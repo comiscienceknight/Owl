@@ -1,0 +1,7 @@
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\bin\Debug\ClientSide.exe.config
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\bin\Debug\ClientSide.exe
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\bin\Debug\ClientSide.pdb
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.csprojResolveAssemblyReference.cache
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.exe
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.pdb
+C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\bin\Debug\wellington4.jpg

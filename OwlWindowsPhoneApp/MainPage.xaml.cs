@@ -22,25 +22,12 @@ namespace OwlWindowsPhoneApp
         public MainPage()
         {
             this.InitializeComponent();
-
+               
             this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
-        /// <summary>
-        /// Invoked when this page is about to be displayed in a Frame.
-        /// </summary>
-        /// <param name="e">Event data that describes how this page was reached.
-        /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // TODO: Prepare page for display here.
-
-            // TODO: If your application contains multiple pages, ensure that you are
-            // handling the hardware Back button by registering for the
-            // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
-            // If you are using the NavigationHelper provided by some templates,
-            // this event is handled for you.
-
             _dispatcherTimer = new DispatcherTimer();
             _dispatcherTimer.Interval = TimeSpan.FromSeconds(2);
             _dispatcherTimer.Tick += DispatcherTimer_Tick;
@@ -66,13 +53,14 @@ namespace OwlWindowsPhoneApp
         {
             // Login the user and then load data from the mobile service.
             await AuthenticateAsync();
-
-            // Hide the login button and load items from the mobile service.
-            this.Button_Login.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         private async System.Threading.Tasks.Task AuthenticateAsync()
         {
+            ProgressBar_Loading.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            ProgressBar_Loading.IsIndeterminate = true;
+            this.Button_Login.IsEnabled = false;
+
             // This sample uses the MicrosoftAccount provider.
             var provider = "MicrosoftAccount";
             MobileServiceUser user = null;
@@ -115,19 +103,27 @@ namespace OwlWindowsPhoneApp
                 }
                 catch (MobileServiceInvalidOperationException ex)
                 {
-                    this.Button_Login.IsEnabled = true;
                     return;
                 }
                 catch (Exception ex)
                 {
-                    this.Button_Login.IsEnabled = true;
+                    
                     return;
+                }
+                finally
+                {
+                    this.Button_Login.IsEnabled = true;
+                    this.Button_Login.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    _dispatcherTimer.Stop();
+                    ProgressBar_Loading.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    ProgressBar_Loading.IsIndeterminate = false;
                 }
             }
             this.Button_Login.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             _dispatcherTimer.Stop();
+            ProgressBar_Loading.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            ProgressBar_Loading.IsIndeterminate = false;
 
-            //this.Frame.Navigate(typeof(PivotPage));
             var rootFrame = (Window.Current.Content as Frame);
             if (!rootFrame.Navigate(typeof(PivotPage)))
             {
@@ -135,28 +131,5 @@ namespace OwlWindowsPhoneApp
             }
         }
 
-        //private async void Button_HttpGet_Click(object sender, RoutedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        HttpClient httpClient = new HttpClient();
-        //        httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", _user.MobileServiceAuthenticationToken);
-        //        httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
-        //        var places = await httpClient.GetStringAsync(
-        //            new Uri("http://owlbat.azure-mobile.net/api/Custom"));
-        //        ShowDialog(places);
-        //        httpClient.Dispose();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //    }
-        //}
-
-        //private async void ShowDialog(string message)
-        //{
-        //    var dialog = new MessageDialog(message);
-        //    dialog.Commands.Add(new UICommand("OK"));
-        //    await dialog.ShowAsync();
-        //}
     }
 }

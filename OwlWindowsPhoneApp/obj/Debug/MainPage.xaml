@@ -12,6 +12,10 @@
         <Button x:ConnectionId='1' Name="Button_Login" VerticalAlignment="Center"
                     HorizontalAlignment="Center"                            
                 Visibility="Visible">Microsoft Account</Button>
+
+        <ProgressBar x:Name="ProgressBar_Loading" IsIndeterminate="False"
+                     HorizontalAlignment="Stretch"        Visibility="Collapsed"
+                     VerticalAlignment="Center"/>
     </Grid>
 </Page>
 

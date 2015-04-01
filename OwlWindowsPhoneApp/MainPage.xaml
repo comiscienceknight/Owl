@@ -12,5 +12,9 @@
         <Button Name="Button_Login" VerticalAlignment="Center"
                     HorizontalAlignment="Center" Click="Button_Login_Click" 
                 Visibility="Visible">Microsoft Account</Button>
+
+        <ProgressBar x:Name="ProgressBar_Loading" IsIndeterminate="False"
+                     HorizontalAlignment="Stretch"        Visibility="Collapsed"
+                     VerticalAlignment="Center"/>
     </Grid>
 </Page>

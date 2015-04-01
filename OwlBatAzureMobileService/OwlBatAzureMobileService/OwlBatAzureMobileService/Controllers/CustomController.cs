@@ -34,6 +34,23 @@ namespace OwlBatAzureMobileService.Controllers
             //Services.Log.Info("Hello from custom controller!");
         }
 
+        [Route("get/randomposts/{city}/{country}")]
+        [HttpGet]
+        public async Task<List<Post>> GetRandomPosts(string city, string country)
+        {
+            string queryText =
+                String.Format("exec OwlBatAzureMobileService.GetPosts @city = '{0}', @country = '{1}'",
+                                city, country);
+            using (var context = new Models.MobileServiceContext())
+            {
+                var dataBase = context.Database;
+                var result = await dataBase.
+                    SqlQuery<Post>(queryText).ToListAsync();
+                return result;
+            }
+            //Services.Log.Info("Hello from custom controller!");
+        }
+
         [Route("api/getplace/{placeId}")]
         [HttpGet]
         public async Task<Place> GetPlaceByPlaceName(string placeId)

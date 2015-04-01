@@ -494,3 +494,7 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServ
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.csprojResolveAssemblyReference.cache
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.pdb
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.dll
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.dll
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.xml
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.xml

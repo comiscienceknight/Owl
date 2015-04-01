@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
 
-  <Identity Name="499498b2-e88f-4432-a46e-7aa582e9df84"
-            Publisher="CN=bhu"
+  <Identity Name="b371b615-3168-45e4-8b5c-61bf63bde99c"
+            Publisher="CN=Bo"
             Version="1.0.0.0" />
 
-  <mp:PhoneIdentity PhoneProductId="499498b2-e88f-4432-a46e-7aa582e9df84" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
+  <mp:PhoneIdentity PhoneProductId="b371b615-3168-45e4-8b5c-61bf63bde99c" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
     <DisplayName>App1</DisplayName>
-    <PublisherDisplayName>bhu</PublisherDisplayName>
+    <PublisherDisplayName>Bo</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
 

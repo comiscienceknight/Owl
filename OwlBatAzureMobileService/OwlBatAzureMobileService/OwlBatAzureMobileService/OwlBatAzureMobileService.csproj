@@ -54,6 +54,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ImageResizer">
+      <HintPath>..\packages\ImageResizer.3.4.3\lib\ImageResizer.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageResizer.Plugins.AzureReader2">
+      <HintPath>..\packages\ImageResizer.Plugins.AzureReader2.3.4.3\lib\ImageResizer.Plugins.AzureReader2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.0.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
     </Reference>
@@ -207,6 +213,7 @@
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\TodoItemController.cs" />
     <Compile Include="DataObjects\Place.cs" />
+    <Compile Include="DataObjects\Post.cs" />
     <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
@@ -236,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Properties\PublishProfiles\mobile-owlbat %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-owlbat %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat.pubxml" />
   </ItemGroup>
   <PropertyGroup>

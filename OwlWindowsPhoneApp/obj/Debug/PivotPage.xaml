@@ -8,7 +8,19 @@
     mc:Ignorable="d"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    
+
+    <Page.BottomAppBar>
+        <CommandBar IsSticky="False" x:Name="appBar">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Filter"  IsCompact="False" Label="Filter"/>
+                <AppBarButton Icon="Refresh" IsCompact="False" Label="Refresh"/>
+            </CommandBar.PrimaryCommands>
+            <!--<CommandBar.SecondaryCommands>
+                <AppBarButton Label="Test01"/>
+                <AppBarButton Label="Test02"/>
+            </CommandBar.SecondaryCommands>-->
+        </CommandBar>
+    </Page.BottomAppBar>
     <Page.Transitions>
         <TransitionCollection>
             <NavigationThemeTransition>
@@ -19,7 +31,7 @@
         </TransitionCollection>
     </Page.Transitions>
     <Grid>
-        <Pivot x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
+        <Pivot x:Uid="Uid_Pivot_Main" Title="Owl" x:Name="Pivot_Main" 
                CommonNavigationTransitionInfo.IsStaggerElement="True">
    
             <PivotItem
@@ -27,7 +39,8 @@
                 Margin="19,14.5,0,0"
                 Header="Posts"
                 CommonNavigationTransitionInfo.IsStaggerElement="True">
-               
+                <local:PostsUserControl>
+                </local:PostsUserControl>
             </PivotItem>
 
             <PivotItem

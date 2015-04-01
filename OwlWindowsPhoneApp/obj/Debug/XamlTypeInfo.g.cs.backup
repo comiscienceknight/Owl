@@ -124,15 +124,25 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[3];
-            _typeNameTable[0] = "OwlWindowsPhoneApp.MainPage";
+            _typeNameTable = new string[8];
+            _typeNameTable[0] = "OwlWindowsPhoneApp.HubViewPage";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[3] = "OwlWindowsPhoneApp.MainPage";
+            _typeNameTable[4] = "OwlWindowsPhoneApp.PivotPage";
+            _typeNameTable[5] = "OwlWindowsPhoneApp.Common.ObservableDictionary";
+            _typeNameTable[6] = "Object";
+            _typeNameTable[7] = "String";
 
-            _typeTable = new global::System.Type[3];
-            _typeTable[0] = typeof(global::OwlWindowsPhoneApp.MainPage);
+            _typeTable = new global::System.Type[8];
+            _typeTable[0] = typeof(global::OwlWindowsPhoneApp.HubViewPage);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[3] = typeof(global::OwlWindowsPhoneApp.MainPage);
+            _typeTable[4] = typeof(global::OwlWindowsPhoneApp.PivotPage);
+            _typeTable[5] = typeof(global::OwlWindowsPhoneApp.Common.ObservableDictionary);
+            _typeTable[6] = typeof(global::System.Object);
+            _typeTable[7] = typeof(global::System.String);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -167,7 +177,17 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_MainPage() { return new global::OwlWindowsPhoneApp.MainPage(); }
+        private object Activate_0_HubViewPage() { return new global::OwlWindowsPhoneApp.HubViewPage(); }
+        private object Activate_3_MainPage() { return new global::OwlWindowsPhoneApp.MainPage(); }
+        private object Activate_4_PivotPage() { return new global::OwlWindowsPhoneApp.PivotPage(); }
+        private object Activate_5_ObservableDictionary() { return new global::OwlWindowsPhoneApp.Common.ObservableDictionary(); }
+        private void MapAdd_5_ObservableDictionary(object instance, object key, object item)
+        {
+            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
+            var newKey = (global::System.String)key;
+            var newItem = (global::System.Object)item;
+            collection.Add(newKey, newItem);
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -179,9 +199,9 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  OwlWindowsPhoneApp.MainPage
+            case 0:   //  OwlWindowsPhoneApp.HubViewPage
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_MainPage;
+                userType.Activator = Activate_0_HubViewPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -193,16 +213,62 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
             case 2:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
+
+            case 3:   //  OwlWindowsPhoneApp.MainPage
+                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_3_MainPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 4:   //  OwlWindowsPhoneApp.PivotPage
+                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_4_PivotPage;
+                userType.AddMemberName("DefaultViewModel");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 5:   //  OwlWindowsPhoneApp.Common.ObservableDictionary
+                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.DictionaryAdd = MapAdd_5_ObservableDictionary;
+                userType.SetIsReturnTypeStub();
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  Object
+                xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 7:   //  String
+                xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
             }
             return xamlType;
         }
 
 
+        private object get_0_PivotPage_DefaultViewModel(object instance)
+        {
+            var that = (global::OwlWindowsPhoneApp.PivotPage)instance;
+            return that.DefaultViewModel;
+        }
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
             global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlMember xamlMember = null;
-            // No Local Properties
+            global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType userType;
+
+            switch (longMemberName)
+            {
+            case "OwlWindowsPhoneApp.PivotPage.DefaultViewModel":
+                userType = (global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.PivotPage");
+                xamlMember = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "OwlWindowsPhoneApp.Common.ObservableDictionary");
+                xamlMember.Getter = get_0_PivotPage_DefaultViewModel;
+                xamlMember.SetIsReadOnly();
+                break;
+            }
             return xamlMember;
         }
     }

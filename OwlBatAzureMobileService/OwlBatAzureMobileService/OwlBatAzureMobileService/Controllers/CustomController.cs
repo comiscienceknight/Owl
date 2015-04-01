@@ -34,6 +34,22 @@ namespace OwlBatAzureMobileService.Controllers
             //Services.Log.Info("Hello from custom controller!");
         }
 
+        [Route("api/getplace/{placeId}")]
+        [HttpGet]
+        public async Task<Place> GetPlaceByPlaceName(string placeId)
+        {
+            string queryText = String.Format("exec OwlBatAzureMobileService.GetCustomData @placeName = '{0}'", placeId);
+            using (var context = new Models.MobileServiceContext())
+            {
+                var dataBase = context.Database;
+                var result = await dataBase.
+                    SqlQuery<Place>(queryText).
+                    FirstOrDefaultAsync();
+                return result;
+            }
+            //Services.Log.Info("Hello from custom controller!");
+        }
+
         // Get GetCustom
         [Route("GetCustom")]
         [HttpGet]

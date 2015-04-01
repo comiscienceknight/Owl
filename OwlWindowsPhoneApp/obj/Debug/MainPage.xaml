@@ -9,8 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:ConnectionId='1' Name="Button_Login"                            
-                Visibility="Visible">Sign in</Button>
+        <Button x:ConnectionId='1' Name="Button_Login" VerticalAlignment="Center"
+                    HorizontalAlignment="Center"                            
+                Visibility="Visible">Microsoft Account</Button>
     </Grid>
 </Page>
 

@@ -1,20 +1,10 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
-using OwlWindowsPhoneApp.DataObjects;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+using System.Threading;
 using Windows.Security.Credentials;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
@@ -26,7 +16,8 @@ namespace OwlWindowsPhoneApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private MobileServiceUser _user;
+        private DispatcherTimer _dispatcherTimer = null;
+        private int _syncObjBool = 0;
 
         public MainPage()
         {
@@ -40,7 +31,7 @@ namespace OwlWindowsPhoneApp
         /// </summary>
         /// <param name="e">Event data that describes how this page was reached.
         /// This parameter is typically used to configure the page.</param>
-        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             // TODO: Prepare page for display here.
 
@@ -50,6 +41,25 @@ namespace OwlWindowsPhoneApp
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
 
+            _dispatcherTimer = new DispatcherTimer();
+            _dispatcherTimer.Interval = TimeSpan.FromSeconds(2);
+            _dispatcherTimer.Tick += DispatcherTimer_Tick;
+            _dispatcherTimer.Start();
+        }
+
+        async void DispatcherTimer_Tick(object sender, object e)
+        {
+            if (Interlocked.CompareExchange(ref _syncObjBool, 1, 0) == 0)
+            {
+                try
+                {
+                    await AuthenticateAsync();
+                }
+                finally
+                {
+                    Interlocked.CompareExchange(ref _syncObjBool, 0, 1);
+                }
+            }
         }
 
         private async void Button_Login_Click(object sender, RoutedEventArgs e)
@@ -63,79 +73,90 @@ namespace OwlWindowsPhoneApp
 
         private async System.Threading.Tasks.Task AuthenticateAsync()
         {
-            string message;
             // This sample uses the MicrosoftAccount provider.
             var provider = "MicrosoftAccount";
+            MobileServiceUser user = null;
+            this.Button_Login.IsEnabled = false;
 
+            string message;
             // Use the PasswordVault to securely store and access credentials.
             PasswordVault vault = new PasswordVault();
             PasswordCredential credential = null;
+            try
+            {
+                // Try to get an existing credential from the vault.
+                credential = vault.FindAllByResource(provider).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                // When there is no matching resource an error occurs, which we ignore.
+            }
+            if (credential != null)
+            {
+                // Create a user from the stored credentials.
+                user = new MobileServiceUser(credential.UserName);
+                credential.RetrievePassword();
+                user.MobileServiceAuthenticationToken = credential.Password;
 
-            while (credential == null)
+                // Set the user from the stored credentials.
+                App.OwlbatClient.CurrentUser = user;
+            }
+            else
             {
                 try
                 {
-                    // Try to get an existing credential from the vault.
-                    credential = vault.FindAllByResource(provider).FirstOrDefault();
+                    // Login with the identity provider.
+                    user = await App.OwlbatClient
+                        .LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
+                    // Create and store the user credentials.
+                    credential = new PasswordCredential(provider,
+                        user.UserId, user.MobileServiceAuthenticationToken);
+                    vault.Add(credential);
                 }
-                catch (Exception e)
+                catch (MobileServiceInvalidOperationException ex)
                 {
-                    // When there is no matching resource an error occurs, which we ignore.
+                    this.Button_Login.IsEnabled = true;
+                    return;
                 }
-
-                if (credential != null)
+                catch (Exception ex)
                 {
-                    // Create a user from the stored credentials.
-                    _user = new MobileServiceUser(credential.UserName);
-                    credential.RetrievePassword();
-                    _user.MobileServiceAuthenticationToken = credential.Password;
-
-                    // Set the user from the stored credentials.
-                    App.OwlbatClient.CurrentUser = _user;
-
-                    try
-                    {
-                        // Try to return an item now to determine if the cached credential has expired.
-                        await App.OwlbatClient.GetTable<Place>().Take(1).ToListAsync();
-                    }
-                    catch (MobileServiceInvalidOperationException ex)
-                    {
-                        if (ex.Response.StatusCode == System.Net.HttpStatusCode.Unauthorized)
-                        {
-                            // Remove the credential with the expired token.
-                            vault.Remove(credential);
-                            credential = null;
-                            continue;
-                        }
-                    }
+                    this.Button_Login.IsEnabled = true;
+                    return;
                 }
-                else
-                {
-                    try
-                    {
-                        // Login with the identity provider.
-                        _user = await App.OwlbatClient
-                            .LoginAsync(MobileServiceAuthenticationProvider.MicrosoftAccount);
+            }
+            this.Button_Login.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            _dispatcherTimer.Stop();
 
-                        // Create and store the user credentials.
-                        credential = new PasswordCredential(provider,
-                            _user.UserId, _user.MobileServiceAuthenticationToken);
-                        vault.Add(credential);
-                    }
-                    catch (MobileServiceInvalidOperationException ex)
-                    {
-                        message = "You must log in. Login Required";
-                    }
-                    catch (Exception ex)
-                    {
-                        message = ex.Message;
-                    }
-                }
-                message = string.Format("You are now logged in - {0}", _user.UserId);
-                var dialog = new MessageDialog(message);
-                dialog.Commands.Add(new UICommand("OK"));
-                await dialog.ShowAsync();
+            //this.Frame.Navigate(typeof(PivotPage));
+            var rootFrame = (Window.Current.Content as Frame);
+            if (!rootFrame.Navigate(typeof(PivotPage)))
+            {
+                throw new Exception("Failed to create initial page");
             }
         }
+
+        //private async void Button_HttpGet_Click(object sender, RoutedEventArgs e)
+        //{
+        //    try
+        //    {
+        //        HttpClient httpClient = new HttpClient();
+        //        httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", _user.MobileServiceAuthenticationToken);
+        //        httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
+        //        var places = await httpClient.GetStringAsync(
+        //            new Uri("http://owlbat.azure-mobile.net/api/Custom"));
+        //        ShowDialog(places);
+        //        httpClient.Dispose();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //}
+
+        //private async void ShowDialog(string message)
+        //{
+        //    var dialog = new MessageDialog(message);
+        //    dialog.Commands.Add(new UICommand("OK"));
+        //    await dialog.ShowAsync();
+        //}
     }
 }

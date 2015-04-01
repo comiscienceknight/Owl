@@ -235,6 +235,7 @@
     <Content Include="Performance\Microsoft.ServiceBus.MessagingPerformanceCounters.man" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\mobile-owlbat %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat.pubxml" />
   </ItemGroup>
   <PropertyGroup>

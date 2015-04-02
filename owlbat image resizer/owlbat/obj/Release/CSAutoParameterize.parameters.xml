@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="OwlBatEntities-Web.config Connection String" description="OwlBatEntities Connection String used in web.config by the application to access the database." defaultValue="data source=olblgislxo.database.windows.net;initial catalog=owlbat;persist security info=True;user id=owlbat;password=@nlc0ccmb;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\GoodBox\\Exoe\ Teamwork\ Foundation\ Server\\owlbat\\owlbat\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlBatEntities']/@connectionString" />
+  </parameter>
+</parameters>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="owlbat" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\GoodBox\\Exoe\ Teamwork\ Foundation\ Server\\owlbat\\owlbat\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\GoodBox\\Exoe\ Teamwork\ Foundation\ Server\\owlbat\\owlbat\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="OwlBatEntities-Web.config Connection String" description="" value="Data Source=tcp:olblgislxo.database.windows.net,1433;Initial Catalog=owlbat;User Id=owlbat@olblgislxo;Password=@nlc0ccmb" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\GoodBox\\Exoe\ Teamwork\ Foundation\ Server\\owlbat\\owlbat\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlBatEntities']/@connectionString" />
+  </parameter>
+</parameters>

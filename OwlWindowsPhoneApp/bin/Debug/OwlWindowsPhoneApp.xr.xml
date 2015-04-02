@@ -61,6 +61,7 @@
       <RootProperty Name="TextTrimming" />
       <RootProperty Name="Opacity" />
       <RootProperty Name="Width" />
+      <RootProperty Name="MaxHeight" />
       <RootProperty Name="TextWrapping" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.PostInfoPage" />

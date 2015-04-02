@@ -23,11 +23,8 @@ namespace OwlWindowsPhoneApp
         {
             this.InitializeComponent();
             this.Loaded += PostsUserControl_Loaded;
-        }
-
-        void PostsUserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            Messenger.Default.Register<LoadingAnimationMessage>(this, async msg => {
+            Messenger.Default.Register<LoadingAnimationMessage>(this, async msg =>
+            {
                 await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     if (msg.IfLoading)
@@ -42,6 +39,10 @@ namespace OwlWindowsPhoneApp
                     }
                 });
             });
+        }
+
+        void PostsUserControl_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

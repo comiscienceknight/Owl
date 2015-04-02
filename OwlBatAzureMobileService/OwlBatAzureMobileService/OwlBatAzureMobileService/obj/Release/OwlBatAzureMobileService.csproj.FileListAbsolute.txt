@@ -340,3 +340,7 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServi
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.dll
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.xml
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.xml
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.dll
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.dll
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.xml
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.xml

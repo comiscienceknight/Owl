@@ -24,7 +24,7 @@
                        Margin="10,3,0,3" TextTrimming="WordEllipsis" 
                        HorizontalAlignment="Left" FontSize="17" Opacity="0.5" FontFamily="Global User Interface"/>
                     <TextBlock Text="{Binding Path=Description}"  HorizontalAlignment="Left"
-                               Width="200"
+                               Width="200" MaxHeight="50"
                        Margin="10,3,0,3" FontSize="14" TextTrimming="WordEllipsis" TextWrapping="Wrap" FontFamily="Global User Interface"/>
                 </StackPanel>
             </StackPanel>

@@ -43,6 +43,8 @@ namespace OwlWindowsPhoneApp.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<PivotViewModel>();
+            SimpleIoc.Default.Register<PostsViewModel>();
         }
 
         public MainViewModel Main
@@ -52,7 +54,25 @@ namespace OwlWindowsPhoneApp.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
+
+        public PivotViewModel Pivot
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<PivotViewModel>();
+            }
+        }
+
+        public PostsViewModel Posts
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<PostsViewModel>();
+            }
+        }
         
+        
+
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

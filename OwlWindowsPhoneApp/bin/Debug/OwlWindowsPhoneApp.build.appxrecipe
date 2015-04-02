@@ -94,6 +94,9 @@
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\PostInfoPage.xbf">
+      <PackagePath>PostInfoPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\MainPage.xbf">
       <PackagePath>View\MainPage.xbf</PackagePath>
     </AppxPackagedFile>

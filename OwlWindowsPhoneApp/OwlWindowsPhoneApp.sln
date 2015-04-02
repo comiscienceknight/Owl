@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwlWindowsPhoneApp", "OwlWi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OwlWindowsPhoneApp", "OwlWindowsPhoneApp", "{023B685C-FD37-4CF1-99D3-DC49B130E6A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App1", "..\App1\App1.csproj", "{005CFEE5-296E-450B-83AE-1CB0534BAA35}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,32 +39,11 @@ Global
 		{C7D9BBDA-AE48-494C-9B42-9B599A8F3B98}.Release|x86.ActiveCfg = Release|x86
 		{C7D9BBDA-AE48-494C-9B42-9B599A8F3B98}.Release|x86.Build.0 = Release|x86
 		{C7D9BBDA-AE48-494C-9B42-9B599A8F3B98}.Release|x86.Deploy.0 = Release|x86
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|ARM.ActiveCfg = Debug|ARM
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|ARM.Build.0 = Debug|ARM
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|ARM.Deploy.0 = Debug|ARM
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|x86.ActiveCfg = Debug|x86
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|x86.Build.0 = Debug|x86
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Debug|x86.Deploy.0 = Debug|x86
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|Any CPU.Build.0 = Release|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|ARM.ActiveCfg = Release|ARM
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|ARM.Build.0 = Release|ARM
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|ARM.Deploy.0 = Release|ARM
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|x64.ActiveCfg = Release|Any CPU
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|x86.ActiveCfg = Release|x86
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|x86.Build.0 = Release|x86
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C7D9BBDA-AE48-494C-9B42-9B599A8F3B98} = {023B685C-FD37-4CF1-99D3-DC49B130E6A7}
-		{005CFEE5-296E-450B-83AE-1CB0534BAA35} = {023B685C-FD37-4CF1-99D3-DC49B130E6A7}
 	EndGlobalSection
 EndGlobal

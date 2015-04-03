@@ -7,13 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     DataContext="{Binding Pivot, Source={StaticResource Locator}}"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" FontFamily="Global User Interface">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
         <CommandBar IsSticky="False" x:Name="appBar">
             <CommandBar.PrimaryCommands>
-                <AppBarButton Icon="Filter"  IsCompact="False" Label="Filter"/>
-                <AppBarButton Icon="Refresh" IsCompact="False" Label="Refresh"/>
+                <AppBarButton x:Name="AppBarButton_FilterPost" Icon="Filter"  
+                              IsCompact="False" Label="Filter" Click="AppBarButton_Filter_Click"/>
+                <AppBarButton x:Name="AppBarButton_RefreshPost" Icon="Refresh" 
+                              IsCompact="False" Label="Refresh"/>
+                <AppBarButton x:Name="AppBarButton_Message"  Icon="Message" 
+                              IsCompact="False" Label="Message" Click="AppBarButton_Message_Click"/>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Name="AppBarButton_Logout" Label="Logout" Click="AppBarButton_Logout_Click"/>
@@ -31,32 +35,48 @@
         </TransitionCollection>
     </Page.Transitions>
     <Grid>
-        <Pivot x:Uid="Uid_Pivot_Main" Title="Owl" x:Name="Pivot_Main" 
-               CommonNavigationTransitionInfo.IsStaggerElement="True">
-   
-            <PivotItem
+        <Grid>
+            <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                <TextBlock x:Name="TextBlock_PageTitle"  Text="Owl, just like the owl" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="30"/>
+            </StackPanel>
+            <Pivot x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
+                   Margin="0,50,0,0" 
+               CommonNavigationTransitionInfo.IsStaggerElement="True"
+               SelectionChanged="Pivot_Main_SelectionChanged" >
+
+                <PivotItem
                 x:Uid="PivotItem1"
                 Margin="19,14.5,0,0"
                 Header="Posts"
                 CommonNavigationTransitionInfo.IsStaggerElement="True">
-                <local:PostsUserControl>
-                </local:PostsUserControl>
-            </PivotItem>
+                    <local:PostsUserControl>
+                    </local:PostsUserControl>
+                </PivotItem>
 
-            <PivotItem
+                <PivotItem
                 x:Uid="PivotItem2"
                 Margin="19,14.5,0,0"
                 Header="My Post">
-               
-            </PivotItem>
+                </PivotItem>
 
-            <PivotItem
+                <PivotItem
                 x:Uid="PivotItem3"
                 Margin="19,14.5,0,0"
                 Header="Chat History">
-                Double line list no text wrapping
+                    Double line list no text wrapping
 
-            </PivotItem>
-        </Pivot>
+                </PivotItem>
+            </Pivot>
+        </Grid>
+        
+        <Grid x:Name="Grid_SubPage" Visibility="Collapsed"  CommonNavigationTransitionInfo.IsStaggerElement="True">
+            
+        </Grid>
     </Grid>
 </Page>

@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Json;
 using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Web.Http;
 
@@ -33,11 +35,12 @@ namespace OwlWindowsPhoneApp.ViewModel
 
         public PostsViewModel()
         {
-            ItemSelectedCommand = new RelayCommand<Post>(async post =>
+            ItemSelectedCommand = new RelayCommand<Post>(post =>
             {
-                var dialog = new MessageDialog(post.Place);
-                dialog.Commands.Add(new UICommand("OK"));
-                await dialog.ShowAsync();
+                //var dialog = new MessageDialog(post.Place);
+                //dialog.Commands.Add(new UICommand("OK"));
+                //await dialog.ShowAsync();
+                Messenger.Default.Send<NavigateToPostInfoMessage>(new NavigateToPostInfoMessage(post));
             });
             ListViewPostLoadedCommand = new RelayCommand(() =>
             {
@@ -88,7 +91,8 @@ namespace OwlWindowsPhoneApp.ViewModel
 
             if (jo.ContainsKey("profileUrl"))
             {
-                Uri myUri = new Uri(jo.GetNamedString("profileUrl"), UriKind.Absolute);
+                post.ProfileUrl = jo.GetNamedString("profileUrl");
+                Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
                 BitmapImage bmi = new BitmapImage();
                 bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
                 bmi.UriSource = myUri;
@@ -101,8 +105,20 @@ namespace OwlWindowsPhoneApp.ViewModel
             if (jo.ContainsKey("guysNumber"))
                 post.GuysNumber = (int)jo.GetNamedNumber("guysNumber");
 
+            if (jo.ContainsKey("userName"))
+                post.UserName = jo.GetNamedString("userName");
+
             if (jo.ContainsKey("time"))
                 post.Time = jo.GetNamedString("time");
+
+            if (jo.ContainsKey("placeAddresse"))
+                post.PlaceAddresse = jo.GetNamedString("placeAddresse");
+
+            if (jo.ContainsKey("popularity"))
+                post.Popularity = (int)jo.GetNamedNumber("popularity");
+
+            if (jo.ContainsKey("myPosition"))
+                post.MyPosition = jo.GetNamedString("myPosition");
 
             post.UserId = jo.GetNamedString("userId");
 

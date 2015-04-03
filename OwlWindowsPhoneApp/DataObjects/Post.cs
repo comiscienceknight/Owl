@@ -97,6 +97,61 @@ namespace OwlWindowsPhoneApp.DataObjects
             }
         }
 
+        private string _userName;
+        public string UserName
+        {
+            get { return _userName; }
+            set
+            {
+                _userName = value;
+                OnPropertyChanged("UserName");
+            }
+        }
+
+        private string _profileUrl;
+        public string ProfileUrl
+        {
+            get { return _profileUrl; }
+            set
+            {
+                _profileUrl = value;
+                OnPropertyChanged("ProfileUrl");
+            }
+        }
+
+        private string _placeAddresse;
+        public string PlaceAddresse
+        {
+            get { return _placeAddresse; }
+            set
+            {
+                _placeAddresse = value;
+                OnPropertyChanged("PlaceAddresse");
+            }
+        }
+
+        private string _myPosition;
+        public string MyPosition
+        {
+            get { return _myPosition; }
+            set
+            {
+                _myPosition = value;
+                OnPropertyChanged("MyPosition");
+            }
+        }
+
+        private int _popularity;
+        public int Popularity
+        {
+            get { return _popularity; }
+            set
+            {
+                _popularity = value;
+                OnPropertyChanged("Popularity");
+            }
+        }
+
         private BitmapImage _profile;
         public BitmapImage Profile
         {

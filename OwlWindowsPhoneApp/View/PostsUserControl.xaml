@@ -19,7 +19,7 @@
                 </Border>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,4,0,10">
                     <TextBlock Text="{Binding Path=Place}"  FontSize="22" 
-                       Margin="10,0,0,3" TextTrimming="WordEllipsis" />
+                       Margin="10,0,0,3" TextTrimming="WordEllipsis" FontFamily="Global User Interface" />
                     <TextBlock Text="{Binding Path=Require}"
                        Margin="10,3,0,3" TextTrimming="WordEllipsis" 
                        HorizontalAlignment="Left" FontSize="17" Opacity="0.5" FontFamily="Global User Interface"/>

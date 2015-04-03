@@ -10,6 +10,10 @@ namespace OwlBatAzureMobileService.DataObjects
     {
         public string Id { get; set; }
         public string PlaceName { get; set; }
+        public string PlaceAddresse { get; set; }
+        public string MyPosition { get; set; }
+        public int Popularity { get; set; }
+        public string UserName { get; set; }
         public string UserId { get; set; }
         public string Time { get; set; }
         public int GuysNumber { get; set; }

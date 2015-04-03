@@ -1,8 +1,13 @@
-﻿using Microsoft.WindowsAzure.MobileServices;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Microsoft.WindowsAzure.MobileServices;
+using OwlWindowsPhoneApp.Common;
+using OwlWindowsPhoneApp.DataObjects;
+using OwlWindowsPhoneApp.ViewModel;
 using System;
 using System.Linq;
 using System.Threading;
 using Windows.Security.Credentials;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -19,16 +24,36 @@ namespace OwlWindowsPhoneApp
         private DispatcherTimer _dispatcherTimer = null;
         private int _syncObjBool = 0;
 
+        private NavigationHelper _navigationHelper;
+        public NavigationHelper NavigationHelper
+        {
+            get { return this._navigationHelper; }
+        }
+
         public MainPage()
         {
             this.InitializeComponent();
                
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            //this.NavigationCacheMode = NavigationCacheMode.Required;
+            
+            _navigationHelper = new NavigationHelper(this);
+            _navigationHelper.LoadState += this.NavigationHelper_LoadState;
+            _navigationHelper.SaveState += this.NavigationHelper_SaveState;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if(e.Parameter.ToString() == "logout")
+            _navigationHelper.OnNavigatedTo(e);
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            _navigationHelper.OnNavigatedFrom(e);
+        }
+
+        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        {
+            if (e.NavigationParameter.ToString() == "logout")
             {
                 ShowAllLoginButtons();
             }
@@ -43,7 +68,11 @@ namespace OwlWindowsPhoneApp
             }
         }
 
-        async void DispatcherTimer_Tick(object sender, object e)
+        private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
+        {
+        }
+
+        void DispatcherTimer_Tick(object sender, object e)
         {
             if (Interlocked.CompareExchange(ref _syncObjBool, 1, 0) == 0)
             {
@@ -139,6 +168,7 @@ namespace OwlWindowsPhoneApp
             }
             HideAllLoginButtons();
             App.PasswordVaultObject = vault;
+
             var rootFrame = (Window.Current.Content as Frame);
             if (!rootFrame.Navigate(typeof(PivotPage)))
             {

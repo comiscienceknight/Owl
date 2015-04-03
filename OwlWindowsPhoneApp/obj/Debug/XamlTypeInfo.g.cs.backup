@@ -132,22 +132,22 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
             _typeNameTable[4] = "GalaSoft.MvvmLight.ObservableObject";
             _typeNameTable[5] = "OwlWindowsPhoneApp.ViewModel.PivotViewModel";
             _typeNameTable[6] = "OwlWindowsPhoneApp.ViewModel.PostsViewModel";
-            _typeNameTable[7] = "OwlWindowsPhoneApp.PostInfoPage";
-            _typeNameTable[8] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[9] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[10] = "OwlWindowsPhoneApp.Common.NavigationHelper";
-            _typeNameTable[11] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[12] = "OwlWindowsPhoneApp.Common.ObservableDictionary";
-            _typeNameTable[13] = "String";
-            _typeNameTable[14] = "OwlWindowsPhoneApp.MainPage";
-            _typeNameTable[15] = "OwlWindowsPhoneApp.PostsUserControl";
-            _typeNameTable[16] = "OwlWindowsPhoneApp.PivotPage";
-            _typeNameTable[17] = "OwlWindowsPhoneApp.ItemClickedConverter";
-            _typeNameTable[18] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[19] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[20] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[21] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[22] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[7] = "OwlWindowsPhoneApp.MessageUserControl";
+            _typeNameTable[8] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[9] = "OwlWindowsPhoneApp.PostInfoUserControl";
+            _typeNameTable[10] = "OwlWindowsPhoneApp.MainPage";
+            _typeNameTable[11] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[12] = "OwlWindowsPhoneApp.Common.NavigationHelper";
+            _typeNameTable[13] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[14] = "OwlWindowsPhoneApp.PostsUserControl";
+            _typeNameTable[15] = "OwlWindowsPhoneApp.PivotPage";
+            _typeNameTable[16] = "OwlWindowsPhoneApp.ItemClickedConverter";
+            _typeNameTable[17] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[18] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[19] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[20] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[21] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[22] = "String";
             _typeNameTable[23] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
             _typeNameTable[24] = "System.Windows.Input.ICommand";
             _typeNameTable[25] = "Windows.UI.Xaml.Data.IValueConverter";
@@ -160,22 +160,22 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
             _typeTable[4] = typeof(global::GalaSoft.MvvmLight.ObservableObject);
             _typeTable[5] = typeof(global::OwlWindowsPhoneApp.ViewModel.PivotViewModel);
             _typeTable[6] = typeof(global::OwlWindowsPhoneApp.ViewModel.PostsViewModel);
-            _typeTable[7] = typeof(global::OwlWindowsPhoneApp.PostInfoPage);
-            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[10] = typeof(global::OwlWindowsPhoneApp.Common.NavigationHelper);
-            _typeTable[11] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[12] = typeof(global::OwlWindowsPhoneApp.Common.ObservableDictionary);
-            _typeTable[13] = typeof(global::System.String);
-            _typeTable[14] = typeof(global::OwlWindowsPhoneApp.MainPage);
-            _typeTable[15] = typeof(global::OwlWindowsPhoneApp.PostsUserControl);
-            _typeTable[16] = typeof(global::OwlWindowsPhoneApp.PivotPage);
-            _typeTable[17] = typeof(global::OwlWindowsPhoneApp.ItemClickedConverter);
-            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[19] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[20] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[21] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[7] = typeof(global::OwlWindowsPhoneApp.MessageUserControl);
+            _typeTable[8] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[9] = typeof(global::OwlWindowsPhoneApp.PostInfoUserControl);
+            _typeTable[10] = typeof(global::OwlWindowsPhoneApp.MainPage);
+            _typeTable[11] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[12] = typeof(global::OwlWindowsPhoneApp.Common.NavigationHelper);
+            _typeTable[13] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[14] = typeof(global::OwlWindowsPhoneApp.PostsUserControl);
+            _typeTable[15] = typeof(global::OwlWindowsPhoneApp.PivotPage);
+            _typeTable[16] = typeof(global::OwlWindowsPhoneApp.ItemClickedConverter);
+            _typeTable[17] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[18] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[20] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[21] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[22] = typeof(global::System.String);
             _typeTable[23] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
             _typeTable[24] = typeof(global::System.Windows.Input.ICommand);
             _typeTable[25] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
@@ -218,30 +218,23 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
         private object Activate_4_ObservableObject() { return new global::GalaSoft.MvvmLight.ObservableObject(); }
         private object Activate_5_PivotViewModel() { return new global::OwlWindowsPhoneApp.ViewModel.PivotViewModel(); }
         private object Activate_6_PostsViewModel() { return new global::OwlWindowsPhoneApp.ViewModel.PostsViewModel(); }
-        private object Activate_7_PostInfoPage() { return new global::OwlWindowsPhoneApp.PostInfoPage(); }
-        private object Activate_12_ObservableDictionary() { return new global::OwlWindowsPhoneApp.Common.ObservableDictionary(); }
-        private object Activate_14_MainPage() { return new global::OwlWindowsPhoneApp.MainPage(); }
-        private object Activate_15_PostsUserControl() { return new global::OwlWindowsPhoneApp.PostsUserControl(); }
-        private object Activate_16_PivotPage() { return new global::OwlWindowsPhoneApp.PivotPage(); }
-        private object Activate_17_ItemClickedConverter() { return new global::OwlWindowsPhoneApp.ItemClickedConverter(); }
-        private object Activate_19_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_21_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_22_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_7_MessageUserControl() { return new global::OwlWindowsPhoneApp.MessageUserControl(); }
+        private object Activate_9_PostInfoUserControl() { return new global::OwlWindowsPhoneApp.PostInfoUserControl(); }
+        private object Activate_10_MainPage() { return new global::OwlWindowsPhoneApp.MainPage(); }
+        private object Activate_14_PostsUserControl() { return new global::OwlWindowsPhoneApp.PostsUserControl(); }
+        private object Activate_15_PivotPage() { return new global::OwlWindowsPhoneApp.PivotPage(); }
+        private object Activate_16_ItemClickedConverter() { return new global::OwlWindowsPhoneApp.ItemClickedConverter(); }
+        private object Activate_18_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_20_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_21_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
         private object Activate_23_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private void MapAdd_12_ObservableDictionary(object instance, object key, object item)
-        {
-            var collection = (global::System.Collections.Generic.IDictionary<global::System.String, global::System.Object>)instance;
-            var newKey = (global::System.String)key;
-            var newItem = (global::System.Object)item;
-            collection.Add(newKey, newItem);
-        }
-        private void VectorAdd_19_BehaviorCollection(object instance, object item)
+        private void VectorAdd_18_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_22_ActionCollection(object instance, object item)
+        private void VectorAdd_21_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
@@ -304,94 +297,89 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 7:   //  OwlWindowsPhoneApp.PostInfoPage
-                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_7_PostInfoPage;
-                userType.AddMemberName("NavigationHelper");
-                userType.AddMemberName("DefaultViewModel");
+            case 7:   //  OwlWindowsPhoneApp.MessageUserControl
+                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_7_MessageUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 8:   //  Windows.UI.Xaml.Controls.Page
+            case 8:   //  Windows.UI.Xaml.Controls.UserControl
                 xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 9:   //  Windows.UI.Xaml.Controls.UserControl
+            case 9:   //  OwlWindowsPhoneApp.PostInfoUserControl
+                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_9_PostInfoUserControl;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  OwlWindowsPhoneApp.MainPage
+                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_10_MainPage;
+                userType.AddMemberName("NavigationHelper");
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 11:   //  Windows.UI.Xaml.Controls.Page
                 xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  OwlWindowsPhoneApp.Common.NavigationHelper
+            case 12:   //  OwlWindowsPhoneApp.Common.NavigationHelper
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 11:   //  Windows.UI.Xaml.DependencyObject
+            case 13:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 12:   //  OwlWindowsPhoneApp.Common.ObservableDictionary
-                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.DictionaryAdd = MapAdd_12_ObservableDictionary;
-                userType.SetIsReturnTypeStub();
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 13:   //  String
-                xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 14:   //  OwlWindowsPhoneApp.MainPage
-                userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_14_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 15:   //  OwlWindowsPhoneApp.PostsUserControl
+            case 14:   //  OwlWindowsPhoneApp.PostsUserControl
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_15_PostsUserControl;
+                userType.Activator = Activate_14_PostsUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 16:   //  OwlWindowsPhoneApp.PivotPage
+            case 15:   //  OwlWindowsPhoneApp.PivotPage
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_16_PivotPage;
+                userType.Activator = Activate_15_PivotPage;
+                userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 17:   //  OwlWindowsPhoneApp.ItemClickedConverter
+            case 16:   //  OwlWindowsPhoneApp.ItemClickedConverter
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_17_ItemClickedConverter;
+                userType.Activator = Activate_16_ItemClickedConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 18:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 17:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 19:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 18:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_19_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_18_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 20:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 19:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 21:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 20:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_21_EventTriggerBehavior;
+                userType.Activator = Activate_20_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -400,11 +388,15 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 22:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 21:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_22_ActionCollection;
+                userType.CollectionAdd = VectorAdd_21_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
+                break;
+
+            case 22:   //  String
+                xamlType = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 23:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
@@ -447,15 +439,15 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
             var that = (global::OwlWindowsPhoneApp.ViewModel.ViewModelLocator)instance;
             return that.Posts;
         }
-        private object get_3_PostInfoPage_NavigationHelper(object instance)
+        private object get_3_MainPage_NavigationHelper(object instance)
         {
-            var that = (global::OwlWindowsPhoneApp.PostInfoPage)instance;
+            var that = (global::OwlWindowsPhoneApp.MainPage)instance;
             return that.NavigationHelper;
         }
-        private object get_4_PostInfoPage_DefaultViewModel(object instance)
+        private object get_4_PivotPage_NavigationHelper(object instance)
         {
-            var that = (global::OwlWindowsPhoneApp.PostInfoPage)instance;
-            return that.DefaultViewModel;
+            var that = (global::OwlWindowsPhoneApp.PivotPage)instance;
+            return that.NavigationHelper;
         }
         private object get_5_Interaction_Behaviors(object instance)
         {
@@ -571,16 +563,16 @@ namespace OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo
                 xamlMember.Getter = get_2_ViewModelLocator_Posts;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "OwlWindowsPhoneApp.PostInfoPage.NavigationHelper":
-                userType = (global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.PostInfoPage");
+            case "OwlWindowsPhoneApp.MainPage.NavigationHelper":
+                userType = (global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.MainPage");
                 xamlMember = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlMember(this, "NavigationHelper", "OwlWindowsPhoneApp.Common.NavigationHelper");
-                xamlMember.Getter = get_3_PostInfoPage_NavigationHelper;
+                xamlMember.Getter = get_3_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "OwlWindowsPhoneApp.PostInfoPage.DefaultViewModel":
-                userType = (global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.PostInfoPage");
-                xamlMember = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlMember(this, "DefaultViewModel", "OwlWindowsPhoneApp.Common.ObservableDictionary");
-                xamlMember.Getter = get_4_PostInfoPage_DefaultViewModel;
+            case "OwlWindowsPhoneApp.PivotPage.NavigationHelper":
+                userType = (global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.PivotPage");
+                xamlMember = new global::OwlWindowsPhoneApp.OwlWindowsPhoneApp_XamlTypeInfo.XamlMember(this, "NavigationHelper", "OwlWindowsPhoneApp.Common.NavigationHelper");
+                xamlMember.Getter = get_4_PivotPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":

@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="OwlWindowsPhoneApp.MessageUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OwlWindowsPhoneApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="400">
+
+    <UserControl.Transitions>
+    </UserControl.Transitions>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <!-- Title Panel -->
+        <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+            <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+            <TextBlock x:Name="TextBlock_PageTitle"  Text="Chat with " 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="30"/>
+        </StackPanel>
+
+        <Rectangle Height="3" HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Fill="#FFC94F17" Opacity="0.5" Margin="15,66,100,0"  />
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid x:Name="ContentRoot" Margin="15,80,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+            </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+                <TextBox />
+            </Grid>
+        </Grid>
+
+        <ProgressBar x:Name="ProgressBar_Loading" Visibility="Collapsed"
+                     IsIndeterminate="True" IsEnabled="True" VerticalAlignment="Top"
+                     Margin="0,5,0,0" />
+    </Grid>
+</UserControl>

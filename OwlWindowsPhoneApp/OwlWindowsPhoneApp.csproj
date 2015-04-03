@@ -86,7 +86,10 @@
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="DataObjects\Message.cs" />
     <Compile Include="DataObjects\Post.cs" />
+    <Compile Include="ViewModel\SendMsgMessage.cs" />
+    <Compile Include="ViewModel\MessageViewModel.cs" />
     <Compile Include="View\MessageUserControl.xaml.cs">
       <DependentUpon>MessageUserControl.xaml</DependentUpon>
     </Compile>
@@ -165,11 +168,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Coding4Fun.Kinect.KinectService.Common">
-      <HintPath>packages\Coding4Fun.Kinect.KinectService.PhoneClient.1.6.0\lib\Coding4Fun.Kinect.KinectService.Common.dll</HintPath>
+    <Reference Include="Coding4Fun.Toolkit.Controls, Version=2.0.7.0, Culture=neutral, PublicKeyToken=c5fd7b72b1a17ce4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Coding4Fun.Toolkit (Windows Store)\Coding4Fun.Toolkit.Controls.dll</HintPath>
     </Reference>
-    <Reference Include="Coding4Fun.Kinect.KinectService.PhoneClient">
-      <HintPath>packages\Coding4Fun.Kinect.KinectService.PhoneClient.1.6.0\lib\Coding4Fun.Kinect.KinectService.PhoneClient.dll</HintPath>
+    <Reference Include="Coding4Fun.Toolkit.Net">
+      <HintPath>packages\Coding4Fun.Toolkit (Windows Store)\Coding4Fun.Toolkit.Net.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight">
       <HintPath>packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.dll</HintPath>

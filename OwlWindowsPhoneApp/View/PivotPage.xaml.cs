@@ -157,6 +157,8 @@ namespace OwlWindowsPhoneApp
                 AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
 
@@ -167,8 +169,10 @@ namespace OwlWindowsPhoneApp
             if(post != null)
             {
                 Grid_SubPage.Children.Add(new PostInfoUserControl(post));
+                AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
         }
@@ -190,11 +194,15 @@ namespace OwlWindowsPhoneApp
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         break;
                     default:
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         break;
                 }
             }

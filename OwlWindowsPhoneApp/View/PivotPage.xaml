@@ -10,7 +10,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar IsSticky="False" x:Name="appBar">
+        <CommandBar IsSticky="True" x:Name="AppBar_Pivot">
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:Name="AppBarButton_FilterPost" Icon="Filter"  
                               IsCompact="False" Label="Filter" Click="AppBarButton_Filter_Click"/>

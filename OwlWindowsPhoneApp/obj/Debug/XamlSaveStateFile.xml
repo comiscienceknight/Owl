@@ -1,9 +1,10 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
+    <LocalAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\obj\debug\intermediatexaml\owlwindowsphoneapp.exe" HashGuid="295b01e1-e2f3-005c-fe77-15973f13870b" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactions.dll" HashGuid="95a94f94-3917-d473-4f7c-18c4bd437046" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactivity.dll" HashGuid="d25f59e6-dd81-900a-0dfc-55b39f6898ef" />
-    <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\coding4fun.kinect.kinectservice.phoneclient.1.6.0\lib\coding4fun.kinect.kinectservice.common.dll" HashGuid="4c303978-d191-4501-3b7e-0ab8c327082b" />
-    <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\coding4fun.kinect.kinectservice.phoneclient.1.6.0\lib\coding4fun.kinect.kinectservice.phoneclient.dll" HashGuid="058c8d15-2617-6b53-0e9a-863f7cd6c94c" />
+    <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\coding4fun.toolkit (windows store)\coding4fun.toolkit.controls.dll" HashGuid="130201a2-c8a1-1ba1-bd40-eb94fe3e66a2" />
+    <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\coding4fun.toolkit (windows store)\coding4fun.toolkit.net.dll" HashGuid="a4bcaf6e-68d0-dd35-856d-7058f550a15a" />
     <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\mvvmlightlibs.5.1.1.0\lib\wpa81\galasoft.mvvmlight.dll" HashGuid="d702f8e6-9904-1220-8de7-be8614bf93e8" />
     <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\mvvmlightlibs.5.1.1.0\lib\wpa81\galasoft.mvvmlight.extras.dll" HashGuid="f59e2cac-89a1-06f4-bbe7-18857251ef78" />
     <ReferenceAssembly PathName="c:\users\bo\documents\github\owl\owlwindowsphoneapp\packages\mvvmlightlibs.5.1.1.0\lib\wpa81\galasoft.mvvmlight.platform.dll" HashGuid="27c4f135-c15f-18a2-cb9f-847748d33bdb" />

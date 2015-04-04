@@ -15,8 +15,10 @@ Assets\Tempo\night3.jpg
 Assets\WideLogo.scale-240.png
 App.xbf
 OwlWindowsPhoneApp.xr.xml
+View\ChatHistoryUserControl.xbf
 View\MainPage.xbf
 View\MessageUserControl.xbf
+View\MyPostUserControl.xbf
 View\PivotPage.xbf
 View\PostInfoUserControl.xbf
 View\PostsUserControl.xbf

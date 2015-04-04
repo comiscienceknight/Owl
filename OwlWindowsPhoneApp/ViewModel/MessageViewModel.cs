@@ -66,6 +66,14 @@ namespace OwlWindowsPhoneApp.ViewModel
             ListViewMessageLoadedCommand = new RelayCommand(() =>
             {
                 LoadPosts();
+                Messenger.Default.Send<EnterIntoChatMessage>(new EnterIntoChatMessage(new ChatEntry()
+                {
+                    UserId = _userId,
+                    UserName = _userName,
+                    Message = "",
+                    Time = "",
+                    UserProfile = _userProfileUrl
+                }));
             });
         }
 

@@ -4,6 +4,13 @@
     <RootInterface FullName="Windows.UI.Xaml.Data.IValueConverter" />
   </Roots.Interfaces>
   <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Chats" />
+    <RootPropertyPathName Name="Message" />
+    <RootPropertyPathName Name="UserName" />
+    <RootPropertyPathName Name="UserProfile" />
+    <RootPropertyPathName Name="ChatEntrytCollection" />
+    <RootPropertyPathName Name="ListViewChatEntriesLoadedCommand" />
+    <RootPropertyPathName Name="ItemSelectedCommand" />
     <RootPropertyPathName Name="LowerRightVisibility" />
     <RootPropertyPathName Name="BackgroundColor" />
     <RootPropertyPathName Name="BubbleMargin" />
@@ -23,7 +30,6 @@
     <RootPropertyPathName Name="Profile" />
     <RootPropertyPathName Name="PostCollection" />
     <RootPropertyPathName Name="ListViewPostLoadedCommand" />
-    <RootPropertyPathName Name="ItemSelectedCommand" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -31,13 +37,60 @@
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ViewModel.ViewModelLocator" />
     <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="DataContext" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Content" />
       <RootProperty Name="Transitions" />
-      <RootProperty Name="DataContext" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Path" />
+      <RootProperty Name="ElementName" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.ItemClickedConverter" />
+    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
+      <RootProperty Name="Orientation" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Children" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Border">
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Child" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
+      <RootProperty Name="Text" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="TextTrimming" />
+      <RootProperty Name="FontFamily" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="MaxHeight" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Style" />
+      <RootProperty Name="CharacterSpacing" />
+      <RootProperty Name="Inlines" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="Stretch" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="ImageOpened" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Children" />
@@ -52,6 +105,35 @@
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="ItemsSource" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="IsItemClickEnabled" />
+      <RootProperty Name="ItemTemplate" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
+      <RootMethod Name="GetBehaviors" />
+      <RootMethod Name="SetBehaviors" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
+      <RootProperty Name="IsIndeterminate" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
+      <RootProperty Name="EventName" />
+      <RootProperty Name="Actions" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
+      <RootProperty Name="Command" />
+      <RootProperty Name="InputConverter" />
+      <RootProperty Name="CommandParameter" />
+    </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.ChatHistoryUserControl" />
     <RootType FullName="Coding4Fun.Toolkit.Controls.ChatBubble">
       <RootProperty Name="ChatBubbleDirection" />
       <RootProperty Name="Visibility" />
@@ -61,36 +143,6 @@
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Data.Binding">
-      <RootProperty Name="Path" />
-      <RootProperty Name="ElementName" />
-      <RootProperty Name="Source" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Children" />
-      <RootProperty Name="Orientation" />
-      <RootProperty Name="VerticalAlignment" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
-      <RootProperty Name="Text" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="TextTrimming" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="FontFamily" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Opacity" />
-      <RootProperty Name="Style" />
-      <RootProperty Name="CharacterSpacing" />
-      <RootProperty Name="Inlines" />
-      <RootProperty Name="MaxHeight" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
@@ -103,27 +155,8 @@
       <RootProperty Name="Opacity" />
       <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
-      <RootProperty Name="Visibility" />
-      <RootProperty Name="IsIndeterminate" />
-      <RootProperty Name="IsEnabled" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="HorizontalAlignment" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="IsItemClickEnabled" />
-      <RootProperty Name="ItemsSource" />
-      <RootProperty Name="ItemTemplate" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactivity.Interaction">
-      <RootMethod Name="GetBehaviors" />
-      <RootMethod Name="SetBehaviors" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
@@ -138,29 +171,11 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
-      <RootProperty Name="EventName" />
-      <RootProperty Name="Actions" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Interactions.Core.InvokeCommandAction">
-      <RootProperty Name="Command" />
-      <RootProperty Name="CommandParameter" />
-      <RootProperty Name="InputConverter" />
-    </RootType>
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.StaticResourceExtension" />
     <RootType FullName="OwlWindowsPhoneApp.ScrollToBottomBehavior">
       <RootProperty Name="ItemsSource" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Stretch" />
-      <RootProperty Name="Source" />
-      <RootEvent Name="ImageOpened" />
-      <RootEvent Name="Tapped" />
-    </RootType>
     <RootType FullName="OwlWindowsPhoneApp.MessageUserControl" />
+    <RootType FullName="OwlWindowsPhoneApp.MyPostUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="Content" />
     </RootType>
@@ -211,12 +226,5 @@
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.PostsUserControl" />
     <RootType FullName="OwlWindowsPhoneApp.PivotPage" />
-    <RootType FullName="OwlWindowsPhoneApp.ItemClickedConverter" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Border">
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Child" />
-    </RootType>
   </Roots.RootTypes>
 </Roots>

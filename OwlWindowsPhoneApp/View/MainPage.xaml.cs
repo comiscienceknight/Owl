@@ -6,6 +6,7 @@ using OwlWindowsPhoneApp.ViewModel;
 using System;
 using System.Linq;
 using System.Threading;
+using Windows.Devices.Geolocation;
 using Windows.Security.Credentials;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
@@ -51,7 +52,7 @@ namespace OwlWindowsPhoneApp
             _navigationHelper.OnNavigatedFrom(e);
         }
 
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        private async void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
         {
             if (e.NavigationParameter.ToString() == "logout")
             {
@@ -72,7 +73,7 @@ namespace OwlWindowsPhoneApp
         {
         }
 
-        void DispatcherTimer_Tick(object sender, object e)
+        private async void DispatcherTimer_Tick(object sender, object e)
         {
             if (Interlocked.CompareExchange(ref _syncObjBool, 1, 0) == 0)
             {
@@ -80,7 +81,7 @@ namespace OwlWindowsPhoneApp
                 {
                     if(!TryAuthenticateWithStoredToken())
                     {
-                        ShowAllLoginButtons();      
+                        ShowAllLoginButtons();
                     }
                 }
                 finally

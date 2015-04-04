@@ -28,6 +28,8 @@ namespace OwlWindowsPhoneApp
             get { return this._navigationHelper; }
         }
 
+       private Common.GeoLocation _geoLocation;
+
         public PivotPage()
         {
             this.InitializeComponent();
@@ -38,11 +40,17 @@ namespace OwlWindowsPhoneApp
             _navigationHelper.LoadState += this.NavigationHelper_LoadState;
             _navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
+            _geoLocation = new Common.GeoLocation(this.Dispatcher);
+
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
 
             Messenger.Default.Register<NavigateToPostInfoMessage>(this, msg =>
             {
                 NavigateToPostInfoPage(msg.Post);
+            });
+            Messenger.Default.Register<NavigateToChatMessage>(this, msg =>
+            {
+                NavigateToMessagePage(msg.ChatEntry.UserId, msg.ChatEntry.UserName, msg.ChatEntry.UserProfile);
             });
         }
 
@@ -112,7 +120,7 @@ namespace OwlWindowsPhoneApp
                 var postInfoUC = Grid_SubPage.Children.First() as PostInfoUserControl;
                 Post post = postInfoUC.GetPost();
                 Grid_SubPage.Children.Clear();
-                NavigateToMessagePage(post);
+                NavigateToMessagePage(post.UserId, post.UserName, post.ProfileUrl);
             }
         }
 
@@ -147,19 +155,16 @@ namespace OwlWindowsPhoneApp
 
 
         #region internal navigation
-        private void NavigateToMessagePage(Post post = null)
+        private void NavigateToMessagePage(string userId, string userName, string profileUrl)
         {
             Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Grid_SubPage.Children.Clear();
-            if (post != null)
-            {
-                Grid_SubPage.Children.Add(new MessageUserControl(post.UserId, post.UserName, post.ProfileUrl));
-                AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            }
+            Grid_SubPage.Children.Add(new MessageUserControl(userId, userName, profileUrl));
+            AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         private void NavigateToPostInfoPage(Post post = null)

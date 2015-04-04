@@ -5,7 +5,8 @@ namespace OwlWindowsPhoneApp.ViewModel
 {
     public class LoadingAnimationMessage
     {
-        public static object Token = new object();
+        public static object PostToken = new object();
+        public static object ChatToken = new object();
         public bool IfLoading { get; set; }
 
         public LoadingAnimationMessage()

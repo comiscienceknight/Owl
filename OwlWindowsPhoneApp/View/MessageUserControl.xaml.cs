@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Xaml.Interactivity;
+using OwlWindowsPhoneApp.DataObjects;
 using OwlWindowsPhoneApp.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -52,7 +53,7 @@ namespace OwlWindowsPhoneApp
                     }
                     else
                     {
-                        ListView_Messages.ScrollIntoView(ListView_Messages.Items.Last());
+                        ListView_Messages.ScrollIntoView(ListView_Messages.Items.Last() as Message, ScrollIntoViewAlignment.Leading);
                         ProgressBar_Loading.IsIndeterminate = false;
                         ProgressBar_Loading.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     }

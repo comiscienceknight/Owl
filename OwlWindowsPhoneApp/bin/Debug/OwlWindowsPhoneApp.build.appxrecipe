@@ -115,8 +115,14 @@
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\ChatHistoryUserControl.xbf">
+      <PackagePath>View\ChatHistoryUserControl.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\MessageUserControl.xbf">
       <PackagePath>View\MessageUserControl.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\MyPostUserControl.xbf">
+      <PackagePath>View\MyPostUserControl.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\PostInfoUserControl.xbf">
       <PackagePath>View\PostInfoUserControl.xbf</PackagePath>

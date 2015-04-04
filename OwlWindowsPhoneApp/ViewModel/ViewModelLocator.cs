@@ -45,6 +45,7 @@ namespace OwlWindowsPhoneApp.ViewModel
             SimpleIoc.Default.Register<MainViewModel>();
             SimpleIoc.Default.Register<PivotViewModel>();
             SimpleIoc.Default.Register<PostsViewModel>();
+            SimpleIoc.Default.Register<ChatHistoryViewModel>();
         }
 
         public MainViewModel Main
@@ -68,6 +69,14 @@ namespace OwlWindowsPhoneApp.ViewModel
             get
             {
                 return ServiceLocator.Current.GetInstance<PostsViewModel>();
+            }
+        }
+
+        public ChatHistoryViewModel Chats
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<ChatHistoryViewModel>();
             }
         }
         

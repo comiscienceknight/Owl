@@ -82,17 +82,26 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataObjects\ChatEntry.cs" />
+    <Compile Include="ViewModel\ChatHistoryViewModel.cs" />
+    <Compile Include="ViewModel\EnterIntoChatMessage.cs" />
+    <Compile Include="ViewModel\NavigateToChatMessage.cs" />
+    <Compile Include="View\ChatHistoryUserControl.xaml.cs">
+      <DependentUpon>ChatHistoryUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Common\GeoLocation.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
     <Compile Include="Common\ObservableDictionary.cs" />
     <Compile Include="Common\RelayCommand.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="DataObjects\Message.cs" />
     <Compile Include="DataObjects\Post.cs" />
+    <Compile Include="View\MessageUserControl.xaml.cs" />
+    <Compile Include="View\MyPostUserControl.xaml.cs">
+      <DependentUpon>MyPostUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\SendMsgMessage.cs" />
     <Compile Include="ViewModel\MessageViewModel.cs" />
-    <Compile Include="View\MessageUserControl.xaml.cs">
-      <DependentUpon>MessageUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PostInfoUserControl.xaml.cs">
       <DependentUpon>PostInfoUserControl.xaml</DependentUpon>
     </Compile>
@@ -142,7 +151,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\ChatHistoryUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MessageUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MyPostUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

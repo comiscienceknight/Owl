@@ -19,8 +19,8 @@ namespace OwlWindowsPhoneApp.ViewModel
 {
     public class MessageViewModel : ViewModelBase
     {
-        private ObservableCollection<Message> _messageCollection = new ObservableCollection<Message>();
-        public ObservableCollection<Message> MessageCollection
+        private ObservableCollection<DataObjects.Message> _messageCollection = new ObservableCollection<DataObjects.Message>();
+        public ObservableCollection<DataObjects.Message> MessageCollection
         {
             get { return _messageCollection; }
             set
@@ -52,7 +52,7 @@ namespace OwlWindowsPhoneApp.ViewModel
             SendMessageCommand = new RelayCommand<string>(msg =>
             {
                 Messenger.Default.Send<SendMsgMessage>(new SendMsgMessage(true));
-                MessageCollection.Add(new Message()
+                MessageCollection.Add(new DataObjects.Message()
                 {
                     TextContent = msg,
                     Time = DateTime.Now.ToString("ddd, hh:mm"),
@@ -81,7 +81,7 @@ namespace OwlWindowsPhoneApp.ViewModel
         {
             Messenger.Default.Send<SendMsgMessage>(new SendMsgMessage(true));
 
-            MessageCollection.Add(new Message()
+            MessageCollection.Add(new DataObjects.Message()
             {
                 TextContent = "Hi, we can start talking",
                 Time = DateTime.Now.ToString("ddd, hh:mm"),
@@ -90,7 +90,7 @@ namespace OwlWindowsPhoneApp.ViewModel
                 BubbleMargin = "0,0,100,0",
                 BackgroundColor = "#FF0050EF"
             });
-            MessageCollection.Add(new Message()
+            MessageCollection.Add(new DataObjects.Message()
             {
                 TextContent = "Hi, how're you?",
                 Time = DateTime.Now.ToString("ddd, hh:mm"),
@@ -99,7 +99,7 @@ namespace OwlWindowsPhoneApp.ViewModel
                 BubbleMargin = "100,0,0,0",
                 BackgroundColor = "#990050EF"
             });
-            MessageCollection.Add(new Message()
+            MessageCollection.Add(new DataObjects.Message()
             {
                 TextContent = "Hi",
                 Time = DateTime.Now.ToString("ddd, hh:mm"),

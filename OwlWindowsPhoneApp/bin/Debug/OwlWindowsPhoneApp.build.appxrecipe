@@ -61,6 +61,12 @@
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\Assets\photofromcamera.png">
+      <PackagePath>Assets\photofromcamera.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\Assets\photofromphone.png">
+      <PackagePath>Assets\photofromphone.png</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\Assets\SignIn\FacebookSignIn.png">
       <PackagePath>Assets\SignIn\FacebookSignIn.png</PackagePath>
     </AppxPackagedFile>
@@ -100,6 +106,9 @@
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\Assets\Tempo\clickmetoaddphoto.jpg">
+      <PackagePath>Assets\Tempo\clickmetoaddphoto.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\Assets\Tempo\linkedin-no-picture.jpg">
       <PackagePath>Assets\Tempo\linkedin-no-picture.jpg</PackagePath>
     </AppxPackagedFile>
@@ -114,6 +123,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\CameraPhotoUserControl.xbf">
+      <PackagePath>View\CameraPhotoUserControl.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\ChatHistoryUserControl.xbf">
       <PackagePath>View\ChatHistoryUserControl.xbf</PackagePath>

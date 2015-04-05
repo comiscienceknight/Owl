@@ -198,4 +198,9 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\ChatHistoryUs
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\ChatHistoryUserControl.g.cs
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\ChatHistoryUserControl.xaml
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\ChatHistoryUserControl.xbf
+C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\CameraPhotoUserControl.g.i.cs
+C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\CameraPhotoUserControl.g.cs
+C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\CameraPhotoUserControl.xaml
+C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\CameraPhotoUserControl.xbf
+C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\bin\Debug\View\CameraPhotoUserControl.xbf
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\OwlWindowsPhoneApp.csprojResolveAssemblyReference.cache

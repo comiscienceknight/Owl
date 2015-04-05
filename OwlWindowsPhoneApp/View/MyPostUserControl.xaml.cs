@@ -1,10 +1,13 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Messaging;
+using OwlWindowsPhoneApp.ViewModel.Message;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Media.Capture;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +25,39 @@ namespace OwlWindowsPhoneApp
         public MyPostUserControl()
         {
             this.InitializeComponent();
+            this.Loaded += MyPostUserControl_Loaded;
+        }
+
+        void MyPostUserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            FlipView_Profile.Width = Window.Current.Bounds.Width - 10;
+            FlipView_Profile.Height = FlipView_Profile.Width * 0.75;
+        }
+
+        private void Image_Profile1_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void Image_Profile2_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private void Image_Profile3_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        }
+
+        private async void Image_TakePhotoFromCamera_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
+            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        private void Image_TakePhotoFromPhone_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+
         }
     }
 }

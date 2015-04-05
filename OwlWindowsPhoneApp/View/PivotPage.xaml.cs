@@ -2,6 +2,7 @@
 using OwlWindowsPhoneApp.Common;
 using OwlWindowsPhoneApp.DataObjects;
 using OwlWindowsPhoneApp.ViewModel;
+using OwlWindowsPhoneApp.ViewModel.Message;
 using System;
 using System.Linq;
 using Windows.Phone.UI.Input;
@@ -51,6 +52,10 @@ namespace OwlWindowsPhoneApp
             Messenger.Default.Register<NavigateToChatMessage>(this, msg =>
             {
                 NavigateToMessagePage(msg.ChatEntry.UserId, msg.ChatEntry.UserName, msg.ChatEntry.UserProfile);
+            });
+            Messenger.Default.Register<NavigateToCameraMessage>(this, msg =>
+            {
+                NavigateToCameraPhotoPage();
             });
         }
 
@@ -138,6 +143,12 @@ namespace OwlWindowsPhoneApp
                 Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
             }
+            else if (Grid_SubPage.Children.Any(p => p is CameraPhotoUserControl))
+            {
+                Grid_SubPage.Children.Clear();
+                Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+            }
             else if (e.Handled == false)
             {
                 e.Handled = true;
@@ -180,6 +191,19 @@ namespace OwlWindowsPhoneApp
                 AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
+        }
+
+        private void NavigateToCameraPhotoPage()
+        {
+            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Grid_SubPage.Children.Clear();
+            var cameraView = new CameraPhotoUserControl();
+            Grid_SubPage.Children.Add(new CameraPhotoUserControl());
+            AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
         }
 
         private void Pivot_Main_SelectionChanged(object sender, SelectionChangedEventArgs e)

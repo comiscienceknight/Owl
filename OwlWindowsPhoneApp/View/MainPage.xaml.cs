@@ -147,10 +147,11 @@ namespace OwlWindowsPhoneApp
         {
             PasswordVault vault = new PasswordVault();
             PasswordCredential credential = null;
+            var loginAsync = App.OwlbatClient.LoginAsync(providerEnum);
             try
             {
                 // Login with the identity provider.
-                MobileServiceUser user = await App.OwlbatClient.LoginAsync(providerEnum);
+                MobileServiceUser user = await loginAsync;
                 // Create and store the user credentials.
                 credential = new PasswordCredential(provider,
                     user.UserId, user.MobileServiceAuthenticationToken);

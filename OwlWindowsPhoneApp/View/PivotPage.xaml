@@ -63,8 +63,10 @@
                 x:Uid="PivotItem2"
                 Margin="19,14.5,0,0"
                 Header="My Post">
+                    <local:MyPostUserControl>
+                    </local:MyPostUserControl>
                 </PivotItem>
-
+                
                 <PivotItem
                 x:Uid="PivotItem3"
                 Margin="19,14.5,0,0"
@@ -77,7 +79,7 @@
         </Grid>
         
         <Grid x:Name="Grid_SubPage" Visibility="Collapsed"  CommonNavigationTransitionInfo.IsStaggerElement="True">
-            
+        
         </Grid>
     </Grid>
 </Page>

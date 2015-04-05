@@ -29,9 +29,9 @@ namespace OwlWindowsPhoneApp.Common
             {
                 Geoposition pos = args.Position;
 
-                var dialog = new MessageDialog(string.Format("GeoLocation: {0}, {1}", pos.Coordinate.Point.Position.Latitude, pos.Coordinate.Point.Position.Longitude));
-                dialog.Commands.Add(new UICommand("OK"));
-                await dialog.ShowAsync();
+                //var dialog = new MessageDialog(string.Format("GeoLocation: {0}, {1}", pos.Coordinate.Point.Position.Latitude, pos.Coordinate.Point.Position.Longitude));
+                //dialog.Commands.Add(new UICommand("OK"));
+                //await dialog.ShowAsync();
             });
         }
 

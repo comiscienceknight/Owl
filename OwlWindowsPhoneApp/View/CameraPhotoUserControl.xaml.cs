@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Foundation;
@@ -27,6 +28,7 @@ namespace OwlWindowsPhoneApp
         private DeviceInformationCollection _webcamList;
         private DeviceInformation _frontWebcam;
         private DeviceInformation _backWebcam;
+        private int _manipStncObjBool = 0;
 
         public CameraPhotoUserControl()
         {
@@ -46,7 +48,7 @@ namespace OwlWindowsPhoneApp
             CaptureElement_Photo.Width = Window.Current.Bounds.Width;
             CaptureElement_Photo.Height = Window.Current.Bounds.Height;
             await GetAllVideoDevice();
-            StartPreview((_frontWebcam != null ? _frontWebcam.Id : (_backWebcam != null ? _backWebcam.Id : null)));
+            StartPreview((_backWebcam != null ? _backWebcam.Id : (_frontWebcam != null ? _frontWebcam.Id : null)));
         }
 
         private async Task GetAllVideoDevice()
@@ -79,51 +81,53 @@ namespace OwlWindowsPhoneApp
                 AudioDeviceId = string.Empty,
                 VideoDeviceId = videoDeviceId
             });
-            _captureManager.SetPreviewRotation(if270Degree ? VideoRotation.Clockwise270Degrees : VideoRotation.None);
+            _captureManager.SetPreviewRotation(if270Degree ? VideoRotation.Clockwise90Degrees : VideoRotation.Clockwise270Degrees);
+            _captureManager.SetRecordRotation(if270Degree ? VideoRotation.Clockwise90Degrees : VideoRotation.Clockwise270Degrees);
             CaptureElement_Photo.Source = _captureManager;
             await _captureManager.StartPreviewAsync();
         }
 
         private async void AppBarButton_RotateCamera_Click(object sender, RoutedEventArgs e)
         {
-            await _captureManager.StopPreviewAsync();
-            string backId = (_backWebcam == null ? "" : _backWebcam.Id);
-            string frontId = (_frontWebcam == null ? "" : _frontWebcam.Id);
-            if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == backId.ToUpper())
+            if (Interlocked.CompareExchange(ref _manipStncObjBool, 1, 0) == 0)
             {
-                StartPreview(frontId, false);
-                AppBarButton_RotateCamera.Label = "Back Camera";
-            }
-            else if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == frontId.ToUpper())
-            {
-                StartPreview(backId);
-                AppBarButton_RotateCamera.Label = "Front Camera";
+                try
+                {
+                    await _captureManager.StopPreviewAsync();
+                    string backId = (_backWebcam == null ? "" : _backWebcam.Id);
+                    string frontId = (_frontWebcam == null ? "" : _frontWebcam.Id);
+                    if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == backId.ToUpper())
+                    {
+                        StartPreview(frontId, false);
+                        AppBarButton_RotateCamera.Label = "Back Camera";
+                    }
+                    else if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == frontId.ToUpper())
+                    {
+                        StartPreview(backId);
+                        AppBarButton_RotateCamera.Label = "Front Camera";
+                    }
+                }
+                finally
+                {
+                    Interlocked.CompareExchange(ref _manipStncObjBool, 0, 1);
+                }
             }
         }
 
         private async void AppBarButton_Focus_Click(object sender, RoutedEventArgs e)
         {
-            //await _captureManager.VideoDeviceController.FocusControl.LockAsync();
-            //await _captureManager.VideoDeviceController.FocusControl.UnlockAsync();
-        }
-
-        private async void AppBarButton_Focus_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            //await _captureManager.VideoDeviceController.FocusControl.LockAsync();
-            await _captureManager.VideoDeviceController.FocusControl.FocusAsync();
-            //await _captureManager.VideoDeviceController.FocusControl.UnlockAsync();
+            string backId = (_backWebcam == null ? "" : _backWebcam.Id);
+            if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == backId.ToUpper())
+            {
+                //await _captureManager.VideoDeviceController.FocusControl.LockAsync();
+                await _captureManager.VideoDeviceController.FocusControl.FocusAsync();
+                //await _captureManager.VideoDeviceController.FocusControl.UnlockAsync();
+            }
         }
 
         private async void AppBarButton_Focus_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
 
-        }
-
-        private async void CaptureElement_Photo_PointerPressed(object sender, PointerRoutedEventArgs e)
-        {
-            //await _captureManager.VideoDeviceController.FocusControl.LockAsync();
-            //await _captureManager.VideoDeviceController.FocusControl.FocusAsync();
-            //await _captureManager.VideoDeviceController.FocusControl.UnlockAsync();
         }
     }
 }

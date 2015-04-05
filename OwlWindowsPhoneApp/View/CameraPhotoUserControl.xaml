@@ -11,17 +11,26 @@
 
     <Grid Background="Black">
         <CaptureElement x:Name="CaptureElement_Photo"  Stretch="UniformToFill"  
-                        PointerPressed="CaptureElement_Photo_PointerPressed"
                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
         
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom"
                     HorizontalAlignment="Center">
             <AppBarButton x:Name="AppBarButton_RotateCamera" Icon="RotateCamera"  
-                          IsCompact="False" Label="Back Camera" Click="AppBarButton_RotateCamera_Click"/>
-            <AppBarButton x:Name="AppBarButton_Focus" Icon="View"  
+                          IsCompact="False" Label="Front Camera" Click="AppBarButton_RotateCamera_Click"
+                          RenderTransformOrigin="0.5,1">
+                <AppBarButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </AppBarButton.RenderTransform>
+            </AppBarButton>
+            <AppBarButton x:Name="AppBarButton_Focus"  
                           IsCompact="False" Label="Focus"
-                          PointerPressed="AppBarButton_Focus_PointerPressed"
-                          PointerReleased="AppBarButton_Focus_PointerReleased" Click="AppBarButton_Focus_Click"/>
+                          ClickMode="Press"
+                          PointerReleased="AppBarButton_Focus_PointerReleased" Click="AppBarButton_Focus_Click" Icon="View" 
+                          RenderTransformOrigin="-0.5,1" >
+                <AppBarButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </AppBarButton.RenderTransform>
+            </AppBarButton>
         </StackPanel>
     </Grid>
 </UserControl>

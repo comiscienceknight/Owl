@@ -61,7 +61,6 @@
       <RootProperty Name="Stretch" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
-      <RootEvent Name="PointerPressed" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.StackPanel">
       <RootProperty Name="Orientation" />
@@ -74,9 +73,15 @@
       <RootProperty Name="Icon" />
       <RootProperty Name="IsCompact" />
       <RootProperty Name="Label" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="RenderTransform" />
+      <RootProperty Name="ClickMode" />
       <RootEvent Name="Click" />
-      <RootEvent Name="PointerPressed" />
       <RootEvent Name="PointerReleased" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
+      <RootProperty Name="ScaleX" />
+      <RootProperty Name="ScaleY" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.CameraPhotoUserControl" />
     <RootType FullName="Windows.UI.Xaml.Data.Binding">

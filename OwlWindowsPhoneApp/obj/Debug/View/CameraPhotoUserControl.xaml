@@ -10,18 +10,27 @@
     d:DesignWidth="400">
 
     <Grid Background="Black">
-        <CaptureElement x:ConnectionId='1' x:Name="CaptureElement_Photo"  Stretch="UniformToFill"  
-                                                                            
+        <CaptureElement x:Name="CaptureElement_Photo"  Stretch="UniformToFill"  
                         HorizontalAlignment="Center" VerticalAlignment="Center"/>
         
         <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom"
                     HorizontalAlignment="Center">
-            <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_RotateCamera" Icon="RotateCamera"  
-                          IsCompact="False" Label="Back Camera"                                        />
-            <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_Focus" Icon="View"  
+            <AppBarButton x:ConnectionId='1' x:Name="AppBarButton_RotateCamera" Icon="RotateCamera"  
+                          IsCompact="False" Label="Front Camera"                                        
+                          RenderTransformOrigin="0.5,1">
+                <AppBarButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </AppBarButton.RenderTransform>
+            </AppBarButton>
+            <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_Focus"  
                           IsCompact="False" Label="Focus"
-                                                                            
-                                                                                                               />
+                          ClickMode="Press"
+                                                                                                                Icon="View" 
+                          RenderTransformOrigin="-0.5,1" >
+                <AppBarButton.RenderTransform>
+                    <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                </AppBarButton.RenderTransform>
+            </AppBarButton>
         </StackPanel>
     </Grid>
 </UserControl>

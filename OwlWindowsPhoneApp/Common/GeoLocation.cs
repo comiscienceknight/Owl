@@ -25,7 +25,7 @@ namespace OwlWindowsPhoneApp.Common
 
         async void Geolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
         {
-            await _uiDispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
+            await _uiDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
             {
                 Geoposition pos = args.Position;
 

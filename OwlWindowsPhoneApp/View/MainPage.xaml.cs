@@ -157,11 +157,11 @@ namespace OwlWindowsPhoneApp
                     user.UserId, user.MobileServiceAuthenticationToken);
                 vault.Add(credential);
             }
-            catch (MobileServiceInvalidOperationException ex)
+            catch (MobileServiceInvalidOperationException)
             {
                 return;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return;
             }

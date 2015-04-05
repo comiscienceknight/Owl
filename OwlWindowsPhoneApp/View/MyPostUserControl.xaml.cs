@@ -36,28 +36,17 @@ namespace OwlWindowsPhoneApp
 
         private void Image_Profile1_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
         }
 
         private void Image_Profile2_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
         }
 
         private void Image_Profile3_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Visible;
-        }
-
-        private async void Image_TakePhotoFromCamera_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
-            Grid_PhotoChooser.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
-        private void Image_TakePhotoFromPhone_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-
+    Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
+using OwlWindowsPhoneApp.Common;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Security.Credentials;
@@ -23,7 +25,7 @@ namespace OwlWindowsPhoneApp
         "https://owlbat.azure-mobile.net/",
         "FeeTSGBvxVAVzirOfnjTWHAKBRfvFV37");
         public static PasswordVault PasswordVaultObject;
-
+        public ContinuationManager ContinuationManager { get; private set; }
         private TransitionCollection _transitions;
 
         /// <summary>
@@ -127,19 +129,52 @@ namespace OwlWindowsPhoneApp
             deferral.Complete();
         }
 
-        protected override void OnActivated(IActivatedEventArgs args)
+        protected override async void OnActivated(IActivatedEventArgs args)
         {
+            base.OnActivated(args);
             // Windows Phone 8.1 requires you to handle the respose from the WebAuthenticationBroker.
 #if WINDOWS_PHONE_APP
-            if (args.Kind == ActivationKind.WebAuthenticationBrokerContinuation)
-            {
-                // Completes the sign-in process started by LoginAsync.
-                // Change 'MobileService' to the name of your MobileServiceClient instance. 
-                App.OwlbatClient.LoginComplete(args as WebAuthenticationBrokerContinuationEventArgs);
-            }
+            //if (args.Kind == ActivationKind.WebAuthenticationBrokerContinuation)
+            //{
+            //    // Completes the sign-in process started by LoginAsync.
+            //    // Change 'MobileService' to the name of your MobileServiceClient instance. 
+            //    App.OwlbatClient.LoginComplete(args as WebAuthenticationBrokerContinuationEventArgs);
+            //}
+            //else
 #endif
+            {
+                ContinuationManager = new ContinuationManager();
 
-            base.OnActivated(args);
+                await RestoreStatusAsync(args.PreviousExecutionState);
+
+                var continuationEventArgs = args as IContinuationActivatedEventArgs;
+                if (continuationEventArgs != null)
+                {
+                    // Call ContinuationManager to handle continuation activation
+                    ContinuationManager.Continue(continuationEventArgs);
+                }
+
+                Window.Current.Activate();
+            }
+        }
+
+        private async Task RestoreStatusAsync(ApplicationExecutionState previousExecutionState)
+        {
+            // Do not repeat app initialization when the Window already has content,
+            // just ensure that the window is active
+            if (previousExecutionState == ApplicationExecutionState.Terminated)
+            {
+                // Restore the saved session state only when appropriate
+                try
+                {
+                    await SuspensionManager.RestoreAsync();
+                }
+                catch (SuspensionManagerException)
+                {
+                    //Something went wrong restoring state.
+                    //Assume there is no state and continue
+                }
+            }
         }
     }
 }

@@ -45,11 +45,11 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="Margin" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetRow" />
@@ -70,14 +70,16 @@
       <RootProperty Name="Margin" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
-      <RootProperty Name="Icon" />
       <RootProperty Name="IsCompact" />
       <RootProperty Name="Label" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="ClickMode" />
+      <RootProperty Name="Icon" />
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="RenderTransform" />
-      <RootProperty Name="ClickMode" />
-      <RootEvent Name="Click" />
       <RootEvent Name="PointerReleased" />
+      <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
       <RootProperty Name="ScaleX" />
@@ -121,9 +123,14 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Stretch" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="RenderTransformOrigin" />
+      <RootProperty Name="ManipulationMode" />
+      <RootProperty Name="RenderTransform" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
+      <RootEvent Name="ManipulationDelta" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="ImageOpened" />
     </RootType>
@@ -156,6 +163,8 @@
       <RootProperty Name="CommandParameter" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ChatHistoryUserControl" />
+    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
+    <RootType FullName="OwlWindowsPhoneApp.View.ImageEffectsUserControl" />
     <RootType FullName="Coding4Fun.Toolkit.Controls.ChatBubble">
       <RootProperty Name="ChatBubbleDirection" />
       <RootProperty Name="Visibility" />

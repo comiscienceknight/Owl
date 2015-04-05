@@ -12,30 +12,24 @@
     <Grid>
         <ScrollViewer Margin="5,0">
             <StackPanel>
-                <FlipView x:Name="FlipView_Profile" Margin="-2,0,0,0"
+                <FlipView x:Name="FlipView_Profile" Margin="-2,0,5,0"
                               Height="300"  VerticalAlignment="Top" >
-                    <Image x:Name="Image_Profile1" Source="ms-appx:///Assets/Tempo/clickmetoaddphoto.jpg" 
+                    <FlipView.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#7FECD364" Offset="0"/>
+                            <GradientStop Color="#7F7FB0EA" Offset="1"/>
+                            <GradientStop Color="#7FE47F7F" Offset="0.57"/>
+                        </LinearGradientBrush>
+                    </FlipView.Background>
+                    <Image x:Name="Image_Profile1" Source="ms-appx:///Assets/Tempo/addphoto.png" 
                            Tapped="Image_Profile1_Tapped"
                             Stretch="Fill"  />
-                    <Image  x:Name="Image_Profile2" Source="ms-appx:///Assets/Tempo/clickmetoaddphoto.jpg"
+                    <Image  x:Name="Image_Profile2" Source="ms-appx:///Assets/Tempo/addphoto.png"
                             Tapped="Image_Profile2_Tapped"   Stretch="Fill"  />
-                    <Image  x:Name="Image_Profile3" Source="ms-appx:///Assets/Tempo/clickmetoaddphoto.jpg"
+                    <Image  x:Name="Image_Profile3" Source="ms-appx:///Assets/Tempo/addphoto.png"
                             Tapped="Image_Profile3_Tapped"   Stretch="Fill" />
                 </FlipView>
             </StackPanel>
         </ScrollViewer>
-        <Grid x:Name="Grid_PhotoChooser"
-              Visibility="Collapsed" HorizontalAlignment="Center" VerticalAlignment="Center"
-                >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Image x:Name="Image_TakePhotoFromCamera"  
-                   Grid.Column="0" Margin="10" Tapped="Image_TakePhotoFromCamera_Tapped"
-                   Source="ms-appx:///Assets/photofromcamera.png" />
-            <Image x:Name="Image_TakePhotoFromPhone"  Tapped="Image_TakePhotoFromPhone_Tapped"
-                   Grid.Column="1" Margin="10" Source="ms-appx:///Assets/photofromphone.png" />
-        </Grid>
     </Grid>
 </UserControl>

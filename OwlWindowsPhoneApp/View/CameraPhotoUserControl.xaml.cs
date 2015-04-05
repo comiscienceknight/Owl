@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OwlWindowsPhoneApp.View;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,14 +9,19 @@ using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Imaging;
 using Windows.Media.Capture;
 using Windows.Media.MediaProperties;
+using Windows.Storage;
+using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
@@ -82,7 +88,7 @@ namespace OwlWindowsPhoneApp
                 VideoDeviceId = videoDeviceId
             });
             _captureManager.SetPreviewRotation(if270Degree ? VideoRotation.Clockwise90Degrees : VideoRotation.Clockwise270Degrees);
-            _captureManager.SetRecordRotation(if270Degree ? VideoRotation.Clockwise90Degrees : VideoRotation.Clockwise270Degrees);
+            //_captureManager.SetRecordRotation(if270Degree ? VideoRotation.Clockwise90Degrees : VideoRotation.Clockwise270Degrees);
             CaptureElement_Photo.Source = _captureManager;
             await _captureManager.StartPreviewAsync();
         }
@@ -127,6 +133,83 @@ namespace OwlWindowsPhoneApp
 
         private async void AppBarButton_Focus_PointerReleased(object sender, PointerRoutedEventArgs e)
         {
+        }
+
+        private async void AppBarButton_TakePicture_Click(object sender, RoutedEventArgs e)
+        {
+            BitmapImage bmpImage = new BitmapImage();
+            StorageFile file;
+            using (var imageStream = new InMemoryRandomAccessStream())
+            {
+                ImageEncodingProperties imgFormat = ImageEncodingProperties.CreateJpeg();
+                await _captureManager.CapturePhotoToStreamAsync(imgFormat, imageStream);
+                BitmapDecoder dec = await BitmapDecoder.CreateAsync(imageStream);
+                BitmapEncoder enc = await BitmapEncoder.CreateForTranscodingAsync(imageStream, dec);
+
+                string backId = (_backWebcam == null ? "" : _backWebcam.Id);
+                string frontId = (_frontWebcam == null ? "" : _frontWebcam.Id);
+                if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == backId.ToUpper())
+                    enc.BitmapTransform.Rotation = BitmapRotation.Clockwise90Degrees;
+                else if (_captureManager.MediaCaptureSettings.VideoDeviceId.ToUpper() == frontId.ToUpper())
+                    enc.BitmapTransform.Rotation = BitmapRotation.Clockwise270Degrees;
+
+                //write changes to the image stream
+                await enc.FlushAsync();
+                await bmpImage.SetSourceAsync(imageStream);
+
+
+                StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                file =
+                    await folder.CreateFileAsync("CapturingImage.jpeg", CreationCollisionOption.ReplaceExisting);
+                using (Stream fileStram = await file.OpenStreamForWriteAsync())
+                {
+                    Stream streamToSave = imageStream.AsStream();
+                    int BUFFER_SIZE = (int)streamToSave.Length;
+                    byte[] buf = new byte[BUFFER_SIZE];
+
+                    int bytesread = 0;
+                    while ((bytesread = await streamToSave.ReadAsync(buf, 0, BUFFER_SIZE)) > 0)
+                    {
+                        await fileStram.WriteAsync(buf, 0, bytesread);
+                    }
+                }
+            }
+
+            Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Grid_ImageEffects.Children.Clear();
+            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file));
+        }
+
+        public async void OpenImagePreview(StorageFile file)
+        {
+            BitmapImage bmpImage = new BitmapImage();
+            bmpImage = await LoadImage(file);
+
+            Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Grid_ImageEffects.Children.Clear();
+            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file));
+        }
+
+        private static async Task<BitmapImage> LoadImage(StorageFile file)
+        {
+            BitmapImage bitmapImage = new BitmapImage();
+            FileRandomAccessStream stream = (FileRandomAccessStream)await file.OpenAsync(FileAccessMode.Read);
+
+            bitmapImage.SetSource(stream);
+
+            return bitmapImage;
+
+        }
+
+        private void AppBarButton_Photos_Click(object sender, RoutedEventArgs e)
+        {
+            FileOpenPicker openPicker = new FileOpenPicker();
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".png");
+            openPicker.PickSingleFileAndContinue();
 
         }
     }

@@ -19,7 +19,7 @@ namespace OwlWindowsPhoneApp
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class PivotPage : Page
+    public sealed partial class PivotPage : Page, IFileOpenPickerContinuable
     {
         private bool _readyToQuit = false;
 
@@ -237,5 +237,21 @@ namespace OwlWindowsPhoneApp
             }
         }
         #endregion
+
+        public void ContinueFileOpenPicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs args)
+        {
+            var file = args.Files.FirstOrDefault();
+            if (file == null)
+                return;
+
+            if(Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
+            {
+                var uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
+                if(uc != null)
+                {
+                    uc.OpenImagePreview(file);
+                }
+            }
+        }
     }
 }

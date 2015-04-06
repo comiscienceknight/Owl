@@ -1,11 +1,13 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using OwlWindowsPhoneApp.Common;
 using OwlWindowsPhoneApp.DataObjects;
+using OwlWindowsPhoneApp.View;
 using OwlWindowsPhoneApp.ViewModel;
 using OwlWindowsPhoneApp.ViewModel.Message;
 using System;
 using System.Linq;
 using Windows.Phone.UI.Input;
+using Windows.Storage.Pickers;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
@@ -54,14 +56,65 @@ namespace OwlWindowsPhoneApp
             {
                 NavigateToMessagePage(msg.ChatEntry.UserId, msg.ChatEntry.UserName, msg.ChatEntry.UserProfile);
             });
-            Messenger.Default.Register<NavigateToCameraMessage>(this, msg =>
+        }
+
+
+
+        private void UserControl_MyPost_Loaded(object sender, RoutedEventArgs e)
+        {
+            UserControl_MyPost.TakePhotoEvent += UserControl_MyPost_TakePhotoEvent;
+        }
+
+        void UserControl_MyPost_TakePhotoEvent(object sender, ProfilePhotoClickEventArg e)
+        {
+            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            Grid_SubPage.Children.Clear();
+            var cameraView = new CameraPhotoUserControl();
+            cameraView.ProfileNumber = e.ProfilePhotoNumber;
+            cameraView.ChoosePhotoFromStorageEvent += CameraView_ChoosePhotoFromStorageEvent;
+            cameraView.TakePhotoEvent += CameraView_TakePhotoEvent;
+            Grid_SubPage.Children.Add(cameraView);
+            AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        }
+
+        void CameraView_TakePhotoEvent(object sender, TakePhotoClickEventArg e)
+        {
+            ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
+            ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
+            Grid_SubPage.Children.Clear();
+            var imageEffectUserControl = new ImageEffectsUserControl(e.TakedPhotoImage, e.TakedPhotoFile, e.TakedPhotoFile.Path)
             {
-                NavigateToCameraPhotoPage(msg.ProfileNumber);
-            });
-            Messenger.Default.Register<TakePhotoToMyPostMessage>(this, msg =>
-            {
-                UpdateMyPostPhoto(msg.BitMap, msg.ProfileNumber);
-            });
+                ProfileNumber = e.ProfilePhotoNumber
+            };
+            imageEffectUserControl.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
+            Grid_SubPage.Children.Add(imageEffectUserControl);
+        }
+
+        void ImageEffectUserControl_ProfilePhotoRendered(object sender, ProfilePhotoRenderedEventArg e)
+        {
+            ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUserControl_ProfilePhotoRendered;
+            UserControl_MyPost.ChangeImageProfile(e.TakedPhotoImage, e.ProfilePhotoNumber);
+            Grid_SubPage.Children.Clear();
+            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+        }
+
+        void CameraView_ChoosePhotoFromStorageEvent(object sender, ChoosePhotoFromStorageClickEventArg e)
+        {
+            ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
+            ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
+            Grid_SubPage.Children.Clear();
+            FileOpenPicker openPicker = new FileOpenPicker();
+            openPicker.ViewMode = PickerViewMode.Thumbnail;
+            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+            openPicker.FileTypeFilter.Add(".jpg");
+            openPicker.FileTypeFilter.Add(".jpeg");
+            openPicker.FileTypeFilter.Add(".png");
+            openPicker.PickSingleFileAndContinue();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -150,17 +203,15 @@ namespace OwlWindowsPhoneApp
             }
             else if (Grid_SubPage.Children.Any(p => p is CameraPhotoUserControl))
             {
-                CameraPhotoUserControl uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
-                if(uc.GetImageEffectsUserControl() != null)
-                {
-                    uc.UnloadImageEffectsUserControl();
-                }
-                else
-                {
-                    Grid_SubPage.Children.Clear();
-                    Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                    UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-                }
+                Grid_SubPage.Children.Clear();
+                Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+            }
+            else if (Grid_SubPage.Children.Any(p => p is ImageEffectsUserControl))
+            {
+                Grid_SubPage.Children.Clear();
+                Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
             }
             else if (e.Handled == false)
             {
@@ -206,33 +257,6 @@ namespace OwlWindowsPhoneApp
             }
         }
 
-        private void UpdateMyPostPhoto(RenderTargetBitmap bmp, int profileNumber)
-        {
-            CameraPhotoUserControl uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
-            if (uc.GetImageEffectsUserControl() != null)
-            {
-                uc.UnloadImageEffectsUserControl();
-            }
-            Grid_SubPage.Children.Clear();
-            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-            UserControl_MyPost.ChangeImageProfile(bmp, profileNumber);
-        }
-
-        private void NavigateToCameraPhotoPage(int profileNumber)
-        {
-            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Grid_SubPage.Children.Clear();
-            var cameraView = new CameraPhotoUserControl();
-            cameraView.ProfileNumber = profileNumber;
-            Grid_SubPage.Children.Add(cameraView);
-            AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
         private void Pivot_Main_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var pivot = sender as Pivot;
@@ -267,17 +291,24 @@ namespace OwlWindowsPhoneApp
 
         public void ContinueFileOpenPicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs args)
         {
-            var file = args.Files.FirstOrDefault();
-            if (file == null)
-                return;
-
-            if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
+            if(args.Files.Count > 0)
             {
-                var uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
-                if (uc != null)
+                var file = args.Files.FirstOrDefault();
+                if (file == null)
+                    return;
+
+                if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
                 {
-                    uc.OpenImagePreview(file);
+                    var uc = Grid_SubPage.Children.First() as ImageEffectsUserControl;
+                    if (uc != null)
+                    {
+                    }
                 }
+            }
+            else
+            {
+                Grid_SubPage.Children.Clear();
+                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
             }
         }
     }

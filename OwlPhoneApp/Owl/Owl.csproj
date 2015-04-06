@@ -101,7 +101,6 @@
     <Compile Include="ViewModel\Message\LogoutMessage.cs" />
     <Compile Include="ViewModel\Message\NavigateToCameraMessage.cs" />
     <Compile Include="ViewModel\Message\NavigateToChatMessage.cs" />
-    <Compile Include="ViewModel\Message\NavigateToMyPostMessage.cs" />
     <Compile Include="ViewModel\Message\NavigateToPostInfoMessage.cs" />
     <Compile Include="ViewModel\Message\TakePhotoToMyPostMessage.cs" />
     <Compile Include="ViewModel\PivotViewModel.cs" />

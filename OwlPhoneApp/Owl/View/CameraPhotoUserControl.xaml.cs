@@ -1,4 +1,5 @@
-﻿using OwlWindowsPhoneApp.View;
+﻿using GalaSoft.MvvmLight.Messaging;
+using OwlWindowsPhoneApp.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,6 +31,10 @@ namespace OwlWindowsPhoneApp
 {
     public sealed partial class CameraPhotoUserControl : UserControl
     {
+        public event EventHandler<TakePhotoClickEventArg> TakePhotoEvent;
+        public event EventHandler<ChoosePhotoFromStorageClickEventArg> ChoosePhotoFromStorageEvent;
+
+
         private MediaCapture _captureManager;
         private DeviceInformationCollection _webcamList;
         private DeviceInformation _frontWebcam;
@@ -163,42 +168,17 @@ namespace OwlWindowsPhoneApp
                 }
             }
 
-            OpenImagePreview(fileStorage);
-        }
-
-        public async void OpenImagePreview(StorageFile file)
-        {
             await _captureManager.StopPreviewAsync();
 
             BitmapImage bmpImage = new BitmapImage();
-            bmpImage = await LoadImage(file);
-
-            Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Grid_ImageEffects.Children.Clear();
-            var uc = new ImageEffectsUserControl(bmpImage, file, file.Path)
-            {
-                ProfileNumber = this.ProfileNumber
-            };
-            Grid_ImageEffects.Children.Add(uc);
-        }
-
-        public ImageEffectsUserControl GetImageEffectsUserControl()
-        {
-            if (Grid_ImageEffects.Children.Any(p => p is ImageEffectsUserControl))
-            {
-                return Grid_ImageEffects.Children.First() as ImageEffectsUserControl;
-            }
-            return null;
-        }
-
-        public async void UnloadImageEffectsUserControl()
-        {
-            if (Grid_ImageEffects.Children.Any(p => p is ImageEffectsUserControl))
-            {
-                Grid_ImageEffects.Children.Clear();
-                Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                await _captureManager.StartPreviewAsync();
-            }
+            bmpImage = await LoadImage(fileStorage);
+            if (TakePhotoEvent != null)
+                TakePhotoEvent(this, new TakePhotoClickEventArg()
+                {
+                    ProfilePhotoNumber = this.ProfileNumber,
+                    TakedPhotoFile = fileStorage,
+                    TakedPhotoImage = bmpImage
+                });
         }
 
         private static async Task<BitmapImage> LoadImage(StorageFile file)
@@ -209,19 +189,27 @@ namespace OwlWindowsPhoneApp
             bitmapImage.SetSource(stream);
 
             return bitmapImage;
-
         }
 
         private void AppBarButton_Photos_Click(object sender, RoutedEventArgs e)
         {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
-            openPicker.PickSingleFileAndContinue();
-
+            if (ChoosePhotoFromStorageEvent != null)
+                ChoosePhotoFromStorageEvent(this, new ChoosePhotoFromStorageClickEventArg()
+                {
+                     ProfilePhotoNumber = this.ProfileNumber
+                });
         }
+    }
+
+    public class TakePhotoClickEventArg : EventArgs
+    {
+        public int ProfilePhotoNumber { get; set; }
+        public StorageFile TakedPhotoFile { get; set; }
+        public BitmapImage TakedPhotoImage { get; set; }
+    }
+
+    public class ChoosePhotoFromStorageClickEventArg : EventArgs
+    {
+        public int ProfilePhotoNumber { get; set; }
     }
 }

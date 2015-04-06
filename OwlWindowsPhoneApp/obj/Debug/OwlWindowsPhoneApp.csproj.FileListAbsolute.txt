@@ -138,3 +138,4 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\MainPage.xbf
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\PivotPage.xbf
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\View\PostsUserControl.xbf
 C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\XamlSaveStateFile.xml
+C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\obj\Debug\OwlWindowsPhoneApp.csprojResolveAssemblyReference.cache

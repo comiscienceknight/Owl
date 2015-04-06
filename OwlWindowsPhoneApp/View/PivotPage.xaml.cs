@@ -153,7 +153,7 @@ namespace OwlWindowsPhoneApp
                 CameraPhotoUserControl uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
                 if(uc.GetImageEffectsUserControl() != null)
                 {
-                    uc.UnloadImageEffectsUserControl();
+                    //uc.UnloadImageEffectsUserControl();
                 }
                 else
                 {

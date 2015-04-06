@@ -23,6 +23,8 @@ namespace OwlWindowsPhoneApp
 {
     public sealed partial class MyPostUserControl : UserControl
     {
+        public event EventHandler<ProfilePhotoClickEventArg> TakePhotoEvent;
+
         public MyPostUserControl()
         {
             this.InitializeComponent();
@@ -43,17 +45,32 @@ namespace OwlWindowsPhoneApp
 
         private void Image_Profile1_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage(0));
+            if (TakePhotoEvent != null)
+                TakePhotoEvent(this, new ProfilePhotoClickEventArg()
+                {
+                    ProfilePhotoNumber = 0
+                });
+            //Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage(0));
         }
 
         private void Image_Profile2_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage(1));
+            if (TakePhotoEvent != null)
+                TakePhotoEvent(this, new ProfilePhotoClickEventArg()
+                {
+                    ProfilePhotoNumber = 1
+                });
+            //Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage(1));
         }
 
         private void Image_Profile3_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage(2));
+            if (TakePhotoEvent != null)
+                TakePhotoEvent(this, new ProfilePhotoClickEventArg()
+                {
+                    ProfilePhotoNumber = 2
+                });
+            //Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage(2));
         }
 
         public void ChangeImageProfile(RenderTargetBitmap bmp, int profileNumber)
@@ -71,5 +88,10 @@ namespace OwlWindowsPhoneApp
                     break;
             }
         }
+    }
+
+    public class ProfilePhotoClickEventArg : EventArgs
+    {
+        public int ProfilePhotoNumber {get;set;}
     }
 }

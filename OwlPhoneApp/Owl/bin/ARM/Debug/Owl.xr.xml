@@ -45,12 +45,12 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Visibility" />
       <RootProperty Name="Margin" />
       <RootProperty Name="MinHeight" />
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="Visibility" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -229,7 +229,9 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.NullExtension" />
-    <RootType FullName="OwlWindowsPhoneApp.MyPostUserControl" />
+    <RootType FullName="OwlWindowsPhoneApp.MyPostUserControl">
+      <RootEvent Name="Loaded" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="IsSticky" />
       <RootProperty Name="PrimaryCommands" />

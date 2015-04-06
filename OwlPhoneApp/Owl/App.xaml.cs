@@ -159,7 +159,7 @@ namespace OwlWindowsPhoneApp
                     ContinuationManager.Continue(continuationEventArgs);
                 }
 
-                Window.Current.Activate();
+                //Window.Current.Activate();
             }
         }
 

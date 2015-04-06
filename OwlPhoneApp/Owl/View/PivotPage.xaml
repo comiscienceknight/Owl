@@ -63,7 +63,8 @@
                 x:Uid="PivotItem2"
                 Margin="19,14.5,0,0"
                 Header="My Post">
-                    <local:MyPostUserControl x:Name="UserControl_MyPost">
+                    <local:MyPostUserControl x:Name="UserControl_MyPost"
+                                             Loaded="UserControl_MyPost_Loaded">
                     </local:MyPostUserControl>
                 </PivotItem>
                 

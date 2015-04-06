@@ -52,8 +52,5 @@
                 <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
             </AppBarButton.RenderTransform>
         </AppBarButton>
-        
-        <Grid x:Name="Grid_ImageEffects" Visibility="Collapsed">
-        </Grid>
     </Grid>
 </UserControl>

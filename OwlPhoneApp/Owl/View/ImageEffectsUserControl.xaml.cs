@@ -32,6 +32,8 @@ namespace OwlWindowsPhoneApp.View
 {
     public sealed partial class ImageEffectsUserControl : UserControl
     {
+        public event EventHandler<ProfilePhotoRenderedEventArg> ProfilePhotoRendered;
+
         private readonly BitmapImage _capturedImage;
         private readonly string _storageFilePath;
         private StorageFile _storageFile;
@@ -142,7 +144,12 @@ namespace OwlWindowsPhoneApp.View
         private async void AppBarButton_Save_Click(object sender, RoutedEventArgs e)
         {
             var bmp = await CreateBitmapFromElement(this.Grid_Image);
-            Messenger.Default.Send<TakePhotoToMyPostMessage>(new TakePhotoToMyPostMessage(bmp) { ProfileNumber = this.ProfileNumber });
+            if (ProfilePhotoRendered != null)
+                ProfilePhotoRendered(this, new ProfilePhotoRenderedEventArg()
+                {
+                    ProfilePhotoNumber = this.ProfileNumber,
+                    TakedPhotoImage = bmp
+                });
         }
 
         private async Task<RenderTargetBitmap> CreateBitmapFromElement(FrameworkElement uielement)
@@ -161,5 +168,11 @@ namespace OwlWindowsPhoneApp.View
 
             return null;
         }
+    }
+
+    public class ProfilePhotoRenderedEventArg : EventArgs
+    {
+        public int ProfilePhotoNumber { get; set; }
+        public RenderTargetBitmap TakedPhotoImage { get; set; }
     }
 }

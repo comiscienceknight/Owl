@@ -6,23 +6,38 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="300"
-    d:DesignWidth="400">
+    d:DesignHeight="800"
+    d:DesignWidth="450">
 
     <Grid Background="Black">
-        <Image x:ConnectionId='1' x:Name="Image_Captured" VerticalAlignment="Top" 
-                           Stretch="Uniform"
-                           RenderTransformOrigin="0,0"
-                                                                               
-                           ManipulationMode="Scale,TranslateX, TranslateY">
-            <Image.RenderTransform>
-                <CompositeTransform/>
-            </Image.RenderTransform>
-        </Image>
+        <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+            <Image Width="50" Height="50" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+            <TextBlock x:Name="TextBlock_PageTitle"  Text="Pick Profile Photo" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="30"/>
+        </StackPanel>
+        
+        <Border x:Name="Border_Image"
+                VerticalAlignment="Top" Margin="5,80,5,10" BorderBrush="#FF7C3131" BorderThickness="5">
+            <Grid x:Name="Grid_Image"  MinHeight="300">
+                <ScrollViewer ZoomMode="Enabled"
+                              HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled"
+                              MinZoomFactor="1">
+                    <Image x:Name="Image_Captured" 
+                           VerticalAlignment="Center" 
+                           Stretch="UniformToFill">
+                    </Image>
+                </ScrollViewer>
+            </Grid>
+        </Border>
 
-        <AppBarButton x:Name="AppBarButton_Save"
+        <AppBarButton x:ConnectionId='1' x:Name="AppBarButton_Save"
                       HorizontalAlignment="Center"
-                      VerticalAlignment="Bottom"
+                      VerticalAlignment="Bottom"                                         
                           IsCompact="False" Label="Take"
                           ClickMode="Press"  Icon="Camera" 
                           RenderTransformOrigin="0.5,0.9" >
@@ -30,13 +45,13 @@
                 <CompositeTransform ScaleX="2" ScaleY="2"/>
             </AppBarButton.RenderTransform>
         </AppBarButton>
-        <StackPanel VerticalAlignment="Top"
-                    HorizontalAlignment="Right">
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5,0,0,150"
+                    HorizontalAlignment="Center">
             <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_EffectsCartoon"  
                           IsCompact="False" Label="Cartoon"
                           ClickMode="Press"
                                                                    
-                          RenderTransformOrigin="2,0" >
+                          RenderTransformOrigin="1,-0.7" >
                 <AppBarButton.Icon>
                     <SymbolIcon/>
                 </AppBarButton.Icon>
@@ -48,7 +63,7 @@
                           IsCompact="False" Label="Enhence"
                           ClickMode="Press"
                                                                    
-                          RenderTransformOrigin="2,0" >
+                          RenderTransformOrigin="1,0" >
                 <AppBarButton.Icon>
                     <SymbolIcon/>
                 </AppBarButton.Icon>
@@ -60,7 +75,7 @@
                           IsCompact="False" Label="Blur"
                           ClickMode="Press"
                                                                 
-                          RenderTransformOrigin="2,0" >
+                          RenderTransformOrigin="1,0" >
                 <AppBarButton.Icon>
                     <SymbolIcon/>
                 </AppBarButton.Icon>
@@ -72,7 +87,7 @@
                           IsCompact="False" Label="Solarize"
                           ClickMode="Press"
                                                                     
-                          RenderTransformOrigin="2,0" >
+                          RenderTransformOrigin="1,0" >
                 <AppBarButton.Icon>
                     <SymbolIcon/>
                 </AppBarButton.Icon>

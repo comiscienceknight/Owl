@@ -10,9 +10,9 @@
     d:DesignWidth="420">
     
     <Grid>
-        <ScrollViewer Margin="5,0">
+        <ScrollViewer Margin="0,0,20,0">
             <StackPanel>
-                <FlipView x:Name="FlipView_Profile" Margin="-2,0,5,0"
+                <FlipView x:Name="FlipView_Profile" Margin="0,0,0,0"
                               Height="300"  VerticalAlignment="Top" >
                     <FlipView.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -23,7 +23,7 @@
                     </FlipView.Background>
                     <Image x:Name="Image_Profile1" Source="ms-appx:///Assets/Tempo/addphoto.png" 
                            Tapped="Image_Profile1_Tapped"
-                            Stretch="Fill"  />
+                            Stretch="UniformToFill"  />
                     <Image  x:Name="Image_Profile2" Source="ms-appx:///Assets/Tempo/addphoto.png"
                             Tapped="Image_Profile2_Tapped"   Stretch="Fill"  />
                     <Image  x:Name="Image_Profile3" Source="ms-appx:///Assets/Tempo/addphoto.png"

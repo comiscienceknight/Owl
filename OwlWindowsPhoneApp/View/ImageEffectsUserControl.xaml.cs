@@ -1,6 +1,8 @@
-﻿using Lumia.Imaging;
+﻿using GalaSoft.MvvmLight.Messaging;
+using Lumia.Imaging;
 using Lumia.Imaging.Adjustments;
 using Lumia.Imaging.Artistic;
+using OwlWindowsPhoneApp.ViewModel.Message;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +12,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Imaging;
+using Windows.Phone.UI.Input;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
@@ -29,19 +32,20 @@ namespace OwlWindowsPhoneApp.View
     public sealed partial class ImageEffectsUserControl : UserControl
     {
         private readonly BitmapImage _capturedImage;
-        private readonly StorageFile _storageFile;
-        private IFilter _currentEffect;
+        private readonly string _storageFilePath;
+        private StorageFile _storageFile;
 
         public ImageEffectsUserControl()
-            : this(null, null)
+            : this(null, null, null)
         {
 
         }
 
-        public ImageEffectsUserControl(BitmapImage capturedImage, StorageFile storageFile)
+        public ImageEffectsUserControl(BitmapImage capturedImage, StorageFile storageFile, string storageFilePath)
         {
             this.InitializeComponent();
             _capturedImage = capturedImage;
+            _storageFilePath = storageFilePath;
             _storageFile = storageFile;
             this.Loaded += ImageEffectsUserControl_Loaded;
         }
@@ -54,76 +58,45 @@ namespace OwlWindowsPhoneApp.View
                 bitmapTransform.Flip = Windows.Graphics.Imaging.BitmapFlip.Vertical;
                 bitmapTransform.Rotation = Windows.Graphics.Imaging.BitmapRotation.Clockwise90Degrees;
                 Image_Captured.Source = _capturedImage;
+
+                Border_Image.Width = Window.Current.Bounds.Width - 10;
+                Border_Image.Height = Border_Image.Width * 0.9;
             }
         }
 
-        private void Image_Captured_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+        public async void ChangeEffects(StorageFile file, IFilter filter)
         {
-            Image img = sender as Image;
-            CompositeTransform ct = img.RenderTransform as CompositeTransform;
-            if (ct == null) return;
+            using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
+            {
+                // Rewind the stream to start. 
+                fileStream.Seek(0);
 
-            //Scale transform
-            ct.ScaleX *= e.Delta.Scale;
-            ct.ScaleY *= e.Delta.Scale;
-            //if (ct.ScaleX < mincale) 
-                //ct.ScaleX = mincale;
-            //if (ct.ScaleY < mincale) 
-                //ct.ScaleY = mincale;
+                using (var imageSource = new RandomAccessStreamImageSource(fileStream))
+                {
+                    using(FilterEffect effect = new FilterEffect(imageSource))
+                    {
+                        effect.Filters = new[] { filter };
 
-            //Translate transform
-            ct.TranslateX += e.Delta.Translation.X;
-            ct.TranslateY += e.Delta.Translation.Y;
+                        var cartoonImageBitmap = new WriteableBitmap((int)(_capturedImage.PixelWidth),
+                            (int)(_capturedImage.PixelHeight));
 
-            //Confine boundary
-            //BringIntoBounds();
-        }
+                        // Render the image to a WriteableBitmap.
+                        var renderer = new WriteableBitmapRenderer(effect, cartoonImageBitmap);
+                        cartoonImageBitmap = await renderer.RenderAsync();
+                        cartoonImageBitmap.Invalidate();
 
-        public void BringIntoBounds()
-        {
-            //CompositeTransform ct = img.RenderTransform as CompositeTransform;
-            //if (ct == null) return;
-
-            ////out of screen, left edge
-            //if (ct.TranslateX < 10 - img.ActualWidth * ct.ScaleX)
-            //{
-            //    ct.TranslateX = 10 - img.ActualWidth * ct.ScaleX;
-            //}
-            ////out of screen, right edge
-            //if (ct.TranslateX > Container.ActualWidth - 10)
-            //{
-            //    ct.TranslateX = Container.ActualWidth - 10;
-            //}
-            //...do the same for Y.
-        }
-
-        public async void ChangeEffects(StorageFile file)
-        {
-            IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
-            // Rewind the stream to start. 
-            fileStream.Seek(0);
-
-            // A cartoon effect is initialized with the selected image stream as source.  
-            var imageSource = new RandomAccessStreamImageSource(fileStream);
-
-            FilterEffect cartoonEffect = new FilterEffect(imageSource);
-            cartoonEffect.Filters = new[] { _currentEffect };
-            var cartoonImageBitmap = new WriteableBitmap((int)(Window.Current.Bounds.Width * 1),
-                (int)(Window.Current.Bounds.Height * 1));
-            // Render the image to a WriteableBitmap.
-            var renderer = new WriteableBitmapRenderer(cartoonEffect, cartoonImageBitmap);
-            cartoonImageBitmap = await renderer.RenderAsync();
-            cartoonImageBitmap.Invalidate();
-
-            // Set the rendered image as source for the cartoon image control.
-            Image_Captured.Source = cartoonImageBitmap;
+                        // Set the rendered image as source for the cartoon image control.
+                        Image_Captured.Source = cartoonImageBitmap;
+                    }
+                }
+            }
         }
 
         private async void AppBarButton_EffectsSolarize_Click(object sender, RoutedEventArgs e)
         {
-            _currentEffect = new SolarizeFilter(0.9);
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
-            ChangeEffects(file);
+            var filter = new SolarizeFilter(0.9);
+            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
+            ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_EffectsBlur_Click(object sender, RoutedEventArgs e)
@@ -144,24 +117,47 @@ namespace OwlWindowsPhoneApp.View
             filter.LightnessCurve.SetPoint(0, 0);
             filter.LightnessCurve.SetPoint(10, 20);
             filter.LightnessCurve.SetPoint(200, 240);
-            _currentEffect = filter;
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
-            ChangeEffects(file);
+
+            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
+            ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_EffectsEnhence_Click(object sender, RoutedEventArgs e)
         {
             StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
-            _currentEffect = new AutoEnhanceFilter();
+            var filter = new AutoEnhanceFilter();
             //StorageFile file = new StorageFile()
-            ChangeEffects(file);
+            ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_EffectsCartoon_Click(object sender, RoutedEventArgs e)
         {
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
-            _currentEffect = new CartoonFilter();
-            ChangeEffects(file);
+            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
+            var filter = new CartoonFilter();
+            ChangeEffects(file, filter);
+        }
+
+        private async void AppBarButton_Save_Click(object sender, RoutedEventArgs e)
+        {
+            var bmp = await CreateBitmapFromElement(this.Grid_Image);
+            Messenger.Default.Send<TakePhotoToMyPostMessage>(new TakePhotoToMyPostMessage(bmp));
+        }
+
+        private async Task<RenderTargetBitmap> CreateBitmapFromElement(FrameworkElement uielement)
+        {
+            try
+            {
+                var renderTargetBitmap = new RenderTargetBitmap();
+                await renderTargetBitmap.RenderAsync(uielement);
+
+                return renderTargetBitmap;
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
+
+            return null;
         }
     }
 }

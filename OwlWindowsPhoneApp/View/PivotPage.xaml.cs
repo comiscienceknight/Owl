@@ -10,6 +10,7 @@ using Windows.UI.Core;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -56,6 +57,10 @@ namespace OwlWindowsPhoneApp
             Messenger.Default.Register<NavigateToCameraMessage>(this, msg =>
             {
                 NavigateToCameraPhotoPage();
+            });
+            Messenger.Default.Register<TakePhotoToMyPostMessage>(this, msg =>
+            {
+                UpdateMyPostPhoto(msg.BitMap);
             });
         }
 
@@ -145,9 +150,17 @@ namespace OwlWindowsPhoneApp
             }
             else if (Grid_SubPage.Children.Any(p => p is CameraPhotoUserControl))
             {
-                Grid_SubPage.Children.Clear();
-                Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+                CameraPhotoUserControl uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
+                if(uc.GetImageEffectsUserControl() != null)
+                {
+                    uc.UnloadImageEffectsUserControl();
+                }
+                else
+                {
+                    Grid_SubPage.Children.Clear();
+                    Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                    UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+                }
             }
             else if (e.Handled == false)
             {
@@ -191,6 +204,19 @@ namespace OwlWindowsPhoneApp
                 AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
+        }
+
+        private void UpdateMyPostPhoto(RenderTargetBitmap bmp)
+        {
+            CameraPhotoUserControl uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
+            if (uc.GetImageEffectsUserControl() != null)
+            {
+                uc.UnloadImageEffectsUserControl();
+            }
+            Grid_SubPage.Children.Clear();
+            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+            UserControl_MyPost.ChangeImageProfile1(bmp);
         }
 
         private void NavigateToCameraPhotoPage()

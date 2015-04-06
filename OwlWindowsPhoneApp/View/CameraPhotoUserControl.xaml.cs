@@ -45,7 +45,7 @@ namespace OwlWindowsPhoneApp
 
         async void CameraPhotoUserControl_Unloaded(object sender, RoutedEventArgs e)
         {
-            await _captureManager.StopPreviewAsync();
+            //await _captureManager.StopPreviewAsync();
             CaptureElement_Photo.Source.Dispose();
         }
 
@@ -177,7 +177,7 @@ namespace OwlWindowsPhoneApp
 
             Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Grid_ImageEffects.Children.Clear();
-            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file));
+            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file, file.Path));
         }
 
         public async void OpenImagePreview(StorageFile file)
@@ -187,7 +187,28 @@ namespace OwlWindowsPhoneApp
 
             Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Grid_ImageEffects.Children.Clear();
-            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file));
+            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file, file.Path));
+        }
+
+        public ImageEffectsUserControl GetImageEffectsUserControl()
+        {
+            if (Grid_ImageEffects.Children.Any(p => p is ImageEffectsUserControl))
+            {
+                return Grid_ImageEffects.Children.First() as ImageEffectsUserControl;
+            }
+            return null;
+        }
+
+        public bool UnloadImageEffectsUserControl()
+        {
+            if (Grid_ImageEffects.Children.Any(p => p is ImageEffectsUserControl))
+            {
+                Grid_ImageEffects.Children.Clear();
+                Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                return true;
+            }
+            else
+                return false;
         }
 
         private static async Task<BitmapImage> LoadImage(StorageFile file)

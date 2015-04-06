@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
@@ -30,8 +31,14 @@ namespace OwlWindowsPhoneApp
 
         void MyPostUserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            FlipView_Profile.Width = Window.Current.Bounds.Width - 10;
-            FlipView_Profile.Height = FlipView_Profile.Width * 0.75;
+            FlipView_Profile.Width = Window.Current.Bounds.Width - 30;
+            FlipView_Profile.Height = FlipView_Profile.Width * 0.9;
+            Image_Profile1.Width = FlipView_Profile.Width - 2;
+            Image_Profile1.Height = FlipView_Profile.Height - 2;
+            Image_Profile2.Width = FlipView_Profile.Width - 2;
+            Image_Profile2.Height = FlipView_Profile.Height - 2;
+            Image_Profile3.Width = FlipView_Profile.Width - 2;
+            Image_Profile3.Height = FlipView_Profile.Height - 2;
         }
 
         private void Image_Profile1_Tapped(object sender, TappedRoutedEventArgs e)
@@ -46,7 +53,12 @@ namespace OwlWindowsPhoneApp
 
         private void Image_Profile3_Tapped(object sender, TappedRoutedEventArgs e)
         {
-    Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
+            Messenger.Default.Send<NavigateToCameraMessage>(new NavigateToCameraMessage());
+        }
+
+        public void ChangeImageProfile1(RenderTargetBitmap bmp)
+        {
+            Image_Profile1.Source = bmp;
         }
     }
 }

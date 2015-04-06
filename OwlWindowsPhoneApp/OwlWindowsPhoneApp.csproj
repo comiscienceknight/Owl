@@ -86,6 +86,7 @@
     <Compile Include="Common\ContinuationManager.cs" />
     <Compile Include="ViewModel\Message\NavigateToCameraMessage.cs" />
     <Compile Include="ViewModel\Message\NavigateToMyPostMessage.cs" />
+    <Compile Include="ViewModel\Message\TakePhotoToMyPostMessage.cs" />
     <Compile Include="View\CameraPhotoUserControl.xaml.cs">
       <DependentUpon>CameraPhotoUserControl.xaml</DependentUpon>
     </Compile>

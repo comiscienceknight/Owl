@@ -46,12 +46,11 @@
       <RootProperty Name="Background" />
       <RootProperty Name="Children" />
       <RootProperty Name="Visibility" />
+      <RootProperty Name="MinHeight" />
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="Margin" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
@@ -78,7 +77,7 @@
       <RootProperty Name="Icon" />
       <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="RenderTransform" />
-      <RootEvent Name="PointerReleased" />
+      <RootProperty Name="Margin" />
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.CompositeTransform">
@@ -101,6 +100,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Child" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="BorderBrush" />
+      <RootProperty Name="BorderThickness" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Text" />
@@ -112,25 +114,21 @@
       <RootProperty Name="Width" />
       <RootProperty Name="MaxHeight" />
       <RootProperty Name="TextWrapping" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Foreground" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Opacity" />
       <RootProperty Name="Style" />
       <RootProperty Name="CharacterSpacing" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="Height" />
       <RootProperty Name="Inlines" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Stretch" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="RenderTransformOrigin" />
-      <RootProperty Name="ManipulationMode" />
-      <RootProperty Name="RenderTransform" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
-      <RootEvent Name="ManipulationDelta" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="ImageOpened" />
     </RootType>
@@ -164,6 +162,15 @@
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ChatHistoryUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="ZoomMode" />
+      <RootProperty Name="HorizontalScrollMode" />
+      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="MinZoomFactor" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="OwlWindowsPhoneApp.View.ImageEffectsUserControl" />
     <RootType FullName="Coding4Fun.Toolkit.Controls.ChatBubble">
       <RootProperty Name="ChatBubbleDirection" />
@@ -175,7 +182,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
@@ -206,12 +212,9 @@
       <RootProperty Name="ItemsSource" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.MessageUserControl" />
-    <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
       <RootProperty Name="Margin" />
+      <RootProperty Name="Background" />
       <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Items" />

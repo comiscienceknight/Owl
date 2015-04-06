@@ -55,15 +55,22 @@ namespace OwlWindowsPhoneApp.ViewModel
         private async void LoadPosts()
         {
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(true));
-            using (HttpClient httpClient = new HttpClient())
+            try
             {
-                httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
-                httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
-                var posts = await httpClient.GetStringAsync(
-                    new Uri("http://owlbat.azure-mobile.net/get/randomposts/Paris/France"));
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+                    httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
+                    var posts = await httpClient.GetStringAsync(
+                        new Uri("http://owlbat.azure-mobile.net/get/randomposts/Paris/France"));
 
-                JsonValue jsonValue = JsonValue.Parse(posts);
-                AnalysePostJsonValueArray(jsonValue);
+                    JsonValue jsonValue = JsonValue.Parse(posts);
+                    AnalysePostJsonValueArray(jsonValue);
+                } 
+            }
+            catch
+            { 
+                
             }
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage());
         }

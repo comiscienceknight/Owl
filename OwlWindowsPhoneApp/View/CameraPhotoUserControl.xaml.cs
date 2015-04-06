@@ -138,7 +138,7 @@ namespace OwlWindowsPhoneApp
         private async void AppBarButton_TakePicture_Click(object sender, RoutedEventArgs e)
         {
             BitmapImage bmpImage = new BitmapImage();
-            StorageFile file;
+            StorageFile fileStorage;
             using (var imageStream = new InMemoryRandomAccessStream())
             {
                 ImageEncodingProperties imgFormat = ImageEncodingProperties.CreateJpeg();
@@ -158,30 +158,21 @@ namespace OwlWindowsPhoneApp
                 await bmpImage.SetSourceAsync(imageStream);
 
 
-                StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                file =
-                    await folder.CreateFileAsync("CapturingImage.jpeg", CreationCollisionOption.ReplaceExisting);
-                using (Stream fileStram = await file.OpenStreamForWriteAsync())
+                fileStorage = await KnownFolders.CameraRoll.CreateFileAsync("OwlProfile.jpg", CreationCollisionOption.ReplaceExisting);
+                using (var destinationStream = (await fileStorage.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))
                 {
-                    Stream streamToSave = imageStream.AsStream();
-                    int BUFFER_SIZE = (int)streamToSave.Length;
-                    byte[] buf = new byte[BUFFER_SIZE];
-
-                    int bytesread = 0;
-                    while ((bytesread = await streamToSave.ReadAsync(buf, 0, BUFFER_SIZE)) > 0)
-                    {
-                        await fileStram.WriteAsync(buf, 0, bytesread);
-                    }
+                    await RandomAccessStream.CopyAndCloseAsync(imageStream, destinationStream);
                 }
             }
 
             Grid_ImageEffects.Visibility = Windows.UI.Xaml.Visibility.Visible;
             Grid_ImageEffects.Children.Clear();
-            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, file, file.Path));
+            Grid_ImageEffects.Children.Add(new ImageEffectsUserControl(bmpImage, fileStorage, fileStorage.Path));
         }
 
         public async void OpenImagePreview(StorageFile file)
         {
+            await _captureManager.StopPreviewAsync();
             BitmapImage bmpImage = new BitmapImage();
             bmpImage = await LoadImage(file);
 

@@ -1,0 +1,118 @@
+﻿<UserControl
+    x:Class="OwlWindowsPhoneApp.MyPostUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OwlWindowsPhoneApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="690"
+    d:DesignWidth="400">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer Margin="0,0,20,0">
+            <StackPanel>
+                <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock Text="Your photos" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+                <Border BorderThickness="4" BorderBrush="#CC68332A" Background="#CCE00B0B">
+                    <FlipView x:Name="FlipView_Profile" Margin="-2,-2,0,-2" Background="{x:Null}"
+                              Height="300"  VerticalAlignment="Top" >
+                        <Image x:Name="Image_Profile1" Source="ms-appx:///Assets/Tempo/addphoto.png" 
+                           Tapped="Image_Profile1_Tapped"
+                            Stretch="Fill"  />
+                        <Image  x:Name="Image_Profile2" Source="ms-appx:///Assets/Tempo/addphoto.png"
+                            Tapped="Image_Profile2_Tapped"   Stretch="Fill"  />
+                        <Image  x:Name="Image_Profile3" Source="ms-appx:///Assets/Tempo/addphoto.png"
+                            Tapped="Image_Profile3_Tapped"   Stretch="Fill" />
+                    </FlipView>
+                </Border>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="Place you're going to" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="What time will arrive" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="How many boys do you have" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="How many girls do you have" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="What the average age you are" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="What're you interested in" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+                <StackPanel Margin="15,10,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+                    <Image Width="35" Height="35" Margin="-10,0,0,0"   
+                   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                    <TextBlock  Text="Your dress code is?" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                </StackPanel>
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

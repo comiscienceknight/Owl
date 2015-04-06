@@ -270,10 +270,10 @@ namespace OwlWindowsPhoneApp
             if (file == null)
                 return;
 
-            if(Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
+            if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
             {
                 var uc = Grid_SubPage.Children.First() as CameraPhotoUserControl;
-                if(uc != null)
+                if (uc != null)
                 {
                     uc.OpenImagePreview(file);
                 }

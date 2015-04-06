@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using Lumia.Imaging;
-using Lumia.Imaging.Adjustments;
-using Lumia.Imaging.Artistic;
+//using Lumia.Imaging;
+//using Lumia.Imaging.Adjustments;
+//using Lumia.Imaging.Artistic;
 using OwlWindowsPhoneApp.ViewModel.Message;
 using System;
 using System.Collections.Generic;
@@ -64,77 +64,77 @@ namespace OwlWindowsPhoneApp.View
             }
         }
 
-        public async void ChangeEffects(StorageFile file, IFilter filter)
-        {
-            using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
-            {
-                // Rewind the stream to start. 
-                fileStream.Seek(0);
+        //public async void ChangeEffects(StorageFile file, IFilter filter)
+        //{
+        //    using (IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read))
+        //    {
+        //        // Rewind the stream to start. 
+        //        fileStream.Seek(0);
 
-                using (var imageSource = new RandomAccessStreamImageSource(fileStream))
-                {
-                    using(FilterEffect effect = new FilterEffect(imageSource))
-                    {
-                        effect.Filters = new[] { filter };
+        //        using (var imageSource = new RandomAccessStreamImageSource(fileStream))
+        //        {
+        //            using(FilterEffect effect = new FilterEffect(imageSource))
+        //            {
+        //                effect.Filters = new[] { filter };
 
-                        var cartoonImageBitmap = new WriteableBitmap((int)(_capturedImage.PixelWidth),
-                            (int)(_capturedImage.PixelHeight));
+        //                var cartoonImageBitmap = new WriteableBitmap((int)(_capturedImage.PixelWidth),
+        //                    (int)(_capturedImage.PixelHeight));
 
-                        // Render the image to a WriteableBitmap.
-                        var renderer = new WriteableBitmapRenderer(effect, cartoonImageBitmap);
-                        cartoonImageBitmap = await renderer.RenderAsync();
-                        cartoonImageBitmap.Invalidate();
+        //                // Render the image to a WriteableBitmap.
+        //                var renderer = new WriteableBitmapRenderer(effect, cartoonImageBitmap);
+        //                cartoonImageBitmap = await renderer.RenderAsync();
+        //                cartoonImageBitmap.Invalidate();
 
-                        // Set the rendered image as source for the cartoon image control.
-                        Image_Captured.Source = cartoonImageBitmap;
-                    }
-                }
-            }
-        }
+        //                // Set the rendered image as source for the cartoon image control.
+        //                Image_Captured.Source = cartoonImageBitmap;
+        //            }
+        //        }
+        //    }
+        //}
 
         private async void AppBarButton_EffectsSolarize_Click(object sender, RoutedEventArgs e)
         {
-            var filter = new SolarizeFilter(0.9);
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
-            ChangeEffects(file, filter);
+            //var filter = new SolarizeFilter(0.9);
+            //StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
+            //ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_EffectsBlur_Click(object sender, RoutedEventArgs e)
         {
-            var filter = new HueSaturationLightnessFilter();
+            //var filter = new HueSaturationLightnessFilter();
 
-            filter.HueCurve = new Curve();
-            filter.HueCurve.SetPoint(0, 0);
-            filter.HueCurve.SetPoint(10, 20);
-            filter.HueCurve.SetPoint(200, 500);
+            //filter.HueCurve = new Curve();
+            //filter.HueCurve.SetPoint(0, 0);
+            //filter.HueCurve.SetPoint(10, 20);
+            //filter.HueCurve.SetPoint(200, 500);
 
-            filter.SaturationCurve = new Curve();
-            filter.SaturationCurve.SetPoint(0, 0);
-            filter.SaturationCurve.SetPoint(10, 20);
-            filter.SaturationCurve.SetPoint(200, 240);
+            //filter.SaturationCurve = new Curve();
+            //filter.SaturationCurve.SetPoint(0, 0);
+            //filter.SaturationCurve.SetPoint(10, 20);
+            //filter.SaturationCurve.SetPoint(200, 240);
 
-            filter.LightnessCurve = new Curve();
-            filter.LightnessCurve.SetPoint(0, 0);
-            filter.LightnessCurve.SetPoint(10, 20);
-            filter.LightnessCurve.SetPoint(200, 240);
+            //filter.LightnessCurve = new Curve();
+            //filter.LightnessCurve.SetPoint(0, 0);
+            //filter.LightnessCurve.SetPoint(10, 20);
+            //filter.LightnessCurve.SetPoint(200, 240);
 
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
-            ChangeEffects(file, filter);
+            //StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
+            //ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_EffectsEnhence_Click(object sender, RoutedEventArgs e)
         {
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
-            var filter = new AutoEnhanceFilter();
-            //StorageFile file = new StorageFile()
-            ChangeEffects(file, filter);
+            //StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFile.Path);
+            //var filter = new AutoEnhanceFilter();
+            ////StorageFile file = new StorageFile()
+            //ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_EffectsCartoon_Click(object sender, RoutedEventArgs e)
         {
-            StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
-            var filter = new CartoonFilter();
-            ChangeEffects(file, filter);
+            //StorageFile file = await StorageFile.GetFileFromPathAsync(_storageFilePath);
+            //var filter = new CartoonFilter();
+            //ChangeEffects(file, filter);
         }
 
         private async void AppBarButton_Save_Click(object sender, RoutedEventArgs e)

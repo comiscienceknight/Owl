@@ -1,0 +1,73 @@
+﻿<UserControl
+    x:Class="OwlWindowsPhoneApp.View.FirstTimeEnterUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Owl.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="400">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <!-- Title Panel -->
+        <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
+                        VerticalAlignment="Top">
+            <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+            <TextBlock x:Name="TextBlock_PageTitle"  Text="Are you a Mocking Owl ? " 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="30"/>
+        </StackPanel>
+
+        <Rectangle Height="3" HorizontalAlignment="Stretch"
+                   VerticalAlignment="Top" Fill="#FFC94F17" Opacity="0.5" Margin="15,66,50,0"  />
+
+        <Grid Margin="10,80,10,75">
+            
+        </Grid>
+        <StackPanel Margin="10,100,10,75" >
+            <FlipView x:Name="FlipView_Profile" Margin="0,0,0,10" Background="{x:Null}"
+                              Height="360"  VerticalAlignment="Center" >
+                <Grid>
+                    <TextBlock Text="1, Pick a profile picture" 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                    <Border Margin="10,60,10,0" BorderBrush="#CC7C1010"
+                                  BorderThickness="5">
+                        <Image x:Name="Image_Profile" Tapped="Image_Profile_Tapped"
+                           VerticalAlignment="Center" Source="ms-appx:///Assets/Tempo/logo.png" 
+                               Stretch="None"/>
+                    </Border>
+                </Grid>
+                <Grid >
+                    <TextBlock Text="2, I'm a " 
+                       Margin="15,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="22"/>
+                    <Border Margin="10,60,10,0" BorderBrush="#CC7C1010"
+                                  BorderThickness="5">
+                        
+                    </Border>
+                </Grid>
+            </FlipView>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,0" 
+                        HorizontalAlignment="Center" VerticalAlignment="Top">
+                <AppBarButton x:Name="AppBarButton_Back" Click="AppBarButton_Back_Click"
+                              Margin="0,0" VerticalAlignment="Bottom"  Icon="Back"  />
+                <AppBarButton x:Name="AppBarButton_Next" Click="AppBarButton_Next_Click" 
+                              Margin="0,0" VerticalAlignment="Bottom"  Icon="Forward"  />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -21,6 +21,7 @@ App.xbf
 Owl.xr.xml
 View\CameraPhotoUserControl.xbf
 View\ChatHistoryUserControl.xbf
+View\FirstTimeEnterUserControl.xbf
 View\ImageEffectsUserControl.xbf
 View\MainPage.xbf
 View\MessageUserControl.xbf

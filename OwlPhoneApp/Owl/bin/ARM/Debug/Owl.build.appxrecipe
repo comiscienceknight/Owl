@@ -151,6 +151,9 @@
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ChatHistoryUserControl.xbf">
       <PackagePath>View\ChatHistoryUserControl.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstTimeEnterUserControl.xbf">
+      <PackagePath>View\FirstTimeEnterUserControl.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ImageEffectsUserControl.xbf">
       <PackagePath>View\ImageEffectsUserControl.xbf</PackagePath>
     </AppxPackagedFile>

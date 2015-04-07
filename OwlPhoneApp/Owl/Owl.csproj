@@ -113,6 +113,9 @@
     <Compile Include="View\ChatHistoryUserControl.xaml.cs">
       <DependentUpon>ChatHistoryUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FirstTimeEnterUserControl.xaml.cs">
+      <DependentUpon>FirstTimeEnterUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ImageEffectsUserControl.xaml.cs">
       <DependentUpon>ImageEffectsUserControl.xaml</DependentUpon>
     </Compile>
@@ -175,6 +178,10 @@
     <Page Include="View\ChatHistoryUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FirstTimeEnterUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\ImageEffectsUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>

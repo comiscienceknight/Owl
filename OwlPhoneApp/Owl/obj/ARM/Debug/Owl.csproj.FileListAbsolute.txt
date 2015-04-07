@@ -255,3 +255,8 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Coding4Fun.Toolk
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Coding4Fun.Toolkit.Controls.pri.xml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\GalaSoft.MvvmLight.Platform.pri.xml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\ProjectArchitectures.txt
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstTimeEnterUserControl.xbf
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstTimeEnterUserControl.g.i.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstTimeEnterUserControl.g.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstTimeEnterUserControl.xaml
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstTimeEnterUserControl.xbf

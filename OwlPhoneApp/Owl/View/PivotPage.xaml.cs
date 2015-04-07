@@ -7,6 +7,7 @@ using OwlWindowsPhoneApp.ViewModel.Message;
 using System;
 using System.Linq;
 using Windows.Phone.UI.Input;
+using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Core;
 using Windows.UI.Popups;
@@ -59,7 +60,7 @@ namespace OwlWindowsPhoneApp
         }
 
 
-
+        #region Take Photo
         private void UserControl_MyPost_Loaded(object sender, RoutedEventArgs e)
         {
             UserControl_MyPost.TakePhotoEvent += UserControl_MyPost_TakePhotoEvent;
@@ -108,6 +109,7 @@ namespace OwlWindowsPhoneApp
             ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
             ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
             Grid_SubPage.Children.Clear();
+
             FileOpenPicker openPicker = new FileOpenPicker();
             openPicker.ViewMode = PickerViewMode.Thumbnail;
             openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
@@ -116,6 +118,32 @@ namespace OwlWindowsPhoneApp
             openPicker.FileTypeFilter.Add(".png");
             openPicker.PickSingleFileAndContinue();
         }
+
+        public async void ContinueFileOpenPicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs args)
+        {
+            if (args.Files.Count > 0)
+            {
+                var file = args.Files.FirstOrDefault();
+                if (file == null)
+                    return;
+
+                if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
+                {
+                    Grid_SubPage.Children.Clear();
+                }
+                StorageFile sf = args.Files.First();
+                BitmapImage bmpImage = await CameraPhotoUserControl.LoadImage(sf);
+                ImageEffectsUserControl imageEffectUc = new ImageEffectsUserControl(bmpImage, sf, sf.Path);
+                imageEffectUc.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
+                Grid_SubPage.Children.Add(imageEffectUc);
+            }
+            else
+            {
+                Grid_SubPage.Children.Clear();
+                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+            }
+        }
+        #endregion
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -289,27 +317,6 @@ namespace OwlWindowsPhoneApp
         }
         #endregion
 
-        public void ContinueFileOpenPicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs args)
-        {
-            if(args.Files.Count > 0)
-            {
-                var file = args.Files.FirstOrDefault();
-                if (file == null)
-                    return;
 
-                if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
-                {
-                    var uc = Grid_SubPage.Children.First() as ImageEffectsUserControl;
-                    if (uc != null)
-                    {
-                    }
-                }
-            }
-            else
-            {
-                Grid_SubPage.Children.Clear();
-                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-            }
-        }
     }
 }

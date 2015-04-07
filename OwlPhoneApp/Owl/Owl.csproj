@@ -145,9 +145,11 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\concertman.png" />
     <Content Include="Assets\Logo.scale-240.png" />
     <Content Include="Assets\photofromcamera.png" />
     <Content Include="Assets\photofromphone.png" />
+    <Content Include="Assets\sexygirl.png" />
     <Content Include="Assets\SignIn\FacebookSignIn.png" />
     <Content Include="Assets\SignIn\GoogleSignIn.png" />
     <Content Include="Assets\SignIn\HotmailSignIn.png" />
@@ -163,6 +165,7 @@
     <Content Include="Assets\Tempo\night1.jpg" />
     <Content Include="Assets\Tempo\night2.jpg" />
     <Content Include="Assets\Tempo\night3.jpg" />
+    <Content Include="Assets\thinking_man_Clip_Art.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
   </ItemGroup>
@@ -255,6 +258,9 @@
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
       <Name>Behaviors SDK %28XAML%29</Name>
+    </SDKReference>
+    <SDKReference Include="Telerik UI For Windows Universal, Version=2015.1.226.45">
+      <Name>Telerik UI For Windows Universal</Name>
     </SDKReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

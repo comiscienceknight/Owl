@@ -11,6 +11,7 @@
     <RootPropertyPathName Name="ChatEntrytCollection" />
     <RootPropertyPathName Name="ListViewChatEntriesLoadedCommand" />
     <RootPropertyPathName Name="ItemSelectedCommand" />
+    <RootPropertyPathName Name="Avenue" />
     <RootPropertyPathName Name="Main" />
     <RootPropertyPathName Name="LowerRightVisibility" />
     <RootPropertyPathName Name="BackgroundColor" />
@@ -47,9 +48,9 @@
       <RootProperty Name="Children" />
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="MinHeight" />
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
+      <RootProperty Name="MinHeight" />
       <RootProperty Name="Visibility" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
@@ -100,9 +101,9 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Child" />
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="BorderBrush" />
       <RootProperty Name="BorderThickness" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
@@ -118,17 +119,18 @@
       <RootProperty Name="Opacity" />
       <RootProperty Name="Style" />
       <RootProperty Name="CharacterSpacing" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FontWeight" />
       <RootProperty Name="Inlines" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
       <RootProperty Name="Source" />
       <RootProperty Name="Stretch" />
+      <RootProperty Name="Height" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootEvent Name="Tapped" />
       <RootEvent Name="ImageOpened" />
@@ -149,8 +151,8 @@
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="IsEnabled" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="IsEnabled" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Interactions.Core.EventTriggerBehavior">
       <RootProperty Name="EventName" />
@@ -181,18 +183,55 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.NullExtension" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox">
+      <RootProperty Name="Watermark" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="AutosuggestFirstItem" />
+      <RootProperty Name="IsDropDownOpen" />
+      <RootProperty Name="DropDownMaxHeight" />
+      <RootProperty Name="FilterMemberPath" />
+      <RootProperty Name="FilterMode" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="FilterDelay" />
+      <RootProperty Name="HeaderStyle" />
+      <RootProperty Name="ItemTemplate" />
+      <RootEvent Name="LostFocus" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Opacity" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ContentControl" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Control">
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Foreground" />
+      <RootProperty Name="FontWeight" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.FrameworkElement">
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Setter">
+      <RootProperty Name="Property" />
+      <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
+      <RootProperty Name="Width" />
+    </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.View.FirstTimeEnterUserControl" />
+    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
       <RootProperty Name="ZoomMode" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="BorderBrush" />
-      <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalScrollMode" />
       <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="MinZoomFactor" />
       <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="OwlWindowsPhoneApp.View.FirstTimeEnterUserControl" />
-    <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
     <RootType FullName="OwlWindowsPhoneApp.View.ImageEffectsUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="DataContext" />
@@ -212,21 +251,12 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
-      <RootProperty Name="Width" />
-    </RootType>
     <RootType FullName="Coding4Fun.Toolkit.Controls.ChatBubbleTextBox">
       <RootProperty Name="Margin" />
       <RootProperty Name="ChatBubbleDirection" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="MaxLength" />
       <RootProperty Name="Text" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ScrollToBottomBehavior">
       <RootProperty Name="ItemsSource" />

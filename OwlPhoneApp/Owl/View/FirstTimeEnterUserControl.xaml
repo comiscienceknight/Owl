@@ -17,43 +17,90 @@
             </TransitionCollection>
         </Grid.ChildrenTransitions>
 
-        <!-- Title Panel -->
-        <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
-			VerticalAlignment="Top">
-            <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
-            <TextBlock x:Name="TextBlock_PageTitle"  Text="Are you a Mocking Owl ? " 
-				Margin="15,12,0,0" Opacity="0.8"
-				Style="{ThemeResource HeaderTextBlockStyle}" 
-				CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
-				FontFamily="Global User Interface" FontSize="30"/>
-        </StackPanel>
+        <StackPanel Margin="10,40,10,25" VerticalAlignment="Center">
+            <FlipView x:Name="FlipView_Profile" Height="450" Margin="0,10,0,10" Background="{x:Null}">
+                <FlipView.Style>
+                    <Style TargetType="FlipView">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="TabNavigation" Value="Once"/>
+                        <Setter Property="IsTabStop" Value="False"/>
+                        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+                        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+                        <Setter Property="ScrollViewer.IsHorizontalRailEnabled" Value="False"/>
+                        <Setter Property="ScrollViewer.IsVerticalRailEnabled" Value="False"/>
+                        <Setter Property="ScrollViewer.IsHorizontalScrollChainingEnabled" Value="True"/>
+                        <Setter Property="ScrollViewer.IsVerticalScrollChainingEnabled" Value="True"/>
+                        <Setter Property="ScrollViewer.IsDeferredScrollingEnabled" Value="False"/>
+                        <Setter Property="ScrollViewer.BringIntoViewOnFocusChange" Value="True"/>
+                        <Setter Property="ItemsPanel">
+                            <Setter.Value>
+                                <ItemsPanelTemplate>
+                                    <VirtualizingStackPanel AreScrollSnapPointsRegular="True" 
+                                        Orientation="Horizontal"/>
+                                </ItemsPanelTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="FlipView">
+                                    <Grid>
+                                        <Border BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            Background="{TemplateBinding Background}">
+                                            <Grid>
+                                                <ScrollViewer x:Name="ScrollingHost" 
+                                          AutomationProperties.AccessibilityView="Raw" 
+                                          BringIntoViewOnFocusChange="{TemplateBinding ScrollViewer.BringIntoViewOnFocusChange}" 
+                                          HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}" 
+                                          HorizontalSnapPointsType="MandatorySingle"
+                                          HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}" 
+                                          IsTabStop="False" 
+                                          IsHorizontalRailEnabled="{TemplateBinding ScrollViewer.IsHorizontalRailEnabled}" 
+                                          IsHorizontalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsHorizontalScrollChainingEnabled}" 
+                                          IsVerticalScrollChainingEnabled="{TemplateBinding ScrollViewer.IsVerticalScrollChainingEnabled}" 
+                                          IsVerticalRailEnabled="{TemplateBinding ScrollViewer.IsVerticalRailEnabled}" 
+                                          IsDeferredScrollingEnabled="{TemplateBinding ScrollViewer.IsDeferredScrollingEnabled}" 
+                                          Padding="{TemplateBinding Padding}" 
+                                          TabNavigation="{TemplateBinding TabNavigation}" 
+                                          VerticalSnapPointsType="MandatorySingle" 
+                                          VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}" 
+                                          VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}" 
+                                          ZoomMode="Disabled">
+                                                    <ItemsPresenter/>
+                                                </ScrollViewer>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </FlipView.Style>
 
-        <Rectangle Height="3" HorizontalAlignment="Stretch"
-			VerticalAlignment="Top" Fill="#FFC94F17" Opacity="0.5" Margin="15,66,50,0"  />
-
-        <Grid Margin="10,80,10,75"/>
-        <StackPanel Margin="10,100,10,75" >
-            <FlipView x:Name="FlipView_Profile" Margin="0,10,0,10" Background="{x:Null}"
-				Height="360"  VerticalAlignment="Center" >
                 <Grid>
-                    <TextBlock Text="1, Pick a profile picture" 
-						Margin="15,12,0,0" Opacity="0.8"
-						Style="{ThemeResource HeaderTextBlockStyle}" 
-						CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
-						FontFamily="Global User Interface" FontSize="22"/>
-                    <Border Margin="10,60,10,0" BorderBrush="#CC7C1010"
+                    <TextBlock Text="Pick a profile picture" 
+                               HorizontalAlignment="Center"
+						Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						FontFamily="Comic Sans MS" FontSize="32"/>
+                    <Border Margin="10,60,10,30" BorderBrush="#CC7C1010"
 						BorderThickness="5">
                         <Image x:Name="Image_Profile" Tapped="Image_Profile_Tapped"
 							VerticalAlignment="Center" Source="ms-appx:///Assets/Tempo/logo.png" 
 							Stretch="None"/>
                     </Border>
+                    <TextBlock x:Name="TextBlock_TouchMyWings" Text="Touch my wings" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" 
+						       Margin="0,0,0,80" Opacity="0.9" TextWrapping="Wrap"
+						       FontFamily="Comic Sans MS" FontSize="18"/>
                 </Grid>
-                <Grid >
-                    <TextBlock Text="2, I'm a " 
-						Margin="15,12,0,0" Opacity="0.8"
-						Style="{ThemeResource HeaderTextBlockStyle}" 
-						CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
-						FontFamily="Global User Interface" FontSize="22"/>
+                <Grid x:Name="Grid_Iam">
+                    <TextBlock Text="I AM A "
+						        HorizontalAlignment="Center"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        Style="{ThemeResource HeaderTextBlockStyle}" 
+						        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+						        FontFamily="Comic Sans MS" FontSize="32"/>
                     <Grid Margin="0,60,20,0" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition />
@@ -68,12 +115,13 @@
                     </Grid>
                 </Grid>
                 <Grid >
-                    <TextBlock x:Name="TextBlock_HiSex"  Text="3, Hi " 
-						Margin="15,12,0,0" Opacity="0.8"
-						Style="{ThemeResource HeaderTextBlockStyle}" 
-						CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
-						FontFamily="Global User Interface" FontSize="22"/>
-                    <Grid Margin="0,50,20,0" >
+                    <TextBlock x:Name="TextBlock_HiSex"  Text="Hi " 
+						        HorizontalAlignment="Center"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        Style="{ThemeResource HeaderTextBlockStyle}" 
+						        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+						        FontFamily="Comic Sans MS" FontSize="32"/>
+                    <Grid Margin="0,60,20,0" >
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"></RowDefinition>
                             <RowDefinition Height="Auto"></RowDefinition>
@@ -84,7 +132,7 @@
                                                   Header="Search Venues"
                                                   HorizontalAlignment="Stretch" 
                                                   AutosuggestFirstItem="False" 
-                                                  IsDropDownOpen="True" DropDownMaxHeight="400" 
+                                                  IsDropDownOpen="True" DropDownMaxHeight="200" 
                                                   FilterMemberPath="Avenue" FilterMode="Contains"
                                                   Margin="20,5,20,10"  FilterDelay="0:0:0.5"
                                                   LostFocus="RadAutoCompleteBox_Search_LostFocus">
@@ -107,32 +155,59 @@
                         </Input:RadAutoCompleteBox>
 
                         <ProgressBar Grid.Row="0" Margin="20,15,20,10" 
-                                     x:Name="ProgressBar" IsIndeterminate="True" 
+                                     x:Name="ProgressBar_Search" IsIndeterminate="True" 
                                      HorizontalAlignment="Stretch" />
 
-                        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="20,35,0,0">
-                            <TextBlock Text="Type in to choose from the available movies" FontSize="20" TextWrapping="Wrap" Width="360" Foreground="#808080" FontWeight="SemiLight"/>
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="25,30,0,0">
+                            <TextBlock Text="Type 'just for look' if you just want visit the app"
+                                       FontSize="20" TextWrapping="Wrap" Width="360" Foreground="#808080" FontWeight="SemiLight"/>
                             <Button x:Name="LostFocusButton" IsHitTestVisible="False" Opacity="0"/>
                         </StackPanel>
                     </Grid>
                 </Grid>
-
+                <Grid >
+                    <StackPanel>
+                        <TextBlock Text="You would probably be " 
+						        HorizontalAlignment="Center" 
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        Style="{ThemeResource HeaderTextBlockStyle}" 
+						        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+						        FontFamily="Comic Sans MS" FontSize="32"/>
+                        <TextBlock x:Name="TextBlock_VenueName" 
+						        HorizontalAlignment="Center"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        Style="{ThemeResource HeaderTextBlockStyle}" 
+						        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+						        FontFamily="Global User Interface" FontSize="32"/>
+                    </StackPanel>
+                    <Grid Margin="0,60,20,0" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel  Orientation="Horizontal">
+                            <Image Height="80" Tapped="Image_Boy_Tapped"
+							VerticalAlignment="Center" Source="ms-appx:///Assets/thinking_man_Clip_Art.png" 
+							Stretch="Uniform"  />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Orientation="Horizontal">
+                            <Image Tapped="Image_Girls_Tapped" Height="80"
+							    VerticalAlignment="Center" Source="ms-appx:///Assets/sexygirl.png" 
+							Stretch="Uniform"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
 
             </FlipView>
+
+            <TextBlock x:Name="TextBlock_Indication" HorizontalAlignment="Center"
+                               VerticalAlignment="Bottom" Text=""
+                       Tapped="TextBlock_Indication_Tapped"
+						       Margin="0,5,0,0" Opacity="0.9" FontSize="24" FontWeight="Bold"/>
+            <Rectangle x:Name="Rectangle_Indication" Width="60" Height="2" Fill="#FF1061F0" Opacity="0"  />
             <StackPanel Orientation="Horizontal" Margin="0,20,0,0" 
 				HorizontalAlignment="Center" VerticalAlignment="Top">
-                <AppBarButton x:Name="AppBarButton_Back" Click="AppBarButton_Back_Click"
-					Margin="0,0" VerticalAlignment="Bottom"  Icon="Back">
-                    <AppBarButton.RenderTransform>
-                        <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
-                    </AppBarButton.RenderTransform>
-                </AppBarButton>
-                <AppBarButton x:Name="AppBarButton_Next" Click="AppBarButton_Next_Click" 
-					Margin="0,0" VerticalAlignment="Bottom"  Icon="Forward"  >
-                    <AppBarButton.RenderTransform>
-                        <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
-                    </AppBarButton.RenderTransform>
-                </AppBarButton>
+                <Ellipse Stroke="#FF260AA4" StrokeThickness="2" />
             </StackPanel>
         </StackPanel>
     </Grid>

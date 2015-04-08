@@ -33,83 +33,69 @@ namespace OwlWindowsPhoneApp.View
         {
             this.InitializeComponent();
 
-            InitAutoTextComplete();
             this.Loaded += FirstTimeEnterUserControl_Loaded;
         }
 
         void FirstTimeEnterUserControl_Loaded(object sender, RoutedEventArgs e)
         {
-            //AppBarButton_Next.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            InitAutoTextComplete();
         }
 
-        private async void AppBarButton_Next_Click(object sender, RoutedEventArgs e)
+        private async void TextBlock_Indication_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (FlipView_Profile.SelectedIndex == 0)
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                if (AppBarButton_Next.Visibility == Windows.UI.Xaml.Visibility.Visible)
-                {
-                    FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
-                }
-                else
-                {
-                    var dialog = new MessageDialog("Pleas pick a profile photo");
-                    dialog.Commands.Add(new UICommand("OK"));
-                    await dialog.ShowAsync();
-                }
-            }
-            else
-            {
-                if (FlipView_Profile.SelectedIndex == FlipView_Profile.Items.Count - 1)
-                {
-                    if (GuideFinished != null)
-                        GuideFinished(this, null);
-                }
-                else
-                    FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
-            }
-            //AppBarButton_Next.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+                TextBlock_Indication.Text = "";
+                Rectangle_Indication.Opacity = 0;
+                TextBlock_VenueName.Text = RadAutoCompleteBox_Search.Text;
+            });
         }
 
-        private void Image_Profile_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Image_Profile_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if(TakePhotoClick != null)
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                TakePhotoClick(this, null);
-            }
+                if (TakePhotoClick != null)
+                {
+                    TakePhotoClick(this, null);
+                }
+            });
         }
 
-        public void ChangeImageProfile(RenderTargetBitmap bmp)
+        public async void ChangeImageProfile(RenderTargetBitmap bmp)
         {
-            Image_Profile.Source = bmp;
             if (bmp != null)
             {
-                //AppBarButton_Next.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                {
+                    TextBlock_Indication.Text = "Next";
+                    Rectangle_Indication.Opacity = 1;
+                    Image_Profile.Source = bmp;
+                    TextBlock_TouchMyWings.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                });
             }
         }
 
-        private void AppBarButton_Back_Click(object sender, RoutedEventArgs e)
+        private async void Image_Boy_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            if (FlipView_Profile.SelectedIndex > 0)
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex - 1;
-            }
+                TextBlock_HiSex.Text = "My Gentleman!";
+                _maleOrFemale = true;
+                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+            });
         }
 
-        private void Image_Boy_Tapped(object sender, TappedRoutedEventArgs e)
+        private async void Image_Girls_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            TextBlock_HiSex.Text = "3, Hi Man! Where do you want?";
-            _maleOrFemale = true;
-            FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                TextBlock_HiSex.Text = "Hi Lady!";
+                _maleOrFemale = false;
+                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+            });
         }
-
-        private void Image_Girls_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            TextBlock_HiSex.Text = "3, Hi Girl! Where do you want?";
-            _maleOrFemale = false;
-            FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
-            //AppBarButton_Next.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
-
 
         #region avenues search
         private WebServiceTextSearchProvider _provider;
@@ -140,28 +126,32 @@ namespace OwlWindowsPhoneApp.View
             _provider = new WebServiceTextSearchProvider();
             _provider.InputChanged += WebServiceProvider_InputChanged;
             RadAutoCompleteBox_Search.InitializeSuggestionsProvider(_provider);
-            //this.ProgressBar.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            this.ProgressBar_Search.Visibility = Visibility.Collapsed;
         }
 
-        private void WebServiceProvider_InputChanged(object sender, EventArgs e)
+        private async void WebServiceProvider_InputChanged(object sender, EventArgs e)
         {
             string inputString = _provider.InputString;
             if (!string.IsNullOrEmpty(inputString))
             {
-                this.ProgressBar.Visibility = Visibility.Visible;
-                var items = MockAveues.Where(p=> p.Avenue.Contains(inputString));
-                if(items == null || items.Count() == 0)
+                this.ProgressBar_Search.Visibility = Visibility.Visible;
+                var items = MockAveues.Where(p => p.Avenue.Contains(inputString));
+                if (items == null || items.Count() == 0)
                 {
-                    items = MockAveues.OrderBy(p=>p.Avenue).Take(10);
+                    items = MockAveues.OrderBy(p => p.Avenue).Take(10);
                 }
-                _provider.LoadItems(items.OrderBy(p=>p.Avenue));
-                this.ProgressBar.Visibility = Visibility.Collapsed;
-                //AppBarButton_Next.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                _provider.LoadItems(items.OrderBy(p => p.Avenue));
+                this.ProgressBar_Search.Visibility = Visibility.Collapsed;
+
+                await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                {
+                    TextBlock_Indication.Text = "Next";
+                    Rectangle_Indication.Opacity = 1;
+                });
             }
             else
             {
                 _provider.Reset();
-                //AppBarButton_Next.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
 

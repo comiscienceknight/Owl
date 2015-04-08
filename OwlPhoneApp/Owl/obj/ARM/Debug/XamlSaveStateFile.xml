@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\obj\arm\debug\intermediatexaml\owl.exe" HashGuid="cb423ff4-e89c-af9b-cf10-babd8b1956ef" />
+    <LocalAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\obj\arm\debug\intermediatexaml\owl.exe" HashGuid="7ba92d6e-52b3-0547-e212-56021af84d2d" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactions.dll" HashGuid="95a94f94-3917-d473-4f7c-18c4bd437046" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactivity.dll" HashGuid="d25f59e6-dd81-900a-0dfc-55b39f6898ef" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
@@ -24,5 +24,6 @@
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\newtonsoft.json.6.0.4\lib\portable-net45+wp80+win8+wpa81\newtonsoft.json.dll" HashGuid="02b12ba6-881e-6b8a-1687-5b2ee1851a11" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\microsoft.net.http.2.2.28\lib\wpa81\system.net.http.extensions.dll" HashGuid="794366f8-cc6d-f0fa-3d07-33b45136e193" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\microsoft.net.http.2.2.28\lib\wpa81\system.net.http.primitives.dll" HashGuid="7b71418d-e056-7613-c839-85fb8f6472a6" />
+    <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\packages\winrtxamltoolkit.windowsphone.1.8.1.0\lib\wpa\winrtxamltoolkit.dll" HashGuid="221e17c6-64f2-d53e-b7b5-145a2dbe921c" />
   </ReferenceAssemblyList>
 </XamlCompilerSaveState>

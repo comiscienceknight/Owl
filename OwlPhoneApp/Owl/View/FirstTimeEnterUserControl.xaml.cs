@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -39,13 +40,22 @@ namespace OwlWindowsPhoneApp.View
         void FirstTimeEnterUserControl_Loaded(object sender, RoutedEventArgs e)
         {
             InitAutoTextComplete();
+            Grid_PickProfile.Width = Window.Current.Bounds.Width - 20;
+            Grid_Iam.Width = Grid_PickProfile.Width;
+            StackPanel_AgeName.Width = Grid_PickProfile.Width;
+            Grid_SearchVenue.Width = Grid_PickProfile.Width;
+            Grid_NumberOfGroup.Width = Grid_PickProfile.Width;
+            Grid_Description.Width = Grid_PickProfile.Width;
         }
 
         private async void TextBlock_Indication_Tapped(object sender, TappedRoutedEventArgs e)
         {
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+                var da = Storyboard_XMoveFlipView.Children.First() as DoubleAnimation;
+                da.To = 0 - Grid_PickProfile.Width/2;
+                Storyboard_XMoveFlipView.Begin();
+                //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
                 TextBlock_Indication.Text = "";
                 Rectangle_Indication.Opacity = 0;
                 TextBlock_VenueName.Text = RadAutoCompleteBox_Search.Text;
@@ -83,7 +93,7 @@ namespace OwlWindowsPhoneApp.View
             {
                 TextBlock_HiSex.Text = "My Gentleman!";
                 _maleOrFemale = true;
-                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+               //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
             });
         }
 
@@ -93,7 +103,58 @@ namespace OwlWindowsPhoneApp.View
             {
                 TextBlock_HiSex.Text = "Hi Lady!";
                 _maleOrFemale = false;
-                FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+                //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+            });
+        }
+
+        private async void NumericUpDown_WithBoys_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            if(e.NewValue > 0)
+            {
+                await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                {
+                    TextBlock_Indication.Text = "Next";
+                    Rectangle_Indication.Opacity = 1;
+                });
+            }
+        }
+
+        private async void NumericUpDown_WithGirls_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+        {
+            if (e.NewValue > 0)
+            {
+                await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                {
+                    TextBlock_Indication.Text = "Next";
+                    Rectangle_Indication.Opacity = 1;
+                });
+            }
+        }
+
+        private async void TextBox_Description_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                {
+                    TextBlock_Indication.Text = "Next";
+                    Rectangle_Indication.Opacity = 1;
+                });
+        }
+
+        private async void TextBox_NickName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                TextBlock_Indication.Text = "Next";
+                Rectangle_Indication.Opacity = 1;
+            });
+        }
+
+        private async void TextBox_AgeRange_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                TextBlock_Indication.Text = "Next";
+                Rectangle_Indication.Opacity = 1;
             });
         }
 

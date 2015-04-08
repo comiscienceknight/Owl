@@ -30,6 +30,8 @@ namespace OwlWindowsPhoneApp.View
         /// </summary>
         private bool? _maleOrFemale = null;
 
+        private double _unitOffset = 0;
+
         public FirstTimeEnterUserControl()
         {
             this.InitializeComponent();
@@ -40,26 +42,58 @@ namespace OwlWindowsPhoneApp.View
         void FirstTimeEnterUserControl_Loaded(object sender, RoutedEventArgs e)
         {
             InitAutoTextComplete();
+
+            _unitOffset = Window.Current.Bounds.Width;
+            ScrollViewer_Main.Height = Window.Current.Bounds.Width;
+            StackPanel_ScrollViewer.Height = Window.Current.Bounds.Width;
+            StackPanel_ScrollViewer.Width = Window.Current.Bounds.Width * 6 - 20; 
             Grid_PickProfile.Width = Window.Current.Bounds.Width - 20;
             Grid_Iam.Width = Grid_PickProfile.Width;
             StackPanel_AgeName.Width = Grid_PickProfile.Width;
             Grid_SearchVenue.Width = Grid_PickProfile.Width;
             Grid_NumberOfGroup.Width = Grid_PickProfile.Width;
             Grid_Description.Width = Grid_PickProfile.Width;
+
+            ScrollViewer_Main.IsDeferredScrollingEnabled = true;
+
+            ListPickerFlyout_AgeRange.ItemsSource = new List<string>() { "avcdeff", "abfdfe" };
+            ListPickerFlyout_Description.ItemsSource = new List<string>() { 
+                "Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink", 
+                "Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink",
+                "Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink",
+                "Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink"
+            };
+
+            ScrollViewer_Main.ViewChanged += ScrollViewer_Main_ViewChanged;
+        }
+
+        void ScrollViewer_Main_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
+        {
+            if((int)(ScrollViewer_Main.HorizontalOffset / _unitOffset) == 5)
+            {
+                TextBlock_Indication.Text = "Start";
+                Rectangle_Indication.Opacity = 1;
+            }
         }
 
         private async void TextBlock_Indication_Tapped(object sender, TappedRoutedEventArgs e)
         {
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                var da = Storyboard_XMoveFlipView.Children.First() as DoubleAnimation;
-                da.To = 0 - Grid_PickProfile.Width/2;
-                Storyboard_XMoveFlipView.Begin();
                 //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
                 TextBlock_Indication.Text = "";
                 Rectangle_Indication.Opacity = 0;
                 TextBlock_VenueName.Text = RadAutoCompleteBox_Search.Text;
+                //ScrollViewer_Main.ScrollToHorizontalOffset(ScrollViewer_Main.HorizontalOffset + Grid_PickProfile.Width + 20);
+                ScrollToNext();
+               
             });
+        }
+
+        private void ScrollToNext()
+        {
+            int offsetBrick = (int)(ScrollViewer_Main.HorizontalOffset / _unitOffset);
+            ScrollViewer_Main.ChangeView((offsetBrick % 6) * _unitOffset + _unitOffset, null, null, false);
         }
 
         private async void Image_Profile_Tapped(object sender, TappedRoutedEventArgs e)
@@ -93,7 +127,7 @@ namespace OwlWindowsPhoneApp.View
             {
                 TextBlock_HiSex.Text = "My Gentleman!";
                 _maleOrFemale = true;
-               //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+                ScrollToNext();
             });
         }
 
@@ -103,7 +137,7 @@ namespace OwlWindowsPhoneApp.View
             {
                 TextBlock_HiSex.Text = "Hi Lady!";
                 _maleOrFemale = false;
-                //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
+                ScrollToNext();
             });
         }
 
@@ -131,13 +165,16 @@ namespace OwlWindowsPhoneApp.View
             }
         }
 
-        private async void TextBox_Description_TextChanged(object sender, TextChangedEventArgs e)
+        private async void TextBox_Description_TextChanged(object sender, RoutedEventArgs e)
         {
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            {
+                if (ScrollViewer_Main.HorizontalOffset > 2000)
                 {
-                    TextBlock_Indication.Text = "Next";
+                    TextBlock_Indication.Text = "Start";
                     Rectangle_Indication.Opacity = 1;
-                });
+                }
+            });
         }
 
         private async void TextBox_NickName_TextChanged(object sender, TextChangedEventArgs e)
@@ -161,25 +198,25 @@ namespace OwlWindowsPhoneApp.View
         #region avenues search
         private WebServiceTextSearchProvider _provider;
         public List<SearchAvenues> MockAveues = new List<SearchAvenues>() { 
-            new SearchAvenues(){ Avenue = "White Room"},
-            new SearchAvenues(){ Avenue = "Café Oz Châtelet"},
-            new SearchAvenues(){ Avenue = "Café Oz Denfert Rochereau"},
-            new SearchAvenues(){ Avenue = "Café Oz Blanche"},
-            new SearchAvenues(){ Avenue = "Café Oz Grands Boulevards"},
-            new SearchAvenues(){ Avenue = "Club Queen"},
-            new SearchAvenues(){ Avenue = "Le Showcase"},
-            new SearchAvenues(){ Avenue = "Club 79"},
-            new SearchAvenues(){ Avenue = "Mix Club"},
-            new SearchAvenues(){ Avenue = "L'Arc"},
-            new SearchAvenues(){ Avenue = "Matignon"},
-            new SearchAvenues(){ Avenue = "Black Calvados"},
-            new SearchAvenues(){ Avenue = "Le Buddah Bar"},
-            new SearchAvenues(){ Avenue = "O'Sullivans"},
-            new SearchAvenues(){ Avenue = "Le Duplex"},
-            new SearchAvenues(){ Avenue = "VIP Room"},
-            new SearchAvenues(){ Avenue = "OMantra"},
-            new SearchAvenues(){ Avenue = "Chez Raspoutine"},
-            new SearchAvenues(){ Avenue = "Le Baron"}
+            new SearchAvenues(){ Avenue = "White Room", Adresse = "15 Avenue Montaigne, 75008 Paris, France"},
+            new SearchAvenues(){ Avenue = "Café Oz Châtelet", Adresse = "18 Rue Saint-Denis, 75001, Paris"},
+            new SearchAvenues(){ Avenue = "Café Oz Denfert Rochereau", Adresse = "3 Place Denfert-Rochereau, 75014, Paris"},
+            new SearchAvenues(){ Avenue = "Café Oz Blanche", Adresse = "1 Rue de Bruxelles, 75009, Paris"},
+            new SearchAvenues(){ Avenue = "Café Oz Grands Boulevards", Adresse = "8 Boulevard Montmartre, 75009, Paris"},
+            new SearchAvenues(){ Avenue = "Club Queen", Adresse = "102 Avenue des Champs-Élysées, 75008, Paris"},
+            new SearchAvenues(){ Avenue = "Le Showcase", Adresse = "Sous le Pont Alexandre III, Port des Champs Élysées, 75008 , Paris"},
+            new SearchAvenues(){ Avenue = "Club 79", Adresse = "22 Rue Quentin-Bauchart, 75008, Paris"},
+            new SearchAvenues(){ Avenue = "Mix Club", Adresse = "24 Rue de L'arrivée, 75015, PARIS"},
+            new SearchAvenues(){ Avenue = "L'Arc", Adresse = "12 Rue de Presbourg, 75016, Paris"},
+            new SearchAvenues(){ Avenue = "Matignon", Adresse = "Unknown"},
+            new SearchAvenues(){ Avenue = "Black Calvados", Adresse = "40 Avenue Pierre 1er de Serbie, 75008, Paris"},
+            new SearchAvenues(){ Avenue = "Le Buddah Bar", Adresse = "8 Rue Boissy d’Anglas, 75008, Paris"},
+            new SearchAvenues(){ Avenue = "O'Sullivans", Adresse = "Unknown"},
+            new SearchAvenues(){ Avenue = "Le Duplex", Adresse = "Unknown"},
+            new SearchAvenues(){ Avenue = "VIP Room", Adresse = "Unknown"},
+            new SearchAvenues(){ Avenue = "OMantra", Adresse = "Unknown"},
+            new SearchAvenues(){ Avenue = "Chez Raspoutine", Adresse = "Unknown"},
+            new SearchAvenues(){ Avenue = "Le Baron", Adresse = "Unknown"}
         };
 
         private void InitAutoTextComplete()
@@ -226,5 +263,6 @@ namespace OwlWindowsPhoneApp.View
     public class SearchAvenues
     {
         public string Avenue { get; set; }
+        public string Adresse { get; set; }
     }
 }

@@ -11,6 +11,7 @@
     <RootPropertyPathName Name="ChatEntrytCollection" />
     <RootPropertyPathName Name="ListViewChatEntriesLoadedCommand" />
     <RootPropertyPathName Name="ItemSelectedCommand" />
+    <RootPropertyPathName Name="Adresse" />
     <RootPropertyPathName Name="Avenue" />
     <RootPropertyPathName Name="Main" />
     <RootPropertyPathName Name="LowerRightVisibility" />
@@ -72,7 +73,6 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="RenderTransform" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
       <RootProperty Name="IsCompact" />
@@ -126,8 +126,8 @@
       <RootProperty Name="FontWeight" />
       <RootProperty Name="Style" />
       <RootProperty Name="CharacterSpacing" />
-      <RootProperty Name="Foreground" />
       <RootProperty Name="Inlines" />
+      <RootProperty Name="Foreground" />
       <RootProperty Name="Height" />
       <RootEvent Name="Tapped" />
     </RootType>
@@ -171,25 +171,20 @@
       <RootProperty Name="CommandParameter" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ChatHistoryUserControl" />
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.Storyboard">
-      <RootProperty Name="Children" />
-      <RootMethod Name="GetTargetProperty" />
-      <RootMethod Name="SetTargetProperty" />
-      <RootMethod Name="GetTargetName" />
-      <RootMethod Name="SetTargetName" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Media.Animation.DoubleAnimation">
-      <RootProperty Name="Duration" />
-      <RootProperty Name="To" />
-    </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
+      <RootProperty Name="Height" />
+      <RootProperty Name="IsHorizontalScrollChainingEnabled" />
+      <RootProperty Name="IsHorizontalRailEnabled" />
+      <RootProperty Name="HorizontalScrollBarVisibility" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalScrollMode" />
-      <RootProperty Name="VerticalScrollMode" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Content" />
       <RootProperty Name="ZoomMode" />
+      <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="MinZoomFactor" />
       <RootProperty Name="Margin" />
     </RootType>
@@ -202,19 +197,18 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Shapes.Ellipse">
-      <RootProperty Name="Stroke" />
-      <RootProperty Name="StrokeThickness" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
-      <RootProperty Name="MaxLength" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="PreventKeyboardDisplayOnProgrammaticFocus" />
-      <RootProperty Name="TextWrapping" />
-      <RootProperty Name="TextAlignment" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="BorderThickness" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
-      <RootEvent Name="TextChanged" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Flyout" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Opacity" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ListPickerFlyout">
+      <RootProperty Name="Placement" />
+      <RootProperty Name="ItemTemplate" />
     </RootType>
     <RootType FullName="WinRTXamlToolkit.Controls.NumericUpDown">
       <RootProperty Name="Width" />
@@ -245,11 +239,6 @@
       <RootProperty Name="ItemTemplate" />
       <RootEvent Name="LostFocus" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="IsHitTestVisible" />
-      <RootProperty Name="Opacity" />
-      <RootProperty Name="Content" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ContentControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.Control">
       <RootProperty Name="FontSize" />
@@ -262,6 +251,14 @@
     <RootType FullName="Windows.UI.Xaml.Setter">
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="MaxLength" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="PreventKeyboardDisplayOnProgrammaticFocus" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="TextChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />

@@ -126,10 +126,10 @@ namespace OwlWindowsPhoneApp.View
             await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
                 TextBlock_HiSex.Text = "My Gentleman!";
-                _maleOrFemale = true;
+                _maleOrFemale = true; 
                 ScrollToNext();
             });
-        }
+        } 
 
         private async void Image_Girls_Tapped(object sender, TappedRoutedEventArgs e)
         {

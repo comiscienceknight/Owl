@@ -20,27 +20,11 @@ namespace OwlBatAzureMobileService.Controllers
     {
         public ApiServices Services { get; set; }
 
-        // GET api/Custom
-        public async Task<Place> Get()
-        {
-            using(var context = new Models.MobileServiceContext())
-            {
-                var dataBase = context.Database;
-                var result = await dataBase.
-                    SqlQuery<Place>("exec OwlBatAzureMobileService.GetCustomData @placeName = 'sample string 1'").
-                    FirstOrDefaultAsync();
-                return result;
-            }
-            //Services.Log.Info("Hello from custom controller!");
-        }
-
-        [Route("get/randomposts/{city}/{country}")]
+        [Route("get/getposts")]
         [HttpGet]
-        public async Task<List<Post>> GetRandomPosts(string city, string country)
+        public async Task<List<Post>> GetAllVailablePosts()
         {
-            string queryText =
-                String.Format("exec OwlBatAzureMobileService.GetPosts @city = '{0}', @country = '{1}'",
-                                city, country);
+            string queryText = "exec OwlBatAzureMobileService.GetPosts";
             using (var context = new Models.MobileServiceContext())
             {
                 var dataBase = context.Database;
@@ -48,31 +32,34 @@ namespace OwlBatAzureMobileService.Controllers
                     SqlQuery<Post>(queryText).ToListAsync();
                 return result;
             }
-            //Services.Log.Info("Hello from custom controller!");
         }
 
-        [Route("api/getplace/{placeId}")]
+        [Route("get/getposts/{userId}")]
         [HttpGet]
-        public async Task<Place> GetPlaceByPlaceName(string placeId)
+        public async Task<bool> IsUserExist(string userId)
         {
-            string queryText = String.Format("exec OwlBatAzureMobileService.GetCustomData @placeName = '{0}'", placeId);
+            string queryText = string.Format("select count(*) from OwlBatAzureMobileService.Users where UserId = '{0}'", userId);
             using (var context = new Models.MobileServiceContext())
             {
                 var dataBase = context.Database;
                 var result = await dataBase.
-                    SqlQuery<Place>(queryText).
-                    FirstOrDefaultAsync();
-                return result;
+                    SqlQuery<int>(queryText).FirstAsync();
+                if(result > 0)
+                    return true;
+                else
+                    return false;
             }
-            //Services.Log.Info("Hello from custom controller!");
         }
 
-        // Get GetCustom
-        [Route("GetCustom")]
+        [Route("get/getvenuesbi/{filterName}")]
         [HttpGet]
-        public string GetCustomMethod()
+        public List<Models.Venue> GetVenuesByName(string filterName)
         {
-            return "You got a custom method";
+            using (var db = new Models.OwlDataClassesDataContext())
+            {
+                var result = db.Venues.Where(p => p.SearchName.Contains(filterName)).ToList();
+                return result;
+            }
         }
 
         [Route("UploadPicture")]
@@ -91,8 +78,8 @@ namespace OwlBatAzureMobileService.Controllers
             var task = request.Content.ReadAsMultipartAsync(provider).
                 ContinueWith<HttpResponseMessage>(o => 
                 {
-                    string file1 = provider.FileData.First().LocalFileName;
-                    UploadImageToStorageBlob(file1).Wait();
+                    string file = provider.FileData.First().LocalFileName;
+                    UploadImageToStorageBlob(file).Wait();
                     // this is the file name on the server where the file was saved 
                     return new HttpResponseMessage()
                     {

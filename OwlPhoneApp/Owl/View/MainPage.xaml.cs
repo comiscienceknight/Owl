@@ -128,7 +128,7 @@ namespace OwlWindowsPhoneApp
                     _dispatcherTimer.Stop();
                     
                     var rootFrame = (Window.Current.Content as Frame);
-                    if (!rootFrame.Navigate(typeof(PivotPage)))
+                    if (!rootFrame.Navigate(typeof(FirstEnterIn)))
                     {
                         throw new Exception("Failed to create initial page");
                     }

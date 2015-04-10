@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Owl" Class="OwlDataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=olblgislxo.database.windows.net;Initial Catalog=Owl;Persist Security Info=True;User ID=owlbat" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OwlConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Venue" Member="Venues">
+    <Type Name="Venue">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlaceName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="SearchName" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="PlaceAddresse" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="MyPosition" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Popularity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Version" Type="System.Data.Linq.Binary" DbType="rowversion NOT NULL" CanBeNull="false" IsVersion="true" />
+      <Column Name="CreatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset" CanBeNull="true" />
+      <Column Name="Deleted" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VenuePhoto" Member="VenuePhotos">
+    <Type Name="VenuePhoto">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PlaceId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="VenuePhotoUrl1" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="VenuePhotoUrl2" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="VenuePhotoUrl3" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

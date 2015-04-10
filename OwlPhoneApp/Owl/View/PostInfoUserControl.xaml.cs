@@ -42,29 +42,36 @@ namespace OwlWindowsPhoneApp
         {
             if (_post != null)
             {
-                TextBlock_PageTitle.Text = "Owl, I am " + (_post.UserName ?? "");
-
-                FlipView_ProfileBackground.Width = Window.Current.Bounds.Width - 30;
-                FlipView_ProfileBackground.Height = FlipView_ProfileBackground.Width * 0.75;
-                FlipView_Profile.Width = FlipView_ProfileBackground.Width + 4;
-                FlipView_Profile.Height = FlipView_ProfileBackground.Height + 3;
-                FlipView_NightClubPhoto.Width = FlipView_ProfileBackground.Width + 4;
-                FlipView_NightClubPhoto.Height = FlipView_ProfileBackground.Height + 3;
-
-                if (!string.IsNullOrWhiteSpace(_post.ProfileUrl) && _post.ProfileUrl.Length > 4)
+                try
                 {
-                    ProgressBar_Loading.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                    TextBlock_PageTitle.Text = "Owl, I am " + (_post.UserName ?? "");
 
-                    var bitmap = new BitmapImage();
-                    bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                    bitmap.UriSource = new Uri(_post.ProfileUrl, UriKind.Absolute);
-                    Image_Profile1.Source = bitmap;
+                    FlipView_ProfileBackground.Width = Window.Current.Bounds.Width - 30;
+                    FlipView_ProfileBackground.Height = FlipView_ProfileBackground.Width * 0.75;
+                    FlipView_Profile.Width = FlipView_ProfileBackground.Width + 4;
+                    FlipView_Profile.Height = FlipView_ProfileBackground.Height + 3;
+                    FlipView_NightClubPhoto.Width = FlipView_ProfileBackground.Width + 4;
+                    FlipView_NightClubPhoto.Height = FlipView_ProfileBackground.Height + 3;
+
+                    if (!string.IsNullOrWhiteSpace(_post.ProfileUrl) && _post.ProfileUrl.Length > 4)
+                    {
+                        ProgressBar_Loading.Visibility = Windows.UI.Xaml.Visibility.Visible;
+
+                        var bitmap = new BitmapImage();
+                        bitmap.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        bitmap.UriSource = new Uri(_post.ProfileUrl, UriKind.Absolute);
+                        Image_Profile1.Source = bitmap;
+                    }
+
+                    TextBlock_Require.Text = _post.Require ?? "";
+                    TextBlock_Description.Text = _post.Description ?? "";
+                    TextBlock_ClubTitle.Text = _post.Place ?? "";
+                    TextBlock_PlaceAddresse.Text = _post.PlaceAddresse ?? "";
                 }
+                catch(Exception exp)
+                {
 
-                TextBlock_Require.Text = _post.Require;
-                TextBlock_Description.Text = _post.Description;
-                TextBlock_ClubTitle.Text = _post.Place;
-                TextBlock_PlaceAddresse.Text = _post.PlaceAddresse;
+                }
             }
         }
 

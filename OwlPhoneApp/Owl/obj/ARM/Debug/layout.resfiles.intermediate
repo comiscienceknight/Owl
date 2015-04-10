@@ -41,6 +41,7 @@ Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesDark.xbf
 Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf
 View\CameraPhotoUserControl.xbf
 View\ChatHistoryUserControl.xbf
+View\FirstEnterIn.xbf
 View\FirstTimeEnterUserControl.xbf
 View\ImageEffectsUserControl.xbf
 View\MainPage.xbf

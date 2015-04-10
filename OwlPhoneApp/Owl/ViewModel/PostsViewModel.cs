@@ -60,7 +60,7 @@ namespace OwlWindowsPhoneApp.ViewModel
                 httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
                 httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
                 var posts = await httpClient.GetStringAsync(
-                    new Uri("http://owlbat.azure-mobile.net/get/randomposts/Paris/France"));
+                    new Uri("http://owlbat.azure-mobile.net/get/getposts"));
 
                 JsonValue jsonValue = JsonValue.Parse(posts);
                 AnalysePostJsonValueArray(jsonValue);
@@ -84,7 +84,7 @@ namespace OwlWindowsPhoneApp.ViewModel
             JsonObject jo = postJasonValue.GetObject();
             var post = new DataObjects.Post();
 
-            post.Place = jo.GetNamedString("placeName");
+            post.Place = jo.GetNamedString("venueName");
 
             if (jo.ContainsKey("description"))
                 post.Description = jo.GetNamedString("description");

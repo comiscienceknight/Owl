@@ -147,6 +147,7 @@
     <Reference Include="RazorEngine">
       <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.IdentityModel.Tokens.Jwt">
       <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.3.0.2\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
     </Reference>
@@ -210,12 +211,15 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\NotifyUsersController.cs" />
-    <Compile Include="Controllers\PlaceController.cs" />
-    <Compile Include="Controllers\TodoItemController.cs" />
-    <Compile Include="DataObjects\Place.cs" />
+    <Compile Include="DataObjects\Venue.cs" />
     <Compile Include="DataObjects\Post.cs" />
-    <Compile Include="DataObjects\TodoItem.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
+    <Compile Include="Models\OwlDataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OwlDataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OwlModelHelper.cs" />
     <Compile Include="ScheduledJobs\SampleJob.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -234,6 +238,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Linq\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -242,11 +247,25 @@
     <Content Include="Performance\Microsoft.ServiceBus.MessagingPerformanceCounters.man" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\OwlDataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>OwlDataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\mobile-owlbat %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %283%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %284%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %285%29.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-owlbat %286%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat.pubxml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\OwlDataClasses.dbml.layout">
+      <DependentUpon>OwlDataClasses.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

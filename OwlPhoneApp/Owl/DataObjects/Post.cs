@@ -31,8 +31,8 @@ namespace OwlWindowsPhoneApp.DataObjects
             }
         }
 
-        private int _guysNumber;
-        public int GuysNumber
+        private int? _guysNumber;
+        public int? GuysNumber
         {
             get { return _guysNumber; }
             set
@@ -42,8 +42,8 @@ namespace OwlWindowsPhoneApp.DataObjects
             }
         }
 
-        private int _girlsNumber;
-        public int GirlsNumber
+        private int? _girlsNumber;
+        public int? GirlsNumber
         {
             get { return _girlsNumber; }
             set

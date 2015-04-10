@@ -12,7 +12,7 @@
     <RootPropertyPathName Name="ListViewChatEntriesLoadedCommand" />
     <RootPropertyPathName Name="ItemSelectedCommand" />
     <RootPropertyPathName Name="Adresse" />
-    <RootPropertyPathName Name="Avenue" />
+    <RootPropertyPathName Name="Venue" />
     <RootPropertyPathName Name="Main" />
     <RootPropertyPathName Name="LowerRightVisibility" />
     <RootPropertyPathName Name="BackgroundColor" />
@@ -38,15 +38,17 @@
       <RootProperty Name="Resources" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ViewModel.ViewModelLocator" />
-    <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+    <RootType FullName="Windows.UI.Xaml.Controls.Page">
+      <RootProperty Name="Background" />
       <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
-      <RootProperty Name="Resources" />
+      <RootProperty Name="BottomAppBar" />
       <RootProperty Name="Transitions" />
     </RootType>
+    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="Background" />
       <RootProperty Name="Children" />
+      <RootProperty Name="Background" />
       <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="Width" />
       <RootProperty Name="Margin" />
@@ -59,6 +61,14 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
+    </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.FirstTimeEnterUserControl" />
+    <RootType FullName="OwlWindowsPhoneApp.FirstEnterIn" />
+    <RootType FullName="Windows.UI.Xaml.Controls.UserControl">
+      <RootProperty Name="Content" />
+      <RootProperty Name="DataContext" />
+      <RootProperty Name="Resources" />
+      <RootProperty Name="Transitions" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CaptureElement">
       <RootProperty Name="Stretch" />
@@ -171,7 +181,6 @@
       <RootProperty Name="CommandParameter" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.ChatHistoryUserControl" />
-    <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
     <RootType FullName="Windows.UI.Xaml.Controls.ScrollViewer">
@@ -263,16 +272,8 @@
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
-    <RootType FullName="OwlWindowsPhoneApp.View.FirstTimeEnterUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
     <RootType FullName="OwlWindowsPhoneApp.View.ImageEffectsUserControl" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Page">
-      <RootProperty Name="DataContext" />
-      <RootProperty Name="Background" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="BottomAppBar" />
-      <RootProperty Name="Transitions" />
-    </RootType>
     <RootType FullName="OwlWindowsPhoneApp.MainPage" />
     <RootType FullName="Coding4Fun.Toolkit.Controls.ChatBubble">
       <RootProperty Name="ChatBubbleDirection" />

@@ -35,8 +35,6 @@ namespace OwlWindowsPhoneApp
 
         private Common.GeoLocation _geoLocation;
 
-        private FirstTimeEnterUserControl _firstTimeEnterUserControl;
-
         public PivotPage()
         {
             this.InitializeComponent();
@@ -65,12 +63,7 @@ namespace OwlWindowsPhoneApp
         void PivotPage_Loaded(object sender, RoutedEventArgs e)
         {
             Grid_SubPage.Children.Clear();
-            _firstTimeEnterUserControl = new View.FirstTimeEnterUserControl();
-            _firstTimeEnterUserControl.GuideFinished += FirstTimeUc_GuideFinished;
-            _firstTimeEnterUserControl.TakePhotoClick += FirstTimeUc_TakePhotoClick;
             AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            Grid_SubPage.Children.Add(_firstTimeEnterUserControl);
-            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
         void FirstTimeUc_TakePhotoClick(object sender, EventArgs e)
@@ -83,16 +76,6 @@ namespace OwlWindowsPhoneApp
             openPicker.FileTypeFilter.Add(".jpeg");
             openPicker.FileTypeFilter.Add(".png");
             openPicker.PickSingleFileAndContinue();
-        }
-
-        void FirstTimeUc_GuideFinished(object sender, EventArgs e)
-        {
-            ((FirstTimeEnterUserControl)sender).TakePhotoClick -= FirstTimeUc_TakePhotoClick;
-            ((FirstTimeEnterUserControl)sender).GuideFinished -= FirstTimeUc_GuideFinished;
-            Grid_SubPage.Children.Clear();
-            _firstTimeEnterUserControl = null;
-            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
         }
 
         #region Take Photo
@@ -132,21 +115,11 @@ namespace OwlWindowsPhoneApp
 
         void ImageEffectUserControl_ProfilePhotoRendered(object sender, ProfilePhotoRenderedEventArg e)
         {
-            if (_firstTimeEnterUserControl != null)
-            {
-                ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUserControl_ProfilePhotoRendered;
-                Grid_SubPage.Children.Clear();
-                Grid_SubPage.Children.Add(_firstTimeEnterUserControl);
-                _firstTimeEnterUserControl.ChangeImageProfile(e.TakedPhotoImage);
-            }
-            else
-            {
-                ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUserControl_ProfilePhotoRendered;
-                UserControl_MyPost.ChangeImageProfile(e.TakedPhotoImage, e.ProfilePhotoNumber);
-                Grid_SubPage.Children.Clear();
-                Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-            }
+            ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUserControl_ProfilePhotoRendered;
+            UserControl_MyPost.ChangeImageProfile(e.TakedPhotoImage, e.ProfilePhotoNumber);
+            Grid_SubPage.Children.Clear();
+            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+            UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
         }
 
         void CameraView_ChoosePhotoFromStorageEvent(object sender, ChoosePhotoFromStorageClickEventArg e)
@@ -166,55 +139,32 @@ namespace OwlWindowsPhoneApp
 
         public async void ContinueFileOpenPicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs args)
         {
-            if (_firstTimeEnterUserControl != null)
+            if (args.Files.Count > 0)
             {
-                if (args.Files.Count > 0)
-                {
-                    var file = args.Files.FirstOrDefault();
-                    if (file == null)
-                        return;
+                var file = args.Files.FirstOrDefault();
+                if (file == null)
+                    return;
 
-                    StorageFile sf = args.Files.First();
-                    BitmapImage bmpImage = await CameraPhotoUserControl.LoadImage(sf);
-                    ImageEffectsUserControl imageEffectUc = new ImageEffectsUserControl(bmpImage, sf, sf.Path);
-                    imageEffectUc.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
-                    Grid_SubPage.Children.Add(imageEffectUc);
+                if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
+                {
+                    Grid_SubPage.Children.Clear();
+                }
+                StorageFile sf = args.Files.First();
+                BitmapImage bmpImage = await CameraPhotoUserControl.LoadImage(sf);
+                ImageEffectsUserControl imageEffectUc = new ImageEffectsUserControl(bmpImage, sf, sf.Path);
+                imageEffectUc.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
+                Grid_SubPage.Children.Add(imageEffectUc);
+            }
+            else
+            {
+                if (Grid_SubPage.Children.First() is FirstTimeEnterUserControl)
+                {
+
                 }
                 else
                 {
                     Grid_SubPage.Children.Clear();
-                    Grid_SubPage.Children.Add(_firstTimeEnterUserControl);
-                }
-            }
-            else
-            {
-                if (args.Files.Count > 0)
-                {
-                    var file = args.Files.FirstOrDefault();
-                    if (file == null)
-                        return;
-
-                    if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
-                    {
-                        Grid_SubPage.Children.Clear();
-                    }
-                    StorageFile sf = args.Files.First();
-                    BitmapImage bmpImage = await CameraPhotoUserControl.LoadImage(sf);
-                    ImageEffectsUserControl imageEffectUc = new ImageEffectsUserControl(bmpImage, sf, sf.Path);
-                    imageEffectUc.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
-                    Grid_SubPage.Children.Add(imageEffectUc);
-                }
-                else
-                {
-                    if (Grid_SubPage.Children.First() is FirstTimeEnterUserControl)
-                    {
-
-                    }
-                    else
-                    {
-                        Grid_SubPage.Children.Clear();
-                        UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-                    }
+                    UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
                 }
             }
         }
@@ -292,20 +242,7 @@ namespace OwlWindowsPhoneApp
 
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
-            if(_firstTimeEnterUserControl != null)
-            {
-                if (Grid_SubPage.Children.Any(p => p is ImageEffectsUserControl))
-                {
-                    Grid_SubPage.Children.Clear();
-                    Grid_SubPage.Children.Add(_firstTimeEnterUserControl);
-                }
-                else
-                {
-                    e.Handled = true;
-                    QuitApp();
-                }
-            }
-            else if (Grid_SubPage.Children.Any(p => p is PostInfoUserControl))
+            if (Grid_SubPage.Children.Any(p => p is PostInfoUserControl))
             {
                 Grid_SubPage.Children.Clear();
                 Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
@@ -326,15 +263,9 @@ namespace OwlWindowsPhoneApp
             else if (Grid_SubPage.Children.Any(p => p is ImageEffectsUserControl))
             {
                 Grid_SubPage.Children.Clear();
-                if(_firstTimeEnterUserControl != null)
-                {
-                    Grid_SubPage.Children.Add(_firstTimeEnterUserControl);
-                }
-                else
-                {
-                    Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                    UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-                }
+
+                Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
             }
             else if (e.Handled == false)
             {

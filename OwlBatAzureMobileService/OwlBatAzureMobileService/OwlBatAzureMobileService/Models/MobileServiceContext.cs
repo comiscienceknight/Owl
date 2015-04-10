@@ -28,22 +28,20 @@ namespace OwlBatAzureMobileService.Models
         {
         }
 
-        public DbSet<TodoItem> TodoItems { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            string schema = ServiceSettingsDictionary.GetSchemaName();
-            if (!string.IsNullOrEmpty(schema))
-            {
-                modelBuilder.HasDefaultSchema(schema);
-            }
+            //string schema = ServiceSettingsDictionary.GetSchemaName();
+            //if (!string.IsNullOrEmpty(schema))
+            //{
+            //    modelBuilder.HasDefaultSchema(schema);
+            //}
 
-            modelBuilder.Conventions.Add(
-                new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
-                    "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
+            //modelBuilder.Conventions.Add(
+            //    new AttributeToColumnAnnotationConvention<TableColumnAttribute, string>(
+            //        "ServiceTableColumn", (property, attributes) => attributes.Single().ColumnType.ToString()));
         }
 
-        public System.Data.Entity.DbSet<OwlBatAzureMobileService.DataObjects.Place> Places { get; set; }
+        //public System.Data.Entity.DbSet<OwlBatAzureMobileService.DataObjects.NeverDeleteThis> NeverDeleteThis { get; set; }
     }
 
 }

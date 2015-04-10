@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Telerik.UI.Xaml.Controls.Input.AutoCompleteBox;
+using Windows.Data.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Popups;
@@ -16,10 +18,11 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using Windows.Web.Http;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace OwlWindowsPhoneApp.View
+namespace OwlWindowsPhoneApp
 {
     public sealed partial class FirstTimeEnterUserControl : UserControl
     {
@@ -78,16 +81,21 @@ namespace OwlWindowsPhoneApp.View
 
         private async void TextBlock_Indication_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+            if(TextBlock_Indication.Text == "Start")
             {
-                //FlipView_Profile.SelectedIndex = FlipView_Profile.SelectedIndex + 1;
-                TextBlock_Indication.Text = "";
-                Rectangle_Indication.Opacity = 0;
-                TextBlock_VenueName.Text = RadAutoCompleteBox_Search.Text;
-                //ScrollViewer_Main.ScrollToHorizontalOffset(ScrollViewer_Main.HorizontalOffset + Grid_PickProfile.Width + 20);
-                ScrollToNext();
-               
-            });
+                if (GuideFinished != null)
+                    GuideFinished(this, new EventArgs());
+            }
+            else
+            {
+                await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
+                {
+                    TextBlock_Indication.Text = "";
+                    Rectangle_Indication.Opacity = 0;
+                    TextBlock_VenueName.Text = RadAutoCompleteBox_Search.Text;
+                    ScrollToNext();
+                });
+            }
         }
 
         private void ScrollToNext()
@@ -197,27 +205,6 @@ namespace OwlWindowsPhoneApp.View
 
         #region avenues search
         private WebServiceTextSearchProvider _provider;
-        public List<SearchAvenues> MockAveues = new List<SearchAvenues>() { 
-            new SearchAvenues(){ Avenue = "White Room", Adresse = "15 Avenue Montaigne, 75008 Paris, France"},
-            new SearchAvenues(){ Avenue = "Café Oz Châtelet", Adresse = "18 Rue Saint-Denis, 75001, Paris"},
-            new SearchAvenues(){ Avenue = "Café Oz Denfert Rochereau", Adresse = "3 Place Denfert-Rochereau, 75014, Paris"},
-            new SearchAvenues(){ Avenue = "Café Oz Blanche", Adresse = "1 Rue de Bruxelles, 75009, Paris"},
-            new SearchAvenues(){ Avenue = "Café Oz Grands Boulevards", Adresse = "8 Boulevard Montmartre, 75009, Paris"},
-            new SearchAvenues(){ Avenue = "Club Queen", Adresse = "102 Avenue des Champs-Élysées, 75008, Paris"},
-            new SearchAvenues(){ Avenue = "Le Showcase", Adresse = "Sous le Pont Alexandre III, Port des Champs Élysées, 75008 , Paris"},
-            new SearchAvenues(){ Avenue = "Club 79", Adresse = "22 Rue Quentin-Bauchart, 75008, Paris"},
-            new SearchAvenues(){ Avenue = "Mix Club", Adresse = "24 Rue de L'arrivée, 75015, PARIS"},
-            new SearchAvenues(){ Avenue = "L'Arc", Adresse = "12 Rue de Presbourg, 75016, Paris"},
-            new SearchAvenues(){ Avenue = "Matignon", Adresse = "Unknown"},
-            new SearchAvenues(){ Avenue = "Black Calvados", Adresse = "40 Avenue Pierre 1er de Serbie, 75008, Paris"},
-            new SearchAvenues(){ Avenue = "Le Buddah Bar", Adresse = "8 Rue Boissy d’Anglas, 75008, Paris"},
-            new SearchAvenues(){ Avenue = "O'Sullivans", Adresse = "Unknown"},
-            new SearchAvenues(){ Avenue = "Le Duplex", Adresse = "Unknown"},
-            new SearchAvenues(){ Avenue = "VIP Room", Adresse = "Unknown"},
-            new SearchAvenues(){ Avenue = "OMantra", Adresse = "Unknown"},
-            new SearchAvenues(){ Avenue = "Chez Raspoutine", Adresse = "Unknown"},
-            new SearchAvenues(){ Avenue = "Le Baron", Adresse = "Unknown"}
-        };
 
         private void InitAutoTextComplete()
         {
@@ -233,24 +220,64 @@ namespace OwlWindowsPhoneApp.View
             if (!string.IsNullOrEmpty(inputString))
             {
                 this.ProgressBar_Search.Visibility = Visibility.Visible;
-                var items = MockAveues.Where(p => p.Avenue.Contains(inputString));
-                if (items == null || items.Count() == 0)
-                {
-                    items = MockAveues.OrderBy(p => p.Avenue).Take(10);
-                }
-                _provider.LoadItems(items.OrderBy(p => p.Avenue));
-                this.ProgressBar_Search.Visibility = Visibility.Collapsed;
 
+                List<SearchAvenues> venues = await SearchAvenues(inputString);
+              
                 await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
+                    _provider.LoadItems(venues.OrderBy(p => p.Venue));
                     TextBlock_Indication.Text = "Next";
                     Rectangle_Indication.Opacity = 1;
                 });
+
+                this.ProgressBar_Search.Visibility = Visibility.Collapsed;
             }
             else
             {
                 _provider.Reset();
             }
+        }
+
+        private async Task<List<SearchAvenues>> SearchAvenues(string inputString)
+        {
+            List<SearchAvenues> venueResult = new List<SearchAvenues>();
+            using (HttpClient httpClient = new HttpClient())
+            {
+                httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+                httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
+                var venues = await httpClient.GetStringAsync(
+                    new Uri("http://owlbat.azure-mobile.net/get/getvenuesbi/" + inputString));
+                JsonValue jsonValue = JsonValue.Parse(venues);
+                AnalysePostJsonValueArray(jsonValue, venueResult);
+            }
+            return venueResult;
+        }
+
+        private void AnalysePostJsonValueArray(JsonValue venuesJasonValue, List<SearchAvenues> venueResult)
+        {
+            if (venuesJasonValue.ValueType == JsonValueType.Array)
+            {
+                foreach (var jv in venuesJasonValue.GetArray().ToList())
+                {
+                    venueResult.Add(AnalyseVenueJsonValue(jv));
+                }
+            }
+        }
+
+        private SearchAvenues AnalyseVenueJsonValue(IJsonValue postJasonValue)
+        {
+            JsonObject jo = postJasonValue.GetObject();
+            var venue = new SearchAvenues();
+
+            venue.VenueId = jo.GetNamedString("id");
+
+            if (jo.ContainsKey("placeName"))
+                venue.Venue = jo.GetNamedString("placeName");
+
+            if (jo.ContainsKey("placeAddresse"))
+                venue.Adresse = jo.GetNamedString("placeAddresse");
+
+            return venue;
         }
 
         private void RadAutoCompleteBox_Search_LostFocus(object sender, RoutedEventArgs e)
@@ -262,7 +289,8 @@ namespace OwlWindowsPhoneApp.View
 
     public class SearchAvenues
     {
-        public string Avenue { get; set; }
+        public string VenueId { get; set; }
+        public string Venue { get; set; }
         public string Adresse { get; set; }
     }
 }

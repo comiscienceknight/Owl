@@ -36,6 +36,7 @@ namespace OwlWindowsPhoneApp
         {
             UserControl_FirstTimeEnter.GuideFinished += UserControl_FirstTimeEnter_GuideFinished;
             UserControl_FirstTimeEnter.TakePhotoClick += UserControl_FirstTimeEnter_TakePhotoClick;
+
         }
 
         /// <summary>

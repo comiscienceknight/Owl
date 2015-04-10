@@ -36,6 +36,9 @@ namespace OwlBatAzureMobileService.Models
     partial void InsertVenuePhoto(VenuePhoto instance);
     partial void UpdateVenuePhoto(VenuePhoto instance);
     partial void DeleteVenuePhoto(VenuePhoto instance);
+    partial void InsertUserAndPost(UserAndPost instance);
+    partial void UpdateUserAndPost(UserAndPost instance);
+    partial void DeleteUserAndPost(UserAndPost instance);
     #endregion
 		
 		public OwlDataClassesDataContext() : 
@@ -81,6 +84,14 @@ namespace OwlBatAzureMobileService.Models
 			get
 			{
 				return this.GetTable<VenuePhoto>();
+			}
+		}
+		
+		public System.Data.Linq.Table<UserAndPost> UserAndPosts
+		{
+			get
+			{
+				return this.GetTable<UserAndPost>();
 			}
 		}
 	}
@@ -496,6 +507,380 @@ namespace OwlBatAzureMobileService.Models
 					this._VenuePhotoUrl3 = value;
 					this.SendPropertyChanged("VenuePhotoUrl3");
 					this.OnVenuePhotoUrl3Changed();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.UserAndPost")]
+	public partial class UserAndPost : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Id;
+		
+		private string _UserId;
+		
+		private string _UserName;
+		
+		private string _UserProfileUrl1;
+		
+		private string _UserProfileUrl2;
+		
+		private string _UserProfileUrl3;
+		
+		private System.Nullable<int> _Popularity;
+		
+		private string _VenueId;
+		
+		private string _VenueName;
+		
+		private string _Time;
+		
+		private string _Sexe;
+		
+		private string _AgeRange;
+		
+		private string _Description;
+		
+		private System.DateTimeOffset _UpdateAt;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(string value);
+    partial void OnIdChanged();
+    partial void OnUserIdChanging(string value);
+    partial void OnUserIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnUserProfileUrl1Changing(string value);
+    partial void OnUserProfileUrl1Changed();
+    partial void OnUserProfileUrl2Changing(string value);
+    partial void OnUserProfileUrl2Changed();
+    partial void OnUserProfileUrl3Changing(string value);
+    partial void OnUserProfileUrl3Changed();
+    partial void OnPopularityChanging(System.Nullable<int> value);
+    partial void OnPopularityChanged();
+    partial void OnVenueIdChanging(string value);
+    partial void OnVenueIdChanged();
+    partial void OnVenueNameChanging(string value);
+    partial void OnVenueNameChanged();
+    partial void OnTimeChanging(string value);
+    partial void OnTimeChanged();
+    partial void OnSexeChanging(string value);
+    partial void OnSexeChanged();
+    partial void OnAgeRangeChanging(string value);
+    partial void OnAgeRangeChanged();
+    partial void OnDescriptionChanging(string value);
+    partial void OnDescriptionChanged();
+    partial void OnUpdateAtChanging(System.DateTimeOffset value);
+    partial void OnUpdateAtChanged();
+    #endregion
+		
+		public UserAndPost()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="VarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="VarChar(128) NOT NULL", CanBeNull=false)]
+		public string UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(160) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl1", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string UserProfileUrl1
+		{
+			get
+			{
+				return this._UserProfileUrl1;
+			}
+			set
+			{
+				if ((this._UserProfileUrl1 != value))
+				{
+					this.OnUserProfileUrl1Changing(value);
+					this.SendPropertyChanging();
+					this._UserProfileUrl1 = value;
+					this.SendPropertyChanged("UserProfileUrl1");
+					this.OnUserProfileUrl1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl2", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string UserProfileUrl2
+		{
+			get
+			{
+				return this._UserProfileUrl2;
+			}
+			set
+			{
+				if ((this._UserProfileUrl2 != value))
+				{
+					this.OnUserProfileUrl2Changing(value);
+					this.SendPropertyChanging();
+					this._UserProfileUrl2 = value;
+					this.SendPropertyChanged("UserProfileUrl2");
+					this.OnUserProfileUrl2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl3", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		public string UserProfileUrl3
+		{
+			get
+			{
+				return this._UserProfileUrl3;
+			}
+			set
+			{
+				if ((this._UserProfileUrl3 != value))
+				{
+					this.OnUserProfileUrl3Changing(value);
+					this.SendPropertyChanging();
+					this._UserProfileUrl3 = value;
+					this.SendPropertyChanged("UserProfileUrl3");
+					this.OnUserProfileUrl3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Popularity", DbType="Int")]
+		public System.Nullable<int> Popularity
+		{
+			get
+			{
+				return this._Popularity;
+			}
+			set
+			{
+				if ((this._Popularity != value))
+				{
+					this.OnPopularityChanging(value);
+					this.SendPropertyChanging();
+					this._Popularity = value;
+					this.SendPropertyChanged("Popularity");
+					this.OnPopularityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenueId", DbType="VarChar(128)")]
+		public string VenueId
+		{
+			get
+			{
+				return this._VenueId;
+			}
+			set
+			{
+				if ((this._VenueId != value))
+				{
+					this.OnVenueIdChanging(value);
+					this.SendPropertyChanging();
+					this._VenueId = value;
+					this.SendPropertyChanged("VenueId");
+					this.OnVenueIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenueName", DbType="VarChar(128)")]
+		public string VenueName
+		{
+			get
+			{
+				return this._VenueName;
+			}
+			set
+			{
+				if ((this._VenueName != value))
+				{
+					this.OnVenueNameChanging(value);
+					this.SendPropertyChanging();
+					this._VenueName = value;
+					this.SendPropertyChanged("VenueName");
+					this.OnVenueNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Time", DbType="VarChar(8)")]
+		public string Time
+		{
+			get
+			{
+				return this._Time;
+			}
+			set
+			{
+				if ((this._Time != value))
+				{
+					this.OnTimeChanging(value);
+					this.SendPropertyChanging();
+					this._Time = value;
+					this.SendPropertyChanged("Time");
+					this.OnTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexe", DbType="VarChar(8)")]
+		public string Sexe
+		{
+			get
+			{
+				return this._Sexe;
+			}
+			set
+			{
+				if ((this._Sexe != value))
+				{
+					this.OnSexeChanging(value);
+					this.SendPropertyChanging();
+					this._Sexe = value;
+					this.SendPropertyChanged("Sexe");
+					this.OnSexeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AgeRange", DbType="VarChar(64)")]
+		public string AgeRange
+		{
+			get
+			{
+				return this._AgeRange;
+			}
+			set
+			{
+				if ((this._AgeRange != value))
+				{
+					this.OnAgeRangeChanging(value);
+					this.SendPropertyChanging();
+					this._AgeRange = value;
+					this.SendPropertyChanged("AgeRange");
+					this.OnAgeRangeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(8)")]
+		public string Description
+		{
+			get
+			{
+				return this._Description;
+			}
+			set
+			{
+				if ((this._Description != value))
+				{
+					this.OnDescriptionChanging(value);
+					this.SendPropertyChanging();
+					this._Description = value;
+					this.SendPropertyChanged("Description");
+					this.OnDescriptionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdateAt", DbType="DateTimeOffset NOT NULL")]
+		public System.DateTimeOffset UpdateAt
+		{
+			get
+			{
+				return this._UpdateAt;
+			}
+			set
+			{
+				if ((this._UpdateAt != value))
+				{
+					this.OnUpdateAtChanging(value);
+					this.SendPropertyChanging();
+					this._UpdateAt = value;
+					this.SendPropertyChanged("UpdateAt");
+					this.OnUpdateAtChanged();
 				}
 			}
 		}

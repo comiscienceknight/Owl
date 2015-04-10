@@ -22,32 +22,27 @@ namespace OwlBatAzureMobileService.Controllers
 
         [Route("get/getposts")]
         [HttpGet]
-        public async Task<List<Post>> GetAllVailablePosts()
+        public List<Post> GetAllVailablePosts()
         {
-            string queryText = "exec OwlBatAzureMobileService.GetPosts";
-            using (var context = new Models.MobileServiceContext())
-            {
-                var dataBase = context.Database;
-                var result = await dataBase.
-                    SqlQuery<Post>(queryText).ToListAsync();
-                return result;
-            }
+            //string queryText = "exec OwlBatAzureMobileService.GetPosts";
+            //using (var context = new Models.MobileServiceContext())
+            //{
+            //    var dataBase = context.Database;
+            //    var result = await dataBase.
+            //        SqlQuery<Post>(queryText).ToListAsync();
+            //    return result;
+            //}
+
+            return new List<Post>();
         }
 
-        [Route("get/getposts/{userId}")]
+        [Route("get/ifuserexist/{userId}")]
         [HttpGet]
-        public async Task<bool> IsUserExist(string userId)
+        public bool IsUserExist(string userId)
         {
-            string queryText = string.Format("select count(*) from OwlBatAzureMobileService.Users where UserId = '{0}'", userId);
-            using (var context = new Models.MobileServiceContext())
+            using (var db = new Models.OwlDataClassesDataContext())
             {
-                var dataBase = context.Database;
-                var result = await dataBase.
-                    SqlQuery<int>(queryText).FirstAsync();
-                if(result > 0)
-                    return true;
-                else
-                    return false;
+                return db.UserAndPosts.Any(p => p.UserId == userId);
             }
         }
 

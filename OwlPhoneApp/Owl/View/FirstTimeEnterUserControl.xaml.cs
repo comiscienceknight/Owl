@@ -42,7 +42,7 @@ namespace OwlWindowsPhoneApp
             this.Loaded += FirstTimeEnterUserControl_Loaded;
         }
 
-        void FirstTimeEnterUserControl_Loaded(object sender, RoutedEventArgs e)
+        async void FirstTimeEnterUserControl_Loaded(object sender, RoutedEventArgs e)
         {
             InitAutoTextComplete();
 
@@ -68,6 +68,38 @@ namespace OwlWindowsPhoneApp
             };
 
             ScrollViewer_Main.ViewChanged += ScrollViewer_Main_ViewChanged;
+
+            this.ProgressBar_Search.Visibility = Visibility.Visible;
+            ScrollViewer_Main.Opacity = 0;
+            if (await ifuserexist())
+            {
+                if (GuideFinished != null)
+                    GuideFinished(this, new EventArgs());
+            }
+            ScrollViewer_Main.Opacity = 1;
+            this.ProgressBar_Search.Visibility = Visibility.Collapsed;
+        }
+
+        private async Task<bool> ifuserexist()
+        {
+            try
+            {
+                using (HttpClient httpClient = new HttpClient())
+                {
+                    httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+                    httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
+                    var venues = await httpClient.GetStringAsync(
+                        new Uri("http://owlbat.azure-mobile.net/get/ifuserexist/" + App.OwlbatClient.CurrentUser.UserId));
+                    JsonValue jsonValue = JsonValue.Parse(venues);
+                    if (jsonValue.ValueType == JsonValueType.Boolean)
+                        return jsonValue.GetBoolean();
+                }
+            }
+            catch
+            {
+            }
+
+            return false;
         }
 
         void ScrollViewer_Main_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)

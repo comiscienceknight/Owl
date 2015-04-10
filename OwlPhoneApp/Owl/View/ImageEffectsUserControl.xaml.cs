@@ -54,7 +54,7 @@ namespace OwlWindowsPhoneApp.View
             this.Loaded += ImageEffectsUserControl_Loaded;
         }
 
-        async void ImageEffectsUserControl_Loaded(object sender, RoutedEventArgs e)
+        void ImageEffectsUserControl_Loaded(object sender, RoutedEventArgs e)
         {
             if (_capturedImage != null)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Owl.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,6 +9,9 @@ using Telerik.UI.Xaml.Controls.Input.AutoCompleteBox;
 using Windows.Data.Json;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Graphics.Imaging;
+using Windows.Storage;
+using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -115,6 +119,15 @@ namespace OwlWindowsPhoneApp
         {
             if(TextBlock_Indication.Text == "Start")
             {
+                RenderTargetBitmap bmp = (RenderTargetBitmap)Image_Profile.Source;
+                RandomAccessStreamReference rasr = RandomAccessStreamReference.CreateFromUri(bmp.);
+                var streamWithContent = await rasr.OpenReadAsync();
+               
+                byte[] buffer = new byte[streamWithContent.Size];
+                await streamWithContent.ReadAsync(buffer.AsBuffer(), (uint)streamWithContent.Size, InputStreamOptions.None);
+
+                (new AzureStorage()).UploadProfile(App.OwlbatClient.CurrentUser.UserId + "profile.jpg", streamWithContent);
+                
                 if (GuideFinished != null)
                     GuideFinished(this, new EventArgs());
             }

@@ -119,14 +119,28 @@ namespace OwlWindowsPhoneApp
         {
             if(TextBlock_Indication.Text == "Start")
             {
+                // The BitmapSource that is rendered with a Visual.
+                
                 RenderTargetBitmap bmp = (RenderTargetBitmap)Image_Profile.Source;
-                RandomAccessStreamReference rasr = RandomAccessStreamReference.CreateFromUri(bmp.);
-                var streamWithContent = await rasr.OpenReadAsync();
-               
-                byte[] buffer = new byte[streamWithContent.Size];
-                await streamWithContent.ReadAsync(buffer.AsBuffer(), (uint)streamWithContent.Size, InputStreamOptions.None);
+                var pixels = await bmp.GetPixelsAsync();
+                StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder;
+                StorageFile file = await folder.CreateFileAsync("owlUploadingPic.jpeg", CreationCollisionOption.ReplaceExisting);
+                using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                {
+                    var encoder = await
+                        BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
+                    byte[] bytes = pixels.ToArray();
+                    encoder.SetPixelData(BitmapPixelFormat.Bgra8,
+                                         BitmapAlphaMode.Ignore,
+                                         (uint)bmp.PixelWidth, (uint)bmp.PixelHeight,
+                                         96, 96, bytes);
 
-                (new AzureStorage()).UploadProfile(App.OwlbatClient.CurrentUser.UserId + "profile.jpg", streamWithContent);
+                    await encoder.FlushAsync();
+                }
+
+                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync("owlUploadingPic.jpeg"); // await Windows.Storage.KnownFolders.PicturesLibrary.GetFileAsync("owlUploadingPic.jpeg");
+                await (new AzureStorage()).UploadProfile(App.OwlbatClient.CurrentUser.UserId.Replace(":", "") + "profile.jpg", savedFile);
+                
                 
                 if (GuideFinished != null)
                     GuideFinished(this, new EventArgs());

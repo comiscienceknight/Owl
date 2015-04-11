@@ -311,7 +311,6 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServi
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ru\System.Spatial.resources.dll
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.csprojResolveAssemblyReference.cache
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.dll
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.pdb
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.WindowsAzure.Mobile.Service.Security.dll
@@ -501,3 +500,4 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServ
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.xml
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ImageResizer.Plugins.AzureReader2.xml
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.csprojResolveAssemblyReference.cache

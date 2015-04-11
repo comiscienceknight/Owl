@@ -36,6 +36,8 @@
       <Column Name="VenueName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
       <Column Name="Time" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="Sexe" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="GirlNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BoyNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AgeRange" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
       <Column Name="Description" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
       <Column Name="UpdateAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />

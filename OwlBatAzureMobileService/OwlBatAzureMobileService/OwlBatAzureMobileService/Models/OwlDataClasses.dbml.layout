@@ -14,10 +14,10 @@
         <elementListCompartment Id="f25eee00-e081-47c0-85b2-71f4530dc9b4" absoluteBounds="4.14, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8f6fc5b0-5b5c-49f4-88c2-90d505fc77cd" absoluteBounds="1.25, 1.5, 2, 3.5016097005208326">
+    <classShape Id="a6ebc519-0186-469e-987a-e03c8edc5fc3" absoluteBounds="6.875, 3.75, 2, 3.8862125651041666">
       <DataClassMoniker Name="/OwlDataClassesDataContext/UserAndPost" />
       <nestedChildShapes>
-        <elementListCompartment Id="593b0761-4546-488f-b05c-ee211f796424" absoluteBounds="1.2649999999999997, 1.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="636c06fe-814e-44cc-b05e-cba30a068578" absoluteBounds="6.89, 4.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

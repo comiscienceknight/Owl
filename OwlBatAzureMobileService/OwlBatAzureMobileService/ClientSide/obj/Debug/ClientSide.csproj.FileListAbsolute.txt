@@ -5,3 +5,10 @@ C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\o
 C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.exe
 C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.pdb
 C:\GoodBox\Exoe Teamwork Foundation Server\OwlBatAzureMobileService\ClientSide\bin\Debug\wellington4.jpg
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\bin\Debug\wellington4.jpg
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\bin\Debug\ClientSide.exe.config
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\bin\Debug\ClientSide.exe
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\bin\Debug\ClientSide.pdb
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.csprojResolveAssemblyReference.cache
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.exe
+C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\ClientSide\obj\Debug\ClientSide.pdb

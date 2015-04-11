@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Windows.Storage;
 using Windows.Storage.Streams;
 
 namespace Owl.Models
@@ -17,13 +18,13 @@ namespace Owl.Models
         {
         }
 
-        public async void UploadProfile(string fileName, IInputStream fileStream)
+        public async Task UploadProfile(string fileName, StorageFile file)
         {
             var credentials = new StorageCredentials("owlbat", "cKblxr8aqs36pM0LpLsT9vAxdMn+V2ShD/EPkD55xQeNyXG2LFGDZgRNi1OL8tOIeeQblxQUDo+K1RT/aMkZ6Q==");
             var client = new CloudBlobClient(new Uri("http://owlbat.blob.core.windows.net/"), credentials);
             var container = client.GetContainerReference("profile");
             var blockBlob = container.GetBlockBlobReference(fileName);
-            await blockBlob.UploadFromStreamAsync(fileStream);
+            await blockBlob.UploadFromFileAsync(file);
             var getblob = blockBlob.Uri;
         }
     }

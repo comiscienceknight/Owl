@@ -57,6 +57,20 @@ namespace OwlBatAzureMobileService.Controllers
             }
         }
 
+        [Route("post/addpost")]
+        [HttpPost]
+        public async Task<string> UpdateOrCreateUserAndPost()
+        {
+            HttpRequestMessage request = this.Request;
+            return await request.Content.ReadAsStringAsync();
+            if (!request.Content.IsMimeMultipartContent())
+            {
+                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+            }
+            //string root = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/uploads");
+            //var provider = new MultipartFormDataStreamProvider(root);
+        }
+
         [Route("UploadPicture")]
         [HttpPost]
         public Task<HttpResponseMessage> PostFile()

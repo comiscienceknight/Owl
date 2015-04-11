@@ -119,8 +119,6 @@ namespace OwlWindowsPhoneApp
         {
             if(TextBlock_Indication.Text == "Start")
             {
-                // The BitmapSource that is rendered with a Visual.
-                
                 RenderTargetBitmap bmp = (RenderTargetBitmap)Image_Profile.Source;
                 var pixels = await bmp.GetPixelsAsync();
                 StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -138,10 +136,24 @@ namespace OwlWindowsPhoneApp
                     await encoder.FlushAsync();
                 }
 
-                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync("owlUploadingPic.jpeg"); // await Windows.Storage.KnownFolders.PicturesLibrary.GetFileAsync("owlUploadingPic.jpeg");
+                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync("owlUploadingPic.jpeg");
                 await (new AzureStorage()).UploadProfile(App.OwlbatClient.CurrentUser.UserId.Replace(":", "") + "profile.jpg", savedFile);
-                
-                
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+                    var prms = new Dictionary<string, string>();
+                    prms.Add("sex", "male&test=123&test2='1234=+select_-:\\:'%3d%26");
+                    prms.Add("nickname", "goodforall");
+                    HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
+                    HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/addpost"), formContent);
+                    response.EnsureSuccessStatusCode();
+                    await response.Content.ReadAsStringAsync();
+                        var dialog = new MessageDialog(response.Content.ToString());
+                        await dialog.ShowAsync();
+                }
+
+
                 if (GuideFinished != null)
                     GuideFinished(this, new EventArgs());
             }
@@ -351,5 +363,18 @@ namespace OwlWindowsPhoneApp
         public string VenueId { get; set; }
         public string Venue { get; set; }
         public string Adresse { get; set; }
+    }
+
+    public class FirstEnterUploadEventArgs : EventArgs
+    {
+        public string VenueId { get; set; }
+        public string VenueName { get; set; }
+        public string ProfileUrl { get; set; }
+        public string Sexe { get; set; }
+        public string AgeRange { get; set; }
+        public string UserName { get; set; }
+        public string Description { get; set; }
+        public string GirlsNumber { get; set; }
+        public string GuysNumber { get; set; }
     }
 }

@@ -294,7 +294,6 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Telerik.UI.Xaml.P
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Telerik.UI.Xaml.Chart\Themes\ThemeResourcesLight.xbf
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Telerik.UI.Xaml.Input\Themes\ThemeResourcesLight.xbf
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf
-C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Telerik.UI.Xaml.Input\Themes\Calendar.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Telerik.UI.Xaml.Input\Themes\CommonResources.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Telerik.UI.Xaml.Chart\Themes\Generic.xbf
@@ -498,3 +497,4 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Microsoft.Data.OD
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Microsoft.Data.OData\qualifiers.txt
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial.pri
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\qualifiers.txt
+C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache

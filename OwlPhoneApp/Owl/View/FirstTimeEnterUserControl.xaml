@@ -79,7 +79,7 @@
                                 <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center" Margin="0,4,5,2">
                                     <Rectangle Height="40" Width="40" Fill="Green" />
-                                    <TextBlock Margin="10,0,5,2" VerticalAlignment="Center" >Not too young too old</TextBlock>
+                                    <TextBlock x:Name="TextBlock_AgeRange"  Margin="10,0,5,2" VerticalAlignment="Center" >Not too young too old</TextBlock>
                                 </StackPanel>
                             </Button.Content>
                             <Button.Flyout>
@@ -228,7 +228,7 @@
                         <Button x:Name="Button_Description" BorderThickness="1"
                                     HorizontalAlignment="Center" Margin="20,20,20,0" >
                             <Button.Content>
-                                <TextBlock TextWrapping="Wrap">
+                                <TextBlock x:Name="TextBlock_Description"  TextWrapping="Wrap">
                                         Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink
                                 </TextBlock>
                             </Button.Content>

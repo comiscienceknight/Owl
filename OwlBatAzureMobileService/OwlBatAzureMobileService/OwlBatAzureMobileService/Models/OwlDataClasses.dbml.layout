@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="OwlDataClasses">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.375" name="OwlDataClasses">
   <DataContextMoniker Name="/OwlDataClassesDataContext" />
   <nestedChildShapes>
     <classShape Id="681158ac-d0a4-48e4-9146-870d8737abdb" absoluteBounds="3.75, 1.5, 2, 2.7324039713541666">
@@ -14,10 +14,10 @@
         <elementListCompartment Id="f25eee00-e081-47c0-85b2-71f4530dc9b4" absoluteBounds="4.14, 5.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a6ebc519-0186-469e-987a-e03c8edc5fc3" absoluteBounds="6.875, 3.75, 2, 3.8862125651041666">
+    <classShape Id="6ed61ff9-3a23-4067-bf5e-f6519f4b7d2f" absoluteBounds="6.75, 6.25, 2, 3.8862125651041666">
       <DataClassMoniker Name="/OwlDataClassesDataContext/UserAndPost" />
       <nestedChildShapes>
-        <elementListCompartment Id="636c06fe-814e-44cc-b05e-cba30a068578" absoluteBounds="6.89, 4.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="289c4322-c20c-4ff7-9f3f-8df3e16b2e69" absoluteBounds="6.765, 6.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

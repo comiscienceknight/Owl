@@ -15,5 +15,13 @@
         <Grid x:Name="Grid_ImageEffects">
             
         </Grid>
+        <Grid x:Name="Grid_Uploading" Visibility="Collapsed">
+            <ProgressBar x:Name="ProgressBar_Loading" IsIndeterminate="True"
+                     HorizontalAlignment="Stretch"
+                     VerticalAlignment="Center"/>
+            <TextBlock Text="Creating your post..." 
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+        </Grid>
     </Grid>
 </Page>

@@ -12,6 +12,10 @@ using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.IO;
 using Microsoft.WindowsAzure.Mobile.Service.Security;
+using System.Collections.Specialized;
+using System.Web;
+using System.Text;
+using System.Data.SqlClient;
 
 namespace OwlBatAzureMobileService.Controllers
 {
@@ -61,14 +65,38 @@ namespace OwlBatAzureMobileService.Controllers
         [HttpPost]
         public async Task<string> UpdateOrCreateUserAndPost()
         {
-            HttpRequestMessage request = this.Request;
-            return await request.Content.ReadAsStringAsync();
-            if (!request.Content.IsMimeMultipartContent())
+            try
             {
-                throw new HttpResponseException(HttpStatusCode.UnsupportedMediaType);
+                HttpRequestMessage request = this.Request;
+                string querystring = await request.Content.ReadAsStringAsync();
+                NameValueCollection qscoll = HttpUtility.ParseQueryString(querystring);
+
+                using (var db = new Models.OwlDataClassesDataContext())
+                {
+                    string description = "";
+                    if (qscoll["description"] != null)
+                        description = qscoll["description"];
+                    if (description.Length > 150)
+                        description = description.Substring(0, 150);
+                    description.Replace("'", " ");
+                    string command =
+                    "INSERT INTO [dbo].[UserAndPost]([UserId],[UserName] ,[UserProfileUrl1] ,[VenueId] ,[VenueName] ,[Time] ,[Sexe] ,[GirlNumber],[BoyNumber],[AgeRange],[Description])" +
+"VALUES ('" + qscoll["userid"] + "' ,'" + qscoll["username"] + "' ,'" + qscoll["profileurl"] + "' ,'" + qscoll["VenueId"] + "' ,'" + qscoll["VenueName"] + "' ,'" + qscoll["Time"] + "' ,'" + qscoll["Sexe"] + "' ," + qscoll["girlsnumber"] + " ,1 ,'" + qscoll["agerange"] + "','" + qscoll["description"] + "')";
+
+                    db.ExecuteCommand(command);
+                }
             }
-            //string root = System.Web.HttpContext.Current.Server.MapPath("~/App_Data/uploads");
-            //var provider = new MultipartFormDataStreamProvider(root);
+            catch(SqlException exp)
+            {
+                return exp.Message;
+            }
+            catch(Exception exp)
+            {
+                return exp.Message;
+            }
+
+
+            return "";
         }
 
         [Route("UploadPicture")]

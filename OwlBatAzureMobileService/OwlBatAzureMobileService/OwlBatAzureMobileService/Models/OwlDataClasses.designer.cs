@@ -613,7 +613,7 @@ namespace OwlBatAzureMobileService.Models
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="VarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="NVarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string Id
 		{
 			get
@@ -693,7 +693,7 @@ namespace OwlBatAzureMobileService.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl2", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl2", DbType="NVarChar(200)")]
 		public string UserProfileUrl2
 		{
 			get
@@ -713,7 +713,7 @@ namespace OwlBatAzureMobileService.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl3", DbType="NVarChar(200) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserProfileUrl3", DbType="NVarChar(200)")]
 		public string UserProfileUrl3
 		{
 			get
@@ -893,7 +893,7 @@ namespace OwlBatAzureMobileService.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(8)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Description", DbType="VarChar(250)")]
 		public string Description
 		{
 			get

@@ -25,12 +25,12 @@
   </Table>
   <Table Name="dbo.UserAndPost" Member="UserAndPosts">
     <Type Name="UserAndPost">
-      <Column Name="Id" Type="System.String" DbType="VarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="UserId" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
       <Column Name="UserName" Type="System.String" DbType="NVarChar(160) NOT NULL" CanBeNull="false" />
       <Column Name="UserProfileUrl1" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="UserProfileUrl2" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="UserProfileUrl3" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="UserProfileUrl2" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="UserProfileUrl3" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="Popularity" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="VenueId" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
       <Column Name="VenueName" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
@@ -39,7 +39,7 @@
       <Column Name="GirlNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="BoyNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="AgeRange" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
-      <Column Name="Description" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="UpdateAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
     </Type>
   </Table>

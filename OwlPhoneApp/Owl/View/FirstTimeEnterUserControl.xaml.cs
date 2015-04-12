@@ -30,7 +30,7 @@ namespace OwlWindowsPhoneApp
 {
     public sealed partial class FirstTimeEnterUserControl : UserControl
     {
-        public event EventHandler<EventArgs> GuideFinished;
+        public event EventHandler<GuideFinishedEventArgs> GuideFinished;
         public event EventHandler<EventArgs> TakePhotoClick;
         /// <summary>
         /// 1 for man, 0 for woman
@@ -75,16 +75,19 @@ namespace OwlWindowsPhoneApp
 
             this.ProgressBar_Search.Visibility = Visibility.Visible;
             ScrollViewer_Main.Opacity = 0;
-            if (await ifuserexist())
+            if (await Ifuserexist())
             {
                 if (GuideFinished != null)
-                    GuideFinished(this, new EventArgs());
+                    GuideFinished(this, new GuideFinishedEventArgs()
+                    {
+                        UserId = "$Existed$"
+                    });
             }
             ScrollViewer_Main.Opacity = 1;
             this.ProgressBar_Search.Visibility = Visibility.Collapsed;
         }
 
-        private async Task<bool> ifuserexist()
+        private async Task<bool> Ifuserexist()
         {
             try
             {
@@ -119,43 +122,35 @@ namespace OwlWindowsPhoneApp
         {
             if(TextBlock_Indication.Text == "Start")
             {
-                RenderTargetBitmap bmp = (RenderTargetBitmap)Image_Profile.Source;
-                var pixels = await bmp.GetPixelsAsync();
-                StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder;
-                StorageFile file = await folder.CreateFileAsync("owlUploadingPic.jpeg", CreationCollisionOption.ReplaceExisting);
-                using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
-                {
-                    var encoder = await
-                        BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
-                    byte[] bytes = pixels.ToArray();
-                    encoder.SetPixelData(BitmapPixelFormat.Bgra8,
-                                         BitmapAlphaMode.Ignore,
-                                         (uint)bmp.PixelWidth, (uint)bmp.PixelHeight,
-                                         96, 96, bytes);
-
-                    await encoder.FlushAsync();
-                }
-
-                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync("owlUploadingPic.jpeg");
-                await (new AzureStorage()).UploadProfile(App.OwlbatClient.CurrentUser.UserId.Replace(":", "") + "profile.jpg", savedFile);
-
-                using (HttpClient client = new HttpClient())
-                {
-                    client.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
-                    var prms = new Dictionary<string, string>();
-                    prms.Add("sex", "male&test=123&test2='1234=+select_-:\\:'%3d%26");
-                    prms.Add("nickname", "goodforall");
-                    HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
-                    HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/addpost"), formContent);
-                    response.EnsureSuccessStatusCode();
-                    await response.Content.ReadAsStringAsync();
-                        var dialog = new MessageDialog(response.Content.ToString());
-                        await dialog.ShowAsync();
-                }
-
+                string maleOrFemale = null;
+                if(_maleOrFemale == null)
+                    maleOrFemale = "Unknown";
+                else if(_maleOrFemale == true)
+                    maleOrFemale = "Male";
+                else 
+                    maleOrFemale = "Female";
+                var venueInfo = RadAutoCompleteBox_Search.SelectedItem as SearchAvenues;
+                if (venueInfo == null)
+                    venueInfo = new SearchAvenues()
+                    {
+                        VenueId = "-1",
+                        Venue = RadAutoCompleteBox_Search.Text
+                    };
 
                 if (GuideFinished != null)
-                    GuideFinished(this, new EventArgs());
+                    GuideFinished(this, new GuideFinishedEventArgs()
+                    {
+                        UserId = null,
+                        AgeRange = TextBlock_AgeRange.Text,
+                        Description = TextBlock_Description.Text,
+                        GirlsNumber = (int)NumericUpDown_WithGirls.Value,
+                        GuysNumber = (int)NumericUpDown_WithBoys.Value,
+                        ProfileBmp = (RenderTargetBitmap)Image_Profile.Source,
+                        Sexe = maleOrFemale,
+                        UserName = TextBox_NickName.Text,
+                        VenueId = venueInfo.VenueId,
+                        VenueName = venueInfo.Venue
+                    });
             }
             else
             {
@@ -365,16 +360,17 @@ namespace OwlWindowsPhoneApp
         public string Adresse { get; set; }
     }
 
-    public class FirstEnterUploadEventArgs : EventArgs
+    public class GuideFinishedEventArgs : EventArgs
     {
+        public string UserId { get; set; }
+        public string UserName { get; set; }
         public string VenueId { get; set; }
         public string VenueName { get; set; }
-        public string ProfileUrl { get; set; }
+        public RenderTargetBitmap ProfileBmp { get; set; }
         public string Sexe { get; set; }
         public string AgeRange { get; set; }
-        public string UserName { get; set; }
         public string Description { get; set; }
-        public string GirlsNumber { get; set; }
-        public string GuysNumber { get; set; }
+        public int GirlsNumber { get; set; }
+        public int GuysNumber { get; set; }
     }
 }

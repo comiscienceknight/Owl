@@ -67,18 +67,22 @@ namespace OwlWindowsPhoneApp
 
         async void UserControl_FirstTimeEnter_GuideFinished(object sender, GuideFinishedEventArgs e)
         {
-            Grid_Uploading.Visibility = Windows.UI.Xaml.Visibility.Visible;
 
-            if(e.UserId != "$Existed$")
+            if (e.UserId != "$Existed$")
             {
                 await UploadCreatedInfo(e);
-            }
+                Grid_Uploading.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                UserControl_FirstTimeEnter.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                Button_Skip.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
-            var rootFrame = (Window.Current.Content as Frame);
-            if (!rootFrame.Navigate(typeof(PivotPage)))
-            {
-                throw new Exception("Failed to create MainPage");
+                var rootFrame = (Window.Current.Content as Frame);
+                if (!rootFrame.Navigate(typeof(PivotPage)))
+                {
+                    throw new Exception("Failed to create MainPage");
+                }
             }
+            else
+                Button_Skip.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
         private async Task UploadCreatedInfo(GuideFinishedEventArgs arg)
@@ -99,7 +103,7 @@ namespace OwlWindowsPhoneApp
                 await encoder.FlushAsync();
             }
 
-            string profileRemoteFileName = App.OwlbatClient.CurrentUser.UserId.Replace(":", "") + ".jpg";
+            string profileRemoteFileName = App.UserId + ".jpg";
             StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync("owlUploadingPic.jpeg");
             await(new AzureStorage()).UploadProfile(profileRemoteFileName, savedFile);
             
@@ -110,14 +114,14 @@ namespace OwlWindowsPhoneApp
                 var prms = new Dictionary<string, string>();
                 prms.Add("profileurl", "http://owlbat.azurewebsites.net/profile/" + profileRemoteFileName);
                 prms.Add("agerange", arg.AgeRange);
-                prms.Add("description", arg.Description);
+                prms.Add("description", arg.Description.Replace("'", "''"));
                 prms.Add("girlsnumber", arg.GirlsNumber.ToString());
                 prms.Add("guysnumber", arg.GuysNumber.ToString());
                 prms.Add("sexe", arg.Sexe);
                 prms.Add("username", arg.UserName);
                 prms.Add("venueid", arg.VenueId);
                 prms.Add("venuename", arg.VenueName);
-                prms.Add("userid", App.OwlbatClient.CurrentUser.UserId);
+                prms.Add("userid", App.UserId);
                 //prms.Add("id", Guid.NewGuid().ToString());
 
                 HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
@@ -125,8 +129,12 @@ namespace OwlWindowsPhoneApp
                 response.EnsureSuccessStatusCode();
 
                 await response.Content.ReadAsStringAsync();
-                var dialog = new MessageDialog(response.Content.ToString());
-                await dialog.ShowAsync();
+                
+                if(response.Content != null && response.Content.ToString() == "")
+                {
+                    var dialog = new MessageDialog(response.Content.ToString());
+                    await dialog.ShowAsync();
+                }
             }
         }
 
@@ -152,6 +160,15 @@ namespace OwlWindowsPhoneApp
             ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUc_ProfilePhotoRendered;
             Grid_ImageEffects.Children.Clear();
             UserControl_FirstTimeEnter.ChangeImageProfile(e.TakedPhotoImage);
+        }
+
+        private void Button_Skip_Click(object sender, RoutedEventArgs e)
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            if (!rootFrame.Navigate(typeof(PivotPage)))
+            {
+                throw new Exception("Failed to create MainPage");
+            }
         }
 
     }

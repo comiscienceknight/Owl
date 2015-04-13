@@ -119,6 +119,63 @@ namespace OwlWindowsPhoneApp.DataObjects
             }
         }
 
+        private string _profileUrl2;
+        public string ProfileUrl2
+        {
+            get { return _profileUrl2; }
+            set
+            {
+                _profileUrl2 = value;
+                OnPropertyChanged("ProfileUrl2");
+            }
+        }
+
+        private string _profileUrl3;
+        public string ProfileUrl3
+        {
+            get { return _profileUrl3; }
+            set
+            {
+                _profileUrl3 = value;
+                OnPropertyChanged("ProfileUrl3");
+            }
+        }
+
+        private string _venuePhotoUrl1;
+        public string VenuePhotoUrl1
+        {
+            get { return _venuePhotoUrl1; }
+            set
+            {
+                _venuePhotoUrl1 = value;
+                OnPropertyChanged("VenuePhotoUrl1");
+            }
+        }
+
+        private string _venuePhotoUrl2;
+        public string VenuePhotoUrl2
+        {
+            get { return _venuePhotoUrl2; }
+            set
+            {
+                _venuePhotoUrl2 = value;
+                OnPropertyChanged("VenuePhotoUrl2");
+            }
+        }
+
+        private string _venuePhotoUrl3;
+        public string VenuePhotoUrl3
+        {
+            get { return _venuePhotoUrl3; }
+            set
+            {
+                _venuePhotoUrl3 = value;
+                OnPropertyChanged("VenuePhotoUrl3");
+            }
+        }
+
+        
+
         private string _placeAddresse;
         public string PlaceAddresse
         {
@@ -131,7 +188,7 @@ namespace OwlWindowsPhoneApp.DataObjects
         }
 
         private string _myPosition;
-        public string MyPosition
+        public string VenuePosition
         {
             get { return _myPosition; }
             set
@@ -141,14 +198,25 @@ namespace OwlWindowsPhoneApp.DataObjects
             }
         }
 
-        private int _popularity;
-        public int Popularity
+        private int _userPopularity;
+        public int UserPopularity
         {
-            get { return _popularity; }
+            get { return _userPopularity; }
             set
             {
-                _popularity = value;
-                OnPropertyChanged("Popularity");
+                _userPopularity = value;
+                OnPropertyChanged("UserPopularity");
+            }
+        }
+
+        private int _venuePopularity;
+        public int VenuePopularity
+        {
+            get { return _venuePopularity; }
+            set
+            {
+                _venuePopularity = value;
+                OnPropertyChanged("VenuePopularity");
             }
         }
 
@@ -160,6 +228,28 @@ namespace OwlWindowsPhoneApp.DataObjects
             {
                 _profile = value;
                 OnPropertyChanged("Profile");
+            }
+        }
+
+        private BitmapImage _profile2;
+        public BitmapImage Profile2
+        {
+            get { return _profile2; }
+            set
+            {
+                _profile2 = value;
+                OnPropertyChanged("Profile2");
+            }
+        }
+
+        private BitmapImage _profile3;
+        public BitmapImage Profile3
+        {
+            get { return _profile3; }
+            set
+            {
+                _profile3 = value;
+                OnPropertyChanged("Profile3");
             }
         }
     }

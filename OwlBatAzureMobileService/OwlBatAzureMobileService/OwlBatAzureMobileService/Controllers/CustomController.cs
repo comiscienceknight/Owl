@@ -16,6 +16,7 @@ using System.Collections.Specialized;
 using System.Web;
 using System.Text;
 using System.Data.SqlClient;
+using OwlBatAzureMobileService.Models;
 
 namespace OwlBatAzureMobileService.Controllers
 {
@@ -24,20 +25,33 @@ namespace OwlBatAzureMobileService.Controllers
     {
         public ApiServices Services { get; set; }
 
-        [Route("get/getposts")]
+        [Route("get/getposts/{date}/{time}")]
         [HttpGet]
-        public List<Post> GetAllVailablePosts()
+        public List<GetPostsResult> GetAllVailablePosts(string date = "2015-03-10", string time = "010101")
         {
-            //string queryText = "exec OwlBatAzureMobileService.GetPosts";
-            //using (var context = new Models.MobileServiceContext())
-            //{
-            //    var dataBase = context.Database;
-            //    var result = await dataBase.
-            //        SqlQuery<Post>(queryText).ToListAsync();
-            //    return result;
-            //}
+            string updateAs = date + "T" + time.Insert(2, ":").Insert(5, ":");
+            DateTimeOffset updateAsDto;
+            if (DateTimeOffset.TryParse(updateAs, out updateAsDto))
+            {
+                using (var db = new Models.OwlDataClassesDataContext())
+                {
+                    return db.GetPosts(updateAsDto).ToList();
+                }
+            }
+            return new List<GetPostsResult>();
+        }
 
-            return new List<Post>();
+        [Route("get/getpost/{userid}")]
+        [HttpGet]
+        public GetPostResult GetUserPost(string userid)
+        {
+            using (var db = new Models.OwlDataClassesDataContext())
+            {
+                var results = db.GetPost(userid).ToList();
+                if (results.Count > 0)
+                    return results.Last();
+            }
+            return new GetPostResult();
         }
 
         [Route("get/ifuserexist/{userId}")]
@@ -78,10 +92,10 @@ namespace OwlBatAzureMobileService.Controllers
                         description = qscoll["description"];
                     if (description.Length > 150)
                         description = description.Substring(0, 150);
-                    description.Replace("'", " ");
+                    description.Replace("'", "''");
                     string command =
                     "INSERT INTO [dbo].[UserAndPost]([UserId],[UserName] ,[UserProfileUrl1] ,[VenueId] ,[VenueName] ,[Time] ,[Sexe] ,[GirlNumber],[BoyNumber],[AgeRange],[Description])" +
-"VALUES ('" + qscoll["userid"] + "' ,'" + qscoll["username"] + "' ,'" + qscoll["profileurl"] + "' ,'" + qscoll["VenueId"] + "' ,'" + qscoll["VenueName"] + "' ,'" + qscoll["Time"] + "' ,'" + qscoll["Sexe"] + "' ," + qscoll["girlsnumber"] + " ,1 ,'" + qscoll["agerange"] + "','" + qscoll["description"] + "')";
+                    "VALUES ('" + qscoll["userid"] + "' ,'" + qscoll["username"] + "' ,'" + qscoll["profileurl"] + "' ,'" + qscoll["VenueId"] + "' ,'" + qscoll["VenueName"] + "' ,'" + qscoll["Time"] + "' ,'" + qscoll["Sexe"] + "' ," + qscoll["girlsnumber"] + " ,1 ,'" + qscoll["agerange"] + "','" + description + "')";
 
                     db.ExecuteCommand(command);
                 }

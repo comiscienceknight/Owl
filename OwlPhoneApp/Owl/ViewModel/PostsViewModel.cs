@@ -60,7 +60,7 @@ namespace OwlWindowsPhoneApp.ViewModel
                 httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
                 httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
                 var posts = await httpClient.GetStringAsync(
-                    new Uri("http://owlbat.azure-mobile.net/get/getposts"));
+                    new Uri("http://owlbat.azure-mobile.net/get/getposts/2015-03-10/010101"));
 
                 JsonValue jsonValue = JsonValue.Parse(posts);
                 AnalysePostJsonValueArray(jsonValue);
@@ -89,21 +89,57 @@ namespace OwlWindowsPhoneApp.ViewModel
             if (jo.ContainsKey("description"))
                 post.Description = jo.GetNamedString("description");
 
-            if (jo.ContainsKey("profileUrl"))
+            if (jo.ContainsKey("userProfileUrl1"))
             {
-                post.ProfileUrl = jo.GetNamedString("profileUrl");
+                post.ProfileUrl = jo.GetNamedString("userProfileUrl1");
                 Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
                 BitmapImage bmi = new BitmapImage();
                 bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
                 bmi.UriSource = myUri;
                 post.Profile = bmi;
             }
+            if (jo.ContainsKey("userProfileUrl2"))
+            {
+                post.ProfileUrl2 = jo.GetNamedString("userProfileUrl2");
+            }
+            if (jo.ContainsKey("userProfileUrl3"))
+            {
+                post.ProfileUrl2 = jo.GetNamedString("userProfileUrl3");
+            }
 
-            if (jo.ContainsKey("girlsNumber"))
-                post.GirlsNumber = (int)jo.GetNamedNumber("girlsNumber");
+            if (jo.ContainsKey("placeAddresse"))
+            {
+                post.PlaceAddresse = jo.GetNamedString("placeAddresse");
+            }
 
-            if (jo.ContainsKey("guysNumber"))
-                post.GuysNumber = (int)jo.GetNamedNumber("guysNumber");
+            if (jo.ContainsKey("venuePosition"))
+            {
+                post.VenuePosition = jo.GetNamedString("venuePosition");
+            }
+
+            if (jo.ContainsKey("venuePopularity"))
+            {
+                post.VenuePopularity = (int)jo.GetNamedNumber("venuePopularity");
+            }
+
+            if (jo.ContainsKey("venuePhotoUrl1"))
+            {
+                post.VenuePhotoUrl1 = jo.GetNamedString("venuePhotoUrl1");
+            }
+            if (jo.ContainsKey("venuePhotoUrl2"))
+            {
+                post.VenuePhotoUrl2 = jo.GetNamedString("venuePhotoUrl2");
+            }
+            if (jo.ContainsKey("venuePhotoUrl3"))
+            {
+                post.VenuePhotoUrl3 = jo.GetNamedString("venuePhotoUrl3");
+            }
+
+            if (jo.ContainsKey("girlNumber"))
+                post.GirlsNumber = (int)jo.GetNamedNumber("girlNumber");
+
+            if (jo.ContainsKey("boyNumber"))
+                post.GuysNumber = (int)jo.GetNamedNumber("boyNumber");
 
             if (jo.ContainsKey("userName"))
                 post.UserName = jo.GetNamedString("userName");
@@ -111,14 +147,8 @@ namespace OwlWindowsPhoneApp.ViewModel
             if (jo.ContainsKey("time"))
                 post.Time = jo.GetNamedString("time");
 
-            if (jo.ContainsKey("placeAddresse"))
-                post.PlaceAddresse = jo.GetNamedString("placeAddresse");
-
-            if (jo.ContainsKey("popularity"))
-                post.Popularity = (int)jo.GetNamedNumber("popularity");
-
-            if (jo.ContainsKey("myPosition"))
-                post.MyPosition = jo.GetNamedString("myPosition");
+            if (jo.ContainsKey("userPopularity"))
+                post.UserPopularity = (int)jo.GetNamedNumber("userPopularity");
 
             post.UserId = jo.GetNamedString("userId");
 

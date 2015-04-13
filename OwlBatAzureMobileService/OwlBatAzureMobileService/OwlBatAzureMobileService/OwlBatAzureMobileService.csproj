@@ -212,7 +212,6 @@
     <Compile Include="Controllers\CustomController.cs" />
     <Compile Include="Controllers\NotifyUsersController.cs" />
     <Compile Include="DataObjects\Venue.cs" />
-    <Compile Include="DataObjects\Post.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="Models\OwlDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
@@ -258,6 +257,7 @@
     <None Include="Properties\PublishProfiles\mobile-owlbat %285%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %286%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %287%29.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-owlbat %288%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat.pubxml" />
   </ItemGroup>
   <ItemGroup>

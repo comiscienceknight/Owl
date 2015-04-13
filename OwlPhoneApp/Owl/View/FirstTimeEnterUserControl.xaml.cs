@@ -96,7 +96,7 @@ namespace OwlWindowsPhoneApp
                     httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
                     httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
                     var venues = await httpClient.GetStringAsync(
-                        new Uri("http://owlbat.azure-mobile.net/get/ifuserexist/" + App.OwlbatClient.CurrentUser.UserId));
+                        new Uri("http://owlbat.azure-mobile.net/get/ifuserexist/" + App.UserId));
                     JsonValue jsonValue = JsonValue.Parse(venues);
                     if (jsonValue.ValueType == JsonValueType.Boolean)
                         return jsonValue.GetBoolean();

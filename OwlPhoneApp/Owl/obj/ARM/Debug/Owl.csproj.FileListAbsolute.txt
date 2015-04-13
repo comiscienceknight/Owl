@@ -351,7 +351,6 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstEnterI
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstEnterIn.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstEnterIn.xaml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\FirstEnterIn.xbf
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Microsoft.Data.Edm.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Microsoft.Data.OData.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Microsoft.WindowsAzure.Storage.dll
@@ -498,3 +497,9 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Microsoft.Data.OD
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial.pri
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\qualifiers.txt
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\BlankPage1.xbf
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.g.i.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.g.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.xaml
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.xbf

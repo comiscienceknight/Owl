@@ -32,6 +32,10 @@ namespace OwlWindowsPhoneApp
         public static PasswordVault PasswordVaultObject;
         public ContinuationManager ContinuationManager { get; private set; }
         private TransitionCollection _transitions;
+        public static string UserId
+        {
+            get { return App.OwlbatClient.CurrentUser.UserId.Replace(":", ""); }
+        }
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

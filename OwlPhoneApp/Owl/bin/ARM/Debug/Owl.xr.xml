@@ -57,12 +57,26 @@
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="MinHeight" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
     </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.BlankPage1" />
     <RootType FullName="OwlWindowsPhoneApp.FirstTimeEnterUserControl" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Button">
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Visibility" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="BorderThickness" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="Flyout" />
+      <RootProperty Name="IsHitTestVisible" />
+      <RootProperty Name="Opacity" />
+      <RootEvent Name="Click" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ProgressBar">
       <RootProperty Name="IsIndeterminate" />
       <RootProperty Name="HorizontalAlignment" />
@@ -206,15 +220,6 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.Button">
-      <RootProperty Name="BorderThickness" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="Content" />
-      <RootProperty Name="Flyout" />
-      <RootProperty Name="IsHitTestVisible" />
-      <RootProperty Name="Opacity" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListPickerFlyout">
       <RootProperty Name="Placement" />
       <RootProperty Name="ItemTemplate" />
@@ -304,11 +309,10 @@
       <RootProperty Name="Items" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.Tools.DirectUI.ProxyTypes.NullExtension" />
-    <RootType FullName="OwlWindowsPhoneApp.MyPostUserControl">
-      <RootEvent Name="Loaded" />
-    </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.MyPostUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="IsSticky" />
+      <RootProperty Name="Background" />
       <RootProperty Name="PrimaryCommands" />
       <RootProperty Name="SecondaryCommands" />
     </RootType>
@@ -331,8 +335,10 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
     </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.PostInfoUserControl">
+      <RootEvent Name="Loaded" />
+    </RootType>
     <RootType FullName="OwlWindowsPhoneApp.PostsUserControl" />
     <RootType FullName="OwlWindowsPhoneApp.PivotPage" />
-    <RootType FullName="OwlWindowsPhoneApp.PostInfoUserControl" />
   </Roots.RootTypes>
 </Roots>

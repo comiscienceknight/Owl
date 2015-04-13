@@ -25,27 +25,28 @@
         </Grid.ChildrenTransitions>
 
         <!-- Title Panel -->
-        <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
+        <StackPanel x:Name="StackPanel_Title" Margin="5,0,0,0" Orientation="Horizontal"
+                    HorizontalAlignment="Left"
                         VerticalAlignment="Top">
-            <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+            <Image x:Name="Image_Title" Width="50" Height="50" Margin="-10,0,10,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
             <TextBlock x:Name="TextBlock_PageTitle"  Text="Owl, just like the owl" 
-                       Margin="15,12,0,0" Opacity="0.8"
+                       Margin="0,12,0,0" Opacity="0.8"
                        Style="{ThemeResource HeaderTextBlockStyle}" 
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
                     FontFamily="Global User Interface" FontSize="30"/>
         </StackPanel>
 
-        <Rectangle Height="3" HorizontalAlignment="Stretch"
-                   VerticalAlignment="Top" Fill="#FF1A9EC5" Opacity="0.5" Margin="15,66,100,0"  />
+        <Rectangle x:Name="Rectangle_Title" Height="3" HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Fill="#FF1A9EC5" Opacity="0.5" Margin="10,66,10,0"  />
         
         <!--TODO: Content should be placed within the following grid-->
-        <Grid x:Name="ContentRoot" Margin="15,80,10,0">
+        <Grid x:Name="Grid_ContentRoot" Margin="10,80,10,0">
             <ScrollViewer>
                 <StackPanel>
-                    <Grid Margin="0,0,0,10">
+                    <Grid Margin="0,0,0,10" HorizontalAlignment="Left">
                         <Image x:Name="FlipView_ProfileBackground"
                                Stretch="Fill" Source="ms-appx:///Assets/Tempo/linkedin-no-picture.jpg"   />
-                        <FlipView x:Name="FlipView_Profile" Margin="-2,0,0,0"
+                        <FlipView x:Name="FlipView_Profile" Margin="0,0,0,0"
                               Height="300"  VerticalAlignment="Top" >
                             <Image x:ConnectionId='1' x:Name="Image_Profile1"                                         
                                Stretch="Fill"  />
@@ -58,37 +59,37 @@
                     <TextBlock x:Name="TextBlock_Require" Text="ABCDEF" 
                                TextWrapping="Wrap" TextTrimming="WordEllipsis"
                                Opacity="0.6" FontSize="22"
-                               Margin="0,0,0,10"/>
+                               Margin="0,0,8,10"/>
                     <TextBlock x:Name="TextBlock_Description" Text="ABCDEF"
                                Opacity="0.8" FontSize="16"
                                TextWrapping="Wrap" TextTrimming="WordEllipsis"
-                               Margin="0,0,0,10"/>
+                               Margin="0,0,8,10"/>
 
-                    <Rectangle Height="3" Fill="#FFC7F138" Opacity="0.5" Margin="0,10,100,18"  />
+                    <Rectangle x:Name="Rectangle_Club" Height="3" HorizontalAlignment="Left" Fill="#FFC7F138" Opacity="0.5" Margin="0,10,10,18"  />
 
                     <TextBlock x:Name="TextBlock_ClubTitle"  Text="ABCDEF" 
                        Margin="0,-6.5,0,10" 
                        Style="{ThemeResource HeaderTextBlockStyle}" FontSize="36"
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" FontFamily="Global User Interface"/>
-                    <Grid  Margin="-2,0,0,0">
+                    <Grid  Margin="0,0,0,0" HorizontalAlignment="Left">
                     	<FlipView x:Name="FlipView_NightClubPhoto"
                     		Height="300" VerticalAlignment="Top" >
-                    		<Image
-                    			Stretch="Fill"  Source="ms-appx:///Assets/Tempo/night2.jpg" />
-                    		<Image
-                    			Stretch="Fill"  Source="ms-appx:///Assets/Tempo/night1.jpg" />
-                    		<Image
-                    			Stretch="Fill"  Source="ms-appx:///Assets/Tempo/night3.jpg" />
+                    		<Image x:Name="Image_NightClub1"
+                    			Stretch="Fill"   />
+                            <Image x:Name="Image_NightClub2"
+                    			Stretch="Fill"  />
+                            <Image x:Name="Image_NightClub3"
+                    			Stretch="Fill" />
                     	</FlipView>
                     	<Rectangle Fill="#B219191D" Height="35" Margin="0" VerticalAlignment="Bottom"/>
-                    	<TextBlock HorizontalAlignment="Left" Margin="6,0,0,5" TextWrapping="Wrap" 
+                    	<TextBlock x:Name="TextBlock_ClubPopularity" HorizontalAlignment="Left" Margin="6,0,0,5" TextWrapping="Wrap" 
                                    Text="30 users've been in this place" VerticalAlignment="Bottom" FontSize="18.667" Foreground="#CCFFFFFF"/>
                     </Grid>
 
                     <TextBlock x:Name="TextBlock_PlaceAddresse" Text="ABCDEF" 
                                TextWrapping="Wrap" TextTrimming="WordEllipsis"
                                Opacity="0.6" FontSize="22"
-                               Margin="5,15,0,10"/>
+                               Margin="5,18,5,10"/>
                 </StackPanel>
             </ScrollViewer>
         </Grid>

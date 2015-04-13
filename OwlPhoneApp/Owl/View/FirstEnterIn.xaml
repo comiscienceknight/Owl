@@ -23,5 +23,8 @@
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"/>
         </Grid>
+        <Button x:Name="Button_Skip" VerticalAlignment="Bottom"
+                Click="Button_Skip_Click" Visibility="Collapsed"
+                HorizontalAlignment="Left">Skip</Button>
     </Grid>
 </Page>

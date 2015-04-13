@@ -10,7 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar IsSticky="True" x:Name="AppBar_Pivot">
+        <CommandBar IsSticky="False" x:Name="AppBar_Pivot" Background="#7FC30F0F"
+                     >
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:ConnectionId='1' x:Name="AppBarButton_FilterPost" Icon="Filter"  
                               IsCompact="False" Label="Filter"                                  />
@@ -18,9 +19,11 @@
                               IsCompact="False" Label="Refresh"/>
                 <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_Message"  Icon="Message" 
                               IsCompact="False" Label="Message"                                   />
+                <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_EditProfile"  Icon="Edit" 
+                              IsCompact="False" Label="Edit Post"                                       />
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_Logout" Label="Logout"                                  />
+                <AppBarButton x:ConnectionId='4' x:Name="AppBarButton_Logout" Label="Logout"                                  />
                 <!--<AppBarButton Label="Test02"/>-->
             </CommandBar.SecondaryCommands>
         </CommandBar>
@@ -38,22 +41,22 @@
         <Grid>
             <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
                         VerticalAlignment="Top">
-                <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
-                <TextBlock x:Name="TextBlock_PageTitle"  Text="Owl, just like the owl" 
-                       Margin="15,12,0,0" Opacity="0.8"
+                <Image Width="30" Height="30" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                <TextBlock x:Name="TextBlock_PageTitle"  Text="Owl" FontWeight="Bold" 
+                       Margin="15,5,0,0" Opacity="0.8"
                        Style="{ThemeResource HeaderTextBlockStyle}" 
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
-                    FontFamily="Global User Interface" FontSize="30"/>
+                    FontFamily="Global User Interface" FontSize="22"/>
             </StackPanel>
-            <Pivot x:ConnectionId='4' x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
-                   Margin="0,50,0,0" 
+            <Pivot x:ConnectionId='5' x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
+                   Margin="0,15,0,0" 
                CommonNavigationTransitionInfo.IsStaggerElement="True"
                                                               >
 
                 <PivotItem
                 x:Uid="PivotItem1"
-                Margin="19,14.5,0,0"
-                Header="Posts"
+                Margin="16,8,0,0"
+                Header="posts"
                 CommonNavigationTransitionInfo.IsStaggerElement="True">
                     <local:PostsUserControl>
                     </local:PostsUserControl>
@@ -61,17 +64,17 @@
 
                 <PivotItem
                 x:Uid="PivotItem2"
-                Margin="19,14.5,0,0"
-                Header="My Post">
-                    <local:MyPostUserControl x:ConnectionId='5' x:Name="UserControl_MyPost"
-                                                                               >
-                    </local:MyPostUserControl>
+                Margin="16,8,0,0"
+                Header="me">
+                    <local:PostInfoUserControl x:ConnectionId='6' x:Name="UserControl_MyPost"
+                                                             >
+                    </local:PostInfoUserControl>
                 </PivotItem>
                 
                 <PivotItem
                 x:Uid="PivotItem3"
-                Margin="19,14.5,0,0"
-                Header="Chat History">
+                Margin="16,8,0,0"
+                Header="chats">
                     <local:ChatHistoryUserControl>
                     </local:ChatHistoryUserControl>
 

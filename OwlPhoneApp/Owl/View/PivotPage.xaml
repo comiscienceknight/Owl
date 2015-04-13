@@ -10,7 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar IsSticky="True" x:Name="AppBar_Pivot">
+        <CommandBar IsSticky="False" x:Name="AppBar_Pivot" Background="#7FC30F0F"
+                     >
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:Name="AppBarButton_FilterPost" Icon="Filter"  
                               IsCompact="False" Label="Filter" Click="AppBarButton_Filter_Click"/>
@@ -18,6 +19,8 @@
                               IsCompact="False" Label="Refresh"/>
                 <AppBarButton x:Name="AppBarButton_Message"  Icon="Message" 
                               IsCompact="False" Label="Message" Click="AppBarButton_Message_Click"/>
+                <AppBarButton x:Name="AppBarButton_EditProfile"  Icon="Edit" 
+                              IsCompact="False" Label="Edit Post" Click="AppBarButton_EditProfile_Click"/>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:Name="AppBarButton_Logout" Label="Logout" Click="AppBarButton_Logout_Click"/>
@@ -38,22 +41,22 @@
         <Grid>
             <StackPanel Margin="15,0,0,0" Orientation="Horizontal"
                         VerticalAlignment="Top">
-                <Image Width="50" Height="50" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
-                <TextBlock x:Name="TextBlock_PageTitle"  Text="Owl, just like the owl" 
-                       Margin="15,12,0,0" Opacity="0.8"
+                <Image Width="30" Height="30" Margin="-10,0,0,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+                <TextBlock x:Name="TextBlock_PageTitle"  Text="Owl" FontWeight="Bold" 
+                       Margin="15,5,0,0" Opacity="0.8"
                        Style="{ThemeResource HeaderTextBlockStyle}" 
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
-                    FontFamily="Global User Interface" FontSize="30"/>
+                    FontFamily="Global User Interface" FontSize="22"/>
             </StackPanel>
             <Pivot x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
-                   Margin="0,50,0,0" 
+                   Margin="0,15,0,0" 
                CommonNavigationTransitionInfo.IsStaggerElement="True"
                SelectionChanged="Pivot_Main_SelectionChanged" >
 
                 <PivotItem
                 x:Uid="PivotItem1"
-                Margin="19,14.5,0,0"
-                Header="Posts"
+                Margin="16,8,0,0"
+                Header="posts"
                 CommonNavigationTransitionInfo.IsStaggerElement="True">
                     <local:PostsUserControl>
                     </local:PostsUserControl>
@@ -61,17 +64,17 @@
 
                 <PivotItem
                 x:Uid="PivotItem2"
-                Margin="19,14.5,0,0"
-                Header="My Post">
-                    <local:MyPostUserControl x:Name="UserControl_MyPost"
-                                             Loaded="UserControl_MyPost_Loaded">
-                    </local:MyPostUserControl>
+                Margin="16,8,0,0"
+                Header="me">
+                    <local:PostInfoUserControl x:Name="UserControl_MyPost"
+                           Loaded="UserControl_MyPost_Loaded">
+                    </local:PostInfoUserControl>
                 </PivotItem>
                 
                 <PivotItem
                 x:Uid="PivotItem3"
-                Margin="19,14.5,0,0"
-                Header="Chat History">
+                Margin="16,8,0,0"
+                Header="chats">
                     <local:ChatHistoryUserControl>
                     </local:ChatHistoryUserControl>
 

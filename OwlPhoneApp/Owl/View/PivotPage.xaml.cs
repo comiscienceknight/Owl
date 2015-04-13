@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
+using Owl;
 using OwlWindowsPhoneApp.Common;
 using OwlWindowsPhoneApp.DataObjects;
 using OwlWindowsPhoneApp.View;
@@ -81,92 +82,93 @@ namespace OwlWindowsPhoneApp
         #region Take Photo
         private void UserControl_MyPost_Loaded(object sender, RoutedEventArgs e)
         {
-            UserControl_MyPost.TakePhotoEvent += UserControl_MyPost_TakePhotoEvent;
+            //UserControl_MyPost.TakePhotoEvent += UserControl_MyPost_TakePhotoEvent;
+            UserControl_MyPost.SetPostByUserId();
         }
 
-        void UserControl_MyPost_TakePhotoEvent(object sender, ProfilePhotoClickEventArg e)
-        {
-            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Grid_SubPage.Children.Clear();
-            var cameraView = new CameraPhotoUserControl();
-            cameraView.ProfileNumber = e.ProfilePhotoNumber;
-            cameraView.ChoosePhotoFromStorageEvent += CameraView_ChoosePhotoFromStorageEvent;
-            cameraView.TakePhotoEvent += CameraView_TakePhotoEvent;
-            Grid_SubPage.Children.Add(cameraView);
-            AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-        }
+        //void UserControl_MyPost_TakePhotoEvent(object sender, ProfilePhotoClickEventArg e)
+        //{
+        //    Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Visible;
+        //    Grid_SubPage.Children.Clear();
+        //    var cameraView = new CameraPhotoUserControl();
+        //    cameraView.ProfileNumber = e.ProfilePhotoNumber;
+        //    cameraView.ChoosePhotoFromStorageEvent += CameraView_ChoosePhotoFromStorageEvent;
+        //    cameraView.TakePhotoEvent += CameraView_TakePhotoEvent;
+        //    Grid_SubPage.Children.Add(cameraView);
+        //    AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //    AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //    AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //    AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //    AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //}
 
-        void CameraView_TakePhotoEvent(object sender, TakePhotoClickEventArg e)
-        {
-            ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
-            ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
-            Grid_SubPage.Children.Clear();
-            var imageEffectUserControl = new ImageEffectsUserControl(e.TakedPhotoImage, e.TakedPhotoFile, e.TakedPhotoFile.Path)
-            {
-                ProfileNumber = e.ProfilePhotoNumber
-            };
-            imageEffectUserControl.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
-            Grid_SubPage.Children.Add(imageEffectUserControl);
-        }
+        //void CameraView_TakePhotoEvent(object sender, TakePhotoClickEventArg e)
+        //{
+        //    ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
+        //    ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
+        //    Grid_SubPage.Children.Clear();
+        //    var imageEffectUserControl = new ImageEffectsUserControl(e.TakedPhotoImage, e.TakedPhotoFile, e.TakedPhotoFile.Path)
+        //    {
+        //        ProfileNumber = e.ProfilePhotoNumber
+        //    };
+        //    imageEffectUserControl.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
+        //    Grid_SubPage.Children.Add(imageEffectUserControl);
+        //}
 
-        void ImageEffectUserControl_ProfilePhotoRendered(object sender, ProfilePhotoRenderedEventArg e)
-        {
-            ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUserControl_ProfilePhotoRendered;
-            UserControl_MyPost.ChangeImageProfile(e.TakedPhotoImage, e.ProfilePhotoNumber);
-            Grid_SubPage.Children.Clear();
-            Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-        }
+        //void ImageEffectUserControl_ProfilePhotoRendered(object sender, ProfilePhotoRenderedEventArg e)
+        //{
+        //    ((ImageEffectsUserControl)sender).ProfilePhotoRendered -= ImageEffectUserControl_ProfilePhotoRendered;
+        //    UserControl_MyPost.ChangeImageProfile(e.TakedPhotoImage, e.ProfilePhotoNumber);
+        //    Grid_SubPage.Children.Clear();
+        //    Grid_SubPage.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+        //    UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+        //}
 
-        void CameraView_ChoosePhotoFromStorageEvent(object sender, ChoosePhotoFromStorageClickEventArg e)
-        {
-            ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
-            ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
-            Grid_SubPage.Children.Clear();
+        //void CameraView_ChoosePhotoFromStorageEvent(object sender, ChoosePhotoFromStorageClickEventArg e)
+        //{
+        //    ((CameraPhotoUserControl)sender).TakePhotoEvent -= CameraView_TakePhotoEvent;
+        //    ((CameraPhotoUserControl)sender).ChoosePhotoFromStorageEvent -= CameraView_ChoosePhotoFromStorageEvent;
+        //    Grid_SubPage.Children.Clear();
 
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
-            openPicker.PickSingleFileAndContinue();
-        }
+        //    FileOpenPicker openPicker = new FileOpenPicker();
+        //    openPicker.ViewMode = PickerViewMode.Thumbnail;
+        //    openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+        //    openPicker.FileTypeFilter.Add(".jpg");
+        //    openPicker.FileTypeFilter.Add(".jpeg");
+        //    openPicker.FileTypeFilter.Add(".png");
+        //    openPicker.PickSingleFileAndContinue();
+        //}
 
         public async void ContinueFileOpenPicker(Windows.ApplicationModel.Activation.FileOpenPickerContinuationEventArgs args)
         {
-            if (args.Files.Count > 0)
-            {
-                var file = args.Files.FirstOrDefault();
-                if (file == null)
-                    return;
+            //if (args.Files.Count > 0)
+            //{
+            //    var file = args.Files.FirstOrDefault();
+            //    if (file == null)
+            //        return;
 
-                if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
-                {
-                    Grid_SubPage.Children.Clear();
-                }
-                StorageFile sf = args.Files.First();
-                BitmapImage bmpImage = await CameraPhotoUserControl.LoadImage(sf);
-                ImageEffectsUserControl imageEffectUc = new ImageEffectsUserControl(bmpImage, sf, sf.Path);
-                imageEffectUc.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
-                Grid_SubPage.Children.Add(imageEffectUc);
-            }
-            else
-            {
-                if (Grid_SubPage.Children.First() is FirstTimeEnterUserControl)
-                {
+            //    if (Grid_SubPage.Children != null && Grid_SubPage.Children.Count > 0)
+            //    {
+            //        Grid_SubPage.Children.Clear();
+            //    }
+            //    StorageFile sf = args.Files.First();
+            //    BitmapImage bmpImage = await CameraPhotoUserControl.LoadImage(sf);
+            //    ImageEffectsUserControl imageEffectUc = new ImageEffectsUserControl(bmpImage, sf, sf.Path);
+            //    imageEffectUc.ProfilePhotoRendered += ImageEffectUserControl_ProfilePhotoRendered;
+            //    Grid_SubPage.Children.Add(imageEffectUc);
+            //}
+            //else
+            //{
+            //    if (Grid_SubPage.Children.First() is FirstTimeEnterUserControl)
+            //    {
 
-                }
-                else
-                {
-                    Grid_SubPage.Children.Clear();
-                    UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
-                }
-            }
+            //    }
+            //    else
+            //    {
+            //        Grid_SubPage.Children.Clear();
+            //        UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
+            //    }
+            //}
         }
         #endregion
 
@@ -237,6 +239,15 @@ namespace OwlWindowsPhoneApp
                 Post post = postInfoUC.GetPost();
                 Grid_SubPage.Children.Clear();
                 NavigateToMessagePage(post.UserId, post.UserName, post.ProfileUrl);
+            }
+        }
+
+        private void AppBarButton_EditProfile_Click(object sender, RoutedEventArgs e)
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            if (!rootFrame.Navigate(typeof(BlankPage1)))
+            {
+                throw new Exception("Failed to create MainPage");
             }
         }
 
@@ -329,17 +340,27 @@ namespace OwlWindowsPhoneApp
             {
                 switch (pivotItem.Header.ToString())
                 {
-                    case "Posts":
+                    case "posts":
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        AppBarButton_EditProfile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        break;
+                    case "me":
+                        AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_EditProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         break;
                     default:
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBarButton_EditProfile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         break;
@@ -347,7 +368,5 @@ namespace OwlWindowsPhoneApp
             }
         }
         #endregion
-
-
     }
 }

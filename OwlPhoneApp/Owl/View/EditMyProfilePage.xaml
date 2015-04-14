@@ -1,0 +1,256 @@
+﻿<Page
+    x:Class="OwlWindowsPhoneApp.EditMyProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Owl"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Input="using:Telerik.UI.Xaml.Controls.Input"
+    xmlns:controls="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar IsSticky="False" x:Name="AppBar_Pivot" Background="#7FC30F0F"
+                     >
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarButton_Upload" Icon="Upload"  
+                              IsCompact="False" Label="Upload" Click="AppBarButton_Upload_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    
+    <Grid>
+        <StackPanel x:Name="StackPanel_Title" Margin="5,0,0,0" Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+            <Image x:Name="Image_Title" Width="50" Height="50" Margin="-10,0,10,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+            <TextBlock x:Name="TextBlock_PageTitle"  Text="Edit My Post" 
+                       Margin="0,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="30"/>
+        </StackPanel>
+
+        <ScrollViewer Margin="8,60,10,0">
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"   
+                           Opacity="0.8"  Margin="0,0,5,0"
+                           Text="Search Venues" />
+                    <Grid Grid.Column="1" HorizontalAlignment="Right">
+                        <Input:RadAutoCompleteBox x:Name="RadAutoCompleteBox_Search" 
+                                                  Grid.Row="0" Watermark="Search" 
+                                                  HorizontalAlignment="Stretch" 
+                                                  AutosuggestFirstItem="False" 
+                                                  IsDropDownOpen="True" DropDownMaxHeight="120" 
+                                                  FilterMemberPath="Venue" FilterMode="Contains"
+                                                  Margin="0,5,0,10"  FilterDelay="0:0:0.5">
+                            <Input:RadAutoCompleteBox.HeaderStyle>
+                                <Style TargetType="ContentControl">
+                                    <Setter Property="FontSize" Value="22"/>
+                                    <Setter Property="Foreground" Value="#0083EF"/>
+                                    <Setter Property="Margin" Value="0,0,0,10"/>
+                                    <Setter Property="FontWeight" Value="ExtraLight"/>
+                                </Style>
+                            </Input:RadAutoCompleteBox.HeaderStyle>
+                            <Input:RadAutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Path=Venue}" 
+                                               FontSize="18" FontFamily="Segoe UI" 
+                                               TextWrapping="Wrap" 
+                                               Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding Path=Adresse}" 
+                                               FontSize="16" Opacity="0.7"  FontFamily="Segoe UI" 
+                                               TextWrapping="Wrap" 
+                                               Margin="5,3,0,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Input:RadAutoCompleteBox.ItemTemplate>
+                        </Input:RadAutoCompleteBox>
+                    </Grid>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Your age range?"  VerticalAlignment="Center" FontSize="26"
+						        HorizontalAlignment="Left"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <Button x:Name="Button_AgeRange" BorderThickness="1" 
+                        HorizontalAlignment="Right"
+                           Grid.Column="1" >
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center" Margin="0,4,5,2">
+                                <Rectangle Height="35" Width="35" Fill="Green" />
+                                <TextBlock x:Name="TextBlock_AgeRange"  Margin="5,0,0,2" VerticalAlignment="Center" >Not too young too old</TextBlock>
+                            </StackPanel>
+                        </Button.Content>
+                        <Button.Flyout>
+                            <ListPickerFlyout x:Name="ListPickerFlyout_AgeRange"
+                                      Placement="Full" >
+                                <ListPickerFlyout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Margin="10,5">
+                                            <Rectangle Height="40" Width="40" Fill="Green" />
+                                            <TextBlock Margin="10,0,0,0">Not too young too old</TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListPickerFlyout.ItemTemplate>
+                            </ListPickerFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="170" />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Group Size Men"    VerticalAlignment="Center" FontSize="26"
+						        HorizontalAlignment="Left"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <controls:NumericUpDown x:Name="NumericUpDown_WithBoys"
+                                        Width="160" VerticalAlignment="Center"
+                                        Minimum="0" 
+                                        Maximum="20"
+                                        SmallChange="1" ValueFormat="F0"
+                                        LargeChange="1"
+                                        HorizontalAlignment="Right"
+                                            Grid.Column="1" />
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="170"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Group Size Women"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <controls:NumericUpDown x:Name="NumericUpDown_WithGirls"
+                                        Width="160" VerticalAlignment="Center"
+                                        Minimum="0" 
+                                        Maximum="20"
+                                        SmallChange="1" ValueFormat="F0"
+                                        LargeChange="1"
+                                        HorizontalAlignment="Right"
+                                            Grid.Column="1" />
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="170"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Dress Code"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <Button x:Name="Button_DressCode" BorderThickness="1" 
+                        HorizontalAlignment="Right"
+                           Grid.Column="1" >
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center" Margin="0,4,5,2">
+                                <Rectangle Height="35" Width="35" Fill="Green" />
+                                <TextBlock x:Name="TextBlock_DressCode"  Margin="5,0,0,2" VerticalAlignment="Center" >Not too young too old</TextBlock>
+                            </StackPanel>
+                        </Button.Content>
+                        <Button.Flyout>
+                            <ListPickerFlyout x:Name="ListPickerFlyout_DressCode"
+                                      Placement="Full" >
+                                <ListPickerFlyout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Margin="10,5">
+                                            <Rectangle Height="40" Width="40" Fill="Green" />
+                                            <TextBlock Margin="10,0,0,0">Uniform</TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListPickerFlyout.ItemTemplate>
+                            </ListPickerFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="170"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Nick Name"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <TextBox x:Name="TextBox_NickName" MinWidth="180" 
+                        HorizontalAlignment="Right"
+                           Grid.Column="1" >
+                    </TextBox>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="100"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Description"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <Button x:Name="Button_Description" BorderThickness="1"
+                         HorizontalAlignment="Right"
+                           Grid.Column="1" >
+                        <Button.Content>
+                            <TextBlock x:Name="TextBlock_Description"  TextWrapping="Wrap">
+                                        Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink
+                            </TextBlock>
+                        </Button.Content>
+                        <Button.Flyout>
+                            <ListPickerFlyout x:Name="ListPickerFlyout_Description"
+                                      Placement="Full" >
+                                <ListPickerFlyout.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextWrapping="Wrap" Margin="10">
+                                        Hi, I wanna have fun and go to some night club. But i don't have wings. Any girl can take me into the bar or club, i'm glad to invite her a drink
+                                        </TextBlock>
+                                    </DataTemplate>
+                                </ListPickerFlyout.ItemTemplate>
+                            </ListPickerFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+
+                <Border BorderThickness="4" BorderBrush="#CC68332A" Background="#CCE00B0B">
+                    <FlipView x:Name="FlipView_Profile" Margin="-2,-2,0,-2" Background="{x:Null}"
+                         >
+                        <Image x:Name="Image_Profile1" Source="ms-appx:///Assets/Tempo/addphoto.png" 
+                            Stretch="Fill"  />
+                        <Image  x:Name="Image_Profile2" Source="ms-appx:///Assets/Tempo/addphoto.png"
+                             Stretch="Fill"  />
+                        <Image  x:Name="Image_Profile3" Source="ms-appx:///Assets/Tempo/addphoto.png"
+                             Stretch="Fill" />
+                    </FlipView>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

@@ -159,7 +159,7 @@ namespace OwlWindowsPhoneApp
         {
             var rootFrame = (Window.Current.Content as Frame);
             _readyToQuit = true;
-            if (!rootFrame.Navigate(typeof(MessagePage)))
+            if (!rootFrame.Navigate(typeof(EditMyProfilePage), UserControl_MyPost.GetPost()))
             {
                 throw new Exception("Failed to create MainPage");
             }

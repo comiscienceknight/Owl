@@ -83,6 +83,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\EditMyProfilePage.xaml.cs">
+      <DependentUpon>EditMyProfilePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
     </Compile>
@@ -181,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\EditMyProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MessagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

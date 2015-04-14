@@ -5,7 +5,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
+using Windows.Phone.UI.Input;
 using Windows.Security.Credentials;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Animation;
@@ -105,10 +107,46 @@ namespace OwlWindowsPhoneApp
                 {
                     throw new Exception("Failed to create initial page");
                 }
+
+                HardwareButtons.BackPressed += HardwareButtons_BackPressed;
             }
 
             // Ensure the current window is active
             Window.Current.Activate();
+        }
+
+        async void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            if (e.Handled == false)
+            {
+                //e.Handled = true;
+                var rootFrame = Window.Current.Content as Frame;
+                if (rootFrame != null && rootFrame.CurrentSourcePageType.Equals(typeof(PivotPage)))
+                {
+                    await QuitApp();
+                    e.Handled = true;
+                }
+                else if (rootFrame.CanGoBack)
+                    rootFrame.GoBack();
+                else
+                    await QuitApp();
+                //else
+                //    rootFrame.Navigate(typeof(PivotPage));
+
+                e.Handled = true;
+            }
+        }
+
+        private async Task QuitApp()
+        {
+            var dialog = new MessageDialog("Do you want quit app Owl?");
+            dialog.Commands.Add(new UICommand("YES"));
+            dialog.Commands.Add(new UICommand("NO"));
+            var returnCommand = await dialog.ShowAsync();
+            if (returnCommand.Label == "YES")
+            {
+                Application.Current.Exit();
+            }
         }
 
         /// <summary>

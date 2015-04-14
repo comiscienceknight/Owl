@@ -21,7 +21,6 @@ Assets\Tempo\night3.jpg
 Assets\thinking_man_Clip_Art.png
 Assets\WideLogo.scale-240.png
 App.xbf
-BlankPage1.xbf
 Owl.xr.xml
 Telerik.UI.Xaml.Chart\Themes\Generic.xbf
 Telerik.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf
@@ -46,7 +45,7 @@ View\FirstEnterIn.xbf
 View\FirstTimeEnterUserControl.xbf
 View\ImageEffectsUserControl.xbf
 View\MainPage.xbf
-View\MessageUserControl.xbf
+View\MessagePage.xbf
 View\MyPostUserControl.xbf
 View\PivotPage.xbf
 View\PostInfoUserControl.xbf

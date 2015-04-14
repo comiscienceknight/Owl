@@ -17,8 +17,6 @@
                               IsCompact="False" Label="Filter" Click="AppBarButton_Filter_Click"/>
                 <AppBarButton x:Name="AppBarButton_RefreshPost" Icon="Refresh" 
                               IsCompact="False" Label="Refresh"/>
-                <AppBarButton x:Name="AppBarButton_Message"  Icon="Message" 
-                              IsCompact="False" Label="Message" Click="AppBarButton_Message_Click"/>
                 <AppBarButton x:Name="AppBarButton_EditProfile"  Icon="Edit" 
                               IsCompact="False" Label="Edit Post" Click="AppBarButton_EditProfile_Click"/>
             </CommandBar.PrimaryCommands>
@@ -54,7 +52,7 @@
                SelectionChanged="Pivot_Main_SelectionChanged" >
 
                 <PivotItem
-                x:Uid="PivotItem1"
+                x:Uid="PivotItem1" x:Name="PivotItem_Posts"
                 Margin="16,8,0,0"
                 Header="posts"
                 CommonNavigationTransitionInfo.IsStaggerElement="True">
@@ -63,7 +61,7 @@
                 </PivotItem>
 
                 <PivotItem
-                x:Uid="PivotItem2"
+                x:Uid="PivotItem2" x:Name="PivotItem_Me"
                 Margin="16,8,0,0"
                 Header="me">
                     <local:PostInfoUserControl x:Name="UserControl_MyPost"
@@ -72,7 +70,7 @@
                 </PivotItem>
                 
                 <PivotItem
-                x:Uid="PivotItem3"
+                x:Uid="PivotItem3" x:Name="PivotItem_Chats"
                 Margin="16,8,0,0"
                 Header="chats">
                     <local:ChatHistoryUserControl>

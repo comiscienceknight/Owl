@@ -148,7 +148,7 @@ namespace Owl.Owl_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[79];
+            _typeNameTable = new string[78];
             _typeNameTable[0] = "OwlWindowsPhoneApp.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "OwlWindowsPhoneApp.ViewModel.MainViewModel";
@@ -157,79 +157,78 @@ namespace Owl.Owl_XamlTypeInfo
             _typeNameTable[5] = "OwlWindowsPhoneApp.ViewModel.PivotViewModel";
             _typeNameTable[6] = "OwlWindowsPhoneApp.ViewModel.PostsViewModel";
             _typeNameTable[7] = "OwlWindowsPhoneApp.ViewModel.ChatHistoryViewModel";
-            _typeNameTable[8] = "OwlWindowsPhoneApp.BlankPage1";
-            _typeNameTable[9] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[10] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[11] = "OwlWindowsPhoneApp.FirstTimeEnterUserControl";
-            _typeNameTable[12] = "OwlWindowsPhoneApp.FirstEnterIn";
-            _typeNameTable[13] = "OwlWindowsPhoneApp.CameraPhotoUserControl";
-            _typeNameTable[14] = "OwlWindowsPhoneApp.ItemClickedConverter";
-            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[16] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[17] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[18] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[19] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[20] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[21] = "String";
-            _typeNameTable[22] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[23] = "System.Windows.Input.ICommand";
-            _typeNameTable[24] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[25] = "OwlWindowsPhoneApp.ChatHistoryUserControl";
-            _typeNameTable[26] = "WinRTXamlToolkit.Controls.NumericUpDown";
-            _typeNameTable[27] = "Windows.UI.Xaml.Controls.Primitives.RangeBase";
-            _typeNameTable[28] = "WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility";
-            _typeNameTable[29] = "System.Enum";
-            _typeNameTable[30] = "System.ValueType";
-            _typeNameTable[31] = "Boolean";
-            _typeNameTable[32] = "Double";
-            _typeNameTable[33] = "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox";
-            _typeNameTable[34] = "Telerik.UI.Xaml.Controls.RadHeaderedControl";
-            _typeNameTable[35] = "Telerik.UI.Xaml.Controls.RadControl";
-            _typeNameTable[36] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[37] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode";
-            _typeNameTable[38] = "TimeSpan";
-            _typeNameTable[39] = "Windows.UI.Xaml.Style";
-            _typeNameTable[40] = "Windows.UI.Xaml.DataTemplate";
-            _typeNameTable[41] = "System.StringComparison";
-            _typeNameTable[42] = "Int32";
-            _typeNameTable[43] = "System.Func`2<Object, String>";
-            _typeNameTable[44] = "System.MulticastDelegate";
-            _typeNameTable[45] = "System.Delegate";
-            _typeNameTable[46] = "System.Collections.IEnumerable";
-            _typeNameTable[47] = "Windows.UI.Xaml.Controls.DataTemplateSelector";
-            _typeNameTable[48] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode";
-            _typeNameTable[49] = "Telerik.UI.Xaml.Controls.Input.HighlightStyle";
-            _typeNameTable[50] = "OwlWindowsPhoneApp.View.ImageEffectsUserControl";
-            _typeNameTable[51] = "OwlWindowsPhoneApp.MainPage";
-            _typeNameTable[52] = "OwlWindowsPhoneApp.Common.NavigationHelper";
-            _typeNameTable[53] = "Coding4Fun.Toolkit.Controls.ChatBubble";
-            _typeNameTable[54] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[55] = "Coding4Fun.Toolkit.Controls.ChatBubbleDirection";
-            _typeNameTable[56] = "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox";
-            _typeNameTable[57] = "Windows.UI.Xaml.Controls.TextBox";
-            _typeNameTable[58] = "OwlWindowsPhoneApp.ScrollToBottomBehavior";
-            _typeNameTable[59] = "OwlWindowsPhoneApp.MessageUserControl";
-            _typeNameTable[60] = "OwlWindowsPhoneApp.MyPostUserControl";
-            _typeNameTable[61] = "OwlWindowsPhoneApp.PostInfoUserControl";
-            _typeNameTable[62] = "OwlWindowsPhoneApp.PostsUserControl";
-            _typeNameTable[63] = "OwlWindowsPhoneApp.PivotPage";
-            _typeNameTable[64] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
-            _typeNameTable[65] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
-            _typeNameTable[66] = "Windows.UI.Xaml.HorizontalAlignment";
-            _typeNameTable[67] = "Windows.UI.Xaml.VerticalAlignment";
-            _typeNameTable[68] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
-            _typeNameTable[69] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
-            _typeNameTable[70] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
-            _typeNameTable[71] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[72] = "Windows.UI.Xaml.Media.FontFamily";
-            _typeNameTable[73] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
-            _typeNameTable[74] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[75] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
-            _typeNameTable[76] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
-            _typeNameTable[77] = "Windows.UI.Xaml.FrameworkElement";
-            _typeNameTable[78] = "Windows.UI.Xaml.Media.Animation.Storyboard";
+            _typeNameTable[8] = "Coding4Fun.Toolkit.Controls.ChatBubble";
+            _typeNameTable[9] = "Windows.UI.Xaml.Controls.ContentControl";
+            _typeNameTable[10] = "Coding4Fun.Toolkit.Controls.ChatBubbleDirection";
+            _typeNameTable[11] = "System.Enum";
+            _typeNameTable[12] = "System.ValueType";
+            _typeNameTable[13] = "Boolean";
+            _typeNameTable[14] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[15] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[16] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[17] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[18] = "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox";
+            _typeNameTable[19] = "Windows.UI.Xaml.Controls.TextBox";
+            _typeNameTable[20] = "String";
+            _typeNameTable[21] = "Windows.UI.Xaml.Style";
+            _typeNameTable[22] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[23] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[24] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[25] = "System.Windows.Input.ICommand";
+            _typeNameTable[26] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[27] = "OwlWindowsPhoneApp.ScrollToBottomBehavior";
+            _typeNameTable[28] = "OwlWindowsPhoneApp.MessagePage";
+            _typeNameTable[29] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[30] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[31] = "OwlWindowsPhoneApp.FirstTimeEnterUserControl";
+            _typeNameTable[32] = "OwlWindowsPhoneApp.FirstEnterIn";
+            _typeNameTable[33] = "OwlWindowsPhoneApp.CameraPhotoUserControl";
+            _typeNameTable[34] = "OwlWindowsPhoneApp.ItemClickedConverter";
+            _typeNameTable[35] = "OwlWindowsPhoneApp.ChatHistoryUserControl";
+            _typeNameTable[36] = "WinRTXamlToolkit.Controls.NumericUpDown";
+            _typeNameTable[37] = "Windows.UI.Xaml.Controls.Primitives.RangeBase";
+            _typeNameTable[38] = "WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility";
+            _typeNameTable[39] = "Double";
+            _typeNameTable[40] = "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox";
+            _typeNameTable[41] = "Telerik.UI.Xaml.Controls.RadHeaderedControl";
+            _typeNameTable[42] = "Telerik.UI.Xaml.Controls.RadControl";
+            _typeNameTable[43] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[44] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode";
+            _typeNameTable[45] = "TimeSpan";
+            _typeNameTable[46] = "Windows.UI.Xaml.DataTemplate";
+            _typeNameTable[47] = "System.StringComparison";
+            _typeNameTable[48] = "Int32";
+            _typeNameTable[49] = "System.Func`2<Object, String>";
+            _typeNameTable[50] = "System.MulticastDelegate";
+            _typeNameTable[51] = "System.Delegate";
+            _typeNameTable[52] = "System.Collections.IEnumerable";
+            _typeNameTable[53] = "Windows.UI.Xaml.Controls.DataTemplateSelector";
+            _typeNameTable[54] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode";
+            _typeNameTable[55] = "Telerik.UI.Xaml.Controls.Input.HighlightStyle";
+            _typeNameTable[56] = "OwlWindowsPhoneApp.View.ImageEffectsUserControl";
+            _typeNameTable[57] = "OwlWindowsPhoneApp.MainPage";
+            _typeNameTable[58] = "OwlWindowsPhoneApp.Common.NavigationHelper";
+            _typeNameTable[59] = "OwlWindowsPhoneApp.MyPostUserControl";
+            _typeNameTable[60] = "OwlWindowsPhoneApp.PostInfoUserControl";
+            _typeNameTable[61] = "OwlWindowsPhoneApp.PostsUserControl";
+            _typeNameTable[62] = "OwlWindowsPhoneApp.PivotPage";
+            _typeNameTable[63] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
+            _typeNameTable[64] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
+            _typeNameTable[65] = "Windows.UI.Xaml.HorizontalAlignment";
+            _typeNameTable[66] = "Windows.UI.Xaml.VerticalAlignment";
+            _typeNameTable[67] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
+            _typeNameTable[68] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
+            _typeNameTable[69] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
+            _typeNameTable[70] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[71] = "Windows.UI.Xaml.Media.FontFamily";
+            _typeNameTable[72] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
+            _typeNameTable[73] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[74] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
+            _typeNameTable[75] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
+            _typeNameTable[76] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[77] = "Windows.UI.Xaml.Media.Animation.Storyboard";
 
-            _typeTable = new global::System.Type[79];
+            _typeTable = new global::System.Type[78];
             _typeTable[0] = typeof(global::OwlWindowsPhoneApp.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::OwlWindowsPhoneApp.ViewModel.MainViewModel);
@@ -238,77 +237,76 @@ namespace Owl.Owl_XamlTypeInfo
             _typeTable[5] = typeof(global::OwlWindowsPhoneApp.ViewModel.PivotViewModel);
             _typeTable[6] = typeof(global::OwlWindowsPhoneApp.ViewModel.PostsViewModel);
             _typeTable[7] = typeof(global::OwlWindowsPhoneApp.ViewModel.ChatHistoryViewModel);
-            _typeTable[8] = typeof(global::OwlWindowsPhoneApp.BlankPage1);
-            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[11] = typeof(global::OwlWindowsPhoneApp.FirstTimeEnterUserControl);
-            _typeTable[12] = typeof(global::OwlWindowsPhoneApp.FirstEnterIn);
-            _typeTable[13] = typeof(global::OwlWindowsPhoneApp.CameraPhotoUserControl);
-            _typeTable[14] = typeof(global::OwlWindowsPhoneApp.ItemClickedConverter);
-            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[16] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[17] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[18] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[19] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[20] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[21] = typeof(global::System.String);
-            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[23] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[24] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[25] = typeof(global::OwlWindowsPhoneApp.ChatHistoryUserControl);
-            _typeTable[26] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDown);
-            _typeTable[27] = typeof(global::Windows.UI.Xaml.Controls.Primitives.RangeBase);
-            _typeTable[28] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility);
-            _typeTable[29] = typeof(global::System.Enum);
-            _typeTable[30] = typeof(global::System.ValueType);
-            _typeTable[31] = typeof(global::System.Boolean);
-            _typeTable[32] = typeof(global::System.Double);
-            _typeTable[33] = typeof(global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox);
-            _typeTable[34] = typeof(global::Telerik.UI.Xaml.Controls.RadHeaderedControl);
-            _typeTable[35] = typeof(global::Telerik.UI.Xaml.Controls.RadControl);
-            _typeTable[36] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[37] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode);
-            _typeTable[38] = typeof(global::System.TimeSpan);
-            _typeTable[39] = typeof(global::Windows.UI.Xaml.Style);
-            _typeTable[40] = typeof(global::Windows.UI.Xaml.DataTemplate);
-            _typeTable[41] = typeof(global::System.StringComparison);
-            _typeTable[42] = typeof(global::System.Int32);
-            _typeTable[43] = typeof(global::System.Func<global::System.Object, global::System.String>);
-            _typeTable[44] = typeof(global::System.MulticastDelegate);
-            _typeTable[45] = typeof(global::System.Delegate);
-            _typeTable[46] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[47] = typeof(global::Windows.UI.Xaml.Controls.DataTemplateSelector);
-            _typeTable[48] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode);
-            _typeTable[49] = typeof(global::Telerik.UI.Xaml.Controls.Input.HighlightStyle);
-            _typeTable[50] = typeof(global::OwlWindowsPhoneApp.View.ImageEffectsUserControl);
-            _typeTable[51] = typeof(global::OwlWindowsPhoneApp.MainPage);
-            _typeTable[52] = typeof(global::OwlWindowsPhoneApp.Common.NavigationHelper);
-            _typeTable[53] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubble);
-            _typeTable[54] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[55] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection);
-            _typeTable[56] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox);
-            _typeTable[57] = typeof(global::Windows.UI.Xaml.Controls.TextBox);
-            _typeTable[58] = typeof(global::OwlWindowsPhoneApp.ScrollToBottomBehavior);
-            _typeTable[59] = typeof(global::OwlWindowsPhoneApp.MessageUserControl);
-            _typeTable[60] = typeof(global::OwlWindowsPhoneApp.MyPostUserControl);
-            _typeTable[61] = typeof(global::OwlWindowsPhoneApp.PostInfoUserControl);
-            _typeTable[62] = typeof(global::OwlWindowsPhoneApp.PostsUserControl);
-            _typeTable[63] = typeof(global::OwlWindowsPhoneApp.PivotPage);
-            _typeTable[64] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
-            _typeTable[65] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
-            _typeTable[66] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
-            _typeTable[67] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
-            _typeTable[68] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
-            _typeTable[69] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
-            _typeTable[70] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
-            _typeTable[71] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[72] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
-            _typeTable[73] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
-            _typeTable[74] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[75] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
-            _typeTable[76] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
-            _typeTable[77] = typeof(global::Windows.UI.Xaml.FrameworkElement);
-            _typeTable[78] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
+            _typeTable[8] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubble);
+            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
+            _typeTable[10] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection);
+            _typeTable[11] = typeof(global::System.Enum);
+            _typeTable[12] = typeof(global::System.ValueType);
+            _typeTable[13] = typeof(global::System.Boolean);
+            _typeTable[14] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[15] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[16] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[18] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.Controls.TextBox);
+            _typeTable[20] = typeof(global::System.String);
+            _typeTable[21] = typeof(global::Windows.UI.Xaml.Style);
+            _typeTable[22] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[23] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[24] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[25] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[27] = typeof(global::OwlWindowsPhoneApp.ScrollToBottomBehavior);
+            _typeTable[28] = typeof(global::OwlWindowsPhoneApp.MessagePage);
+            _typeTable[29] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[30] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[31] = typeof(global::OwlWindowsPhoneApp.FirstTimeEnterUserControl);
+            _typeTable[32] = typeof(global::OwlWindowsPhoneApp.FirstEnterIn);
+            _typeTable[33] = typeof(global::OwlWindowsPhoneApp.CameraPhotoUserControl);
+            _typeTable[34] = typeof(global::OwlWindowsPhoneApp.ItemClickedConverter);
+            _typeTable[35] = typeof(global::OwlWindowsPhoneApp.ChatHistoryUserControl);
+            _typeTable[36] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDown);
+            _typeTable[37] = typeof(global::Windows.UI.Xaml.Controls.Primitives.RangeBase);
+            _typeTable[38] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility);
+            _typeTable[39] = typeof(global::System.Double);
+            _typeTable[40] = typeof(global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox);
+            _typeTable[41] = typeof(global::Telerik.UI.Xaml.Controls.RadHeaderedControl);
+            _typeTable[42] = typeof(global::Telerik.UI.Xaml.Controls.RadControl);
+            _typeTable[43] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[44] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode);
+            _typeTable[45] = typeof(global::System.TimeSpan);
+            _typeTable[46] = typeof(global::Windows.UI.Xaml.DataTemplate);
+            _typeTable[47] = typeof(global::System.StringComparison);
+            _typeTable[48] = typeof(global::System.Int32);
+            _typeTable[49] = typeof(global::System.Func<global::System.Object, global::System.String>);
+            _typeTable[50] = typeof(global::System.MulticastDelegate);
+            _typeTable[51] = typeof(global::System.Delegate);
+            _typeTable[52] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[53] = typeof(global::Windows.UI.Xaml.Controls.DataTemplateSelector);
+            _typeTable[54] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode);
+            _typeTable[55] = typeof(global::Telerik.UI.Xaml.Controls.Input.HighlightStyle);
+            _typeTable[56] = typeof(global::OwlWindowsPhoneApp.View.ImageEffectsUserControl);
+            _typeTable[57] = typeof(global::OwlWindowsPhoneApp.MainPage);
+            _typeTable[58] = typeof(global::OwlWindowsPhoneApp.Common.NavigationHelper);
+            _typeTable[59] = typeof(global::OwlWindowsPhoneApp.MyPostUserControl);
+            _typeTable[60] = typeof(global::OwlWindowsPhoneApp.PostInfoUserControl);
+            _typeTable[61] = typeof(global::OwlWindowsPhoneApp.PostsUserControl);
+            _typeTable[62] = typeof(global::OwlWindowsPhoneApp.PivotPage);
+            _typeTable[63] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
+            _typeTable[64] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
+            _typeTable[65] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
+            _typeTable[66] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
+            _typeTable[67] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
+            _typeTable[68] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
+            _typeTable[69] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
+            _typeTable[70] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[71] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
+            _typeTable[72] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
+            _typeTable[73] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[74] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
+            _typeTable[75] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
+            _typeTable[76] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[77] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -349,48 +347,47 @@ namespace Owl.Owl_XamlTypeInfo
         private object Activate_5_PivotViewModel() { return new global::OwlWindowsPhoneApp.ViewModel.PivotViewModel(); }
         private object Activate_6_PostsViewModel() { return new global::OwlWindowsPhoneApp.ViewModel.PostsViewModel(); }
         private object Activate_7_ChatHistoryViewModel() { return new global::OwlWindowsPhoneApp.ViewModel.ChatHistoryViewModel(); }
-        private object Activate_8_BlankPage1() { return new global::OwlWindowsPhoneApp.BlankPage1(); }
-        private object Activate_11_FirstTimeEnterUserControl() { return new global::OwlWindowsPhoneApp.FirstTimeEnterUserControl(); }
-        private object Activate_12_FirstEnterIn() { return new global::OwlWindowsPhoneApp.FirstEnterIn(); }
-        private object Activate_13_CameraPhotoUserControl() { return new global::OwlWindowsPhoneApp.CameraPhotoUserControl(); }
-        private object Activate_14_ItemClickedConverter() { return new global::OwlWindowsPhoneApp.ItemClickedConverter(); }
-        private object Activate_16_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_19_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_20_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_22_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_25_ChatHistoryUserControl() { return new global::OwlWindowsPhoneApp.ChatHistoryUserControl(); }
-        private object Activate_26_NumericUpDown() { return new global::WinRTXamlToolkit.Controls.NumericUpDown(); }
-        private object Activate_33_RadAutoCompleteBox() { return new global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox(); }
-        private object Activate_49_HighlightStyle() { return new global::Telerik.UI.Xaml.Controls.Input.HighlightStyle(); }
-        private object Activate_50_ImageEffectsUserControl() { return new global::OwlWindowsPhoneApp.View.ImageEffectsUserControl(); }
-        private object Activate_51_MainPage() { return new global::OwlWindowsPhoneApp.MainPage(); }
-        private object Activate_53_ChatBubble() { return new global::Coding4Fun.Toolkit.Controls.ChatBubble(); }
-        private object Activate_56_ChatBubbleTextBox() { return new global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox(); }
-        private object Activate_58_ScrollToBottomBehavior() { return new global::OwlWindowsPhoneApp.ScrollToBottomBehavior(); }
-        private object Activate_59_MessageUserControl() { return new global::OwlWindowsPhoneApp.MessageUserControl(); }
-        private object Activate_60_MyPostUserControl() { return new global::OwlWindowsPhoneApp.MyPostUserControl(); }
-        private object Activate_61_PostInfoUserControl() { return new global::OwlWindowsPhoneApp.PostInfoUserControl(); }
-        private object Activate_62_PostsUserControl() { return new global::OwlWindowsPhoneApp.PostsUserControl(); }
-        private object Activate_63_PivotPage() { return new global::OwlWindowsPhoneApp.PivotPage(); }
-        private object Activate_64_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
-        private object Activate_68_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
-        private object Activate_69_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
-        private object Activate_70_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
-        private object Activate_75_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
-        private object Activate_76_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
-        private void VectorAdd_16_BehaviorCollection(object instance, object item)
+        private object Activate_8_ChatBubble() { return new global::Coding4Fun.Toolkit.Controls.ChatBubble(); }
+        private object Activate_15_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_18_ChatBubbleTextBox() { return new global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox(); }
+        private object Activate_22_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_23_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_24_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_27_ScrollToBottomBehavior() { return new global::OwlWindowsPhoneApp.ScrollToBottomBehavior(); }
+        private object Activate_28_MessagePage() { return new global::OwlWindowsPhoneApp.MessagePage(); }
+        private object Activate_31_FirstTimeEnterUserControl() { return new global::OwlWindowsPhoneApp.FirstTimeEnterUserControl(); }
+        private object Activate_32_FirstEnterIn() { return new global::OwlWindowsPhoneApp.FirstEnterIn(); }
+        private object Activate_33_CameraPhotoUserControl() { return new global::OwlWindowsPhoneApp.CameraPhotoUserControl(); }
+        private object Activate_34_ItemClickedConverter() { return new global::OwlWindowsPhoneApp.ItemClickedConverter(); }
+        private object Activate_35_ChatHistoryUserControl() { return new global::OwlWindowsPhoneApp.ChatHistoryUserControl(); }
+        private object Activate_36_NumericUpDown() { return new global::WinRTXamlToolkit.Controls.NumericUpDown(); }
+        private object Activate_40_RadAutoCompleteBox() { return new global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox(); }
+        private object Activate_55_HighlightStyle() { return new global::Telerik.UI.Xaml.Controls.Input.HighlightStyle(); }
+        private object Activate_56_ImageEffectsUserControl() { return new global::OwlWindowsPhoneApp.View.ImageEffectsUserControl(); }
+        private object Activate_57_MainPage() { return new global::OwlWindowsPhoneApp.MainPage(); }
+        private object Activate_59_MyPostUserControl() { return new global::OwlWindowsPhoneApp.MyPostUserControl(); }
+        private object Activate_60_PostInfoUserControl() { return new global::OwlWindowsPhoneApp.PostInfoUserControl(); }
+        private object Activate_61_PostsUserControl() { return new global::OwlWindowsPhoneApp.PostsUserControl(); }
+        private object Activate_62_PivotPage() { return new global::OwlWindowsPhoneApp.PivotPage(); }
+        private object Activate_63_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
+        private object Activate_67_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
+        private object Activate_68_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
+        private object Activate_69_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
+        private object Activate_74_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
+        private object Activate_75_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
+        private void VectorAdd_15_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_20_ActionCollection(object instance, object item)
+        private void VectorAdd_23_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_70_List(object instance, object item)
+        private void VectorAdd_69_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Brush>)instance;
             var newItem = (global::Windows.UI.Xaml.Media.Brush)item;
@@ -461,73 +458,87 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 8:   //  OwlWindowsPhoneApp.BlankPage1
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_8_BlankPage1;
-                userType.SetIsLocalType();
+            case 8:   //  Coding4Fun.Toolkit.Controls.ChatBubble
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentControl"));
+                userType.Activator = Activate_8_ChatBubble;
+                userType.AddMemberName("ChatBubbleDirection");
+                userType.AddMemberName("IsEquallySpaced");
                 xamlType = userType;
                 break;
 
-            case 9:   //  Windows.UI.Xaml.Controls.Page
+            case 9:   //  Windows.UI.Xaml.Controls.ContentControl
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 11:   //  OwlWindowsPhoneApp.FirstTimeEnterUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_11_FirstTimeEnterUserControl;
-                userType.SetIsLocalType();
+            case 10:   //  Coding4Fun.Toolkit.Controls.ChatBubbleDirection
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType.AddEnumValue("UpperRight", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.UpperRight);
+                userType.AddEnumValue("UpperLeft", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.UpperLeft);
+                userType.AddEnumValue("LowerRight", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.LowerRight);
+                userType.AddEnumValue("LowerLeft", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.LowerLeft);
                 xamlType = userType;
                 break;
 
-            case 12:   //  OwlWindowsPhoneApp.FirstEnterIn
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_12_FirstEnterIn;
-                userType.SetIsLocalType();
+            case 11:   //  System.Enum
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 13:   //  OwlWindowsPhoneApp.CameraPhotoUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_13_CameraPhotoUserControl;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 14:   //  OwlWindowsPhoneApp.ItemClickedConverter
+            case 12:   //  System.ValueType
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_14_ItemClickedConverter;
-                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 15:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 13:   //  Boolean
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 14:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 16:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 15:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_16_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_15_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 17:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 16:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 18:   //  Windows.UI.Xaml.DependencyObject
+            case 17:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 19:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 18:   //  Coding4Fun.Toolkit.Controls.ChatBubbleTextBox
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.TextBox"));
+                userType.Activator = Activate_18_ChatBubbleTextBox;
+                userType.AddMemberName("ChatBubbleDirection");
+                userType.AddMemberName("Hint");
+                userType.AddMemberName("HintStyle");
+                userType.AddMemberName("IsEquallySpaced");
+                xamlType = userType;
+                break;
+
+            case 19:   //  Windows.UI.Xaml.Controls.TextBox
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 20:   //  String
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 21:   //  Windows.UI.Xaml.Style
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 22:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_19_EventTriggerBehavior;
+                userType.Activator = Activate_22_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -536,48 +547,96 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 20:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 23:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_20_ActionCollection;
+                userType.CollectionAdd = VectorAdd_23_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 21:   //  String
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 22:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 24:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_22_InvokeCommandAction;
+                userType.Activator = Activate_24_InvokeCommandAction;
                 userType.AddMemberName("Command");
-                userType.AddMemberName("InputConverter");
                 userType.AddMemberName("CommandParameter");
+                userType.AddMemberName("InputConverter");
                 userType.AddMemberName("InputConverterParameter");
                 userType.AddMemberName("InputConverterLanguage");
                 xamlType = userType;
                 break;
 
-            case 23:   //  System.Windows.Input.ICommand
+            case 25:   //  System.Windows.Input.ICommand
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 24:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 26:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 25:   //  OwlWindowsPhoneApp.ChatHistoryUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_25_ChatHistoryUserControl;
+            case 27:   //  OwlWindowsPhoneApp.ScrollToBottomBehavior
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_27_ScrollToBottomBehavior;
+                userType.AddMemberName("ItemsSource");
+                userType.AddMemberName("AssociatedObject");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 26:   //  WinRTXamlToolkit.Controls.NumericUpDown
+            case 28:   //  OwlWindowsPhoneApp.MessagePage
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_28_MessagePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 29:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 30:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 31:   //  OwlWindowsPhoneApp.FirstTimeEnterUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_31_FirstTimeEnterUserControl;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 32:   //  OwlWindowsPhoneApp.FirstEnterIn
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_32_FirstEnterIn;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 33:   //  OwlWindowsPhoneApp.CameraPhotoUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_33_CameraPhotoUserControl;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 34:   //  OwlWindowsPhoneApp.ItemClickedConverter
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_34_ItemClickedConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 35:   //  OwlWindowsPhoneApp.ChatHistoryUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_35_ChatHistoryUserControl;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 36:   //  WinRTXamlToolkit.Controls.NumericUpDown
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Primitives.RangeBase"));
-                userType.Activator = Activate_26_NumericUpDown;
+                userType.Activator = Activate_36_NumericUpDown;
                 userType.AddMemberName("ValueFormat");
                 userType.AddMemberName("ValueBarVisibility");
                 userType.AddMemberName("IsReadOnly");
@@ -585,38 +644,24 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 27:   //  Windows.UI.Xaml.Controls.Primitives.RangeBase
+            case 37:   //  Windows.UI.Xaml.Controls.Primitives.RangeBase
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 28:   //  WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility
+            case 38:   //  WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Visible", global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility.Visible);
                 userType.AddEnumValue("Collapsed", global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility.Collapsed);
                 xamlType = userType;
                 break;
 
-            case 29:   //  System.Enum
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                xamlType = userType;
-                break;
-
-            case 30:   //  System.ValueType
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                xamlType = userType;
-                break;
-
-            case 31:   //  Boolean
+            case 39:   //  Double
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 32:   //  Double
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 33:   //  Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox
+            case 40:   //  Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadHeaderedControl"));
-                userType.Activator = Activate_33_RadAutoCompleteBox;
+                userType.Activator = Activate_40_RadAutoCompleteBox;
                 userType.AddMemberName("Watermark");
                 userType.AddMemberName("AutosuggestFirstItem");
                 userType.AddMemberName("IsDropDownOpen");
@@ -641,7 +686,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 34:   //  Telerik.UI.Xaml.Controls.RadHeaderedControl
+            case 41:   //  Telerik.UI.Xaml.Controls.RadHeaderedControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadControl"));
                 userType.AddMemberName("Header");
                 userType.AddMemberName("HeaderStyle");
@@ -649,38 +694,34 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 35:   //  Telerik.UI.Xaml.Controls.RadControl
+            case 42:   //  Telerik.UI.Xaml.Controls.RadControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.AddMemberName("CurrentVisualState");
                 xamlType = userType;
                 break;
 
-            case 36:   //  Windows.UI.Xaml.Controls.Control
+            case 43:   //  Windows.UI.Xaml.Controls.Control
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 37:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode
+            case 44:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("StartsWith", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode.StartsWith);
                 userType.AddEnumValue("Contains", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode.Contains);
                 xamlType = userType;
                 break;
 
-            case 38:   //  TimeSpan
+            case 45:   //  TimeSpan
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 39:   //  Windows.UI.Xaml.Style
+            case 46:   //  Windows.UI.Xaml.DataTemplate
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 40:   //  Windows.UI.Xaml.DataTemplate
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 41:   //  System.StringComparison
+            case 47:   //  System.StringComparison
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("CurrentCulture", global::System.StringComparison.CurrentCulture);
                 userType.AddEnumValue("CurrentCultureIgnoreCase", global::System.StringComparison.CurrentCultureIgnoreCase);
@@ -689,37 +730,37 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 42:   //  Int32
+            case 48:   //  Int32
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 43:   //  System.Func`2<Object, String>
+            case 49:   //  System.Func`2<Object, String>
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.MulticastDelegate"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 44:   //  System.MulticastDelegate
+            case 50:   //  System.MulticastDelegate
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Delegate"));
                 xamlType = userType;
                 break;
 
-            case 45:   //  System.Delegate
+            case 51:   //  System.Delegate
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 46:   //  System.Collections.IEnumerable
+            case 52:   //  System.Collections.IEnumerable
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 47:   //  Windows.UI.Xaml.Controls.DataTemplateSelector
+            case 53:   //  Windows.UI.Xaml.Controls.DataTemplateSelector
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 48:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode
+            case 54:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Auto", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode.Auto);
                 userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode.Top);
@@ -728,9 +769,9 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 49:   //  Telerik.UI.Xaml.Controls.Input.HighlightStyle
+            case 55:   //  Telerik.UI.Xaml.Controls.Input.HighlightStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_49_HighlightStyle;
+                userType.Activator = Activate_55_HighlightStyle;
                 userType.AddMemberName("FontFamily");
                 userType.AddMemberName("FontWeight");
                 userType.AddMemberName("FontStyle");
@@ -740,111 +781,60 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 50:   //  OwlWindowsPhoneApp.View.ImageEffectsUserControl
+            case 56:   //  OwlWindowsPhoneApp.View.ImageEffectsUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_50_ImageEffectsUserControl;
+                userType.Activator = Activate_56_ImageEffectsUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 51:   //  OwlWindowsPhoneApp.MainPage
+            case 57:   //  OwlWindowsPhoneApp.MainPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_51_MainPage;
+                userType.Activator = Activate_57_MainPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 52:   //  OwlWindowsPhoneApp.Common.NavigationHelper
+            case 58:   //  OwlWindowsPhoneApp.Common.NavigationHelper
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 53:   //  Coding4Fun.Toolkit.Controls.ChatBubble
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_53_ChatBubble;
-                userType.AddMemberName("ChatBubbleDirection");
-                userType.AddMemberName("IsEquallySpaced");
-                xamlType = userType;
-                break;
-
-            case 54:   //  Windows.UI.Xaml.Controls.ContentControl
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 55:   //  Coding4Fun.Toolkit.Controls.ChatBubbleDirection
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("UpperRight", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.UpperRight);
-                userType.AddEnumValue("UpperLeft", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.UpperLeft);
-                userType.AddEnumValue("LowerRight", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.LowerRight);
-                userType.AddEnumValue("LowerLeft", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.LowerLeft);
-                xamlType = userType;
-                break;
-
-            case 56:   //  Coding4Fun.Toolkit.Controls.ChatBubbleTextBox
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.TextBox"));
-                userType.Activator = Activate_56_ChatBubbleTextBox;
-                userType.AddMemberName("ChatBubbleDirection");
-                userType.AddMemberName("Hint");
-                userType.AddMemberName("HintStyle");
-                userType.AddMemberName("IsEquallySpaced");
-                xamlType = userType;
-                break;
-
-            case 57:   //  Windows.UI.Xaml.Controls.TextBox
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 58:   //  OwlWindowsPhoneApp.ScrollToBottomBehavior
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_58_ScrollToBottomBehavior;
-                userType.AddMemberName("ItemsSource");
-                userType.AddMemberName("AssociatedObject");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 59:   //  OwlWindowsPhoneApp.MessageUserControl
+            case 59:   //  OwlWindowsPhoneApp.MyPostUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_59_MessageUserControl;
+                userType.Activator = Activate_59_MyPostUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 60:   //  OwlWindowsPhoneApp.MyPostUserControl
+            case 60:   //  OwlWindowsPhoneApp.PostInfoUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_60_MyPostUserControl;
+                userType.Activator = Activate_60_PostInfoUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 61:   //  OwlWindowsPhoneApp.PostInfoUserControl
+            case 61:   //  OwlWindowsPhoneApp.PostsUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_61_PostInfoUserControl;
+                userType.Activator = Activate_61_PostsUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 62:   //  OwlWindowsPhoneApp.PostsUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_62_PostsUserControl;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 63:   //  OwlWindowsPhoneApp.PivotPage
+            case 62:   //  OwlWindowsPhoneApp.PivotPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_63_PivotPage;
+                userType.Activator = Activate_62_PivotPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 64:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
+            case 63:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_64_ChartAnnotationLabelDefinition;
+                userType.Activator = Activate_63_ChartAnnotationLabelDefinition;
                 userType.AddMemberName("Format");
                 userType.AddMemberName("Template");
                 userType.AddMemberName("DefaultVisualStyle");
@@ -857,7 +847,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 65:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
+            case 64:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Left", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Left);
                 userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Top);
@@ -867,17 +857,17 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 66:   //  Windows.UI.Xaml.HorizontalAlignment
+            case 65:   //  Windows.UI.Xaml.HorizontalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 67:   //  Windows.UI.Xaml.VerticalAlignment
+            case 66:   //  Windows.UI.Xaml.VerticalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 68:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
+            case 67:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_68_ChartPalette;
+                userType.Activator = Activate_67_ChartPalette;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("FillEntries");
                 userType.AddMemberName("SpecialFillEntries");
@@ -887,30 +877,30 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 69:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
+            case 68:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_69_PaletteEntryCollection;
+                userType.Activator = Activate_68_PaletteEntryCollection;
                 userType.SetContentPropertyName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes");
                 userType.AddMemberName("Brushes");
                 xamlType = userType;
                 break;
 
-            case 70:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
+            case 69:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_70_List;
+                userType.CollectionAdd = VectorAdd_69_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 71:   //  Windows.UI.Xaml.Media.Brush
+            case 70:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 72:   //  Windows.UI.Xaml.Media.FontFamily
+            case 71:   //  Windows.UI.Xaml.Media.FontFamily
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 73:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
+            case 72:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Black", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Black);
                 userType.AddEnumValue("Bold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Bold);
@@ -926,7 +916,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 74:   //  Windows.UI.Text.FontStyle
+            case 73:   //  Windows.UI.Text.FontStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
@@ -934,28 +924,28 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 75:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
+            case 74:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_75_CalendarCellStyle;
+                userType.Activator = Activate_74_CalendarCellStyle;
                 userType.AddMemberName("ContentStyle");
                 userType.AddMemberName("DecorationStyle");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 76:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
+            case 75:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.Activator = Activate_76_BusyIndicatorAnimationAdapter;
+                userType.Activator = Activate_75_BusyIndicatorAnimationAdapter;
                 userType.AddMemberName("Animation");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 77:   //  Windows.UI.Xaml.FrameworkElement
+            case 76:   //  Windows.UI.Xaml.FrameworkElement
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 78:   //  Windows.UI.Xaml.Media.Animation.Storyboard
+            case 77:   //  Windows.UI.Xaml.Media.Animation.Storyboard
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -1046,444 +1036,444 @@ namespace Owl.Owl_XamlTypeInfo
             var that = (global::OwlWindowsPhoneApp.ViewModel.ViewModelLocator)instance;
             return that.Chats;
         }
-        private object get_4_Interaction_Behaviors(object instance)
-        {
-            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
-        }
-        private void set_4_Interaction_Behaviors(object instance, object Value)
-        {
-            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
-        }
-        private object get_5_EventTriggerBehavior_Actions(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.Actions;
-        }
-        private object get_6_EventTriggerBehavior_EventName(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.EventName;
-        }
-        private void set_6_EventTriggerBehavior_EventName(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            that.EventName = (global::System.String)Value;
-        }
-        private object get_7_EventTriggerBehavior_SourceObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.SourceObject;
-        }
-        private void set_7_EventTriggerBehavior_SourceObject(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            that.SourceObject = (global::System.Object)Value;
-        }
-        private object get_8_EventTriggerBehavior_AssociatedObject(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
-            return that.AssociatedObject;
-        }
-        private object get_9_InvokeCommandAction_Command(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            return that.Command;
-        }
-        private void set_9_InvokeCommandAction_Command(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            that.Command = (global::System.Windows.Input.ICommand)Value;
-        }
-        private object get_10_InvokeCommandAction_InputConverter(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            return that.InputConverter;
-        }
-        private void set_10_InvokeCommandAction_InputConverter(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
-        }
-        private object get_11_InvokeCommandAction_CommandParameter(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            return that.CommandParameter;
-        }
-        private void set_11_InvokeCommandAction_CommandParameter(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            that.CommandParameter = (global::System.Object)Value;
-        }
-        private object get_12_InvokeCommandAction_InputConverterParameter(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            return that.InputConverterParameter;
-        }
-        private void set_12_InvokeCommandAction_InputConverterParameter(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            that.InputConverterParameter = (global::System.Object)Value;
-        }
-        private object get_13_InvokeCommandAction_InputConverterLanguage(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            return that.InputConverterLanguage;
-        }
-        private void set_13_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            that.InputConverterLanguage = (global::System.String)Value;
-        }
-        private object get_14_NumericUpDown_ValueFormat(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            return that.ValueFormat;
-        }
-        private void set_14_NumericUpDown_ValueFormat(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            that.ValueFormat = (global::System.String)Value;
-        }
-        private object get_15_NumericUpDown_ValueBarVisibility(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            return that.ValueBarVisibility;
-        }
-        private void set_15_NumericUpDown_ValueBarVisibility(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            that.ValueBarVisibility = (global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility)Value;
-        }
-        private object get_16_NumericUpDown_IsReadOnly(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            return that.IsReadOnly;
-        }
-        private void set_16_NumericUpDown_IsReadOnly(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            that.IsReadOnly = (global::System.Boolean)Value;
-        }
-        private object get_17_NumericUpDown_DragSpeed(object instance)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            return that.DragSpeed;
-        }
-        private void set_17_NumericUpDown_DragSpeed(object instance, object Value)
-        {
-            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
-            that.DragSpeed = (global::System.Double)Value;
-        }
-        private object get_18_RadAutoCompleteBox_Watermark(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.Watermark;
-        }
-        private void set_18_RadAutoCompleteBox_Watermark(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.Watermark = (global::System.Object)Value;
-        }
-        private object get_19_RadHeaderedControl_Header(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
-            return that.Header;
-        }
-        private void set_19_RadHeaderedControl_Header(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
-            that.Header = (global::System.Object)Value;
-        }
-        private object get_20_RadAutoCompleteBox_AutosuggestFirstItem(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.AutosuggestFirstItem;
-        }
-        private void set_20_RadAutoCompleteBox_AutosuggestFirstItem(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.AutosuggestFirstItem = (global::System.Boolean)Value;
-        }
-        private object get_21_RadAutoCompleteBox_IsDropDownOpen(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.IsDropDownOpen;
-        }
-        private void set_21_RadAutoCompleteBox_IsDropDownOpen(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.IsDropDownOpen = (global::System.Boolean)Value;
-        }
-        private object get_22_RadAutoCompleteBox_DropDownMaxHeight(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.DropDownMaxHeight;
-        }
-        private void set_22_RadAutoCompleteBox_DropDownMaxHeight(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.DropDownMaxHeight = (global::System.Double)Value;
-        }
-        private object get_23_RadAutoCompleteBox_FilterMemberPath(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilterMemberPath;
-        }
-        private void set_23_RadAutoCompleteBox_FilterMemberPath(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.FilterMemberPath = (global::System.String)Value;
-        }
-        private object get_24_RadAutoCompleteBox_FilterMode(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilterMode;
-        }
-        private void set_24_RadAutoCompleteBox_FilterMode(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.FilterMode = (global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode)Value;
-        }
-        private object get_25_RadAutoCompleteBox_FilterDelay(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilterDelay;
-        }
-        private void set_25_RadAutoCompleteBox_FilterDelay(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.FilterDelay = (global::System.TimeSpan)Value;
-        }
-        private object get_26_RadHeaderedControl_HeaderStyle(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
-            return that.HeaderStyle;
-        }
-        private void set_26_RadHeaderedControl_HeaderStyle(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
-            that.HeaderStyle = (global::Windows.UI.Xaml.Style)Value;
-        }
-        private object get_27_RadAutoCompleteBox_ItemTemplate(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.ItemTemplate;
-        }
-        private void set_27_RadAutoCompleteBox_ItemTemplate(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_28_RadAutoCompleteBox_Text(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.Text;
-        }
-        private void set_28_RadAutoCompleteBox_Text(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.Text = (global::System.String)Value;
-        }
-        private object get_29_RadAutoCompleteBox_FilterComparisonMode(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilterComparisonMode;
-        }
-        private void set_29_RadAutoCompleteBox_FilterComparisonMode(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.FilterComparisonMode = (global::System.StringComparison)Value;
-        }
-        private object get_30_RadAutoCompleteBox_DisplayMemberPath(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.DisplayMemberPath;
-        }
-        private void set_30_RadAutoCompleteBox_DisplayMemberPath(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.DisplayMemberPath = (global::System.String)Value;
-        }
-        private object get_31_RadAutoCompleteBox_FilterStartThreshold(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilterStartThreshold;
-        }
-        private void set_31_RadAutoCompleteBox_FilterStartThreshold(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.FilterStartThreshold = (global::System.Int32)Value;
-        }
-        private object get_32_RadAutoCompleteBox_FilterMemberProvider(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilterMemberProvider;
-        }
-        private void set_32_RadAutoCompleteBox_FilterMemberProvider(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.FilterMemberProvider = (global::System.Func<global::System.Object, global::System.String>)Value;
-        }
-        private object get_33_RadAutoCompleteBox_FilteredItems(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.FilteredItems;
-        }
-        private object get_34_RadAutoCompleteBox_ItemsSource(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.ItemsSource;
-        }
-        private void set_34_RadAutoCompleteBox_ItemsSource(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.ItemsSource = (global::System.Collections.IEnumerable)Value;
-        }
-        private object get_35_RadAutoCompleteBox_ItemTemplateSelector(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.ItemTemplateSelector;
-        }
-        private void set_35_RadAutoCompleteBox_ItemTemplateSelector(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.ItemTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
-        }
-        private object get_36_RadAutoCompleteBox_DropDownPlacement(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.DropDownPlacement;
-        }
-        private void set_36_RadAutoCompleteBox_DropDownPlacement(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.DropDownPlacement = (global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode)Value;
-        }
-        private object get_37_RadAutoCompleteBox_WatermarkTemplate(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.WatermarkTemplate;
-        }
-        private void set_37_RadAutoCompleteBox_WatermarkTemplate(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            that.WatermarkTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_38_RadAutoCompleteBox_SelectedItem(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
-            return that.SelectedItem;
-        }
-        private object get_39_RadHeaderedControl_HeaderTemplate(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
-            return that.HeaderTemplate;
-        }
-        private void set_39_RadHeaderedControl_HeaderTemplate(object instance, object Value)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
-            that.HeaderTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
-        }
-        private object get_40_RadControl_CurrentVisualState(object instance)
-        {
-            var that = (global::Telerik.UI.Xaml.Controls.RadControl)instance;
-            return that.CurrentVisualState;
-        }
-        private object get_41_RadAutoCompleteBox_TextMatchHighlightStyle(object instance)
-        {
-            return global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.GetTextMatchHighlightStyle((global::Windows.UI.Xaml.DependencyObject)instance);
-        }
-        private void set_41_RadAutoCompleteBox_TextMatchHighlightStyle(object instance, object Value)
-        {
-            global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.SetTextMatchHighlightStyle((global::Windows.UI.Xaml.DependencyObject)instance, (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)Value);
-        }
-        private object get_42_RadAutoCompleteBox_IsTextMatchHighlightEnabled(object instance)
-        {
-            return global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.GetIsTextMatchHighlightEnabled((global::Windows.UI.Xaml.DependencyObject)instance);
-        }
-        private void set_42_RadAutoCompleteBox_IsTextMatchHighlightEnabled(object instance, object Value)
-        {
-            global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.SetIsTextMatchHighlightEnabled((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Boolean)Value);
-        }
-        private object get_43_MainPage_NavigationHelper(object instance)
-        {
-            var that = (global::OwlWindowsPhoneApp.MainPage)instance;
-            return that.NavigationHelper;
-        }
-        private object get_44_ChatBubble_ChatBubbleDirection(object instance)
+        private object get_4_ChatBubble_ChatBubbleDirection(object instance)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
             return that.ChatBubbleDirection;
         }
-        private void set_44_ChatBubble_ChatBubbleDirection(object instance, object Value)
+        private void set_4_ChatBubble_ChatBubbleDirection(object instance, object Value)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
             that.ChatBubbleDirection = (global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection)Value;
         }
-        private object get_45_ChatBubble_IsEquallySpaced(object instance)
+        private object get_5_ChatBubble_IsEquallySpaced(object instance)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
             return that.IsEquallySpaced;
         }
-        private void set_45_ChatBubble_IsEquallySpaced(object instance, object Value)
+        private void set_5_ChatBubble_IsEquallySpaced(object instance, object Value)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
             that.IsEquallySpaced = (global::System.Boolean)Value;
         }
-        private object get_46_ChatBubbleTextBox_ChatBubbleDirection(object instance)
+        private object get_6_Interaction_Behaviors(object instance)
+        {
+            return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_6_Interaction_Behaviors(object instance, object Value)
+        {
+            global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
+        }
+        private object get_7_ChatBubbleTextBox_ChatBubbleDirection(object instance)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             return that.ChatBubbleDirection;
         }
-        private void set_46_ChatBubbleTextBox_ChatBubbleDirection(object instance, object Value)
+        private void set_7_ChatBubbleTextBox_ChatBubbleDirection(object instance, object Value)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             that.ChatBubbleDirection = (global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection)Value;
         }
-        private object get_47_ChatBubbleTextBox_Hint(object instance)
+        private object get_8_ChatBubbleTextBox_Hint(object instance)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             return that.Hint;
         }
-        private void set_47_ChatBubbleTextBox_Hint(object instance, object Value)
+        private void set_8_ChatBubbleTextBox_Hint(object instance, object Value)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             that.Hint = (global::System.String)Value;
         }
-        private object get_48_ChatBubbleTextBox_HintStyle(object instance)
+        private object get_9_ChatBubbleTextBox_HintStyle(object instance)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             return that.HintStyle;
         }
-        private void set_48_ChatBubbleTextBox_HintStyle(object instance, object Value)
+        private void set_9_ChatBubbleTextBox_HintStyle(object instance, object Value)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             that.HintStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_49_ChatBubbleTextBox_IsEquallySpaced(object instance)
+        private object get_10_ChatBubbleTextBox_IsEquallySpaced(object instance)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             return that.IsEquallySpaced;
         }
-        private void set_49_ChatBubbleTextBox_IsEquallySpaced(object instance, object Value)
+        private void set_10_ChatBubbleTextBox_IsEquallySpaced(object instance, object Value)
         {
             var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
             that.IsEquallySpaced = (global::System.Boolean)Value;
         }
-        private object get_50_ScrollToBottomBehavior_ItemsSource(object instance)
+        private object get_11_EventTriggerBehavior_Actions(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.Actions;
+        }
+        private object get_12_EventTriggerBehavior_EventName(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.EventName;
+        }
+        private void set_12_EventTriggerBehavior_EventName(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.EventName = (global::System.String)Value;
+        }
+        private object get_13_EventTriggerBehavior_SourceObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.SourceObject;
+        }
+        private void set_13_EventTriggerBehavior_SourceObject(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            that.SourceObject = (global::System.Object)Value;
+        }
+        private object get_14_EventTriggerBehavior_AssociatedObject(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
+            return that.AssociatedObject;
+        }
+        private object get_15_InvokeCommandAction_Command(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.Command;
+        }
+        private void set_15_InvokeCommandAction_Command(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.Command = (global::System.Windows.Input.ICommand)Value;
+        }
+        private object get_16_InvokeCommandAction_CommandParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.CommandParameter;
+        }
+        private void set_16_InvokeCommandAction_CommandParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.CommandParameter = (global::System.Object)Value;
+        }
+        private object get_17_InvokeCommandAction_InputConverter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverter;
+        }
+        private void set_17_InvokeCommandAction_InputConverter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
+        }
+        private object get_18_InvokeCommandAction_InputConverterParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterParameter;
+        }
+        private void set_18_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterParameter = (global::System.Object)Value;
+        }
+        private object get_19_InvokeCommandAction_InputConverterLanguage(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.InputConverterLanguage;
+        }
+        private void set_19_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.InputConverterLanguage = (global::System.String)Value;
+        }
+        private object get_20_ScrollToBottomBehavior_ItemsSource(object instance)
         {
             var that = (global::OwlWindowsPhoneApp.ScrollToBottomBehavior)instance;
             return that.ItemsSource;
         }
-        private void set_50_ScrollToBottomBehavior_ItemsSource(object instance, object Value)
+        private void set_20_ScrollToBottomBehavior_ItemsSource(object instance, object Value)
         {
             var that = (global::OwlWindowsPhoneApp.ScrollToBottomBehavior)instance;
             that.ItemsSource = (global::System.Object)Value;
         }
-        private object get_51_ScrollToBottomBehavior_AssociatedObject(object instance)
+        private object get_21_ScrollToBottomBehavior_AssociatedObject(object instance)
         {
             var that = (global::OwlWindowsPhoneApp.ScrollToBottomBehavior)instance;
             return that.AssociatedObject;
+        }
+        private object get_22_NumericUpDown_ValueFormat(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            return that.ValueFormat;
+        }
+        private void set_22_NumericUpDown_ValueFormat(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            that.ValueFormat = (global::System.String)Value;
+        }
+        private object get_23_NumericUpDown_ValueBarVisibility(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            return that.ValueBarVisibility;
+        }
+        private void set_23_NumericUpDown_ValueBarVisibility(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            that.ValueBarVisibility = (global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility)Value;
+        }
+        private object get_24_NumericUpDown_IsReadOnly(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            return that.IsReadOnly;
+        }
+        private void set_24_NumericUpDown_IsReadOnly(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            that.IsReadOnly = (global::System.Boolean)Value;
+        }
+        private object get_25_NumericUpDown_DragSpeed(object instance)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            return that.DragSpeed;
+        }
+        private void set_25_NumericUpDown_DragSpeed(object instance, object Value)
+        {
+            var that = (global::WinRTXamlToolkit.Controls.NumericUpDown)instance;
+            that.DragSpeed = (global::System.Double)Value;
+        }
+        private object get_26_RadAutoCompleteBox_Watermark(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.Watermark;
+        }
+        private void set_26_RadAutoCompleteBox_Watermark(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.Watermark = (global::System.Object)Value;
+        }
+        private object get_27_RadHeaderedControl_Header(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
+            return that.Header;
+        }
+        private void set_27_RadHeaderedControl_Header(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
+            that.Header = (global::System.Object)Value;
+        }
+        private object get_28_RadAutoCompleteBox_AutosuggestFirstItem(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.AutosuggestFirstItem;
+        }
+        private void set_28_RadAutoCompleteBox_AutosuggestFirstItem(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.AutosuggestFirstItem = (global::System.Boolean)Value;
+        }
+        private object get_29_RadAutoCompleteBox_IsDropDownOpen(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.IsDropDownOpen;
+        }
+        private void set_29_RadAutoCompleteBox_IsDropDownOpen(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.IsDropDownOpen = (global::System.Boolean)Value;
+        }
+        private object get_30_RadAutoCompleteBox_DropDownMaxHeight(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.DropDownMaxHeight;
+        }
+        private void set_30_RadAutoCompleteBox_DropDownMaxHeight(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.DropDownMaxHeight = (global::System.Double)Value;
+        }
+        private object get_31_RadAutoCompleteBox_FilterMemberPath(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilterMemberPath;
+        }
+        private void set_31_RadAutoCompleteBox_FilterMemberPath(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.FilterMemberPath = (global::System.String)Value;
+        }
+        private object get_32_RadAutoCompleteBox_FilterMode(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilterMode;
+        }
+        private void set_32_RadAutoCompleteBox_FilterMode(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.FilterMode = (global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode)Value;
+        }
+        private object get_33_RadAutoCompleteBox_FilterDelay(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilterDelay;
+        }
+        private void set_33_RadAutoCompleteBox_FilterDelay(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.FilterDelay = (global::System.TimeSpan)Value;
+        }
+        private object get_34_RadHeaderedControl_HeaderStyle(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
+            return that.HeaderStyle;
+        }
+        private void set_34_RadHeaderedControl_HeaderStyle(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
+            that.HeaderStyle = (global::Windows.UI.Xaml.Style)Value;
+        }
+        private object get_35_RadAutoCompleteBox_ItemTemplate(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.ItemTemplate;
+        }
+        private void set_35_RadAutoCompleteBox_ItemTemplate(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.ItemTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_36_RadAutoCompleteBox_Text(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.Text;
+        }
+        private void set_36_RadAutoCompleteBox_Text(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.Text = (global::System.String)Value;
+        }
+        private object get_37_RadAutoCompleteBox_FilterComparisonMode(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilterComparisonMode;
+        }
+        private void set_37_RadAutoCompleteBox_FilterComparisonMode(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.FilterComparisonMode = (global::System.StringComparison)Value;
+        }
+        private object get_38_RadAutoCompleteBox_DisplayMemberPath(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.DisplayMemberPath;
+        }
+        private void set_38_RadAutoCompleteBox_DisplayMemberPath(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.DisplayMemberPath = (global::System.String)Value;
+        }
+        private object get_39_RadAutoCompleteBox_FilterStartThreshold(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilterStartThreshold;
+        }
+        private void set_39_RadAutoCompleteBox_FilterStartThreshold(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.FilterStartThreshold = (global::System.Int32)Value;
+        }
+        private object get_40_RadAutoCompleteBox_FilterMemberProvider(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilterMemberProvider;
+        }
+        private void set_40_RadAutoCompleteBox_FilterMemberProvider(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.FilterMemberProvider = (global::System.Func<global::System.Object, global::System.String>)Value;
+        }
+        private object get_41_RadAutoCompleteBox_FilteredItems(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.FilteredItems;
+        }
+        private object get_42_RadAutoCompleteBox_ItemsSource(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.ItemsSource;
+        }
+        private void set_42_RadAutoCompleteBox_ItemsSource(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.ItemsSource = (global::System.Collections.IEnumerable)Value;
+        }
+        private object get_43_RadAutoCompleteBox_ItemTemplateSelector(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.ItemTemplateSelector;
+        }
+        private void set_43_RadAutoCompleteBox_ItemTemplateSelector(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.ItemTemplateSelector = (global::Windows.UI.Xaml.Controls.DataTemplateSelector)Value;
+        }
+        private object get_44_RadAutoCompleteBox_DropDownPlacement(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.DropDownPlacement;
+        }
+        private void set_44_RadAutoCompleteBox_DropDownPlacement(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.DropDownPlacement = (global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode)Value;
+        }
+        private object get_45_RadAutoCompleteBox_WatermarkTemplate(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.WatermarkTemplate;
+        }
+        private void set_45_RadAutoCompleteBox_WatermarkTemplate(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            that.WatermarkTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_46_RadAutoCompleteBox_SelectedItem(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox)instance;
+            return that.SelectedItem;
+        }
+        private object get_47_RadHeaderedControl_HeaderTemplate(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
+            return that.HeaderTemplate;
+        }
+        private void set_47_RadHeaderedControl_HeaderTemplate(object instance, object Value)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadHeaderedControl)instance;
+            that.HeaderTemplate = (global::Windows.UI.Xaml.DataTemplate)Value;
+        }
+        private object get_48_RadControl_CurrentVisualState(object instance)
+        {
+            var that = (global::Telerik.UI.Xaml.Controls.RadControl)instance;
+            return that.CurrentVisualState;
+        }
+        private object get_49_RadAutoCompleteBox_TextMatchHighlightStyle(object instance)
+        {
+            return global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.GetTextMatchHighlightStyle((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_49_RadAutoCompleteBox_TextMatchHighlightStyle(object instance, object Value)
+        {
+            global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.SetTextMatchHighlightStyle((global::Windows.UI.Xaml.DependencyObject)instance, (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)Value);
+        }
+        private object get_50_RadAutoCompleteBox_IsTextMatchHighlightEnabled(object instance)
+        {
+            return global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.GetIsTextMatchHighlightEnabled((global::Windows.UI.Xaml.DependencyObject)instance);
+        }
+        private void set_50_RadAutoCompleteBox_IsTextMatchHighlightEnabled(object instance, object Value)
+        {
+            global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.SetIsTextMatchHighlightEnabled((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Boolean)Value);
+        }
+        private object get_51_MainPage_NavigationHelper(object instance)
+        {
+            var that = (global::OwlWindowsPhoneApp.MainPage)instance;
+            return that.NavigationHelper;
         }
         private object get_52_PivotPage_NavigationHelper(object instance)
         {
@@ -1737,260 +1727,315 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlMember.Getter = get_3_ViewModelLocator_Chats;
                 xamlMember.SetIsReadOnly();
                 break;
+            case "Coding4Fun.Toolkit.Controls.ChatBubble.ChatBubbleDirection":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubble");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ChatBubbleDirection", "Coding4Fun.Toolkit.Controls.ChatBubbleDirection");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_4_ChatBubble_ChatBubbleDirection;
+                xamlMember.Setter = set_4_ChatBubble_ChatBubbleDirection;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ChatBubble.IsEquallySpaced":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubble");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsEquallySpaced", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_5_ChatBubble_IsEquallySpaced;
+                xamlMember.Setter = set_5_ChatBubble_IsEquallySpaced;
+                break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_4_Interaction_Behaviors;
-                xamlMember.Setter = set_4_Interaction_Behaviors;
+                xamlMember.Getter = get_6_Interaction_Behaviors;
+                xamlMember.Setter = set_6_Interaction_Behaviors;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.ChatBubbleDirection":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ChatBubbleDirection", "Coding4Fun.Toolkit.Controls.ChatBubbleDirection");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_7_ChatBubbleTextBox_ChatBubbleDirection;
+                xamlMember.Setter = set_7_ChatBubbleTextBox_ChatBubbleDirection;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.Hint":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Hint", "String");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_8_ChatBubbleTextBox_Hint;
+                xamlMember.Setter = set_8_ChatBubbleTextBox_Hint;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.HintStyle":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HintStyle", "Windows.UI.Xaml.Style");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_9_ChatBubbleTextBox_HintStyle;
+                xamlMember.Setter = set_9_ChatBubbleTextBox_HintStyle;
+                break;
+            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.IsEquallySpaced":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsEquallySpaced", "Boolean");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_10_ChatBubbleTextBox_IsEquallySpaced;
+                xamlMember.Setter = set_10_ChatBubbleTextBox_IsEquallySpaced;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_5_EventTriggerBehavior_Actions;
+                xamlMember.Getter = get_11_EventTriggerBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_6_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_6_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_12_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_12_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_7_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_7_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_13_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_13_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_8_EventTriggerBehavior_AssociatedObject;
+                xamlMember.Getter = get_14_EventTriggerBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_9_InvokeCommandAction_Command;
-                xamlMember.Setter = set_9_InvokeCommandAction_Command;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_10_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_10_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_15_InvokeCommandAction_Command;
+                xamlMember.Setter = set_15_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_11_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_11_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_16_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_16_InvokeCommandAction_CommandParameter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_17_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_17_InvokeCommandAction_InputConverter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_12_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_12_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_18_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_18_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_13_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_13_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Getter = get_19_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_19_InvokeCommandAction_InputConverterLanguage;
+                break;
+            case "OwlWindowsPhoneApp.ScrollToBottomBehavior.ItemsSource":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.ScrollToBottomBehavior");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_20_ScrollToBottomBehavior_ItemsSource;
+                xamlMember.Setter = set_20_ScrollToBottomBehavior_ItemsSource;
+                break;
+            case "OwlWindowsPhoneApp.ScrollToBottomBehavior.AssociatedObject":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.ScrollToBottomBehavior");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
+                xamlMember.Getter = get_21_ScrollToBottomBehavior_AssociatedObject;
+                xamlMember.SetIsReadOnly();
                 break;
             case "WinRTXamlToolkit.Controls.NumericUpDown.ValueFormat":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.NumericUpDown");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ValueFormat", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_14_NumericUpDown_ValueFormat;
-                xamlMember.Setter = set_14_NumericUpDown_ValueFormat;
+                xamlMember.Getter = get_22_NumericUpDown_ValueFormat;
+                xamlMember.Setter = set_22_NumericUpDown_ValueFormat;
                 break;
             case "WinRTXamlToolkit.Controls.NumericUpDown.ValueBarVisibility":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.NumericUpDown");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ValueBarVisibility", "WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_15_NumericUpDown_ValueBarVisibility;
-                xamlMember.Setter = set_15_NumericUpDown_ValueBarVisibility;
+                xamlMember.Getter = get_23_NumericUpDown_ValueBarVisibility;
+                xamlMember.Setter = set_23_NumericUpDown_ValueBarVisibility;
                 break;
             case "WinRTXamlToolkit.Controls.NumericUpDown.IsReadOnly":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.NumericUpDown");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_16_NumericUpDown_IsReadOnly;
-                xamlMember.Setter = set_16_NumericUpDown_IsReadOnly;
+                xamlMember.Getter = get_24_NumericUpDown_IsReadOnly;
+                xamlMember.Setter = set_24_NumericUpDown_IsReadOnly;
                 break;
             case "WinRTXamlToolkit.Controls.NumericUpDown.DragSpeed":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("WinRTXamlToolkit.Controls.NumericUpDown");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "DragSpeed", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_17_NumericUpDown_DragSpeed;
-                xamlMember.Setter = set_17_NumericUpDown_DragSpeed;
+                xamlMember.Getter = get_25_NumericUpDown_DragSpeed;
+                xamlMember.Setter = set_25_NumericUpDown_DragSpeed;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.Watermark":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Watermark", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_18_RadAutoCompleteBox_Watermark;
-                xamlMember.Setter = set_18_RadAutoCompleteBox_Watermark;
+                xamlMember.Getter = get_26_RadAutoCompleteBox_Watermark;
+                xamlMember.Setter = set_26_RadAutoCompleteBox_Watermark;
                 break;
             case "Telerik.UI.Xaml.Controls.RadHeaderedControl.Header":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadHeaderedControl");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_19_RadHeaderedControl_Header;
-                xamlMember.Setter = set_19_RadHeaderedControl_Header;
+                xamlMember.Getter = get_27_RadHeaderedControl_Header;
+                xamlMember.Setter = set_27_RadHeaderedControl_Header;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.AutosuggestFirstItem":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "AutosuggestFirstItem", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_20_RadAutoCompleteBox_AutosuggestFirstItem;
-                xamlMember.Setter = set_20_RadAutoCompleteBox_AutosuggestFirstItem;
+                xamlMember.Getter = get_28_RadAutoCompleteBox_AutosuggestFirstItem;
+                xamlMember.Setter = set_28_RadAutoCompleteBox_AutosuggestFirstItem;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.IsDropDownOpen":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsDropDownOpen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_21_RadAutoCompleteBox_IsDropDownOpen;
-                xamlMember.Setter = set_21_RadAutoCompleteBox_IsDropDownOpen;
+                xamlMember.Getter = get_29_RadAutoCompleteBox_IsDropDownOpen;
+                xamlMember.Setter = set_29_RadAutoCompleteBox_IsDropDownOpen;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.DropDownMaxHeight":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "DropDownMaxHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_22_RadAutoCompleteBox_DropDownMaxHeight;
-                xamlMember.Setter = set_22_RadAutoCompleteBox_DropDownMaxHeight;
+                xamlMember.Getter = get_30_RadAutoCompleteBox_DropDownMaxHeight;
+                xamlMember.Setter = set_30_RadAutoCompleteBox_DropDownMaxHeight;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilterMemberPath":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilterMemberPath", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_23_RadAutoCompleteBox_FilterMemberPath;
-                xamlMember.Setter = set_23_RadAutoCompleteBox_FilterMemberPath;
+                xamlMember.Getter = get_31_RadAutoCompleteBox_FilterMemberPath;
+                xamlMember.Setter = set_31_RadAutoCompleteBox_FilterMemberPath;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilterMode":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilterMode", "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_24_RadAutoCompleteBox_FilterMode;
-                xamlMember.Setter = set_24_RadAutoCompleteBox_FilterMode;
+                xamlMember.Getter = get_32_RadAutoCompleteBox_FilterMode;
+                xamlMember.Setter = set_32_RadAutoCompleteBox_FilterMode;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilterDelay":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilterDelay", "TimeSpan");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_25_RadAutoCompleteBox_FilterDelay;
-                xamlMember.Setter = set_25_RadAutoCompleteBox_FilterDelay;
+                xamlMember.Getter = get_33_RadAutoCompleteBox_FilterDelay;
+                xamlMember.Setter = set_33_RadAutoCompleteBox_FilterDelay;
                 break;
             case "Telerik.UI.Xaml.Controls.RadHeaderedControl.HeaderStyle":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadHeaderedControl");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_26_RadHeaderedControl_HeaderStyle;
-                xamlMember.Setter = set_26_RadHeaderedControl_HeaderStyle;
+                xamlMember.Getter = get_34_RadHeaderedControl_HeaderStyle;
+                xamlMember.Setter = set_34_RadHeaderedControl_HeaderStyle;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.ItemTemplate":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ItemTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_27_RadAutoCompleteBox_ItemTemplate;
-                xamlMember.Setter = set_27_RadAutoCompleteBox_ItemTemplate;
+                xamlMember.Getter = get_35_RadAutoCompleteBox_ItemTemplate;
+                xamlMember.Setter = set_35_RadAutoCompleteBox_ItemTemplate;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.Text":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Text", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_28_RadAutoCompleteBox_Text;
-                xamlMember.Setter = set_28_RadAutoCompleteBox_Text;
+                xamlMember.Getter = get_36_RadAutoCompleteBox_Text;
+                xamlMember.Setter = set_36_RadAutoCompleteBox_Text;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilterComparisonMode":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilterComparisonMode", "System.StringComparison");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_29_RadAutoCompleteBox_FilterComparisonMode;
-                xamlMember.Setter = set_29_RadAutoCompleteBox_FilterComparisonMode;
+                xamlMember.Getter = get_37_RadAutoCompleteBox_FilterComparisonMode;
+                xamlMember.Setter = set_37_RadAutoCompleteBox_FilterComparisonMode;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.DisplayMemberPath":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "DisplayMemberPath", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_30_RadAutoCompleteBox_DisplayMemberPath;
-                xamlMember.Setter = set_30_RadAutoCompleteBox_DisplayMemberPath;
+                xamlMember.Getter = get_38_RadAutoCompleteBox_DisplayMemberPath;
+                xamlMember.Setter = set_38_RadAutoCompleteBox_DisplayMemberPath;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilterStartThreshold":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilterStartThreshold", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_31_RadAutoCompleteBox_FilterStartThreshold;
-                xamlMember.Setter = set_31_RadAutoCompleteBox_FilterStartThreshold;
+                xamlMember.Getter = get_39_RadAutoCompleteBox_FilterStartThreshold;
+                xamlMember.Setter = set_39_RadAutoCompleteBox_FilterStartThreshold;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilterMemberProvider":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilterMemberProvider", "System.Func`2<Object, String>");
-                xamlMember.Getter = get_32_RadAutoCompleteBox_FilterMemberProvider;
-                xamlMember.Setter = set_32_RadAutoCompleteBox_FilterMemberProvider;
+                xamlMember.Getter = get_40_RadAutoCompleteBox_FilterMemberProvider;
+                xamlMember.Setter = set_40_RadAutoCompleteBox_FilterMemberProvider;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.FilteredItems":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FilteredItems", "System.Collections.IEnumerable");
-                xamlMember.Getter = get_33_RadAutoCompleteBox_FilteredItems;
+                xamlMember.Getter = get_41_RadAutoCompleteBox_FilteredItems;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.ItemsSource":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_34_RadAutoCompleteBox_ItemsSource;
-                xamlMember.Setter = set_34_RadAutoCompleteBox_ItemsSource;
+                xamlMember.Getter = get_42_RadAutoCompleteBox_ItemsSource;
+                xamlMember.Setter = set_42_RadAutoCompleteBox_ItemsSource;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.ItemTemplateSelector":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ItemTemplateSelector", "Windows.UI.Xaml.Controls.DataTemplateSelector");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_35_RadAutoCompleteBox_ItemTemplateSelector;
-                xamlMember.Setter = set_35_RadAutoCompleteBox_ItemTemplateSelector;
+                xamlMember.Getter = get_43_RadAutoCompleteBox_ItemTemplateSelector;
+                xamlMember.Setter = set_43_RadAutoCompleteBox_ItemTemplateSelector;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.DropDownPlacement":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "DropDownPlacement", "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_36_RadAutoCompleteBox_DropDownPlacement;
-                xamlMember.Setter = set_36_RadAutoCompleteBox_DropDownPlacement;
+                xamlMember.Getter = get_44_RadAutoCompleteBox_DropDownPlacement;
+                xamlMember.Setter = set_44_RadAutoCompleteBox_DropDownPlacement;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.WatermarkTemplate":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "WatermarkTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_37_RadAutoCompleteBox_WatermarkTemplate;
-                xamlMember.Setter = set_37_RadAutoCompleteBox_WatermarkTemplate;
+                xamlMember.Getter = get_45_RadAutoCompleteBox_WatermarkTemplate;
+                xamlMember.Setter = set_45_RadAutoCompleteBox_WatermarkTemplate;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.SelectedItem":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_38_RadAutoCompleteBox_SelectedItem;
+                xamlMember.Getter = get_46_RadAutoCompleteBox_SelectedItem;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Telerik.UI.Xaml.Controls.RadHeaderedControl.HeaderTemplate":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadHeaderedControl");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HeaderTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_39_RadHeaderedControl_HeaderTemplate;
-                xamlMember.Setter = set_39_RadHeaderedControl_HeaderTemplate;
+                xamlMember.Getter = get_47_RadHeaderedControl_HeaderTemplate;
+                xamlMember.Setter = set_47_RadHeaderedControl_HeaderTemplate;
                 break;
             case "Telerik.UI.Xaml.Controls.RadControl.CurrentVisualState":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadControl");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "CurrentVisualState", "String");
-                xamlMember.Getter = get_40_RadControl_CurrentVisualState;
+                xamlMember.Getter = get_48_RadControl_CurrentVisualState;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.TextMatchHighlightStyle":
@@ -1999,8 +2044,8 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_41_RadAutoCompleteBox_TextMatchHighlightStyle;
-                xamlMember.Setter = set_41_RadAutoCompleteBox_TextMatchHighlightStyle;
+                xamlMember.Getter = get_49_RadAutoCompleteBox_TextMatchHighlightStyle;
+                xamlMember.Setter = set_49_RadAutoCompleteBox_TextMatchHighlightStyle;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.IsTextMatchHighlightEnabled":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox");
@@ -2008,68 +2053,13 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_42_RadAutoCompleteBox_IsTextMatchHighlightEnabled;
-                xamlMember.Setter = set_42_RadAutoCompleteBox_IsTextMatchHighlightEnabled;
+                xamlMember.Getter = get_50_RadAutoCompleteBox_IsTextMatchHighlightEnabled;
+                xamlMember.Setter = set_50_RadAutoCompleteBox_IsTextMatchHighlightEnabled;
                 break;
             case "OwlWindowsPhoneApp.MainPage.NavigationHelper":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.MainPage");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "NavigationHelper", "OwlWindowsPhoneApp.Common.NavigationHelper");
-                xamlMember.Getter = get_43_MainPage_NavigationHelper;
-                xamlMember.SetIsReadOnly();
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubble.ChatBubbleDirection":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubble");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ChatBubbleDirection", "Coding4Fun.Toolkit.Controls.ChatBubbleDirection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_44_ChatBubble_ChatBubbleDirection;
-                xamlMember.Setter = set_44_ChatBubble_ChatBubbleDirection;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubble.IsEquallySpaced":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubble");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsEquallySpaced", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_45_ChatBubble_IsEquallySpaced;
-                xamlMember.Setter = set_45_ChatBubble_IsEquallySpaced;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.ChatBubbleDirection":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ChatBubbleDirection", "Coding4Fun.Toolkit.Controls.ChatBubbleDirection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_46_ChatBubbleTextBox_ChatBubbleDirection;
-                xamlMember.Setter = set_46_ChatBubbleTextBox_ChatBubbleDirection;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.Hint":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Hint", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_47_ChatBubbleTextBox_Hint;
-                xamlMember.Setter = set_47_ChatBubbleTextBox_Hint;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.HintStyle":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HintStyle", "Windows.UI.Xaml.Style");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_48_ChatBubbleTextBox_HintStyle;
-                xamlMember.Setter = set_48_ChatBubbleTextBox_HintStyle;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.IsEquallySpaced":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsEquallySpaced", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_49_ChatBubbleTextBox_IsEquallySpaced;
-                xamlMember.Setter = set_49_ChatBubbleTextBox_IsEquallySpaced;
-                break;
-            case "OwlWindowsPhoneApp.ScrollToBottomBehavior.ItemsSource":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.ScrollToBottomBehavior");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_50_ScrollToBottomBehavior_ItemsSource;
-                xamlMember.Setter = set_50_ScrollToBottomBehavior_ItemsSource;
-                break;
-            case "OwlWindowsPhoneApp.ScrollToBottomBehavior.AssociatedObject":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("OwlWindowsPhoneApp.ScrollToBottomBehavior");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_51_ScrollToBottomBehavior_AssociatedObject;
+                xamlMember.Getter = get_51_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "OwlWindowsPhoneApp.PivotPage.NavigationHelper":

@@ -54,6 +54,12 @@ namespace OwlWindowsPhoneApp
         {
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            UserControl_FirstTimeEnter.GuideFinished -= UserControl_FirstTimeEnter_GuideFinished;
+            UserControl_FirstTimeEnter.TakePhotoClick -= UserControl_FirstTimeEnter_TakePhotoClick;
+        }
+
         void UserControl_FirstTimeEnter_TakePhotoClick(object sender, EventArgs e)
         {
             FileOpenPicker openPicker = new FileOpenPicker();

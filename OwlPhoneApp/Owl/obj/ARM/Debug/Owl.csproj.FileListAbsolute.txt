@@ -124,7 +124,6 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\CameraPhoto
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ChatHistoryUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ImageEffectsUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MainPage.xbf
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MessageUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MyPostUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PivotPage.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostInfoUserControl.xbf
@@ -182,8 +181,6 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\ImageEffect
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\ImageEffectsUserControl.g.cs
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MainPage.g.i.cs
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MainPage.g.cs
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessageUserControl.g.i.cs
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessageUserControl.g.cs
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MyPostUserControl.g.i.cs
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MyPostUserControl.g.cs
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\PivotPage.g.i.cs
@@ -198,7 +195,6 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\CameraPhoto
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\ChatHistoryUserControl.xaml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\ImageEffectsUserControl.xaml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MainPage.xaml
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessageUserControl.xaml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MyPostUserControl.xaml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\PivotPage.xaml
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\PostInfoUserControl.xaml
@@ -208,7 +204,6 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\CameraPhoto
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\ChatHistoryUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\ImageEffectsUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MainPage.xbf
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessageUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MyPostUserControl.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\PivotPage.xbf
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\PostInfoUserControl.xbf
@@ -498,8 +493,8 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial.pr
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\qualifiers.txt
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache
 C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\Owl.csprojResolveAssemblyReference.cache
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\BlankPage1.xbf
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.g.i.cs
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.g.cs
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.xaml
-C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\BlankPage1.xbf
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MessagePage.xbf
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessagePage.g.i.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessagePage.g.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessagePage.xaml
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\MessagePage.xbf

@@ -18,29 +18,28 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
+// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
 namespace OwlWindowsPhoneApp
 {
-    public sealed partial class MessageUserControl : UserControl
+    /// <summary>
+    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// </summary>
+    public sealed partial class MessagePage : Page
     {
-        private readonly string _userId;
-        private readonly string _userName;
-        private readonly string _userProfileUrl;
+        private string _userId;
+        private string _userName;
+        private string _userProfileUrl;
 
-        public MessageUserControl()
-            :this(null, null, null)
-        {
-
-        }
-
-        public MessageUserControl(string userId, string userName, string userProfileUrl)
+        public MessagePage()
         {
             this.InitializeComponent();
-            _userId = userId;
-            _userProfileUrl = userProfileUrl;
-            _userName = userName;
-            this.DataContext = new MessageViewModel(userId, userName, userProfileUrl);
+            this.Loaded += MessagePage_Loaded;
+        }
+
+        void MessagePage_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.DataContext = new MessageViewModel(_userId, _userName, _userProfileUrl);
             this.Loaded += MessageUserControl_Loaded;
             Messenger.Default.Register<SendMsgMessage>(this, async msg =>
             {
@@ -59,6 +58,22 @@ namespace OwlWindowsPhoneApp
                     }
                 });
             });
+        }
+  
+        /// <summary>
+        /// Invoked when this page is about to be displayed in a Frame.
+        /// </summary>
+        /// <param name="e">Event data that describes how this page was reached.
+        /// This parameter is typically used to configure the page.</param>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var param = e.Parameter as ChatEntry;
+            if(param != null)
+            {
+                _userId = param.UserId;
+                _userName = param.UserName;
+                _userProfileUrl = param.UserProfile;
+            }
         }
 
         void MessageUserControl_Loaded(object sender, RoutedEventArgs e)

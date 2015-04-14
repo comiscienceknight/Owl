@@ -58,11 +58,13 @@ namespace OwlWindowsPhoneApp
                 Grid_SubPage.Children.Clear();
                 if (msg.Post != null)
                 {
-                    Grid_SubPage.Children.Add(new PostInfoUserControl(msg.Post));
-                    AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                    AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                    AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                    AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+
+                    var rootFrame = (Window.Current.Content as Frame);
+                    _readyToQuit = true;
+                    if (!rootFrame.Navigate(typeof(PostInfoPage), msg.Post))
+                    {
+                        throw new Exception("Failed to create MainPage");
+                    }
                 }
             });
             Messenger.Default.Register<NavigateToChatMessage>(this, msg =>

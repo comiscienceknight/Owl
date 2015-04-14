@@ -136,6 +136,9 @@
     <Compile Include="View\PivotPage.xaml.cs">
       <DependentUpon>PivotPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\PostInfoPage.xaml.cs">
+      <DependentUpon>PostInfoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PostInfoUserControl.xaml.cs">
       <DependentUpon>PostInfoUserControl.xaml</DependentUpon>
     </Compile>
@@ -213,6 +216,10 @@
     <Page Include="View\PivotPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PostInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PostInfoUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>

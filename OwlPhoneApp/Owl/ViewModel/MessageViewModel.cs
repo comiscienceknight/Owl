@@ -33,22 +33,12 @@ namespace OwlWindowsPhoneApp.ViewModel
         public RelayCommand<string> SendMessageCommand { get; set; }
         public RelayCommand ListViewMessageLoadedCommand { get; set; }
 
-        private readonly string _userId;
-        private readonly string _userName;
-        private readonly string _userProfileUrl;
+        private string _userId;
+        private string _userName;
+        private string _userProfileUrl;
 
         public MessageViewModel()
-            : this(null, null, null)
         {
-
-        }
-
-        public MessageViewModel(string userId, string userName, string userProfileUrl)
-        {
-            _userId = userId;
-            _userProfileUrl = userProfileUrl;
-            _userName = userName;
-
             SendMessageCommand = new RelayCommand<string>(msg =>
             {
                 Messenger.Default.Send<SendMsgMessage>(new SendMsgMessage(true));
@@ -66,18 +56,25 @@ namespace OwlWindowsPhoneApp.ViewModel
             ListViewMessageLoadedCommand = new RelayCommand(() =>
             {
                 LoadPosts();
-                Messenger.Default.Send<EnterIntoChatMessage>(new EnterIntoChatMessage(new ChatEntry()
-                {
-                    UserId = _userId,
-                    UserName = _userName,
-                    Message = "",
-                    Time = "",
-                    UserProfile = _userProfileUrl
-                }));
             });
         }
 
-        private async void LoadPosts()
+        public void InitBasicInfo(string userId, string userName, string userProfileUrl)
+        {
+            _userId = userId;
+            _userProfileUrl = userProfileUrl;
+            _userName = userName;
+            Messenger.Default.Send<EnterIntoChatMessage>(new EnterIntoChatMessage(new ChatEntry()
+            {
+                UserId = _userId,
+                UserName = _userName,
+                Message = "",
+                Time = "",
+                UserProfile = _userProfileUrl
+            }));
+        }
+
+        private void LoadPosts()
         {
             Messenger.Default.Send<SendMsgMessage>(new SendMsgMessage(true));
 

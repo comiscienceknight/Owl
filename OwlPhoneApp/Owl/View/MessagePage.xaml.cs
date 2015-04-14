@@ -34,13 +34,14 @@ namespace OwlWindowsPhoneApp
         public MessagePage()
         {
             this.InitializeComponent();
+            this.DataContext = new MessageViewModel();
             this.Loaded += MessagePage_Loaded;
         }
 
         void MessagePage_Loaded(object sender, RoutedEventArgs e)
         {
-            this.DataContext = new MessageViewModel(_userId, _userName, _userProfileUrl);
-            this.Loaded += MessageUserControl_Loaded;
+            (this.DataContext as MessageViewModel).InitBasicInfo(_userId, _userName, _userProfileUrl);
+            TextBlock_PageTitle.Text = "Chat - " + _userName;
             Messenger.Default.Register<SendMsgMessage>(this, async msg =>
             {
                 await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
@@ -74,11 +75,6 @@ namespace OwlWindowsPhoneApp
                 _userName = param.UserName;
                 _userProfileUrl = param.UserProfile;
             }
-        }
-
-        void MessageUserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            TextBlock_PageTitle.Text = "Chat - " + _userName;
         }
 
         private void Button_SendMessage_Click(object sender, RoutedEventArgs e)

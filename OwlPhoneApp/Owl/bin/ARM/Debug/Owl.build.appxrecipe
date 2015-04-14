@@ -355,6 +355,9 @@
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PivotPage.xbf">
       <PackagePath>View\PivotPage.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostInfoPage.xbf">
+      <PackagePath>View\PostInfoPage.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostInfoUserControl.xbf">
       <PackagePath>View\PostInfoUserControl.xbf</PackagePath>
     </AppxPackagedFile>

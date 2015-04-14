@@ -340,5 +340,6 @@
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.PostsUserControl" />
     <RootType FullName="OwlWindowsPhoneApp.PivotPage" />
+    <RootType FullName="OwlWindowsPhoneApp.PostInfoPage" />
   </Roots.RootTypes>
 </Roots>

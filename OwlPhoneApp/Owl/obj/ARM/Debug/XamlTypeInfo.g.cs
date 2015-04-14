@@ -148,7 +148,7 @@ namespace Owl.Owl_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[78];
+            _typeNameTable = new string[79];
             _typeNameTable[0] = "OwlWindowsPhoneApp.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "OwlWindowsPhoneApp.ViewModel.MainViewModel";
@@ -212,23 +212,24 @@ namespace Owl.Owl_XamlTypeInfo
             _typeNameTable[60] = "OwlWindowsPhoneApp.PostInfoUserControl";
             _typeNameTable[61] = "OwlWindowsPhoneApp.PostsUserControl";
             _typeNameTable[62] = "OwlWindowsPhoneApp.PivotPage";
-            _typeNameTable[63] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
-            _typeNameTable[64] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
-            _typeNameTable[65] = "Windows.UI.Xaml.HorizontalAlignment";
-            _typeNameTable[66] = "Windows.UI.Xaml.VerticalAlignment";
-            _typeNameTable[67] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
-            _typeNameTable[68] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
-            _typeNameTable[69] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
-            _typeNameTable[70] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[71] = "Windows.UI.Xaml.Media.FontFamily";
-            _typeNameTable[72] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
-            _typeNameTable[73] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[74] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
-            _typeNameTable[75] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
-            _typeNameTable[76] = "Windows.UI.Xaml.FrameworkElement";
-            _typeNameTable[77] = "Windows.UI.Xaml.Media.Animation.Storyboard";
+            _typeNameTable[63] = "OwlWindowsPhoneApp.PostInfoPage";
+            _typeNameTable[64] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
+            _typeNameTable[65] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
+            _typeNameTable[66] = "Windows.UI.Xaml.HorizontalAlignment";
+            _typeNameTable[67] = "Windows.UI.Xaml.VerticalAlignment";
+            _typeNameTable[68] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
+            _typeNameTable[69] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
+            _typeNameTable[70] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
+            _typeNameTable[71] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[72] = "Windows.UI.Xaml.Media.FontFamily";
+            _typeNameTable[73] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
+            _typeNameTable[74] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[75] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
+            _typeNameTable[76] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
+            _typeNameTable[77] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[78] = "Windows.UI.Xaml.Media.Animation.Storyboard";
 
-            _typeTable = new global::System.Type[78];
+            _typeTable = new global::System.Type[79];
             _typeTable[0] = typeof(global::OwlWindowsPhoneApp.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::OwlWindowsPhoneApp.ViewModel.MainViewModel);
@@ -292,21 +293,22 @@ namespace Owl.Owl_XamlTypeInfo
             _typeTable[60] = typeof(global::OwlWindowsPhoneApp.PostInfoUserControl);
             _typeTable[61] = typeof(global::OwlWindowsPhoneApp.PostsUserControl);
             _typeTable[62] = typeof(global::OwlWindowsPhoneApp.PivotPage);
-            _typeTable[63] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
-            _typeTable[64] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
-            _typeTable[65] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
-            _typeTable[66] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
-            _typeTable[67] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
-            _typeTable[68] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
-            _typeTable[69] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
-            _typeTable[70] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[71] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
-            _typeTable[72] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
-            _typeTable[73] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[74] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
-            _typeTable[75] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
-            _typeTable[76] = typeof(global::Windows.UI.Xaml.FrameworkElement);
-            _typeTable[77] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
+            _typeTable[63] = typeof(global::OwlWindowsPhoneApp.PostInfoPage);
+            _typeTable[64] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
+            _typeTable[65] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
+            _typeTable[66] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
+            _typeTable[67] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
+            _typeTable[68] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
+            _typeTable[69] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
+            _typeTable[70] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
+            _typeTable[71] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[72] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
+            _typeTable[73] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
+            _typeTable[74] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[75] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
+            _typeTable[76] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
+            _typeTable[77] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[78] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -369,12 +371,13 @@ namespace Owl.Owl_XamlTypeInfo
         private object Activate_60_PostInfoUserControl() { return new global::OwlWindowsPhoneApp.PostInfoUserControl(); }
         private object Activate_61_PostsUserControl() { return new global::OwlWindowsPhoneApp.PostsUserControl(); }
         private object Activate_62_PivotPage() { return new global::OwlWindowsPhoneApp.PivotPage(); }
-        private object Activate_63_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
-        private object Activate_67_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
-        private object Activate_68_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
-        private object Activate_69_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
-        private object Activate_74_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
-        private object Activate_75_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
+        private object Activate_63_PostInfoPage() { return new global::OwlWindowsPhoneApp.PostInfoPage(); }
+        private object Activate_64_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
+        private object Activate_68_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
+        private object Activate_69_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
+        private object Activate_70_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
+        private object Activate_75_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
+        private object Activate_76_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
         private void VectorAdd_15_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
@@ -387,7 +390,7 @@ namespace Owl.Owl_XamlTypeInfo
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_69_List(object instance, object item)
+        private void VectorAdd_70_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Brush>)instance;
             var newItem = (global::Windows.UI.Xaml.Media.Brush)item;
@@ -832,9 +835,16 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 63:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
+            case 63:   //  OwlWindowsPhoneApp.PostInfoPage
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_63_PostInfoPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 64:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_63_ChartAnnotationLabelDefinition;
+                userType.Activator = Activate_64_ChartAnnotationLabelDefinition;
                 userType.AddMemberName("Format");
                 userType.AddMemberName("Template");
                 userType.AddMemberName("DefaultVisualStyle");
@@ -847,7 +857,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 64:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
+            case 65:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Left", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Left);
                 userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Top);
@@ -857,17 +867,17 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 65:   //  Windows.UI.Xaml.HorizontalAlignment
+            case 66:   //  Windows.UI.Xaml.HorizontalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 66:   //  Windows.UI.Xaml.VerticalAlignment
+            case 67:   //  Windows.UI.Xaml.VerticalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 67:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
+            case 68:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_67_ChartPalette;
+                userType.Activator = Activate_68_ChartPalette;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("FillEntries");
                 userType.AddMemberName("SpecialFillEntries");
@@ -877,30 +887,30 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 68:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
+            case 69:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_68_PaletteEntryCollection;
+                userType.Activator = Activate_69_PaletteEntryCollection;
                 userType.SetContentPropertyName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes");
                 userType.AddMemberName("Brushes");
                 xamlType = userType;
                 break;
 
-            case 69:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
+            case 70:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_69_List;
+                userType.CollectionAdd = VectorAdd_70_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 70:   //  Windows.UI.Xaml.Media.Brush
+            case 71:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 71:   //  Windows.UI.Xaml.Media.FontFamily
+            case 72:   //  Windows.UI.Xaml.Media.FontFamily
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 72:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
+            case 73:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Black", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Black);
                 userType.AddEnumValue("Bold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Bold);
@@ -916,7 +926,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 73:   //  Windows.UI.Text.FontStyle
+            case 74:   //  Windows.UI.Text.FontStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
@@ -924,28 +934,28 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 74:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
+            case 75:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_74_CalendarCellStyle;
+                userType.Activator = Activate_75_CalendarCellStyle;
                 userType.AddMemberName("ContentStyle");
                 userType.AddMemberName("DecorationStyle");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 75:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
+            case 76:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.Activator = Activate_75_BusyIndicatorAnimationAdapter;
+                userType.Activator = Activate_76_BusyIndicatorAnimationAdapter;
                 userType.AddMemberName("Animation");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 76:   //  Windows.UI.Xaml.FrameworkElement
+            case 77:   //  Windows.UI.Xaml.FrameworkElement
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 77:   //  Windows.UI.Xaml.Media.Animation.Storyboard
+            case 78:   //  Windows.UI.Xaml.Media.Animation.Storyboard
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -2541,5 +2551,6 @@ namespace Owl.Owl_XamlTypeInfo
         }
     }
 }
+
 
 

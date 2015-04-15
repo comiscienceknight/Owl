@@ -553,3 +553,8 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\pr
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\pri.resfiles.intermediate
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\priconfig.xml
 C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\System.Spatial\priconfig.xml.intermediate
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\EditMyProfilePage.xbf
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\EditMyProfilePage.g.i.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\EditMyProfilePage.g.cs
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\EditMyProfilePage.xaml
+C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\View\EditMyProfilePage.xbf

@@ -34,6 +34,39 @@
 
         <ScrollViewer Margin="8,60,10,0">
             <StackPanel>
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+                
+                <Grid x:Name="Grid_Profiles">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" Margin="5">
+                        <Image x:Name="Image_Profile1" Tapped="Image_Profile1_Tapped" />
+                    </Grid>
+                    <Grid Grid.Column="1" Margin="5,0">
+                        <Rectangle Fill="White" Opacity="0.5" Height="30" VerticalAlignment="Center"
+                                   Width="2" HorizontalAlignment="Left"/>
+                        <AppBarButton x:Name="AppBarButton_InsertProfile2" Icon="Add"  
+                                      HorizontalAlignment="Center" Margin="0"
+                                      VerticalAlignment="Center" Click="AppBarButton_InsertProfile2_Click"
+                                      IsCompact="False" Label="Add photo" />
+                        <Image x:Name="Image_Profile2" />
+                    </Grid>
+                    <Grid Grid.Column="2" Margin="5,0">
+                        <Rectangle Fill="White" Opacity="0.5" Height="30" VerticalAlignment="Center"
+                                   Width="2" HorizontalAlignment="Left"/>
+                        <AppBarButton x:Name="AppBarButton_InsertProfile3" Icon="Add"  
+                                      HorizontalAlignment="Center" Margin="0"
+                                      VerticalAlignment="Center" Click="AppBarButton_InsertProfile3_Click"
+                                      IsCompact="False" Label="Add photo" />
+                        <Image x:Name="Image_Profile3"/>
+                    </Grid>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
+                
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="170" />
@@ -73,6 +106,10 @@
                                 </DataTemplate>
                             </Input:RadAutoCompleteBox.ItemTemplate>
                         </Input:RadAutoCompleteBox>
+                        <ProgressBar Margin="0,0,0,8" Visibility="Collapsed"
+                                     VerticalAlignment="Bottom" Width="200"
+                                     x:Name="ProgressBar_Search" IsIndeterminate="True" 
+                                     HorizontalAlignment="Stretch" />
                     </Grid>
                 </Grid>
 
@@ -237,20 +274,61 @@
                     </Button>
                 </Grid>
 
-                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,5" ></Rectangle>
-
-                <Border BorderThickness="4" BorderBrush="#CC68332A" Background="#CCE00B0B">
-                    <FlipView x:Name="FlipView_Profile" Margin="-2,-2,0,-2" Background="{x:Null}"
-                         >
-                        <Image x:Name="Image_Profile1" Source="ms-appx:///Assets/Tempo/addphoto.png" 
-                            Stretch="Fill"  />
-                        <Image  x:Name="Image_Profile2" Source="ms-appx:///Assets/Tempo/addphoto.png"
-                             Stretch="Fill"  />
-                        <Image  x:Name="Image_Profile3" Source="ms-appx:///Assets/Tempo/addphoto.png"
-                             Stretch="Fill" />
-                    </FlipView>
-                </Border>
             </StackPanel>
         </ScrollViewer>
+
+        <Border x:Name="Grid_ManipForProfile" 
+                BorderBrush="Red" BorderThickness="3"  Background="#CC000000"
+                CornerRadius="5" Visibility="Collapsed" >
+            <StackPanel 
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Center"
+                  Margin="10">
+                <Image x:Name="Image_SelectedImage" Stretch="UniformToFill">
+                
+                </Image>
+            
+                <Grid Background="Green" Height="130">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <AppBarButton x:Name="AppBarButton_ChangeProfile" Icon="Edit"  
+                              Grid.Column="0"
+                                    HorizontalAlignment="Center" Margin="5,8,5,0"
+                                    VerticalAlignment="Top"
+                                Click="AppBarButton_ChangeProfile_Click"
+                                    IsCompact="False" Label="Change photo" >
+                        <AppBarButton.RenderTransform>
+                            <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                        </AppBarButton.RenderTransform>
+                    </AppBarButton>
+                    <AppBarButton x:Name="AppBarButton_RemovePhoto" Icon="Remove"  
+                              Grid.Column="1"
+                                      HorizontalAlignment="Center" Margin="5,8,5,0"
+                                      VerticalAlignment="Top"
+                                  Click="AppBarButton_RemovePhoto_Click"
+                                      IsCompact="False" Label="Remove photo" >
+                        <AppBarButton.RenderTransform>
+                            <CompositeTransform ScaleX="1.5" ScaleY="1.5"/>
+                        </AppBarButton.RenderTransform>
+                    </AppBarButton>
+                    <AppBarButton x:Name="AppBarButton_CloseProfileManip" Icon="ClosePane"  
+                              Grid.Column="2"
+                                      HorizontalAlignment="Center" Margin="5,8,5,0"
+                                      VerticalAlignment="Top"
+                                  Click="AppBarButton_CloseProfileManip_Click"
+                                      IsCompact="False" Label="Close" >
+                        <AppBarButton.RenderTransform>
+                            <CompositeTransform ScaleX="1.2" ScaleY="1.2"/>
+                        </AppBarButton.RenderTransform>
+                    </AppBarButton>
+                </Grid>
+            </StackPanel>
+        </Border>
+        <Grid x:Name="Grid_SubWindow">
+            
+        </Grid>
     </Grid>
 </Page>

@@ -1,19 +1,14 @@
-﻿using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Auth;
+﻿using Microsoft.WindowsAzure.Storage.Auth;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
-using Windows.Storage.Streams;
 
 namespace Owl.Models
 {
     class AzureStorage
     {
-        private CloudStorageAccount _storageAccount;
         public AzureStorage()
         {
         }

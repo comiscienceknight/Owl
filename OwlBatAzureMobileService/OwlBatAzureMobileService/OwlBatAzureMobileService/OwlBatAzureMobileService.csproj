@@ -258,6 +258,7 @@
     <None Include="Properties\PublishProfiles\mobile-owlbat %286%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %287%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat %288%29.pubxml" />
+    <None Include="Properties\PublishProfiles\mobile-owlbat %289%29.pubxml" />
     <None Include="Properties\PublishProfiles\mobile-owlbat.pubxml" />
   </ItemGroup>
   <ItemGroup>

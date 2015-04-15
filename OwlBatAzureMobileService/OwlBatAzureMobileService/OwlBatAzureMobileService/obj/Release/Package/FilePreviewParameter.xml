@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="IIS Web Application Name" description="" value="mobile$owlbat" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp$" />
-    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp$" />
   </parameter>
   <parameter name="MS_NotificationHubConnectionString-Web.config Connection String" description="" value="Endpoint=sb://owlbathub-ns.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=Dh1STn54oCpzsYl/iM8t7sYSh0cOoEwUAdP+lfzymYU=" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_NotificationHubConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_NotificationHubConnectionString']/@connectionString" />
   </parameter>
   <parameter name="OwlConnectionString-Web.config Connection String" description="" value="Data Source=olblgislxo.database.windows.net;Initial Catalog=Owl;Persist Security Info=True;User ID=owlbat;Password=@nlc0ccmb" tags="">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlConnectionString']/@connectionString" />
   </parameter>
   <parameter name="OwlbatConnectionString-Web.config Connection String" description="OwlbatConnectionString Connection String used in web.config by the application to access the database." value="data source=owlbat.database.windows.net;initial catalog=Owlbat;user id=owlbat;password=@nlc0ccmb;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlbatConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlbatConnectionString']/@connectionString" />
   </parameter>
 </parameters>

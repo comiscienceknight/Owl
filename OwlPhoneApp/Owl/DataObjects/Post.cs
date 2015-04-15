@@ -20,6 +20,17 @@ namespace OwlWindowsPhoneApp.DataObjects
             }
         }
 
+        private string _venueId;
+        public string VenueId
+        {
+            get { return _venueId; }
+            set
+            {
+                _venueId = value;
+                OnPropertyChanged("VenueId");
+            }
+        }
+
         private string _place;
         public string Place
         {

@@ -92,11 +92,14 @@ namespace OwlWindowsPhoneApp.ViewModel
             if (jo.ContainsKey("userProfileUrl1"))
             {
                 post.ProfileUrl = jo.GetNamedString("userProfileUrl1");
-                Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
-                BitmapImage bmi = new BitmapImage();
-                bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                bmi.UriSource = myUri;
-                post.Profile = bmi;
+                if (!string.IsNullOrWhiteSpace(post.ProfileUrl))
+                {
+                    Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
+                    BitmapImage bmi = new BitmapImage();
+                    bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bmi.UriSource = myUri;
+                    post.Profile = bmi;
+                }
             }
             if (jo.ContainsKey("userProfileUrl2"))
             {

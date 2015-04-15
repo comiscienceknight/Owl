@@ -1,13 +1,18 @@
-﻿using OwlWindowsPhoneApp.DataObjects;
+﻿using Owl.Models;
+using OwlWindowsPhoneApp.DataObjects;
 using OwlWindowsPhoneApp.View;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 using Telerik.UI.Xaml.Controls.Input.AutoCompleteBox;
 using Windows.Data.Json;
+using Windows.Graphics.Imaging;
 using Windows.Storage;
 using Windows.Storage.Pickers;
+using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -48,21 +53,137 @@ namespace OwlWindowsPhoneApp
 
         void EditMyProfilePage_Loaded(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
-            Uri myUri = new Uri(_post.ProfileUrl, UriKind.Absolute);
-            BitmapImage bmi = new BitmapImage();
-            bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-            bmi.UriSource = myUri;
-            Image_Profile1.Source = bmi;
+            if(!string.IsNullOrWhiteSpace(_post.ProfileUrl))
+            {
+                Uri myUri = new Uri(_post.ProfileUrl, UriKind.Absolute);
+                BitmapImage bmi = new BitmapImage();
+                bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                bmi.UriSource = myUri;
+                Image_Profile1.Source = bmi;
+            }
+            if (!string.IsNullOrWhiteSpace(_post.ProfileUrl2))
+            {
+                Uri myUri = new Uri(_post.ProfileUrl2, UriKind.Absolute);
+                BitmapImage bmi = new BitmapImage();
+                bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                bmi.UriSource = myUri;
+                Image_Profile2.Source = bmi;
+            }
+            if (!string.IsNullOrWhiteSpace(_post.ProfileUrl3))
+            {
+                Uri myUri = new Uri(_post.ProfileUrl3, UriKind.Absolute);
+                BitmapImage bmi = new BitmapImage();
+                bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                bmi.UriSource = myUri;
+                Image_Profile3.Source = bmi;
+            }
+            
+            RadAutoCompleteBox_Search.Text = _post.Place;
+            NumericUpDown_WithBoys.Value = _post.GuysNumber ?? 0;
+            NumericUpDown_WithGirls.Value = _post.GirlsNumber ?? 0;
+            TextBox_NickName.Text = _post.UserName;
+            
 
             InitAutoTextComplete();
         }
 
-        private void AppBarButton_Upload_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
+        private async void AppBarButton_Upload_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
         {
+            string profileUrl1 = null, profileUrl2 = null, profileUrl3 = null;
+            if(Image_Profile1.Source != null && Image_Profile1.Source is RenderTargetBitmap)
+            {
+                profileUrl1 = "owlUploadingPic" + ".jpeg";
+                await SaveProfile(Image_Profile1.Source as RenderTargetBitmap, profileUrl1);
+                string profileRemoteFileName = App.UserId + ".jpg";
+                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(profileUrl1);
+                await (new AzureStorage()).UploadProfile(profileRemoteFileName, savedFile);
+                profileUrl1 = profileRemoteFileName;
+            }
+            if (Image_Profile2.Source != null && Image_Profile2.Source is RenderTargetBitmap)
+            {
+                profileUrl2 = "owlUploadingPic2" + ".jpeg";
+                await SaveProfile(Image_Profile2.Source as RenderTargetBitmap, profileUrl2);
+                string profileRemoteFileName2 = App.UserId + "2.jpg";
+                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(profileUrl2);
+                await (new AzureStorage()).UploadProfile(profileRemoteFileName2, savedFile);
+                profileUrl2 = profileRemoteFileName2;
+            }
+            if (Image_Profile3.Source != null && Image_Profile3.Source is RenderTargetBitmap)
+            {
+                profileUrl3 = "owlUploadingPic3" + ".jpeg";
+                await SaveProfile(Image_Profile3.Source as RenderTargetBitmap, profileUrl3);
+                string profileRemoteFileName3 = App.UserId + "3.jpg";
+                StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(profileUrl3);
+                await (new AzureStorage()).UploadProfile(profileRemoteFileName3, savedFile);
+                profileUrl3 = profileRemoteFileName3;
+            }
+
+            var venueInfo = RadAutoCompleteBox_Search.SelectedItem as SearchAvenues;
+            if (venueInfo == null || string.IsNullOrWhiteSpace(venueInfo.VenueId))
+            {
+                if(_post.Place != RadAutoCompleteBox_Search.Text)
+                {
+                    var dialog = new MessageDialog("Venue should be recognized");
+                    await dialog.ShowAsync();
+                    return;
+                }
+            }
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+
+                var prms = new Dictionary<string, string>();
+                if(!string.IsNullOrWhiteSpace(profileUrl1))
+                    prms.Add("profileurl", "http://owlbat.azurewebsites.net/profile/" + profileUrl1);
+                if (!string.IsNullOrWhiteSpace(profileUrl2))
+                    prms.Add("profileurl2", "http://owlbat.azurewebsites.net/profile/" + profileUrl2);
+                if (!string.IsNullOrWhiteSpace(profileUrl3))
+                    prms.Add("profileurl3", "http://owlbat.azurewebsites.net/profile/" + profileUrl3);
+                prms.Add("agerange", TextBlock_AgeRange.Text ?? "");
+                prms.Add("description", (TextBlock_Description.Text ?? "").Replace("'", "''"));
+                prms.Add("girlsnumber", ((int)NumericUpDown_WithGirls.Value).ToString());
+                prms.Add("guysnumber", ((int)NumericUpDown_WithGirls.Value).ToString());
+                prms.Add("username", TextBox_NickName.Text ?? " ");
+                prms.Add("venueid", venueInfo == null ? _post.VenueId : venueInfo.VenueId);
+                prms.Add("venuename", venueInfo == null ? _post.Place : venueInfo.Venue);
+                prms.Add("codedress", TextBlock_DressCode.Text ?? "");
+                prms.Add("userid", App.UserId);
+
+                HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
+                HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/updatepost"), formContent);
+                response.EnsureSuccessStatusCode();
+
+                await response.Content.ReadAsStringAsync();
+
+                if (response.Content != null && response.Content.ToString() == "")
+                {
+                    var dialog = new MessageDialog(response.Content.ToString());
+                    await dialog.ShowAsync();
+                }
+            }
+
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.GoBack();
         }
 
+        private async Task SaveProfile(RenderTargetBitmap bmp, string imageName)
+        {
+            var pixels = await bmp.GetPixelsAsync();
+            StorageFolder folder = Windows.Storage.ApplicationData.Current.LocalFolder;
+            StorageFile file = await folder.CreateFileAsync(imageName, CreationCollisionOption.ReplaceExisting);
+            using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+            {
+                var encoder = await
+                    BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream);
+                byte[] bytes = pixels.ToArray();
+                encoder.SetPixelData(BitmapPixelFormat.Bgra8,
+                                     BitmapAlphaMode.Ignore,
+                                     (uint)bmp.PixelWidth, (uint)bmp.PixelHeight,
+                                     96, 96, bytes);
+                await encoder.FlushAsync();
+            }
+        }
 
         #region photo profile
         private void Image_Profile1_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
@@ -79,7 +200,10 @@ namespace OwlWindowsPhoneApp
         private void AppBarButton_InsertProfile2_Click(object sender, RoutedEventArgs e)
         {
             Grid_ManipForProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Image_SelectedImage.Source = Image_Profile1.Source;
+            if(Image_Profile2.Source != null)
+                Image_SelectedImage.Source = Image_Profile2.Source;
+            else
+                Image_SelectedImage.Source = null;
             Image_SelectedImage.Width = Window.Current.Bounds.Width - 40;
             Image_SelectedImage.Height = Image_SelectedImage.Width * 0.9;
             Grid_ManipForProfile.Height = Image_SelectedImage.Height + 150;
@@ -90,7 +214,10 @@ namespace OwlWindowsPhoneApp
         private void AppBarButton_InsertProfile3_Click(object sender, RoutedEventArgs e)
         {
             Grid_ManipForProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
-            Image_SelectedImage.Source = Image_Profile1.Source;
+            if (Image_Profile3.Source != null)
+                Image_SelectedImage.Source = Image_Profile3.Source;
+            else
+                Image_SelectedImage.Source = null;
             Image_SelectedImage.Width = Window.Current.Bounds.Width - 40;
             Image_SelectedImage.Height = Image_SelectedImage.Width * 0.9;
             Grid_ManipForProfile.Height = Image_SelectedImage.Height + 150;
@@ -195,6 +322,7 @@ namespace OwlWindowsPhoneApp
             {
                 Image_Profile3.Source = e.TakedPhotoImage;
             }
+            AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
         }
 
         public void CloseCameraByBackButton()

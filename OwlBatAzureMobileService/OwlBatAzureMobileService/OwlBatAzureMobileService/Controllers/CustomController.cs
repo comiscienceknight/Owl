@@ -77,7 +77,45 @@ namespace OwlBatAzureMobileService.Controllers
 
         [Route("post/addpost")]
         [HttpPost]
-        public async Task<string> UpdateOrCreateUserAndPost()
+        public async Task<string> CreateUserAndPost()
+        {
+            try
+            {
+                HttpRequestMessage request = this.Request;
+                string querystring = await request.Content.ReadAsStringAsync();
+                NameValueCollection qscoll = HttpUtility.ParseQueryString(querystring);
+
+                using (var db = new Models.OwlDataClassesDataContext())
+                {
+                    string description = "";
+                    if (qscoll["description"] != null)
+                        description = qscoll["description"];
+                    if (description.Length > 249)
+                        description = description.Substring(0, 249);
+                    description.Replace("'", "''");
+                    string username = (qscoll["username"] ?? "").Replace("'", "''");
+                    string command =
+                    "INSERT INTO [dbo].[UserAndPost]([UserId],[UserName] ,[UserProfileUrl1] ,[VenueId] ,[VenueName] ,[Time] ,[Sexe] ,[GirlNumber],[BoyNumber],[AgeRange],[Description])" +
+                    "VALUES ('" + qscoll["userid"] + "' ,'" + username + "' ,'" + qscoll["profileurl"] + "' ,'" + qscoll["venueId"] + "' ,'" + qscoll["venuename"] + "' ,'" + qscoll["time"] + "' ,'" + qscoll["Sexe"] + "' ," + qscoll["girlsnumber"] + " ," + qscoll["guysnumber"] + ",'" + qscoll["agerange"] + "','" + description + "')";
+
+                    db.ExecuteCommand(command);
+                }
+            }
+            catch(SqlException exp)
+            {
+                return exp.Message;
+            }
+            catch(Exception exp)
+            {
+                return exp.Message;
+            }
+
+            return "";
+        }
+
+        [Route("post/updatepost")]
+        [HttpPost]
+        public async Task<string> UpdateUserAndPost()
         {
             try
             {
@@ -93,22 +131,37 @@ namespace OwlBatAzureMobileService.Controllers
                     if (description.Length > 150)
                         description = description.Substring(0, 150);
                     description.Replace("'", "''");
-                    string command =
-                    "INSERT INTO [dbo].[UserAndPost]([UserId],[UserName] ,[UserProfileUrl1] ,[VenueId] ,[VenueName] ,[Time] ,[Sexe] ,[GirlNumber],[BoyNumber],[AgeRange],[Description])" +
-                    "VALUES ('" + qscoll["userid"] + "' ,'" + qscoll["username"] + "' ,'" + qscoll["profileurl"] + "' ,'" + qscoll["VenueId"] + "' ,'" + qscoll["VenueName"] + "' ,'" + qscoll["Time"] + "' ,'" + qscoll["Sexe"] + "' ," + qscoll["girlsnumber"] + " ,1 ,'" + qscoll["agerange"] + "','" + description + "')";
+                    StringBuilder commandSb = 
+                        new StringBuilder("UPDATE [dbo].[UserAndPost] SET");
+                    commandSb.Append(" [UserName] = '" + qscoll["username"] + "'");
+                    if (!string.IsNullOrWhiteSpace(qscoll["profileurl"]))
+                        commandSb.Append(",[UserProfileUrl1] = '" + qscoll["profileurl"] + "'");
+                    if (!string.IsNullOrWhiteSpace(qscoll["profileurl2"]))
+                        commandSb.Append(",[UserProfileUrl2] = '" + qscoll["profileurl2"] + "'");
+                    if (!string.IsNullOrWhiteSpace(qscoll["profileurl3"]))
+                        commandSb.Append(",[UserProfileUrl3] = '" + qscoll["profileurl3"] + "'");
+                    commandSb.Append(",[VenueId] = '" + qscoll["venueid"] + "'");
+                    commandSb.Append(",[VenueName] = '" + qscoll["venuename"] + "'");
+                    commandSb.Append(",[Time] = '" + qscoll["Time"] + "'");
+                    commandSb.Append(",[Sexe] = '" + qscoll["Sexe"] + "'");
+                    commandSb.Append(",[GirlNumber] = " + qscoll["girlsnumber"]);
+                    commandSb.Append(",[BoyNumber] = " + qscoll["guysnumber"]);
+                    commandSb.Append(",[AgeRange] = '" + qscoll["agerange"] + "'");
+                    commandSb.Append(",[Description] = '" + qscoll["description"] + "'");
+                    commandSb.Append(",[CodeDress] = '" + qscoll["codedress"] + "'");
+                    commandSb.Append(" WHERE [UserId]= '" + qscoll["userid"] + "'");
 
-                    db.ExecuteCommand(command);
+                    db.ExecuteCommand(commandSb.ToString());
                 }
             }
-            catch(SqlException exp)
+            catch (SqlException exp)
             {
                 return exp.Message;
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
                 return exp.Message;
             }
-
 
             return "";
         }

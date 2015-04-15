@@ -74,19 +74,38 @@ namespace OwlWindowsPhoneApp
             if (jo.ContainsKey("userProfileUrl1"))
             {
                 post.ProfileUrl = jo.GetNamedString("userProfileUrl1");
-                Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
-                BitmapImage bmi = new BitmapImage();
-                bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                bmi.UriSource = myUri;
-                post.Profile = bmi;
+                if (!string.IsNullOrWhiteSpace(post.ProfileUrl))
+                {
+                    Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
+                    BitmapImage bmi = new BitmapImage();
+                    bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bmi.UriSource = myUri;
+                    post.Profile = bmi;
+                }
             }
             if (jo.ContainsKey("userProfileUrl2"))
             {
                 post.ProfileUrl2 = jo.GetNamedString("userProfileUrl2");
+                if (!string.IsNullOrWhiteSpace(post.ProfileUrl2))
+                {
+                    Uri myUri = new Uri(post.ProfileUrl2 + "?Width=175", UriKind.Absolute);
+                    BitmapImage bmi = new BitmapImage();
+                    bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bmi.UriSource = myUri;
+                    post.Profile2 = bmi;
+                }
             }
             if (jo.ContainsKey("userProfileUrl3"))
             {
-                post.ProfileUrl2 = jo.GetNamedString("userProfileUrl3");
+                post.ProfileUrl3 = jo.GetNamedString("userProfileUrl3");
+                if (!string.IsNullOrWhiteSpace(post.ProfileUrl3))
+                {
+                    Uri myUri = new Uri(post.ProfileUrl3 + "?Width=175", UriKind.Absolute);
+                    BitmapImage bmi = new BitmapImage();
+                    bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bmi.UriSource = myUri;
+                    post.Profile3 = bmi;
+                }
             }
 
             if (jo.ContainsKey("placeAddresse"))
@@ -128,6 +147,9 @@ namespace OwlWindowsPhoneApp
 
             if (jo.ContainsKey("time"))
                 post.Time = jo.GetNamedString("time");
+
+            if (jo.ContainsKey("venueId"))
+                post.VenueId = jo.GetNamedString("venueId");
 
             if (jo.ContainsKey("userPopularity"))
                 post.UserPopularity = (int)jo.GetNamedNumber("userPopularity");

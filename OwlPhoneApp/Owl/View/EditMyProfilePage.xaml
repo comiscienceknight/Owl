@@ -206,7 +206,8 @@
                             <StackPanel Orientation="Horizontal"
                                 VerticalAlignment="Center" Margin="0,4,5,2">
                                 <Rectangle Height="35" Width="35" Fill="Green" />
-                                <TextBlock x:Name="TextBlock_DressCode"  Margin="5,0,0,2" VerticalAlignment="Center" >Not too young too old</TextBlock>
+                                <TextBlock x:Name="TextBlock_DressCode"  Margin="5,0,0,2" VerticalAlignment="Center" >
+                                    Uniform</TextBlock>
                             </StackPanel>
                         </Button.Content>
                         <Button.Flyout>

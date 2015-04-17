@@ -50,6 +50,10 @@ namespace OwlWindowsPhoneApp.ViewModel
             {
                 PostCollection.Clear();
             });
+            Messenger.Default.Register<Message.RefreshPostsMessage>(this, msg =>
+            {
+                RefreshPost();
+            });
         }
 
         private async void LoadPosts()
@@ -66,6 +70,12 @@ namespace OwlWindowsPhoneApp.ViewModel
                 AnalysePostJsonValueArray(jsonValue);
             }
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage());
+        }
+
+        public void RefreshPost()
+        {
+            PostCollection.Clear();
+            LoadPosts();
         }
 
         private void AnalysePostJsonValueArray(JsonValue postsJasonValue)

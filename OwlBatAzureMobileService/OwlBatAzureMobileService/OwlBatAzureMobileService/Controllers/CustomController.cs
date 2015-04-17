@@ -142,7 +142,7 @@ namespace OwlBatAzureMobileService.Controllers
                         commandSb.Append(",[UserProfileUrl3] = '" + qscoll["profileurl3"] + "'");
                     commandSb.Append(",[VenueId] = '" + qscoll["venueid"] + "'");
                     commandSb.Append(",[VenueName] = '" + qscoll["venuename"] + "'");
-                    commandSb.Append(",[Time] = '" + qscoll["Time"] + "'");
+                    commandSb.Append(",[Time] = '" + qscoll["arrivaltime"] + "'");
                     commandSb.Append(",[Sexe] = '" + qscoll["Sexe"] + "'");
                     commandSb.Append(",[GirlNumber] = " + qscoll["girlsnumber"]);
                     commandSb.Append(",[BoyNumber] = " + qscoll["guysnumber"]);

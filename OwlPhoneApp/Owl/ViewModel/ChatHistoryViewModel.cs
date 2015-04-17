@@ -53,7 +53,7 @@ namespace OwlWindowsPhoneApp.ViewModel
                         Message = msg.Message.Message,
                         UserId = msg.Message.UserId,
                         UserName = msg.Message.UserName,
-                        UserProfile = msg.Message.UserProfile + "?Width=125"
+                        UserProfile = msg.Message.UserProfile + "?Width=100"
                     });
                 }
             });
@@ -66,7 +66,14 @@ namespace OwlWindowsPhoneApp.ViewModel
         private async void LoadChatsEntries()
         {
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(true), LoadingAnimationMessage.ChatToken);
-
+            ChatEntrytCollection.Add(new ChatEntry()
+            {
+                Time = "21:25",
+                Message = "Hi, how are you",
+                UserId = "test1",
+                UserName = "Robot",
+                UserProfile = "http://owlbat.azurewebsites.net/profile/boys2_3.jpg?Width=100"
+            });
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(), LoadingAnimationMessage.ChatToken);
         }
     }

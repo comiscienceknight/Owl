@@ -82,8 +82,12 @@ namespace OwlWindowsPhoneApp
             NumericUpDown_WithBoys.Value = _post.GuysNumber ?? 0;
             NumericUpDown_WithGirls.Value = _post.GirlsNumber ?? 0;
             TextBox_NickName.Text = _post.UserName;
+            if (_post.Time.Length == 5)
+                _post.Time += ":00";
+            TimeSpan arrivalTime;
+            if (TimeSpan.TryParse(_post.Time, out arrivalTime))
+                TimePicker_ArrivalTime.Time = arrivalTime;
             
-
             InitAutoTextComplete();
         }
 
@@ -149,6 +153,7 @@ namespace OwlWindowsPhoneApp
                 prms.Add("venuename", venueInfo == null ? _post.Place : venueInfo.Venue);
                 prms.Add("codedress", TextBlock_DressCode.Text ?? "");
                 prms.Add("userid", App.UserId);
+                prms.Add("arrivaltime", TimePicker_ArrivalTime.Time.ToString("hh:mm"));
 
                 HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
                 HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/updatepost"), formContent);
@@ -445,5 +450,10 @@ namespace OwlWindowsPhoneApp
             return venue;
         }
         #endregion
+
+        private void TimePicker_ArrivalTime_TimeChanged(object sender, TimePickerValueChangedEventArgs e)
+        {
+
+        }
     }
 }

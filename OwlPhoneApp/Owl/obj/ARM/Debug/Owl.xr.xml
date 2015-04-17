@@ -72,8 +72,8 @@
       <RootProperty Name="ColumnDefinitions" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
-      <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="ChildrenTransitions" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Width" />
       <RootProperty Name="MinHeight" />
@@ -160,8 +160,8 @@
       <RootProperty Name="Foreground" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
-      <RootProperty Name="MaxHeight" />
       <RootProperty Name="FontWeight" />
+      <RootProperty Name="MaxHeight" />
       <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
@@ -182,6 +182,12 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.DataTemplate">
       <RootProperty Name="Template" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.TimePicker">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootEvent Name="TimeChanged" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="MinWidth" />
@@ -247,6 +253,10 @@
       <RootProperty Name="Source" />
     </RootType>
     <RootType FullName="OwlWindowsPhoneApp.EditMyProfilePage" />
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="OwlWindowsPhoneApp.FilterPage" />
     <RootType FullName="Coding4Fun.Toolkit.Controls.ChatBubble">
       <RootProperty Name="ChatBubbleDirection" />
       <RootProperty Name="Visibility" />
@@ -259,9 +269,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Media.Animation.TransitionCollection" />
     <RootType FullName="Windows.UI.Xaml.Media.Animation.EntranceThemeTransition" />
-    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
-      <RootProperty Name="Height" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="VerticalAlignment" />

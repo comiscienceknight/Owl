@@ -15,13 +15,14 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:ConnectionId='1' x:Name="AppBarButton_FilterPost" Icon="Filter"  
                               IsCompact="False" Label="Filter"                                  />
-                <AppBarButton x:Name="AppBarButton_RefreshPost" Icon="Refresh" 
+                <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_RefreshPost" Icon="Refresh"
+                                                                    
                               IsCompact="False" Label="Refresh"/>
-                <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_EditProfile"  Icon="Edit" 
+                <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_EditProfile"  Icon="Edit" 
                               IsCompact="False" Label="Edit Post"                                       />
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
-                <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_Logout" Label="Logout"                                  />
+                <AppBarButton x:ConnectionId='4' x:Name="AppBarButton_Logout" Label="Logout"                                  />
                 <!--<AppBarButton Label="Test02"/>-->
             </CommandBar.SecondaryCommands>
         </CommandBar>
@@ -46,7 +47,7 @@
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
                     FontFamily="Global User Interface" FontSize="22"/>
             </StackPanel>
-            <Pivot x:ConnectionId='4' x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
+            <Pivot x:ConnectionId='5' x:Uid="Uid_Pivot_Main" Title="" x:Name="Pivot_Main" 
                    Margin="0,15,0,0" 
                CommonNavigationTransitionInfo.IsStaggerElement="True"
                                                               >
@@ -64,7 +65,7 @@
                 x:Uid="PivotItem2" x:Name="PivotItem_Me"
                 Margin="16,8,0,0"
                 Header="me">
-                    <local:PostInfoUserControl x:ConnectionId='5' x:Name="UserControl_MyPost"
+                    <local:PostInfoUserControl x:ConnectionId='6' x:Name="UserControl_MyPost"
                                                              >
                     </local:PostInfoUserControl>
                 </PivotItem>

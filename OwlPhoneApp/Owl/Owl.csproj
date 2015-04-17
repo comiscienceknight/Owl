@@ -83,8 +83,12 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\Message\RefreshPostsMessage.cs" />
     <Compile Include="View\EditMyProfilePage.xaml.cs">
       <DependentUpon>EditMyProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FilterPage.xaml.cs">
+      <DependentUpon>FilterPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
@@ -109,10 +113,8 @@
     <Compile Include="ViewModel\Message\EnterIntoChatMessage.cs" />
     <Compile Include="ViewModel\Message\LoadingAnimationMessage.cs" />
     <Compile Include="ViewModel\Message\LogoutMessage.cs" />
-    <Compile Include="ViewModel\Message\NavigateToCameraMessage.cs" />
     <Compile Include="ViewModel\Message\NavigateToChatMessage.cs" />
     <Compile Include="ViewModel\Message\NavigateToPostInfoMessage.cs" />
-    <Compile Include="ViewModel\Message\TakePhotoToMyPostMessage.cs" />
     <Compile Include="ViewModel\PivotViewModel.cs" />
     <Compile Include="ViewModel\PostsViewModel.cs" />
     <Compile Include="ViewModel\SendMsgMessage.cs" />
@@ -185,6 +187,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\EditMyProfilePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FilterPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

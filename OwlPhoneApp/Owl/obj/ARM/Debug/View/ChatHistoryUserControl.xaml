@@ -14,15 +14,15 @@
     <UserControl.Resources>
         <DataTemplate x:Key="ImageTextListCollectionTemplate">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Border Height="125" Width="125" Margin="5,2,0,15">
+                <Border Height="108" Width="120" Margin="5,2,0,15">
                     <Image Source="{Binding Path=UserProfile}" Stretch="UniformToFill"/>
                 </Border>
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,4,0,10">
-                    <TextBlock Text="{Binding Path=UserName}"  FontSize="18" 
-                       Margin="10,0,0,3" TextTrimming="WordEllipsis" FontFamily="Global User Interface" />
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,4,0,10">
+                    <TextBlock Text="{Binding Path=UserName}"  FontSize="28" 
+                       Margin="0,0,10,3" TextTrimming="WordEllipsis" FontFamily="Global User Interface" />
                     <TextBlock Text="{Binding Path=Message}"  HorizontalAlignment="Left"
-                               Width="200" MaxHeight="50"
-                       Margin="10,3,0,3" FontSize="16" TextTrimming="WordEllipsis" TextWrapping="Wrap" FontFamily="Global User Interface"/>
+                               Opacity="0.8" Margin="0,5,10,3"
+                                FontSize="25" TextTrimming="WordEllipsis" TextWrapping="Wrap" FontFamily="Global User Interface"/>
                 </StackPanel>
             </StackPanel>
         </DataTemplate>

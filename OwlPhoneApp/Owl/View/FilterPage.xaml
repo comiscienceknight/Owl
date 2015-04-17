@@ -1,0 +1,213 @@
+﻿<Page
+    x:Class="OwlWindowsPhoneApp.FilterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Owl.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Input="using:Telerik.UI.Xaml.Controls.Input"
+    xmlns:controls="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.BottomAppBar>
+        <CommandBar IsSticky="False" x:Name="AppBar_Pivot" Background="#7FC30F0F"
+                     >
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarButton_Find" Icon="Find"  
+                              IsCompact="False" Label="Search" Click="AppBarButton_Find_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid>
+        <StackPanel x:Name="StackPanel_Title" Margin="5,0,0,0" Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                        VerticalAlignment="Top">
+            <Image x:Name="Image_Title" Width="50" Height="50" Margin="-10,0,10,0"   Stretch="Fill" Source="ms-appx:///Assets/Tempo/logo.png"   />
+            <TextBlock x:Name="TextBlock_PageTitle"  Text="Search" 
+                       Margin="0,12,0,0" Opacity="0.8"
+                       Style="{ThemeResource HeaderTextBlockStyle}" 
+                       CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" 
+                    FontFamily="Global User Interface" FontSize="30"/>
+        </StackPanel>
+
+        <ScrollViewer Margin="8,60,10,0">
+            <StackPanel>
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,10" ></Rectangle>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="26"   
+                           Opacity="0.8"  Margin="0,0,5,2">
+                        Search by name
+                    </TextBlock>
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+                        <Input:RadAutoCompleteBox x:Name="RadAutoCompleteBox_Search" 
+                                                  Grid.Row="0" Watermark="Search" 
+                                                  HorizontalAlignment="Stretch" 
+                                                  AutosuggestFirstItem="False" 
+                                                  IsDropDownOpen="True" DropDownMaxHeight="120" 
+                                                  FilterMemberPath="Venue" FilterMode="Contains"
+                                                  Margin="0,5,5,10"  FilterDelay="0:0:0.5">
+                            <Input:RadAutoCompleteBox.HeaderStyle>
+                                <Style TargetType="ContentControl">
+                                    <Setter Property="FontSize" Value="22"/>
+                                    <Setter Property="Foreground" Value="#0083EF"/>
+                                    <Setter Property="Margin" Value="0,0,0,10"/>
+                                    <Setter Property="FontWeight" Value="ExtraLight"/>
+                                </Style>
+                            </Input:RadAutoCompleteBox.HeaderStyle>
+                            <Input:RadAutoCompleteBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Path=Venue}" 
+                                               FontSize="18" FontFamily="Segoe UI" 
+                                               TextWrapping="Wrap" 
+                                               Margin="5,0,0,0"/>
+                                        <TextBlock Text="{Binding Path=Adresse}" 
+                                               FontSize="16" Opacity="0.7"  FontFamily="Segoe UI" 
+                                               TextWrapping="Wrap" 
+                                               Margin="5,3,0,0"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </Input:RadAutoCompleteBox.ItemTemplate>
+                        </Input:RadAutoCompleteBox>
+                        <ProgressBar Margin="0,0,0,8" Visibility="Collapsed"
+                                     VerticalAlignment="Bottom" Width="200"
+                                     x:Name="ProgressBar_Search" IsIndeterminate="True" 
+                                     HorizontalAlignment="Stretch" />
+                    </Grid>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,10" ></Rectangle>
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Age range"  VerticalAlignment="Center" FontSize="26"
+						        HorizontalAlignment="Left"
+						        Margin="0,0,0,5" Opacity="0.8" TextWrapping="Wrap"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" FontSize="26" Margin="3,0">from </TextBlock>
+                        <controls:NumericUpDown x:Name="NumericUpDown_StartAge"
+                                        Width="160" VerticalAlignment="Center"
+                                        Minimum="-1"
+                                        Maximum="150"
+                                        SmallChange="1" ValueFormat="F0"
+                                        LargeChange="1"
+                                        HorizontalAlignment="Left"  />
+                        <TextBlock VerticalAlignment="Center" FontSize="26" Margin="3,0"> to </TextBlock>
+                        <controls:NumericUpDown x:Name="NumericUpDown_EndAge"
+                                        Width="160" VerticalAlignment="Center"
+                                        Minimum="-1"
+                                        Maximum="150"
+                                        SmallChange="1" ValueFormat="F0"
+                                        LargeChange="1"
+                                        HorizontalAlignment="Left"
+                                            Grid.Column="1" />
+                        
+                    </StackPanel>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,10" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Group Size Men"    VerticalAlignment="Center" FontSize="26"
+						        HorizontalAlignment="Left"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <controls:NumericUpDown x:Name="NumericUpDown_WithBoys"
+                                        Width="160" VerticalAlignment="Center"
+                                        Minimum="-0"
+                                        Maximum="20"
+                                        SmallChange="1" ValueFormat="F0"
+                                        LargeChange="1"
+                                        HorizontalAlignment="Right"
+                                            Grid.Column="1" />
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,10" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Group Size Women"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <controls:NumericUpDown x:Name="NumericUpDown_WithGirls"
+                                        Width="160" VerticalAlignment="Center"
+                                        Minimum="-1" 
+                                        Maximum="20"
+                                        SmallChange="1" ValueFormat="F0"
+                                        LargeChange="1"
+                                        HorizontalAlignment="Right"
+                                            Grid.Column="1" />
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,10" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  Width="170"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Dress Code"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <Button x:Name="Button_DressCode" BorderThickness="1" 
+                        HorizontalAlignment="Right"
+                           Grid.Column="1" >
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Center" Margin="0,4,5,2">
+                                <Rectangle Height="35" Width="35" Fill="Green" />
+                                <TextBlock x:Name="TextBlock_DressCode"  Margin="5,0,0,2" VerticalAlignment="Center" >
+                                    Uniform</TextBlock>
+                            </StackPanel>
+                        </Button.Content>
+                        <Button.Flyout>
+                            <ListPickerFlyout x:Name="ListPickerFlyout_DressCode"
+                                      Placement="Full" >
+                                <ListPickerFlyout.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal" Margin="10,5">
+                                            <Rectangle Height="40" Width="40" Fill="Green" />
+                                            <TextBlock Margin="10,0,0,0">Uniform</TextBlock>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListPickerFlyout.ItemTemplate>
+                            </ListPickerFlyout>
+                        </Button.Flyout>
+                    </Button>
+                </Grid>
+
+                <Rectangle Height="2" Fill="White" Opacity="0.5" Margin="0,10" ></Rectangle>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition  />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Arrival Time"   
+						        HorizontalAlignment="Left"   VerticalAlignment="Center" FontSize="26"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"/>
+                    <TimePicker x:Name="TimePicker_ArrivalTime" Margin="0,0,5,0"
+                                Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" />
+                </Grid>
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

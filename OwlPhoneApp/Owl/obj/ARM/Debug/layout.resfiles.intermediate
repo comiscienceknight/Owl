@@ -42,6 +42,7 @@ Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf
 View\CameraPhotoUserControl.xbf
 View\ChatHistoryUserControl.xbf
 View\EditMyProfilePage.xbf
+View\FilterPage.xbf
 View\FirstEnterIn.xbf
 View\FirstTimeEnterUserControl.xbf
 View\ImageEffectsUserControl.xbf

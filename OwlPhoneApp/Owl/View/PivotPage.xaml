@@ -15,7 +15,8 @@
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:Name="AppBarButton_FilterPost" Icon="Filter"  
                               IsCompact="False" Label="Filter" Click="AppBarButton_Filter_Click"/>
-                <AppBarButton x:Name="AppBarButton_RefreshPost" Icon="Refresh" 
+                <AppBarButton x:Name="AppBarButton_RefreshPost" Icon="Refresh"
+                              Click="AppBarButton_RefreshPost_Click"
                               IsCompact="False" Label="Refresh"/>
                 <AppBarButton x:Name="AppBarButton_EditProfile"  Icon="Edit" 
                               IsCompact="False" Label="Edit Post" Click="AppBarButton_EditProfile_Click"/>

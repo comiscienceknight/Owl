@@ -153,6 +153,12 @@ namespace OwlWindowsPhoneApp
 
         private void AppBarButton_Filter_Click(object sender, RoutedEventArgs e)
         {
+            var rootFrame = (Window.Current.Content as Frame);
+            _readyToQuit = true;
+            if (!rootFrame.Navigate(typeof(FilterPage), UserControl_MyPost.GetPost()))
+            {
+                throw new Exception("Failed to create MainPage");
+            }
         }
 
         private void AppBarButton_EditProfile_Click(object sender, RoutedEventArgs e)
@@ -163,6 +169,11 @@ namespace OwlWindowsPhoneApp
             {
                 throw new Exception("Failed to create MainPage");
             }
+        }
+
+        private void AppBarButton_RefreshPost_Click(object sender, RoutedEventArgs e)
+        {
+            Messenger.Default.Send<RefreshPostsMessage>(new RefreshPostsMessage());
         }
         #endregion
 

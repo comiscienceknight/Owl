@@ -1,5 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using OwlWindowsPhoneApp.View;
+using Owl.View;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,7 +27,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     public sealed partial class CameraPhotoUserControl : UserControl
     {
@@ -49,7 +49,7 @@ namespace OwlWindowsPhoneApp
             this.Unloaded += CameraPhotoUserControl_Unloaded;
         }
 
-        async void CameraPhotoUserControl_Unloaded(object sender, RoutedEventArgs e)
+        void CameraPhotoUserControl_Unloaded(object sender, RoutedEventArgs e)
         {
             //await _captureManager.StopPreviewAsync();
             CaptureElement_Photo.Source.Dispose();

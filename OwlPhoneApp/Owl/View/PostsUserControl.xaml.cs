@@ -1,6 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
-using OwlWindowsPhoneApp.DataObjects;
-using OwlWindowsPhoneApp.ViewModel;
+using Owl.DataObjects;
+using Owl.ViewModel;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -15,7 +15,7 @@ using Windows.Web.Http;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     public sealed partial class PostsUserControl : UserControl
     {   

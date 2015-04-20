@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Microsoft.Xaml.Interactivity;
-using OwlWindowsPhoneApp.DataObjects;
-using OwlWindowsPhoneApp.ViewModel;
+using Owl.DataObjects;
+using Owl.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
@@ -20,7 +20,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

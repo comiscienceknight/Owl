@@ -2,7 +2,7 @@
 using Lumia.Imaging;
 using Lumia.Imaging.Adjustments;
 using Lumia.Imaging.Artistic;
-using OwlWindowsPhoneApp.ViewModel.Message;
+using Owl.ViewModel.Message;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -28,7 +28,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace OwlWindowsPhoneApp.View
+namespace Owl.View
 {
     public sealed partial class ImageEffectsUserControl : UserControl
     {

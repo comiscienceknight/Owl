@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="Owl.View.FirstVisit.PageBasicInfo"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Owl.View.FirstVisit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <ScrollViewer Margin="0,0,0,20">
+            <StackPanel VerticalAlignment="Center" Margin="0,0,0,20">
+                <Rectangle Fill="#CCF1F11D" Height="2" VerticalAlignment="Top"
+                   Margin="10,10,10,15"/>
+                <Grid Margin="0,0,0,0">
+                    <TextBlock Text="What's your sex? " FontWeight="SemiLight" 
+						        HorizontalAlignment="Center"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        FontSize="22"/>
+                    <StackPanel Margin="0,30,0,0" HorizontalAlignment="Center" Orientation="Horizontal">
+                        <RadioButton x:Name="RadioButton_Man" MinWidth="70" Margin="0,0,30,0"
+                                 HorizontalAlignment="Center" Content="Man"
+                                 Checked="RadioButton_Man_Checked" FontFamily="Global User Interface" />
+                        <RadioButton x:Name="RadioButton_Woman" HorizontalAlignment="Center" Content="Woman" 
+                                  MinWidth="70"
+                                 Checked="RadioButton_Woman_Checked"/>
+
+                    </StackPanel>
+                </Grid>
+                <Rectangle Fill="#FF07B054" Height="2" VerticalAlignment="Top"
+                   Margin="10,10,10,5"/>
+                <Grid Width="400" Margin="0,20,0,0">
+                    <TextBlock Text="How do you call you? " FontWeight="SemiLight" 
+						        HorizontalAlignment="Center"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        FontSize="22"/>
+                    <Grid Margin="0,30,0,0" >
+                        <TextBox x:Name="TextBox_UserName" Margin="30,0" Width="250"
+                             MaxLength="50" FontFamily="Global User Interface"
+                             TextChanged="TextBox_UserName_TextChanged" />
+                    </Grid>
+                </Grid>
+                <Rectangle Fill="#FFE67314" Height="2" VerticalAlignment="Top"
+                   Margin="10,20,10,5"/>
+                <Grid Width="400" Margin="0,20,0,0">
+                    <TextBlock Text="What's your age? " FontWeight="SemiLight" 
+						        HorizontalAlignment="Center"
+						        Margin="0" Opacity="0.8" TextWrapping="Wrap"
+						        FontSize="22"/>
+                    <StackPanel Orientation="Vertical" Margin="0,30,0,0" HorizontalAlignment="Center">
+                        <DatePicker x:Name="DatePicker_Birthday" 
+                                    DateChanged="DatePicker_Birthday_DateChanged"
+                                Width="110" HorizontalContentAlignment="Center" FontFamily="Global User Interface" />
+                        <TextBlock x:Name="TextBlock_Age" Text="0 years old" Margin="5,0,0,0"
+                               VerticalAlignment="Center" FontSize="22" />
+                    </StackPanel>
+                </Grid>
+                <Rectangle Fill="#FFEC09E1" Height="2" VerticalAlignment="Top"
+                   Margin="10,10,10,5"/>
+                <Button x:Name="Button_Submit" IsEnabled="false" FontWeight="SemiLight"
+                        Margin="0,45,0,0" HorizontalAlignment="Center" Content="Submit" 
+                        Click="Button_Submit_Click"
+                        BorderBrush="#FF1968C7" Foreground="#FF3285EA" 
+                        FontSize="26" FontFamily="Global User Interface" />
+            </StackPanel>
+        </ScrollViewer>
+        
+        
+    </Grid>
+</Page>

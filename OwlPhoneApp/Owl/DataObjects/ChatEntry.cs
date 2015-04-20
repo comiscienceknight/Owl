@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwlWindowsPhoneApp.DataObjects
+namespace Owl.DataObjects
 {
     public class ChatEntry : INotifyPropertyChanged
     {

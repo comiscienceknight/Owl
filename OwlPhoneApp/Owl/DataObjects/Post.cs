@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace OwlWindowsPhoneApp.DataObjects
+namespace Owl.DataObjects
 {
     public class Post: INotifyPropertyChanged
     {
@@ -39,6 +36,17 @@ namespace OwlWindowsPhoneApp.DataObjects
             {
                 _place = value;
                 OnPropertyChanged("Place");
+            }
+        }
+
+        private string _dressCode;
+        public string DressCode
+        {
+            get { return _dressCode; }
+            set
+            {
+                _dressCode = value;
+                OnPropertyChanged("DressCode");
             }
         }
 
@@ -116,6 +124,17 @@ namespace OwlWindowsPhoneApp.DataObjects
             {
                 _userName = value;
                 OnPropertyChanged("UserName");
+            }
+        }
+
+        private string _lookingFor;
+        public string LookingFor
+        {
+            get { return _lookingFor; }
+            set
+            {
+                _lookingFor = value;
+                OnPropertyChanged("LookingFor");
             }
         }
 

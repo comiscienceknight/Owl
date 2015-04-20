@@ -1,7 +1,7 @@
 ﻿using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
-using OwlWindowsPhoneApp.DataObjects;
+using Owl.DataObjects;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Web.Http;
 
-namespace OwlWindowsPhoneApp.ViewModel
+namespace Owl.ViewModel
 {
     public class ChatHistoryViewModel : ViewModelBase
     {

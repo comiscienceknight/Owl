@@ -1,5 +1,5 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
-using OwlWindowsPhoneApp.Common;
+using Owl.Common;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -38,6 +38,9 @@ namespace OwlWindowsPhoneApp
         {
             get { return App.OwlbatClient.CurrentUser.UserId.Replace(":", ""); }
         }
+
+        public static DataObjects.User MySelf;
+        public static DataObjects.Post MyPost;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

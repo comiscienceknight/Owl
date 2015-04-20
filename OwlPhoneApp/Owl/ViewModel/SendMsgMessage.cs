@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace OwlWindowsPhoneApp.ViewModel
+namespace Owl.ViewModel
 {
     public class SendMsgMessage
     {

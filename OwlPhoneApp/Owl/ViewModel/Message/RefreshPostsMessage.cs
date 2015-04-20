@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwlWindowsPhoneApp.ViewModel.Message
+namespace Owl.ViewModel.Message
 {
     public class RefreshPostsMessage
     {

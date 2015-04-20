@@ -1,5 +1,5 @@
-<Application x:Class="OwlWindowsPhoneApp.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:OwlWindowsPhoneApp">
+<Application x:Class="Owl.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="using:Owl">
   <Application.Resources>
-    <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:OwlWindowsPhoneApp.ViewModel" />
+    <vm:ViewModelLocator x:Key="Locator" xmlns:vm="using:Owl.ViewModel" />
   </Application.Resources>
 </Application>

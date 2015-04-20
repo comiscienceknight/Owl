@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OwlWindowsPhoneApp.ViewModel
+namespace Owl.ViewModel
 {
     public class LogoutMessage
     {

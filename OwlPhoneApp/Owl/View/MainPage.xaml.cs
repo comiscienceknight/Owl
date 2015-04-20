@@ -1,8 +1,8 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Microsoft.WindowsAzure.MobileServices;
-using OwlWindowsPhoneApp.Common;
-using OwlWindowsPhoneApp.DataObjects;
-using OwlWindowsPhoneApp.ViewModel;
+using Owl.Common;
+using Owl.DataObjects;
+using Owl.ViewModel;
 using System;
 using System.Linq;
 using System.Threading;
@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=391641
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -128,7 +128,7 @@ namespace OwlWindowsPhoneApp
                     _dispatcherTimer.Stop();
                     
                     var rootFrame = (Window.Current.Content as Frame);
-                    if (!rootFrame.Navigate(typeof(FirstEnterIn)))
+                    if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
                     {
                         throw new Exception("Failed to create initial page");
                     }

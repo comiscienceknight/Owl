@@ -8,7 +8,7 @@ using Windows.Devices.Geolocation;
 using Windows.UI.Core;
 using Windows.UI.Popups;
 
-namespace OwlWindowsPhoneApp.Common
+namespace Owl.Common
 {
     public class GeoLocation
     {

@@ -26,7 +26,7 @@ using Windows.Web.Http;
 
 // The User Control item template is documented at http://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     public sealed partial class FirstTimeEnterUserControl : UserControl
     {

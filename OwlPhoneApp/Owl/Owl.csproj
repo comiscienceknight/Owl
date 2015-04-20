@@ -83,12 +83,32 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataObjects\MyPost.cs" />
+    <Compile Include="DataObjects\User.cs" />
     <Compile Include="ViewModel\Message\RefreshPostsMessage.cs" />
     <Compile Include="View\EditMyProfilePage.xaml.cs">
       <DependentUpon>EditMyProfilePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\FilterPage.xaml.cs">
       <DependentUpon>FilterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstVisit\PageBasicInfo.xaml.cs">
+      <DependentUpon>PageBasicInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstVisit\PageImWithGirlsAndGuys.xaml.cs">
+      <DependentUpon>PageImWithGirlsAndGuys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstVisit\PageProfile.xaml.cs">
+      <DependentUpon>PageProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstVisit\PageTonightImGoingToSearchVenues.xaml.cs">
+      <DependentUpon>PageTonightImGoingToSearchVenues.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstVisit\PageTonightImGoingTo.xaml.cs">
+      <DependentUpon>PageTonightImGoingTo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\FirstVisit\PageWereDressed.xaml.cs">
+      <DependentUpon>PageWereDressed.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MessagePage.xaml.cs">
       <DependentUpon>MessagePage.xaml</DependentUpon>
@@ -172,6 +192,9 @@
     <Content Include="Assets\StoreLogo.scale-240.png" />
     <Content Include="Assets\Tempo\addphoto.png" />
     <Content Include="Assets\Tempo\clickmetoaddphoto.jpg" />
+    <Content Include="Assets\Tempo\IC773168.jpg" />
+    <Content Include="Assets\Tempo\IC773171.jpg" />
+    <Content Include="Assets\Tempo\IC773173.jpg" />
     <Content Include="Assets\Tempo\linkedin-no-picture.jpg" />
     <Content Include="Assets\Tempo\logo.png" />
     <Content Include="Assets\Tempo\night1.jpg" />
@@ -191,6 +214,30 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FilterPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FirstVisit\PageBasicInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FirstVisit\PageImWithGirlsAndGuys.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FirstVisit\PageProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FirstVisit\PageTonightImGoingToSearchVenues.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FirstVisit\PageTonightImGoingTo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\FirstVisit\PageWereDressed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

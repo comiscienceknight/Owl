@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 
-namespace OwlWindowsPhoneApp
+namespace Owl
 {
     public class ItemClickedConverter : IValueConverter
     {

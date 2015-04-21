@@ -43,6 +43,35 @@
       <Column Name="UpdateAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.[User]" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(160) NOT NULL" CanBeNull="false" />
+      <Column Name="Popularity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="CreatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+      <Column Name="UpdatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+      <Column Name="Birthday" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Post" Member="Posts">
+    <Type Name="Post">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Popularity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OutType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VenueId" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="LookingFor" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="ArrivalTime" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="GirlNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BoyNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ProfileUrl" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="OtherInfo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="UpdateAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+      <Column Name="CodeDress" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+    </Type>
+  </Table>
   <Function Name="dbo.GetPosts" Method="GetPosts">
     <Parameter Name="UpdateAs" Parameter="updateAs" Type="System.DateTimeOffset" DbType="DateTimeOffset" />
     <ElementType Name="GetPostsResult">
@@ -92,5 +121,38 @@
       <Column Name="VenuePhotoUrl2" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
       <Column Name="VenuePhotoUrl3" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="dbo.InsertAnUser" Method="InsertAnUser">
+    <Parameter Name="UserId" Parameter="userId" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Sexe" Parameter="sexe" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="Birthday" Parameter="birthday" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertAnPost" Method="InsertAnPost">
+    <Parameter Name="UserId" Parameter="userId" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="OutType" Parameter="outType" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="VenueId" Parameter="venueId" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="LookingFor" Parameter="lookingFor" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ArrivalTime" Parameter="arrivalTime" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="GirlNumber" Parameter="girlNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BoyNumber" Parameter="boyNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfileUrl" Parameter="profileUrl" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="OtherInfo" Parameter="otherInfo" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CodeDress" Parameter="codeDress" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UpdateAnPost" Method="UpdateAnPost">
+    <Parameter Name="UserId" Parameter="userId" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="OutType" Parameter="outType" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="VenueId" Parameter="venueId" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="LookingFor" Parameter="lookingFor" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="ArrivalTime" Parameter="arrivalTime" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="GirlNumber" Parameter="girlNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BoyNumber" Parameter="boyNumber" Type="System.Int32" DbType="Int" />
+    <Parameter Name="ProfileUrl" Parameter="profileUrl" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="OtherInfo" Parameter="otherInfo" Type="System.String" DbType="NVarChar(MAX)" />
+    <Parameter Name="CodeDress" Parameter="codeDress" Type="System.String" DbType="NVarChar(MAX)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>

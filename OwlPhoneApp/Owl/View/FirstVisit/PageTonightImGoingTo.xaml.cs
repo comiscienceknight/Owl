@@ -38,6 +38,11 @@ namespace Owl.View.FirstVisit
                     RadioButton_Anywhere.IsChecked = false;
                 }
             }
+            else
+            {
+                App.MyPost = new DataObjects.Post();
+                App.MyPost.UserId = App.MySelf.UserId;
+            }
         }
 
         /// <summary>
@@ -71,10 +76,15 @@ namespace Owl.View.FirstVisit
 
         }
 
-        private void Button_Next_Click(object sender, RoutedEventArgs e)
+        private void AppBarButton_Leave_Click(object sender, RoutedEventArgs e)
+        {
+            App.QuitFromEditPost();
+        }
+
+        private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)
         {
             var rootFrame = (Window.Current.Content as Frame);
-            if(RadioButton_Venue.IsChecked == true)
+            if (RadioButton_Venue.IsChecked == true)
             {
                 rootFrame.Navigate(typeof(PageTonightImGoingToSearchVenues));
             }
@@ -82,7 +92,7 @@ namespace Owl.View.FirstVisit
             {
                 rootFrame.Navigate(typeof(PageTonightImGoingToSearchVenues));
             }
-            else if(RadioButton_Anywhere.IsChecked == true)
+            else if (RadioButton_Anywhere.IsChecked == true)
             {
                 App.MyPost.VenueId = null;
                 App.MyPost.Place = "Anywhere";

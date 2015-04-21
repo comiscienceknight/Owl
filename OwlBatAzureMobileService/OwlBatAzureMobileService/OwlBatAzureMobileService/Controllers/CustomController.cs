@@ -64,6 +64,24 @@ namespace OwlBatAzureMobileService.Controllers
             }
         }
 
+        [Route("get/getuser/{userid}")]
+        [HttpGet]
+        public User GetUser(string userId)
+        {
+            using (var db = new Models.OwlDataClassesDataContext())
+            {
+                var results = db.Users.Where(p => p.UserId == userId).ToList();
+                if (results.Count > 0)
+                    return results.Last();
+                else
+                    return new User()
+                    {
+                        UserId = userId
+                    };
+            }
+        }
+
+
         [Route("get/getvenuesbi/{filterName}")]
         [HttpGet]
         public List<Models.Venue> GetVenuesByName(string filterName)
@@ -73,6 +91,67 @@ namespace OwlBatAzureMobileService.Controllers
                 var result = db.Venues.Where(p => p.SearchName.Contains(filterName)).ToList();
                 return result;
             }
+        }
+
+        [Route("post/createuser")]
+        [HttpPost]
+        public async Task<string> CreateUser()
+        {
+            try
+            {
+                HttpRequestMessage request = this.Request;
+                string querystring = await request.Content.ReadAsStringAsync();
+                NameValueCollection qscoll = HttpUtility.ParseQueryString(querystring);
+
+                using (var db = new Models.OwlDataClassesDataContext())
+                {
+                    db.InsertAnUser(qscoll["userid"], qscoll["username"], qscoll["sexe"], qscoll["birthday"]);
+                }
+            }
+            catch (SqlException exp)
+            {
+                return exp.Message;
+            }
+            catch (Exception exp)
+            {
+                return exp.Message;
+            }
+            return "";
+        }
+
+        [Route("post/createpost")]
+        [HttpPost]
+        public async Task<string> CreateOrUpdatePost()
+        {
+            try
+            {
+                HttpRequestMessage request = this.Request;
+                string querystring = await request.Content.ReadAsStringAsync();
+                NameValueCollection qscoll = HttpUtility.ParseQueryString(querystring);
+
+                using (var db = new Models.OwlDataClassesDataContext())
+                {
+                    if(db.Posts.Any(p=>p.UserId == qscoll["userid"]))
+                    {
+                        db.UpdateAnPost(qscoll["userid"], qscoll["outype"], qscoll["venueid"], qscoll["lookingfor"], qscoll["arrivaltime"],
+                           Convert.ToInt32(qscoll["girlnumber"]), Convert.ToInt32(qscoll["boynumber"]), qscoll["profileurl"], qscoll["otherinfo"], qscoll["codedress"]);
+                    }
+                    else
+                    {
+                        db.InsertAnPost(qscoll["userid"], qscoll["outype"], qscoll["venueid"], qscoll["lookingfor"], qscoll["arrivaltime"], 
+                            Convert.ToInt32(qscoll["girlnumber"]), Convert.ToInt32(qscoll["boynumber"]), qscoll["profileurl"], qscoll["otherinfo"], qscoll["codedress"]);
+                    }
+                }
+            }
+            catch (SqlException exp)
+            {
+                return exp.Message;
+            }
+            catch (Exception exp)
+            {
+                return exp.Message;
+            }
+            return "";
         }
 
         [Route("post/addpost")]
@@ -112,6 +191,9 @@ namespace OwlBatAzureMobileService.Controllers
 
             return "";
         }
+
+
+
 
         [Route("post/updatepost")]
         [HttpPost]

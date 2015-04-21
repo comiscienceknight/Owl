@@ -236,5 +236,18 @@ namespace Owl
                 }
             }
         }
+
+        public static void QuitFromEditPost()
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            if (string.IsNullOrWhiteSpace(App.MyPost.UserId))
+            {
+                rootFrame.Navigate(typeof(MainPage));
+            }
+            else
+            {
+                rootFrame.Navigate(typeof(Owl.PivotPage));
+            }
+        }
     }
 }

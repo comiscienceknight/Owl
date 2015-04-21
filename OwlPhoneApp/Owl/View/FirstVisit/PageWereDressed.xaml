@@ -7,7 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" x:Name="AppBar_Pivot" Background="#7FC30F0F">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarButton_Back"  Icon="Back" 
+                              IsCompact="False" Label="Back" 
+                              Click="AppBarButton_Back_Click"/>
+                <AppBarButton x:Name="AppBarButton_Leave" Icon="Stop"
+                              Click="AppBarButton_Leave_Click"
+                              IsCompact="False" Label="Leave"/>
+                <AppBarButton x:Name="AppBarButton_Forward"  Icon="Forward" 
+                              IsCompact="False" Label="Edit Post" 
+                              Click="AppBarButton_Forward_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid>
         <TextBlock Text="Edit Post 3/4" FontSize="16" Opacity="0.8"
                    HorizontalAlignment="Center" FontWeight="SemiLight"
@@ -15,8 +29,8 @@
         <Rectangle Fill="#FF07B054" Height="2" VerticalAlignment="Top"
                    Margin="10,30,10,10"/>
 
-        <StackPanel VerticalAlignment="Center" Margin="0,50,0,20">
-            <StackPanel Margin="0,20,0,0">
+        <StackPanel VerticalAlignment="Top" Margin="0,50,0,20">
+            <StackPanel Margin="0,0,0,0">
                 <TextBlock Text="We're DRESSED" HorizontalAlignment="Center" 
                        FontSize="24" FontWeight="SemiLight" Opacity="0.8" />
                 <Button x:Name="Button_DressCode" BorderThickness="1"
@@ -29,29 +43,17 @@
                     </Button.Flyout>
                 </Button>
             </StackPanel>
-            <Rectangle Fill="#CCA39DE2" Height="2" VerticalAlignment="Top"
+            <Rectangle Fill="#CCF1F11D" Height="2" VerticalAlignment="Top"
                    Margin="10,10,10,10"/>
-            
+
             <StackPanel Margin="0,20,0,10">
                 <TextBlock Text="Other info?" HorizontalAlignment="Center" 
                        FontSize="24" FontWeight="SemiLight" Opacity="0.8" />
-                <RichEditBox x:Name="RichEditBox_OtherInfo"  
-                             Width="260" Height="150" FontFamily="Global User Interface"  />
+                <RichEditBox x:Name="RichEditBox_OtherInfo" TextWrapping="Wrap"
+                             Width="280" Height="150" FontFamily="Global User Interface"  />
             </StackPanel>
-            <Rectangle Fill="#CCF1F11D" Height="2" VerticalAlignment="Top"
-                   Margin="10,10,10,10"/>
-            
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                    Margin="0,45,0,100" >
-                <Button x:Name="Button_Goback"
-                        Margin="0,0,5,0" HorizontalAlignment="Center" Content="Go back" 
-                        Click="Button_Goback_Click" FontWeight="SemiLight"
-                    BorderBrush="#FF1968C7" Foreground="#FF3285EA" FontSize="26" FontFamily="Global User Interface" />
-                <Button x:Name="Button_Next" 
-                        Margin="5,0,0,0" HorizontalAlignment="Center" Content="Next" 
-                        Click="Button_Next_Click" FontWeight="SemiLight"
-                    BorderBrush="#FF1968C7" Foreground="#FF3285EA" FontSize="26" FontFamily="Global User Interface" />
-            </StackPanel>
+
+
         </StackPanel>
     </Grid>
 </Page>

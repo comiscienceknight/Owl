@@ -97,7 +97,7 @@ namespace Owl.ViewModel
             post.Place = jo.GetNamedString("venueName");
 
             if (jo.ContainsKey("description"))
-                post.Description = jo.GetNamedString("description");
+                post.OtherInfo = jo.GetNamedString("description");
 
             if (jo.ContainsKey("userProfileUrl1"))
             {

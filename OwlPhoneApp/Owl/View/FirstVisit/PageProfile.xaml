@@ -8,7 +8,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" x:Name="AppBar_Pivot" Background="#7FC30F0F">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarButton_Back"  Icon="Back" 
+                              IsCompact="False" Label="Back" 
+                              Click="AppBarButton_Back_Click"/>
+                <AppBarButton x:Name="AppBarButton_Leave" Icon="Stop"
+                              Click="AppBarButton_Leave_Click"
+                              IsCompact="False" Label="Leave"/>
+                <AppBarButton x:Name="AppBarButton_Upload"  Icon="Upload" 
+                              IsCompact="False" Label="Upload"    IsEnabled="False"
+                              Click="AppBarButton_Upload_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid>
         <TextBlock Text="Edit Post 4/4" FontSize="16" Opacity="0.8"
                    HorizontalAlignment="Center" FontWeight="SemiLight"
@@ -20,14 +34,16 @@
             <Border x:Name="Border_Image"
                 VerticalAlignment="Top" Margin="5,5,5,5" BorderBrush="#FF7C3131" BorderThickness="5">
                 <Grid x:Name="Grid_Image" Margin="5"  MinHeight="300">
-                    <TextBlock Text="Tap for adding profile" VerticalAlignment="Center"
-                               HorizontalAlignment="Center" FontSize="16"/>
-                    <ScrollViewer ZoomMode="Enabled"
+                    <AppBarButton x:Name="AppBarButton_InsertProfile" Icon="Pictures"  
+                                      HorizontalAlignment="Center" Margin="0"
+                                      VerticalAlignment="Center" Click="AppBarButton_InsertProfile_Click"
+                                      IsCompact="False" Label="Add photo" />
+                    <ScrollViewer ZoomMode="Enabled" Tapped="ScrollViewer_Tapped"
                               HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled"
                               MinZoomFactor="1">
                         <Image x:Name="Image_Profile" 
                            VerticalAlignment="Center" Tapped="Image_Profile_Tapped" 
-                           Stretch="UniformToFill"  Source="ms-appx:///Assets/Tempo/logo.png">
+                           Stretch="UniformToFill" >
                         </Image>
                     </ScrollViewer>
                 </Grid>
@@ -55,19 +71,6 @@
                     <TextBlock Text="Blur" TextAlignment="Center" Margin="0,2,0,0"
                                FontSize="18"/>
                 </StackPanel>
-            </StackPanel>
-            <Rectangle Fill="#CCA39DE2" Height="2" VerticalAlignment="Top"
-                       Margin="10,10,10,10"/>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                    Margin="0,30,0,100" >
-                <Button x:Name="Button_Goback"
-                        Margin="0,0,5,0" HorizontalAlignment="Center" Content="Go back" 
-                        Click="Button_Goback_Click" FontWeight="SemiLight"
-                        BorderBrush="#FF1968C7" Foreground="#FF3285EA" FontSize="26" FontFamily="Global User Interface" />
-                <Button x:Name="Button_Preview" IsEnabled="False"
-                        Margin="5,0,0,0" HorizontalAlignment="Center" Content="Preview" 
-                        Click="Button_Preview_Click" FontWeight="SemiLight"
-                    BorderBrush="#FF1968C7" Foreground="#FF3285EA" FontSize="26" FontFamily="Global User Interface" />
             </StackPanel>
             
         </StackPanel>

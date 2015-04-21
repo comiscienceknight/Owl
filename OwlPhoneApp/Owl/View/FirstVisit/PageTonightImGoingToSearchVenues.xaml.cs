@@ -41,7 +41,7 @@ namespace Owl.View.FirstVisit
                 if (App.MyPost.VenueId != null)
                 {
                     RadAutoCompleteBox_Search.Text = App.MyPost.Place;
-                    Button_Next.IsEnabled = true;
+                    AppBarButton_Forward.IsEnabled = true;
                 }
             }
         }
@@ -55,18 +55,6 @@ namespace Owl.View.FirstVisit
         {
         }
 
-        private void Button_Goback_Click(object sender, RoutedEventArgs e)
-        {
-            var rootFrame = (Window.Current.Content as Frame);
-            rootFrame.GoBack();
-        }
-
-        private void Button_Next_Click(object sender, RoutedEventArgs e)
-        {
-            var rootFrame = (Window.Current.Content as Frame);
-            rootFrame.Navigate(typeof(PageImWithGirlsAndGuys));
-        }
-
         private void RadAutoCompleteBox_Search_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             SearchAvenues sa = RadAutoCompleteBox_Search.SelectedItem as SearchAvenues;
@@ -76,7 +64,7 @@ namespace Owl.View.FirstVisit
                 App.MyPost.Place = sa.Venue;
                 App.MyPost.PlaceAddresse = sa.Adresse;
 
-                Button_Next.IsEnabled = true;
+                AppBarButton_Forward.IsEnabled = true;
             }
         }
 
@@ -160,6 +148,23 @@ namespace Owl.View.FirstVisit
         {
         }
         #endregion
+
+        private void AppBarButton_Back_Click(object sender, RoutedEventArgs e)
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            rootFrame.GoBack();
+        }
+
+        private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            rootFrame.Navigate(typeof(PageImWithGirlsAndGuys));
+        }
+
+        private void AppBarButton_Leave_Click(object sender, RoutedEventArgs e)
+        {
+            App.QuitFromEditPost();
+        }
 
 
     }

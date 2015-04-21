@@ -8,7 +8,21 @@
     mc:Ignorable="d"
     xmlns:controls="using:WinRTXamlToolkit.Controls"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" x:Name="AppBar_Pivot" Background="#7FC30F0F">
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarButton_Back"  Icon="Back" 
+                              IsCompact="False" Label="Back" 
+                              Click="AppBarButton_Back_Click"/>
+                <AppBarButton x:Name="AppBarButton_Leave" Icon="Stop"
+                              Click="AppBarButton_Leave_Click"
+                              IsCompact="False" Label="Leave"/>
+                <AppBarButton x:Name="AppBarButton_Forward"  Icon="Forward" 
+                              IsCompact="False" Label="Edit Post"    IsEnabled="False"
+                              Click="AppBarButton_Forward_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
     <Grid>
         <TextBlock Text="Edit Post 2/4" FontSize="16" Opacity="0.8"
                    HorizontalAlignment="Center" FontWeight="SemiLight"
@@ -16,7 +30,7 @@
         <Rectangle Fill="#FF07B054" Height="2" VerticalAlignment="Top"
                    Margin="10,30,10,10"/>
 
-        <StackPanel VerticalAlignment="Center" Margin="0,0,0,20">
+        <StackPanel VerticalAlignment="Top" Margin="0,50,0,20">
             <TextBlock Text="I'll be there with" HorizontalAlignment="Center" 
                        FontSize="24" FontWeight="SemiLight" Opacity="0.8" />
             <StackPanel Margin="0,20,0,10">
@@ -58,9 +72,6 @@
                        FontSize="24" FontWeight="SemiLight" Opacity="0.8" />
                 <Button x:Name="Button_LookingFor" BorderThickness="1"
                         HorizontalAlignment="Center" Margin="20,5,20,0" >
-                    <!--<Button.Content>
-                        I'm just looking
-                    </Button.Content>-->
                     <Button.Flyout>
                         <ListPickerFlyout x:Name="ListPickerFlyout_LookingFor"
                                           ItemsPicked="ListPickerFlyout_LookingFor_ItemsPicked"
@@ -71,18 +82,20 @@
                 <TextBox x:Name="TextBox_Suggestion" Width="300" MaxLength="50" TextChanged="TextBox_Suggestion_TextChanged"
                          Visibility="Collapsed" />
             </StackPanel>
-            <Rectangle Fill="#CCA39DE2" Height="2" VerticalAlignment="Top"
+            <Rectangle Fill="#CC0083EF" Height="2" VerticalAlignment="Top"
                    Margin="10,10,10,10"/>
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center"
-                    Margin="0,45,0,100" >
-                <Button x:Name="Button_Goback"
-                        Margin="0,0,5,0" HorizontalAlignment="Center" Content="Go back" 
-                        Click="Button_Goback_Click" FontWeight="SemiLight"
-                    BorderBrush="#FF1968C7" Foreground="#FF3285EA" FontSize="26" FontFamily="Global User Interface" />
-                <Button x:Name="Button_Next" IsEnabled="False"
-                        Margin="5,0,0,0" HorizontalAlignment="Center" Content="Next" 
-                        Click="Button_Next_Click" FontWeight="SemiLight"
-                    BorderBrush="#FF1968C7" Foreground="#FF3285EA" FontSize="26" FontFamily="Global User Interface" />
+            <StackPanel Margin="0,20,0,0">
+                <TextBlock Text="We'll be there at" HorizontalAlignment="Center" 
+                       FontSize="24" FontWeight="SemiLight" Opacity="0.8" />
+                <StackPanel Margin="20,5" HorizontalAlignment="Center"
+                            Orientation="Horizontal">
+                    <CheckBox x:Name="CheckBox_ArrivalTime" IsChecked="True"
+                              Checked="CheckBox_ArrivalTime_Checked"
+                              VerticalAlignment="Center" Content="Around" />
+                    <TimePicker x:Name="TimePicker_ArrivalTime" Margin="10,0,0,0"
+                                VerticalAlignment="Center"
+                            TimeChanged="TimePicker_ArrivalTime_TimeChanged" />
+                </StackPanel>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -63,25 +63,6 @@ namespace Owl.View.FirstVisit
             }
         }
 
-        private void Button_Goback_Click(object sender, RoutedEventArgs e)
-        {
-            var rootFrame = (Window.Current.Content as Frame);
-            rootFrame.GoBack();
-        }
-
-        private void Button_Next_Click(object sender, RoutedEventArgs e)
-        {
-            App.MyPost.GirlsNumber = (int)NumericUpDown_WithGirls.Value;
-            App.MyPost.GuysNumber = (int)NumericUpDown_WithBoys.Value;
-            if (App.MyPost.LookingFor == "Suggest something")
-            {
-                App.MyPost.LookingFor = TextBox_Suggestion.Text;
-            }
-            var rootFrame = (Window.Current.Content as Frame);
-            rootFrame.Navigate(typeof(PageWereDressed));
-            
-        }
-
         private void NumericUpDown_WithBoys_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
             EnableNextButton();
@@ -98,11 +79,11 @@ namespace Owl.View.FirstVisit
                 (App.MyPost.LookingFor == "Suggest something" &&
                  string.IsNullOrWhiteSpace(TextBox_Suggestion.Text)))
             {
-                Button_Next.IsEnabled = false;
+                AppBarButton_Forward.IsEnabled = false;
             }
             else
             {
-                Button_Next.IsEnabled = true;
+                AppBarButton_Forward.IsEnabled = true;
             }
         }
 
@@ -122,6 +103,40 @@ namespace Owl.View.FirstVisit
         {
             App.MyPost.LookingFor = TextBox_Suggestion.Text;
             EnableNextButton();
+        }
+
+        private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)
+        {
+            App.MyPost.GirlsNumber = (int)NumericUpDown_WithGirls.Value;
+            App.MyPost.GuysNumber = (int)NumericUpDown_WithBoys.Value;
+            App.MyPost.LookingFor = Button_LookingFor.Content.ToString();
+            if (CheckBox_ArrivalTime.IsChecked == true)
+                App.MyPost.Time = "Around " + TimePicker_ArrivalTime.Time.ToString().Substring(0, 5);
+            else
+                App.MyPost.Time = TimePicker_ArrivalTime.Time.ToString("hh:mm");
+            var rootFrame = (Window.Current.Content as Frame);
+            rootFrame.Navigate(typeof(PageWereDressed));
+        }
+
+        private void AppBarButton_Leave_Click(object sender, RoutedEventArgs e)
+        {
+            App.QuitFromEditPost();
+        }
+
+        private void AppBarButton_Back_Click(object sender, RoutedEventArgs e)
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            rootFrame.GoBack();
+        }
+
+        private void TimePicker_ArrivalTime_TimeChanged(object sender, TimePickerValueChangedEventArgs e)
+        {
+            
+        }
+
+        private void CheckBox_ArrivalTime_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

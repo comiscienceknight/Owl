@@ -56,19 +56,29 @@ namespace Owl.View.FirstVisit
         private void ListPickerFlyout_DressCode_ItemsPicked(ListPickerFlyout sender, ItemsPickedEventArgs args)
         {
             Button_DressCode.Content = ListPickerFlyout_DressCode.SelectedItem;
-            App.MyPost.DressCode = ListPickerFlyout_DressCode.SelectedItem.ToString();
         }
 
-        private void Button_Next_Click(object sender, RoutedEventArgs e)
-        {
-            var rootFrame = (Window.Current.Content as Frame);
-            rootFrame.Navigate(typeof(PageProfile));
-        }
-
-        private void Button_Goback_Click(object sender, RoutedEventArgs e)
+        private void AppBarButton_Back_Click(object sender, RoutedEventArgs e)
         {
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.GoBack();
+        }
+
+        private void AppBarButton_Leave_Click(object sender, RoutedEventArgs e)
+        {
+            App.QuitFromEditPost();
+        }
+
+        private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)
+        {   
+            string value = string.Empty;
+            RichEditBox_OtherInfo.Document.GetText(Windows.UI.Text.TextGetOptions.AdjustCrlf, out value);
+            App.MyPost.OtherInfo = value;
+
+            App.MyPost.DressCode = Button_DressCode.Content.ToString();
+
+            var rootFrame = (Window.Current.Content as Frame);
+            rootFrame.Navigate(typeof(PageProfile));
         }
     }
 }

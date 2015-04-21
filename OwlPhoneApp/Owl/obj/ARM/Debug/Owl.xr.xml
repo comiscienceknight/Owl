@@ -51,6 +51,7 @@
       <RootProperty Name="IsSticky" />
       <RootProperty Name="Background" />
       <RootProperty Name="PrimaryCommands" />
+      <RootProperty Name="IsOpen" />
       <RootProperty Name="SecondaryCommands" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.AppBarButton">
@@ -61,6 +62,7 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="RenderTransform" />
+      <RootProperty Name="IsEnabled" />
       <RootProperty Name="ClickMode" />
       <RootProperty Name="RenderTransformOrigin" />
       <RootEvent Name="Click" />
@@ -104,6 +106,7 @@
       <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
+      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />
@@ -286,11 +289,18 @@
       <RootEvent Name="Checked" />
     </RootType>
     <RootType FullName="Owl.View.FirstVisit.PageBasicInfo" />
+    <RootType FullName="Windows.UI.Xaml.Controls.CheckBox">
+      <RootProperty Name="IsChecked" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="Content" />
+      <RootEvent Name="Checked" />
+    </RootType>
     <RootType FullName="Owl.View.FirstVisit.PageImWithGirlsAndGuys" />
     <RootType FullName="Owl.View.FirstVisit.PageProfile" />
     <RootType FullName="Owl.View.FirstVisit.PageTonightImGoingToSearchVenues" />
     <RootType FullName="Owl.View.FirstVisit.PageTonightImGoingTo" />
     <RootType FullName="Windows.UI.Xaml.Controls.RichEditBox">
+      <RootProperty Name="TextWrapping" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="FontFamily" />

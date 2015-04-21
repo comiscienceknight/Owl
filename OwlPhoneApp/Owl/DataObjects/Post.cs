@@ -73,7 +73,7 @@ namespace Owl.DataObjects
         }
 
         private string _description;
-        public string Description
+        public string OtherInfo
         {
             get { return _description; }
             set

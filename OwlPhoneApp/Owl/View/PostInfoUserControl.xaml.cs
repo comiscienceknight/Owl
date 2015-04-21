@@ -26,7 +26,7 @@ namespace Owl
 {
     public sealed partial class PostInfoUserControl : UserControl
     {
-        private Post _post;
+        private Post _post = null;
 
         public PostInfoUserControl()
             :this(null)
@@ -69,7 +69,7 @@ namespace Owl
             post.Place = jo.GetNamedString("venueName");
 
             if (jo.ContainsKey("description"))
-                post.Description = jo.GetNamedString("description");
+                post.OtherInfo = jo.GetNamedString("description");
 
             if (jo.ContainsKey("userProfileUrl1"))
             {
@@ -245,7 +245,7 @@ namespace Owl
                 }
 
                 TextBlock_Require.Text = _post.Require ?? "";
-                TextBlock_Description.Text = _post.Description ?? "";
+                TextBlock_Description.Text = _post.OtherInfo ?? "";
                 TextBlock_ClubTitle.Text = _post.Place ?? "";
                 TextBlock_PlaceAddresse.Text = _post.PlaceAddresse ?? "";
                 TextBlock_ClubPopularity.Text = _post.VenuePopularity.ToString() + " users have been here";

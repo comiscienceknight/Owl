@@ -126,7 +126,7 @@ namespace Owl
                     App.PasswordVaultObject = vault;
 
                     _dispatcherTimer.Stop();
-                    
+
                     var rootFrame = (Window.Current.Content as Frame);
                     if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
                     {

@@ -216,7 +216,7 @@ namespace Owl.View.FirstVisit
                 var prms = new Dictionary<string, string>();
                 if (!string.IsNullOrWhiteSpace(profileUrl))
                     prms.Add("profileurl", "http://owlbat.azurewebsites.net/profile/" + profileUrl);
-                prms.Add("userid", App.MyPost.UserId);
+                prms.Add("userid", App.MySelf.UserId);
                 string outType = "";
                 if (string.IsNullOrWhiteSpace(App.MyPost.VenueId) && App.MyPost.Place == "Anywhere")
                     outType = "Anywhere";
@@ -225,7 +225,7 @@ namespace Owl.View.FirstVisit
                 prms.Add("outype", outType);
                 prms.Add("venueid", App.MyPost.VenueId ?? "");
                 prms.Add("lookingfor", App.MyPost.LookingFor ?? "");
-                prms.Add("arrivaltime", App.MyPost.Time ?? "");
+                prms.Add("arrivaltime", App.MyPost.ArrivalTime ?? "");
                 prms.Add("girlnumber", (App.MyPost.GirlsNumber ?? 0).ToString());
                 prms.Add("boynumber", (App.MyPost.GuysNumber ?? 0).ToString());
                 prms.Add("otherinfo", App.MyPost.OtherInfo ?? "");

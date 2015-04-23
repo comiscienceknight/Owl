@@ -28,12 +28,6 @@ namespace Owl
     {
         private bool _readyToQuit = false;
 
-        private NavigationHelper _navigationHelper;
-        public NavigationHelper NavigationHelper
-        {
-            get { return this._navigationHelper; }
-        }
-
         private Common.GeoLocation _geoLocation;
 
         public PivotPage()
@@ -41,10 +35,6 @@ namespace Owl
             this.InitializeComponent();
 
             this.NavigationCacheMode = NavigationCacheMode.Required;
-
-            _navigationHelper = new NavigationHelper(this);
-            _navigationHelper.LoadState += this.NavigationHelper_LoadState;
-            _navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             _geoLocation = new Common.GeoLocation(this.Dispatcher);
 
@@ -61,20 +51,14 @@ namespace Owl
 
                     var rootFrame = (Window.Current.Content as Frame);
                     _readyToQuit = true;
-                    if (!rootFrame.Navigate(typeof(PostInfoPage), msg.Post))
-                    {
-                        throw new Exception("Failed to create MainPage");
-                    }
+                    rootFrame.Navigate(typeof(PostInfoPage), msg.Post);
                 }
             });
             Messenger.Default.Register<NavigateToChatMessage>(this, msg =>
             {
                 var rootFrame = (Window.Current.Content as Frame);
                 _readyToQuit = true;
-                if (!rootFrame.Navigate(typeof(MessagePage), msg.ChatEntry))
-                {
-                    throw new Exception("Failed to create MainPage");
-                }
+                rootFrame.Navigate(typeof(MessagePage), msg.ChatEntry);
             });
         }
 
@@ -92,13 +76,11 @@ namespace Owl
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            _navigationHelper.OnNavigatedTo(e);
             _readyToQuit = false;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
-            _navigationHelper.OnNavigatedFrom(e);
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -106,20 +88,6 @@ namespace Owl
             if (_readyToQuit == false)
                 e.Cancel = true;
             base.OnNavigatingFrom(e);
-        }
-
-        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
-        {
-
-        }
-
-        private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
-        {
-        }
-
-        private void UserControl_MyPost_Loaded(object sender, RoutedEventArgs e)
-        {
-            UserControl_MyPost.SetPostByUserId();
         }
 
 
@@ -155,25 +123,19 @@ namespace Owl
         {
             var rootFrame = (Window.Current.Content as Frame);
             _readyToQuit = true;
-            if (!rootFrame.Navigate(typeof(FilterPage), UserControl_MyPost.GetPost()))
-            {
-                throw new Exception("Failed to create MainPage");
-            }
-        }
-
-        private void AppBarButton_EditProfile_Click(object sender, RoutedEventArgs e)
-        {
-            var rootFrame = (Window.Current.Content as Frame);
-            _readyToQuit = true;
-            if (!rootFrame.Navigate(typeof(EditMyProfilePage), UserControl_MyPost.GetPost()))
-            {
-                throw new Exception("Failed to create MainPage");
-            }
+            rootFrame.Navigate(typeof(FilterPage));
         }
 
         private void AppBarButton_RefreshPost_Click(object sender, RoutedEventArgs e)
         {
             Messenger.Default.Send<RefreshPostsMessage>(new RefreshPostsMessage());
+        }
+
+        private void AppBarButton_MySelf_Click(object sender, RoutedEventArgs e)
+        {
+            var rootFrame = (Window.Current.Content as Frame);
+            _readyToQuit = true;
+            rootFrame.Navigate(typeof(PostInfoPage), App.MyPost);
         }
         #endregion
 
@@ -196,20 +158,11 @@ namespace Owl
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                        AppBarButton_EditProfile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                        AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                        break;
-                    case "me":
-                        AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                        AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                        AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                        AppBarButton_EditProfile.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         break;
                     default:
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                        AppBarButton_EditProfile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
                         break;

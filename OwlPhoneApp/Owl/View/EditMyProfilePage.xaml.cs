@@ -82,10 +82,10 @@ namespace Owl
             NumericUpDown_WithBoys.Value = _post.GuysNumber ?? 0;
             NumericUpDown_WithGirls.Value = _post.GirlsNumber ?? 0;
             TextBox_NickName.Text = _post.UserName;
-            if (_post.Time.Length == 5)
-                _post.Time += ":00";
+            if (_post.ArrivalTime.Length == 5)
+                _post.ArrivalTime += ":00";
             TimeSpan arrivalTime;
-            if (TimeSpan.TryParse(_post.Time, out arrivalTime))
+            if (TimeSpan.TryParse(_post.ArrivalTime, out arrivalTime))
                 TimePicker_ArrivalTime.Time = arrivalTime;
             
             InitAutoTextComplete();

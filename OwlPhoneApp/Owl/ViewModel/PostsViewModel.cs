@@ -158,14 +158,14 @@ namespace Owl.ViewModel
                 post.UserName = jo.GetNamedString("userName");
 
             if (jo.ContainsKey("time"))
-                post.Time = jo.GetNamedString("time");
+                post.ArrivalTime = jo.GetNamedString("time");
 
             if (jo.ContainsKey("userPopularity"))
                 post.UserPopularity = (int)jo.GetNamedNumber("userPopularity");
 
             post.UserId = jo.GetNamedString("userId");
 
-            post.Require = string.Format("+ {0} boys, + {1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.Time);
+            post.Require = string.Format("+ {0} boys, + {1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.ArrivalTime);
 
             return post;
         }

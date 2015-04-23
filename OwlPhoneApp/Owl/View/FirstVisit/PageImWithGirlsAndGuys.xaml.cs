@@ -111,9 +111,9 @@ namespace Owl.View.FirstVisit
             App.MyPost.GuysNumber = (int)NumericUpDown_WithBoys.Value;
             App.MyPost.LookingFor = Button_LookingFor.Content.ToString();
             if (CheckBox_ArrivalTime.IsChecked == true)
-                App.MyPost.Time = "Around " + TimePicker_ArrivalTime.Time.ToString().Substring(0, 5);
+                App.MyPost.ArrivalTime = "Around " + TimePicker_ArrivalTime.Time.ToString().Substring(0, 5);
             else
-                App.MyPost.Time = TimePicker_ArrivalTime.Time.ToString("hh:mm");
+                App.MyPost.ArrivalTime = TimePicker_ArrivalTime.Time.ToString("hh:mm");
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.Navigate(typeof(PageWereDressed));
         }

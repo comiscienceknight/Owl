@@ -155,4 +155,29 @@
     <Parameter Name="CodeDress" Parameter="codeDress" Type="System.String" DbType="NVarChar(MAX)" />
     <Return Type="System.Int32" />
   </Function>
+  <Function Name="dbo.GetPostByUserId" Method="GetPostByUserId">
+    <Parameter Name="userid" Type="System.String" DbType="VarChar(128)" />
+    <ElementType Name="GetPostByUserIdResult">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="ProfileUrl" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Popularity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VenueId" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="PlaceName" Type="System.String" DbType="NVarChar(80)" CanBeNull="true" />
+      <Column Name="ArrivalTime" Type="System.String" DbType="VarChar(32)" CanBeNull="true" />
+      <Column Name="Sexe" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="GirlNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BoyNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OtherInfo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="LookingFor" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+      <Column Name="OutType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PlaceAddresse" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="VenuePosition" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VenuePopularity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VenuePhotoUrl1" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="VenuePhotoUrl2" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+      <Column Name="VenuePhotoUrl3" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
+    </ElementType>
+  </Function>
 </Database>

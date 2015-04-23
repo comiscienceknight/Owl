@@ -55,7 +55,7 @@ namespace Owl
                 var rootFrame = (Window.Current.Content as Frame);
                 var chatEntry = new ChatEntry()
                         {
-                            Time = _post.Time,
+                            Time = _post.ArrivalTime,
                             Message = "",
                             UserId = _post.UserId,
                             UserName = _post.UserName,
@@ -66,7 +66,6 @@ namespace Owl
                     throw new Exception("Failed to create MainPage");
                 }
             }
-
         }
     }
 }

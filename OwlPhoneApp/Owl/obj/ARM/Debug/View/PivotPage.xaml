@@ -18,8 +18,8 @@
                 <AppBarButton x:ConnectionId='2' x:Name="AppBarButton_RefreshPost" Icon="Refresh"
                                                                     
                               IsCompact="False" Label="Refresh"/>
-                <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_EditProfile"  Icon="Edit" 
-                              IsCompact="False" Label="Edit Post"                                       />
+                <AppBarButton x:ConnectionId='3' x:Name="AppBarButton_MySelf"  Icon="People" 
+                              IsCompact="False" Label="My Self"                                   />
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
                 <AppBarButton x:ConnectionId='4' x:Name="AppBarButton_Logout" Label="Logout"                                  />
@@ -59,15 +59,6 @@
                 CommonNavigationTransitionInfo.IsStaggerElement="True">
                     <local:PostsUserControl>
                     </local:PostsUserControl>
-                </PivotItem>
-
-                <PivotItem
-                x:Uid="PivotItem2" x:Name="PivotItem_Me"
-                Margin="16,8,0,0"
-                Header="me">
-                    <local:PostInfoUserControl x:ConnectionId='6' x:Name="UserControl_MyPost"
-                                                             >
-                    </local:PostInfoUserControl>
                 </PivotItem>
                 
                 <PivotItem

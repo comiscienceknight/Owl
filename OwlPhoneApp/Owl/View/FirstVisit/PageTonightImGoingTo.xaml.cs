@@ -1,16 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using Owl.Models;
+using System;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkID=390556
@@ -22,27 +14,55 @@ namespace Owl.View.FirstVisit
     /// </summary>
     public sealed partial class PageTonightImGoingTo : Page
     {
+        private bool _purposeForUpdating = false;
+
         public PageTonightImGoingTo()
         {
             this.InitializeComponent();
             this.Loaded += PageTonightImGoingTo_Loaded;
         }
 
-        void PageTonightImGoingTo_Loaded(object sender, RoutedEventArgs e)
+        private async void PageTonightImGoingTo_Loaded(object sender, RoutedEventArgs e)
         {
-            if(App.MyPost != null)
+            Border_Root.Visibility = Windows.UI.Xaml.Visibility.Visible;
+            App.MyPost = await JsonReceiver.GetPostByUserId(App.UserId);
+            if (string.IsNullOrWhiteSpace(App.MyPost.UserId))
+                App.MyPost.UserId = App.MySelf.UserId;
+            Border_Root.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+
+            InitUiContentsWithAppMyPost();
+
+            if(_purposeForUpdating)
             {
-                if(App.MyPost.VenueId != null)
-                {
-                    RadioButton_Venue.IsChecked = true;
-                    RadioButton_Anywhere.IsChecked = false;
-                }
+
             }
             else
             {
-                App.MyPost = new DataObjects.Post();
-                App.MyPost.UserId = App.MySelf.UserId;
+                if(!string.IsNullOrWhiteSpace(App.MyPost.Id))
+                {
+                    var rootFrame = (Window.Current.Content as Frame);
+                    rootFrame.Navigate(typeof(PivotPage));
+                }
             }
+        }
+
+        private void InitUiContentsWithAppMyPost()
+        {
+            if (!string.IsNullOrWhiteSpace(App.MyPost.VenueId))
+            {
+                AffectRadioButtons(true, false, false);
+            }
+            else
+            {
+                AffectRadioButtons(false, true, false);
+            }
+        }
+
+        private void AffectRadioButtons(bool venue, bool anywhere, bool neighborhood)
+        {
+            RadioButton_Venue.IsChecked = venue;
+            RadioButton_Anywhere.IsChecked = anywhere;
+            RadioButton_Neighborhood.IsChecked = neighborhood;
         }
 
         /// <summary>
@@ -52,13 +72,8 @@ namespace Owl.View.FirstVisit
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if(App.MyPost == null)
-            {
-                App.MyPost = new DataObjects.Post();
-                App.MyPost.UserId = App.MySelf.UserId;
-                App.MyPost.UserName = App.MySelf.UserName;
-                App.MyPost.UserPopularity = App.MySelf.Popularity;
-            }
+            if (e.Parameter != null && e.Parameter is bool)
+                _purposeForUpdating = (bool)e.Parameter;
         }
 
         private void RadioButton_Venue_Checked(object sender, RoutedEventArgs e)

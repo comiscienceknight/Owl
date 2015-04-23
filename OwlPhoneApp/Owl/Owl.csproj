@@ -85,6 +85,7 @@
     </Compile>
     <Compile Include="DataObjects\MyPost.cs" />
     <Compile Include="DataObjects\User.cs" />
+    <Compile Include="Models\JsonReceiver.cs" />
     <Compile Include="ViewModel\Message\RefreshPostsMessage.cs" />
     <Compile Include="View\EditMyProfilePage.xaml.cs">
       <DependentUpon>EditMyProfilePage.xaml</DependentUpon>

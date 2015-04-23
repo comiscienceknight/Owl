@@ -64,6 +64,10 @@
                                Opacity="0.8" FontSize="16"
                                TextWrapping="Wrap" TextTrimming="WordEllipsis"
                                Margin="0,0,8,10"/>
+                    <TextBlock x:Name="TextBlock_ArrivalTime" Text="ABCDEF" 
+                               TextWrapping="Wrap" TextTrimming="WordEllipsis"
+                               Opacity="0.6" FontSize="22"
+                               Margin="0,0,8,10"/>
 
                     <Rectangle x:Name="Rectangle_Club" Height="3" HorizontalAlignment="Left" Fill="#FFC7F138" Opacity="0.5" Margin="0,10,10,18"  />
 

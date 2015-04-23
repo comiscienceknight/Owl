@@ -17,6 +17,39 @@ namespace Owl.DataObjects
             }
         }
 
+        private string _id;
+        public string Id
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged("Id");
+            }
+        }
+
+        private string _sexe;
+        public string Sexe
+        {
+            get { return _sexe; }
+            set
+            {
+                _sexe = value;
+                OnPropertyChanged("Sexe");
+            }
+        }
+
+        private string _outType;
+        public string OutType
+        {
+            get { return _outType; }
+            set
+            {
+                _outType = value;
+                OnPropertyChanged("OutType");
+            }
+        }
+
         private string _venueId;
         public string VenueId
         {
@@ -106,7 +139,7 @@ namespace Owl.DataObjects
         }
 
         private string _time;
-        public string Time
+        public string ArrivalTime
         {
             get { return _time; }
             set

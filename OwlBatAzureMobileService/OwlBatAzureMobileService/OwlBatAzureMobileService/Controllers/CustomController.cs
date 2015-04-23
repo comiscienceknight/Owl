@@ -54,6 +54,19 @@ namespace OwlBatAzureMobileService.Controllers
             return new GetPostResult();
         }
 
+        [Route("get/getpostbyuserid/{userid}")]
+        [HttpGet]
+        public GetPostByUserIdResult GetUserPostByUserId(string userid)
+        {
+            using (var db = new Models.OwlDataClassesDataContext())
+            {
+                var results = db.GetPostByUserId(userid).ToList();
+                if (results.Count > 0)
+                    return results.First();
+            }
+            return new GetPostByUserIdResult();
+        }
+
         [Route("get/ifuserexist/{userId}")]
         [HttpGet]
         public bool IsUserExist(string userId)

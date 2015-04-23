@@ -65,7 +65,14 @@
                         FontSize="26" FontFamily="Global User Interface" />
             </StackPanel>
         </ScrollViewer>
-        
-        
+
+        <Border x:Name="Border_Root" Background="#AA000000" Height="30"
+                Visibility="Collapsed"
+                VerticalAlignment="Stretch" HorizontalAlignment="Stretch" >
+            <ProgressBar Margin="0,0,0,0" 
+                     VerticalAlignment="Center"
+                                     x:Name="ProgressBar_Root" IsIndeterminate="True" 
+                                     HorizontalAlignment="Stretch" />
+        </Border>
     </Grid>
 </Page>

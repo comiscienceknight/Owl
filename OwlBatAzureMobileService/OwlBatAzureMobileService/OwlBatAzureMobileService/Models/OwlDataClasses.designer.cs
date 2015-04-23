@@ -151,6 +151,13 @@ namespace OwlBatAzureMobileService.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userId, outType, venueId, lookingFor, arrivalTime, girlNumber, boyNumber, profileUrl, otherInfo, codeDress);
 			return ((int)(result.ReturnValue));
 		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPostByUserId")]
+		public ISingleResult<GetPostByUserIdResult> GetPostByUserId([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string userid)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userid);
+			return ((ISingleResult<GetPostByUserIdResult>)(result.ReturnValue));
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Venue")]
@@ -2226,6 +2233,374 @@ namespace OwlBatAzureMobileService.Models
 				if ((this._Description != value))
 				{
 					this._Description = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlaceAddresse", DbType="NVarChar(200)")]
+		public string PlaceAddresse
+		{
+			get
+			{
+				return this._PlaceAddresse;
+			}
+			set
+			{
+				if ((this._PlaceAddresse != value))
+				{
+					this._PlaceAddresse = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenuePosition", DbType="NVarChar(50)")]
+		public string VenuePosition
+		{
+			get
+			{
+				return this._VenuePosition;
+			}
+			set
+			{
+				if ((this._VenuePosition != value))
+				{
+					this._VenuePosition = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenuePopularity", DbType="Int")]
+		public System.Nullable<int> VenuePopularity
+		{
+			get
+			{
+				return this._VenuePopularity;
+			}
+			set
+			{
+				if ((this._VenuePopularity != value))
+				{
+					this._VenuePopularity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenuePhotoUrl1", DbType="NVarChar(160)")]
+		public string VenuePhotoUrl1
+		{
+			get
+			{
+				return this._VenuePhotoUrl1;
+			}
+			set
+			{
+				if ((this._VenuePhotoUrl1 != value))
+				{
+					this._VenuePhotoUrl1 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenuePhotoUrl2", DbType="NVarChar(160)")]
+		public string VenuePhotoUrl2
+		{
+			get
+			{
+				return this._VenuePhotoUrl2;
+			}
+			set
+			{
+				if ((this._VenuePhotoUrl2 != value))
+				{
+					this._VenuePhotoUrl2 = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenuePhotoUrl3", DbType="NVarChar(160)")]
+		public string VenuePhotoUrl3
+		{
+			get
+			{
+				return this._VenuePhotoUrl3;
+			}
+			set
+			{
+				if ((this._VenuePhotoUrl3 != value))
+				{
+					this._VenuePhotoUrl3 = value;
+				}
+			}
+		}
+	}
+	
+	public partial class GetPostByUserIdResult
+	{
+		
+		private string _Id;
+		
+		private string _UserId;
+		
+		private string _UserName;
+		
+		private string _ProfileUrl;
+		
+		private System.Nullable<int> _Popularity;
+		
+		private string _VenueId;
+		
+		private string _PlaceName;
+		
+		private string _ArrivalTime;
+		
+		private string _Sexe;
+		
+		private System.Nullable<int> _GirlNumber;
+		
+		private System.Nullable<int> _BoyNumber;
+		
+		private string _OtherInfo;
+		
+		private string _LookingFor;
+		
+		private string _OutType;
+		
+		private string _PlaceAddresse;
+		
+		private string _VenuePosition;
+		
+		private System.Nullable<int> _VenuePopularity;
+		
+		private string _VenuePhotoUrl1;
+		
+		private string _VenuePhotoUrl2;
+		
+		private string _VenuePhotoUrl3;
+		
+		public GetPostByUserIdResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="NVarChar(128) NOT NULL", CanBeNull=false)]
+		public string Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="VarChar(128) NOT NULL", CanBeNull=false)]
+		public string UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(160)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this._UserName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ProfileUrl", DbType="VarChar(250) NOT NULL", CanBeNull=false)]
+		public string ProfileUrl
+		{
+			get
+			{
+				return this._ProfileUrl;
+			}
+			set
+			{
+				if ((this._ProfileUrl != value))
+				{
+					this._ProfileUrl = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Popularity", DbType="Int")]
+		public System.Nullable<int> Popularity
+		{
+			get
+			{
+				return this._Popularity;
+			}
+			set
+			{
+				if ((this._Popularity != value))
+				{
+					this._Popularity = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_VenueId", DbType="VarChar(128)")]
+		public string VenueId
+		{
+			get
+			{
+				return this._VenueId;
+			}
+			set
+			{
+				if ((this._VenueId != value))
+				{
+					this._VenueId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PlaceName", DbType="NVarChar(80)")]
+		public string PlaceName
+		{
+			get
+			{
+				return this._PlaceName;
+			}
+			set
+			{
+				if ((this._PlaceName != value))
+				{
+					this._PlaceName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ArrivalTime", DbType="VarChar(32)")]
+		public string ArrivalTime
+		{
+			get
+			{
+				return this._ArrivalTime;
+			}
+			set
+			{
+				if ((this._ArrivalTime != value))
+				{
+					this._ArrivalTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Sexe", DbType="VarChar(8)")]
+		public string Sexe
+		{
+			get
+			{
+				return this._Sexe;
+			}
+			set
+			{
+				if ((this._Sexe != value))
+				{
+					this._Sexe = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GirlNumber", DbType="Int")]
+		public System.Nullable<int> GirlNumber
+		{
+			get
+			{
+				return this._GirlNumber;
+			}
+			set
+			{
+				if ((this._GirlNumber != value))
+				{
+					this._GirlNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BoyNumber", DbType="Int")]
+		public System.Nullable<int> BoyNumber
+		{
+			get
+			{
+				return this._BoyNumber;
+			}
+			set
+			{
+				if ((this._BoyNumber != value))
+				{
+					this._BoyNumber = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OtherInfo", DbType="VarChar(250)")]
+		public string OtherInfo
+		{
+			get
+			{
+				return this._OtherInfo;
+			}
+			set
+			{
+				if ((this._OtherInfo != value))
+				{
+					this._OtherInfo = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LookingFor", DbType="VarChar(128)")]
+		public string LookingFor
+		{
+			get
+			{
+				return this._LookingFor;
+			}
+			set
+			{
+				if ((this._LookingFor != value))
+				{
+					this._LookingFor = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_OutType", DbType="VarChar(50)")]
+		public string OutType
+		{
+			get
+			{
+				return this._OutType;
+			}
+			set
+			{
+				if ((this._OutType != value))
+				{
+					this._OutType = value;
 				}
 			}
 		}

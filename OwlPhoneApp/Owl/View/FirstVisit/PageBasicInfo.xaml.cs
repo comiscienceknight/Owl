@@ -37,8 +37,9 @@ namespace Owl.View.FirstVisit
 
         async void PageBasicInfo_Loaded(object sender, RoutedEventArgs e)
         {
+            Border_Root.Visibility = Windows.UI.Xaml.Visibility.Visible;
             _mySelf = await GetUser();
-            
+            Border_Root.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             EnableSubmit();
 
             if (App.MySelf == null)
@@ -182,7 +183,7 @@ namespace Owl.View.FirstVisit
                 post.UserName = jo.GetNamedString("userName");
 
             if (jo.ContainsKey("time"))
-                post.Time = jo.GetNamedString("time");
+                post.ArrivalTime = jo.GetNamedString("time");
 
             if (jo.ContainsKey("venueId"))
                 post.VenueId = jo.GetNamedString("venueId");
@@ -192,7 +193,7 @@ namespace Owl.View.FirstVisit
 
             post.UserId = jo.GetNamedString("userId");
 
-            post.Require = string.Format("+ {0} boys, + {1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.Time);
+            post.Require = string.Format("+ {0} boys, + {1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.ArrivalTime);
 
             return post;
         }
@@ -267,7 +268,7 @@ namespace Owl.View.FirstVisit
 
                 await response.Content.ReadAsStringAsync();
 
-                if (response.Content != null && response.Content.ToString() == "")
+                if (response.Content != null && response.Content.ToString() != "")
                 {
                     var dialog = new MessageDialog(response.Content.ToString());
                     await dialog.ShowAsync();

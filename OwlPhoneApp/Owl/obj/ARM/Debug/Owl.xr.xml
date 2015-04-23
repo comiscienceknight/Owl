@@ -115,9 +115,10 @@
       <RootProperty Name="CornerRadius" />
       <RootProperty Name="Visibility" />
       <RootProperty Name="Child" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="Margin" />
       <RootProperty Name="Height" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
       <RootProperty Name="Width" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Image">
@@ -397,11 +398,9 @@
       <RootProperty Name="Header" />
       <RootProperty Name="Content" />
     </RootType>
-    <RootType FullName="Owl.PostInfoUserControl">
-      <RootEvent Name="Loaded" />
-    </RootType>
     <RootType FullName="Owl.PostsUserControl" />
     <RootType FullName="Owl.PivotPage" />
     <RootType FullName="Owl.PostInfoPage" />
+    <RootType FullName="Owl.PostInfoUserControl" />
   </Roots.RootTypes>
 </Roots>

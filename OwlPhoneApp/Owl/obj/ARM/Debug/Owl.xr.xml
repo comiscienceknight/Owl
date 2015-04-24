@@ -26,7 +26,8 @@
     <RootPropertyPathName Name="Main" />
     <RootPropertyPathName Name="Pivot" />
     <RootPropertyPathName Name="Posts" />
-    <RootPropertyPathName Name="Description" />
+    <RootPropertyPathName Name="OtherInfo" />
+    <RootPropertyPathName Name="LookingFor" />
     <RootPropertyPathName Name="Require" />
     <RootPropertyPathName Name="Place" />
     <RootPropertyPathName Name="Profile" />
@@ -63,6 +64,7 @@
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="RenderTransform" />
       <RootProperty Name="IsEnabled" />
+      <RootProperty Name="Visibility" />
       <RootProperty Name="ClickMode" />
       <RootProperty Name="RenderTransformOrigin" />
       <RootEvent Name="Click" />
@@ -357,7 +359,6 @@
       <RootProperty Name="Content" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Resources" />
-      <RootProperty Name="Transitions" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.CaptureElement">
       <RootProperty Name="Stretch" />
@@ -401,6 +402,5 @@
     <RootType FullName="Owl.PostsUserControl" />
     <RootType FullName="Owl.PivotPage" />
     <RootType FullName="Owl.PostInfoPage" />
-    <RootType FullName="Owl.PostInfoUserControl" />
   </Roots.RootTypes>
 </Roots>

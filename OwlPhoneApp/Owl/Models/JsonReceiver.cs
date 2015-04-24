@@ -59,6 +59,8 @@ namespace Owl.Models
                     post.PlaceAddresse = jo.GetNamedString("placeAddresse");
                 if (jo.ContainsKey("venuePosition"))
                     post.VenuePosition = jo.GetNamedString("venuePosition");
+                if (jo.ContainsKey("venueId"))
+                    post.VenueId = jo.GetNamedString("venueId");
                 if (jo.ContainsKey("venuePopularity"))
                     post.VenuePopularity = (int)jo.GetNamedNumber("venuePopularity");
                 if (jo.ContainsKey("venuePhotoUrl1"))

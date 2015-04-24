@@ -165,9 +165,6 @@
     <Compile Include="View\PostInfoPage.xaml.cs">
       <DependentUpon>PostInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PostInfoUserControl.xaml.cs">
-      <DependentUpon>PostInfoUserControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\PostsUserControl.xaml.cs">
       <DependentUpon>PostsUserControl.xaml</DependentUpon>
     </Compile>
@@ -279,10 +276,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\PostInfoPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\PostInfoUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

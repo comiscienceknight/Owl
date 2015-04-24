@@ -25,20 +25,14 @@ namespace OwlBatAzureMobileService.Controllers
     {
         public ApiServices Services { get; set; }
 
-        [Route("get/getposts/{date}/{time}")]
+        [Route("get/getposts")]
         [HttpGet]
-        public List<GetPostsResult> GetAllVailablePosts(string date = "2015-03-10", string time = "010101")
+        public List<GetPostsResult> GetAllVailablePosts()
         {
-            string updateAs = date + "T" + time.Insert(2, ":").Insert(5, ":");
-            DateTimeOffset updateAsDto;
-            if (DateTimeOffset.TryParse(updateAs, out updateAsDto))
+            using (var db = new Models.OwlDataClassesDataContext())
             {
-                using (var db = new Models.OwlDataClassesDataContext())
-                {
-                    return db.GetPosts(updateAsDto).ToList();
-                }
+                return db.GetPosts().ToList();
             }
-            return new List<GetPostsResult>();
         }
 
         [Route("get/getpost/{userid}")]

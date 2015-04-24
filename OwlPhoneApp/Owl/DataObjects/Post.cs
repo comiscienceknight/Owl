@@ -39,6 +39,17 @@ namespace Owl.DataObjects
             }
         }
 
+        private string _birthday;
+        public string Birthday
+        {
+            get { return _birthday; }
+            set
+            {
+                _birthday = value;
+                OnPropertyChanged("Birthday");
+            }
+        }
+
         private string _outType;
         public string OutType
         {

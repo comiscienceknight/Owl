@@ -59,12 +59,13 @@ namespace Owl.ViewModel
         private async void LoadPosts()
         {
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(true));
+            PostCollection.Clear();
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
                 httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
                 var posts = await httpClient.GetStringAsync(
-                    new Uri("http://owlbat.azure-mobile.net/get/getposts/2015-03-10/010101"));
+                    new Uri("http://owlbat.azure-mobile.net/get/getposts"));
 
                 JsonValue jsonValue = JsonValue.Parse(posts);
                 AnalysePostJsonValueArray(jsonValue);
@@ -94,14 +95,13 @@ namespace Owl.ViewModel
             JsonObject jo = postJasonValue.GetObject();
             var post = new DataObjects.Post();
 
-            post.Place = jo.GetNamedString("venueName");
-
-            if (jo.ContainsKey("description"))
-                post.OtherInfo = jo.GetNamedString("description");
-
-            if (jo.ContainsKey("userProfileUrl1"))
+            if (jo.ContainsKey("userId"))
+                post.UserId = jo.GetNamedString("userId");
+            if (jo.ContainsKey("userName"))
+                post.UserName = jo.GetNamedString("userName");
+            if (jo.ContainsKey("profileUrl"))
             {
-                post.ProfileUrl = jo.GetNamedString("userProfileUrl1");
+                post.ProfileUrl = jo.GetNamedString("profileUrl");
                 if (!string.IsNullOrWhiteSpace(post.ProfileUrl))
                 {
                     Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
@@ -111,61 +111,44 @@ namespace Owl.ViewModel
                     post.Profile = bmi;
                 }
             }
-            if (jo.ContainsKey("userProfileUrl2"))
-            {
-                post.ProfileUrl2 = jo.GetNamedString("userProfileUrl2");
-            }
-            if (jo.ContainsKey("userProfileUrl3"))
-            {
-                post.ProfileUrl2 = jo.GetNamedString("userProfileUrl3");
-            }
-
-            if (jo.ContainsKey("placeAddresse"))
-            {
-                post.PlaceAddresse = jo.GetNamedString("placeAddresse");
-            }
-
-            if (jo.ContainsKey("venuePosition"))
-            {
-                post.VenuePosition = jo.GetNamedString("venuePosition");
-            }
-
-            if (jo.ContainsKey("venuePopularity"))
-            {
-                post.VenuePopularity = (int)jo.GetNamedNumber("venuePopularity");
-            }
-
-            if (jo.ContainsKey("venuePhotoUrl1"))
-            {
-                post.VenuePhotoUrl1 = jo.GetNamedString("venuePhotoUrl1");
-            }
-            if (jo.ContainsKey("venuePhotoUrl2"))
-            {
-                post.VenuePhotoUrl2 = jo.GetNamedString("venuePhotoUrl2");
-            }
-            if (jo.ContainsKey("venuePhotoUrl3"))
-            {
-                post.VenuePhotoUrl3 = jo.GetNamedString("venuePhotoUrl3");
-            }
-
-            if (jo.ContainsKey("girlNumber"))
-                post.GirlsNumber = (int)jo.GetNamedNumber("girlNumber");
-
-            if (jo.ContainsKey("boyNumber"))
-                post.GuysNumber = (int)jo.GetNamedNumber("boyNumber");
-
-            if (jo.ContainsKey("userName"))
-                post.UserName = jo.GetNamedString("userName");
-
-            if (jo.ContainsKey("time"))
-                post.ArrivalTime = jo.GetNamedString("time");
-
             if (jo.ContainsKey("userPopularity"))
                 post.UserPopularity = (int)jo.GetNamedNumber("userPopularity");
+            if (jo.ContainsKey("venueId"))
+                post.VenueId = jo.GetNamedString("venueId");
+            if (jo.ContainsKey("placeName"))
+                post.Place = jo.GetNamedString("placeName");
+            if (jo.ContainsKey("arrivalTime"))
+                post.ArrivalTime = jo.GetNamedString("arrivalTime");
+            if (jo.ContainsKey("sexe"))
+                post.Sexe = jo.GetNamedString("sexe");
+            if (jo.ContainsKey("girlNumber"))
+                post.GirlsNumber = (int)jo.GetNamedNumber("girlNumber");
+            if (jo.ContainsKey("boyNumber"))
+                post.GuysNumber = (int)jo.GetNamedNumber("boyNumber");
+            if (jo.ContainsKey("birthday"))
+                post.Birthday = jo.GetNamedString("birthday");
+            if (jo.ContainsKey("otherInfo"))
+                post.OtherInfo = jo.GetNamedString("otherInfo");
+            if (jo.ContainsKey("codeDress"))
+                post.DressCode = jo.GetNamedString("codeDress");
+            if (jo.ContainsKey("outType"))
+                post.OutType = jo.GetNamedString("outType");
+            if (jo.ContainsKey("lookingFor"))
+                post.LookingFor = jo.GetNamedString("lookingFor");
+            if (jo.ContainsKey("placeAddresse"))
+                post.PlaceAddresse = jo.GetNamedString("placeAddresse");
+            if (jo.ContainsKey("venuePosition"))
+                post.VenuePosition = jo.GetNamedString("venuePosition");
+            if (jo.ContainsKey("venuePopularity"))
+                post.VenuePopularity = (int)jo.GetNamedNumber("venuePopularity");
+            if (jo.ContainsKey("venuePhotoUrl1"))
+                post.VenuePhotoUrl1 = jo.GetNamedString("venuePhotoUrl1");
+            if (jo.ContainsKey("venuePhotoUrl2"))
+                post.VenuePhotoUrl2 = jo.GetNamedString("venuePhotoUrl2");
+            if (jo.ContainsKey("venuePhotoUrl3"))
+                post.VenuePhotoUrl3 = jo.GetNamedString("venuePhotoUrl3");
 
-            post.UserId = jo.GetNamedString("userId");
-
-            post.Require = string.Format("+ {0} boys, + {1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.ArrivalTime);
+            post.Require = string.Format("+{0} boys, +{1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.ArrivalTime);
 
             return post;
         }

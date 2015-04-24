@@ -34,7 +34,7 @@ namespace Owl.View.FirstVisit
 
             if(_purposeForUpdating)
             {
-
+                AppBarButton_Leave.Visibility = Windows.UI.Xaml.Visibility.Visible;
             }
             else
             {
@@ -93,7 +93,8 @@ namespace Owl.View.FirstVisit
 
         private void AppBarButton_Leave_Click(object sender, RoutedEventArgs e)
         {
-            App.QuitFromEditPost();
+            var rootFrame = (Window.Current.Content as Frame);
+            rootFrame.GoBack();
         }
 
         private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)

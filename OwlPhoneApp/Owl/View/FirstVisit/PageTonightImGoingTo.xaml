@@ -13,7 +13,7 @@
                      >
             <CommandBar.PrimaryCommands>
                 <AppBarButton x:Name="AppBarButton_Leave" Icon="Stop"
-                              Click="AppBarButton_Leave_Click"
+                              Click="AppBarButton_Leave_Click" Visibility="Collapsed"
                               IsCompact="False" Label="Leave"/>
                 <AppBarButton x:Name="AppBarButton_Forward"  Icon="Forward" 
                               IsCompact="False" Label="Edit Post" 

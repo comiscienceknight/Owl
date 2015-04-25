@@ -88,7 +88,7 @@ namespace Owl.View.FirstVisit
                 this.ProgressBar_Search.Visibility = Visibility.Visible;
 
                 List<SearchAvenues> venues = await SearchAvenues(inputString);
-              
+
                 await this.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
                 {
                     _provider.LoadItems(venues.OrderBy(p => p.Venue));

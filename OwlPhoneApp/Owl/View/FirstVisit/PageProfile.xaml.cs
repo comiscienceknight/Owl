@@ -49,7 +49,7 @@ namespace Owl.View.FirstVisit
             Border_Image.Height = Border_Image.Width * 0.9;
 
             if(App.MyPost != null && !string.IsNullOrWhiteSpace(App.MyPost.ProfileUrl) &&
-               (App.MyPost.ProfileUrl.ToUpper().EndsWith(".JPEG") || App.MyPost.ProfileUrl.ToUpper().EndsWith(".JPEG") || 
+               (App.MyPost.ProfileUrl.ToUpper().EndsWith(".JPG") || App.MyPost.ProfileUrl.ToUpper().EndsWith(".JPEG") || 
                 App.MyPost.ProfileUrl.ToUpper().EndsWith(".PNG")))
             {
                 if(App.MyPost.Profile != null)

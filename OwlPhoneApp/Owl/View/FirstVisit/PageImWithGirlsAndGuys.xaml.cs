@@ -33,11 +33,38 @@ namespace Owl.View.FirstVisit
         void PageImWithGirlsAndGuys_Loaded(object sender, RoutedEventArgs e)
         {
             ListPickerFlyout_LookingFor.ItemsSource = _lookingFor;
-            if (!string.IsNullOrWhiteSpace(App.MyPost.LookingFor))
+
+            if (App.MyPost != null)
+            {
+                NumericUpDown_WithGirls.Value = App.MyPost.GirlsNumber ?? 0;
+                NumericUpDown_WithBoys.Value = App.MyPost.GuysNumber ?? 0;
+                if (!_lookingFor.Contains(App.MyPost.LookingFor) && !string.IsNullOrWhiteSpace(App.MyPost.LookingFor))
+                    _lookingFor.Add(App.MyPost.LookingFor);
                 ListPickerFlyout_LookingFor.SelectedItem = App.MyPost.LookingFor;
+                if (!string.IsNullOrWhiteSpace(App.MyPost.ArrivalTime))
+                {
+                    if (App.MyPost.ArrivalTime.ToUpper().Contains("AROUND"))
+                    {
+                        CheckBox_ArrivalTime.IsChecked = true;
+                        string time = App.MyPost.ArrivalTime.Remove(App.MyPost.ArrivalTime.ToUpper().IndexOf("AROUND"), 6).Trim();
+                        if (time.Length == 5)
+                        {
+                            int hour, minute;
+                            if (Int32.TryParse(time.Substring(0, 2), out hour))
+                            {
+                                if (Int32.TryParse(time.Substring(3, 2), out minute))
+                                {
+                                    TimePicker_ArrivalTime.Time = new TimeSpan(hour, minute, 0);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             else
             {
                 ListPickerFlyout_LookingFor.SelectedItem = "I'm just looking";
+                TimePicker_ArrivalTime.Time = new TimeSpan(22, 0, 0);
             }
 
             Button_LookingFor.Content = ListPickerFlyout_LookingFor.SelectedItem;
@@ -50,17 +77,6 @@ namespace Owl.View.FirstVisit
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (App.MyPost != null)
-            {
-                NumericUpDown_WithGirls.Value = App.MyPost.GirlsNumber ?? 0;
-                NumericUpDown_WithBoys.Value = App.MyPost.GuysNumber ?? 0;
-                if (!_lookingFor.Contains(App.MyPost.LookingFor) && !string.IsNullOrWhiteSpace(App.MyPost.LookingFor))
-                    _lookingFor.Add(App.MyPost.LookingFor);
-            }
-            else
-            {
-
-            }
         }
 
         private void NumericUpDown_WithBoys_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -131,7 +147,7 @@ namespace Owl.View.FirstVisit
 
         private void TimePicker_ArrivalTime_TimeChanged(object sender, TimePickerValueChangedEventArgs e)
         {
-            
+
         }
 
         private void CheckBox_ArrivalTime_Checked(object sender, RoutedEventArgs e)

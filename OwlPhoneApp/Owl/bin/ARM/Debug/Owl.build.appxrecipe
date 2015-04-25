@@ -1,25 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>WIN-9JEMKDLD07J</Machine>
-    <WindowsUser>bhu</WindowsUser>
+    <Machine>COMISCIENCE</Machine>
+    <WindowsUser>Bo</WindowsUser>
     <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
     <SolutionConfiguration>Debug|ARM</SolutionConfiguration>
     <PackageArchitecture>arm</PackageArchitecture>
     <PackageIdentityName>12fc2fbb-db2e-4831-8716-bff129089de0</PackageIdentityName>
-    <IntermediateOutputPath>C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\obj\ARM\Debug\</IntermediateOutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Owl.exe">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Owl.exe">
       <PackagePath>Owl.exe</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Owl.exe.config">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Owl.exe.config">
       <PackagePath>Owl.exe.config</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\BehaviorsXamlSDKManaged\12.0\References\CommonConfiguration\Neutral\Microsoft.Xaml.Interactions.dll">
@@ -46,148 +46,148 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\References\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives.dll">
       <PackagePath>Telerik.UI.Xaml.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.Controls.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.Controls.dll">
       <PackagePath>Coding4Fun.Toolkit.Controls.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.dll">
       <PackagePath>Coding4Fun.Toolkit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.dll">
       <PackagePath>GalaSoft.MvvmLight.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.Extras.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.Extras.dll">
       <PackagePath>GalaSoft.MvvmLight.Extras.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.Platform.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.Platform.dll">
       <PackagePath>GalaSoft.MvvmLight.Platform.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81-hidden\ARM\Lumia.Imaging.Managed.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81-hidden\ARM\Lumia.Imaging.Managed.dll">
       <PackagePath>Lumia.Imaging.Managed.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
       <PackagePath>Microsoft.Data.Edm.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.OData.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.OData.dll">
       <PackagePath>Microsoft.Data.OData.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\CommonServiceLocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\Microsoft.Practices.ServiceLocation.dll">
       <PackagePath>Microsoft.Practices.ServiceLocation.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\WindowsAzure.MobileServices.1.2.5\lib\wpa81\Microsoft.WindowsAzure.Mobile.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\WindowsAzure.MobileServices.1.2.5\lib\wpa81\Microsoft.WindowsAzure.Mobile.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\WindowsAzure.MobileServices.1.2.5\lib\wpa81\Microsoft.WindowsAzure.Mobile.Ext.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\WindowsAzure.MobileServices.1.2.5\lib\wpa81\Microsoft.WindowsAzure.Mobile.Ext.dll">
       <PackagePath>Microsoft.WindowsAzure.Mobile.Ext.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WindowsAzure.Storage.4.3.0\lib\wpa\Microsoft.WindowsAzure.Storage.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WindowsAzure.Storage.4.3.0\lib\wpa\Microsoft.WindowsAzure.Storage.dll">
       <PackagePath>Microsoft.WindowsAzure.Storage.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Newtonsoft.Json.6.0.4\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Extensions.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Microsoft.Net.Http.2.2.28\lib\wpa81\System.Net.Http.Primitives.dll">
       <PackagePath>System.Net.Http.Primitives.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\System.Spatial.dll">
       <PackagePath>System.Spatial.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit.dll">
       <PackagePath>WinRTXamlToolkit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\..\..\lib\wpa81\ARM\Lumia.Imaging.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\..\..\lib\wpa81\ARM\Lumia.Imaging.dll">
       <PackagePath>Lumia.Imaging.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\..\..\lib\wpa81\ARM\Lumia.InteropServices.WindowsRuntime.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\..\..\lib\wpa81\ARM\Lumia.InteropServices.WindowsRuntime.dll">
       <PackagePath>Lumia.InteropServices.WindowsRuntime.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.Edm.resources.dll">
       <PackagePath>de\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.Edm.resources.dll">
       <PackagePath>es\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.Edm.resources.dll">
       <PackagePath>fr\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.Edm.resources.dll">
       <PackagePath>it\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.Edm.resources.dll">
       <PackagePath>ja\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.Edm.resources.dll">
       <PackagePath>ko\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.Edm.resources.dll">
       <PackagePath>ru\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.Edm.resources.dll">
       <PackagePath>zh-Hans\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.Edm.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.Edm.resources.dll">
       <PackagePath>zh-Hant\Microsoft.Data.Edm.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\Microsoft.Data.OData.resources.dll">
       <PackagePath>de\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\Microsoft.Data.OData.resources.dll">
       <PackagePath>es\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\Microsoft.Data.OData.resources.dll">
       <PackagePath>fr\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\Microsoft.Data.OData.resources.dll">
       <PackagePath>it\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\Microsoft.Data.OData.resources.dll">
       <PackagePath>ja\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\Microsoft.Data.OData.resources.dll">
       <PackagePath>ko\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\Microsoft.Data.OData.resources.dll">
       <PackagePath>ru\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\Microsoft.Data.OData.resources.dll">
       <PackagePath>zh-Hans\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.OData.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.OData.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\Microsoft.Data.OData.resources.dll">
       <PackagePath>zh-Hant\Microsoft.Data.OData.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\de\System.Spatial.resources.dll">
       <PackagePath>de\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\es\System.Spatial.resources.dll">
       <PackagePath>es\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\fr\System.Spatial.resources.dll">
       <PackagePath>fr\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\it\System.Spatial.resources.dll">
       <PackagePath>it\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ja\System.Spatial.resources.dll">
       <PackagePath>ja\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ko\System.Spatial.resources.dll">
       <PackagePath>ko\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\ru\System.Spatial.resources.dll">
       <PackagePath>ru\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hans\System.Spatial.resources.dll">
       <PackagePath>zh-Hans\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\System.Spatial.resources.dll">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\System.Spatial.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\zh-Hant\System.Spatial.resources.dll">
       <PackagePath>zh-Hant\System.Spatial.resources.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81\ARM\Lumia.Imaging.winmd">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81\ARM\Lumia.Imaging.winmd">
       <PackagePath>Lumia.Imaging.winmd</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81\ARM\Lumia.InteropServices.WindowsRuntime.winmd">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81\ARM\Lumia.InteropServices.WindowsRuntime.winmd">
       <PackagePath>Lumia.InteropServices.WindowsRuntime.winmd</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Input\Themes\Calendar.xbf">
@@ -250,241 +250,241 @@
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Telerik\UI for Windows Universal Q1 2015\SDKs\Windows Phone 8.1\Telerik UI for Windows Universal\Redist\CommonConfiguration\neutral\Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf">
       <PackagePath>Telerik.UI.Xaml.Primitives\Themes\ThemeResourcesLight.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\concertman.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\concertman.png">
       <PackagePath>Assets\concertman.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Logo.scale-240.png">
       <PackagePath>Assets\Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\photofromcamera.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\photofromcamera.png">
       <PackagePath>Assets\photofromcamera.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\photofromphone.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\photofromphone.png">
       <PackagePath>Assets\photofromphone.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\sexygirl.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\sexygirl.png">
       <PackagePath>Assets\sexygirl.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\FacebookSignIn.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\FacebookSignIn.png">
       <PackagePath>Assets\SignIn\FacebookSignIn.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\GoogleSignIn.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\GoogleSignIn.png">
       <PackagePath>Assets\SignIn\GoogleSignIn.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\HotmailSignIn.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\HotmailSignIn.png">
       <PackagePath>Assets\SignIn\HotmailSignIn.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\TwitterSignIn.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SignIn\TwitterSignIn.png">
       <PackagePath>Assets\SignIn\TwitterSignIn.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SmallLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SmallLogo.scale-240.png">
       <PackagePath>Assets\SmallLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SplashScreen.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\SplashScreen.scale-240.png">
       <PackagePath>Assets\SplashScreen.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Square71x71Logo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Square71x71Logo.scale-240.png">
       <PackagePath>Assets\Square71x71Logo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\StoreLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\StoreLogo.scale-240.png">
       <PackagePath>Assets\StoreLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\addphoto.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\addphoto.png">
       <PackagePath>Assets\Tempo\addphoto.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\logo.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\logo.png">
       <PackagePath>Assets\Tempo\logo.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\thinking_man_Clip_Art.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\thinking_man_Clip_Art.png">
       <PackagePath>Assets\thinking_man_Clip_Art.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\WideLogo.scale-240.png">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\WideLogo.scale-240.png">
       <PackagePath>Assets\WideLogo.scale-240.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\clickmetoaddphoto.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\clickmetoaddphoto.jpg">
       <PackagePath>Assets\Tempo\clickmetoaddphoto.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\IC773168.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\IC773168.jpg">
       <PackagePath>Assets\Tempo\IC773168.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\IC773171.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\IC773171.jpg">
       <PackagePath>Assets\Tempo\IC773171.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\IC773173.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\IC773173.jpg">
       <PackagePath>Assets\Tempo\IC773173.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\linkedin-no-picture.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\linkedin-no-picture.jpg">
       <PackagePath>Assets\Tempo\linkedin-no-picture.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\night1.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\night1.jpg">
       <PackagePath>Assets\Tempo\night1.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\night2.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\night2.jpg">
       <PackagePath>Assets\Tempo\night2.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\night3.jpg">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\Assets\Tempo\night3.jpg">
       <PackagePath>Assets\Tempo\night3.jpg</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\ReadMe.Coding4Fun.Toolkit.txt">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\ReadMe.Coding4Fun.Toolkit.txt">
       <PackagePath>ReadMe.Coding4Fun.Toolkit.txt</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\App.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\EditMyProfilePage.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\EditMyProfilePage.xbf">
       <PackagePath>View\EditMyProfilePage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FilterPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FilterPage.xbf">
       <PackagePath>View\FilterPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageBasicInfo.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageBasicInfo.xbf">
       <PackagePath>View\FirstVisit\PageBasicInfo.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageImWithGirlsAndGuys.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageImWithGirlsAndGuys.xbf">
       <PackagePath>View\FirstVisit\PageImWithGirlsAndGuys.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageProfile.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageProfile.xbf">
       <PackagePath>View\FirstVisit\PageProfile.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageTonightImGoingToSearchVenues.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageTonightImGoingToSearchVenues.xbf">
       <PackagePath>View\FirstVisit\PageTonightImGoingToSearchVenues.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageTonightImGoingTo.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageTonightImGoingTo.xbf">
       <PackagePath>View\FirstVisit\PageTonightImGoingTo.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageWereDressed.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageWereDressed.xbf">
       <PackagePath>View\FirstVisit\PageWereDressed.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MessagePage.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MessagePage.xbf">
       <PackagePath>View\MessagePage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstEnterIn.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstEnterIn.xbf">
       <PackagePath>View\FirstEnterIn.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\CameraPhotoUserControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\CameraPhotoUserControl.xbf">
       <PackagePath>View\CameraPhotoUserControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ChatHistoryUserControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ChatHistoryUserControl.xbf">
       <PackagePath>View\ChatHistoryUserControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstTimeEnterUserControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstTimeEnterUserControl.xbf">
       <PackagePath>View\FirstTimeEnterUserControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ImageEffectsUserControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\ImageEffectsUserControl.xbf">
       <PackagePath>View\ImageEffectsUserControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MainPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MainPage.xbf">
       <PackagePath>View\MainPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MyPostUserControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MyPostUserControl.xbf">
       <PackagePath>View\MyPostUserControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PivotPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PivotPage.xbf">
       <PackagePath>View\PivotPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostInfoPage.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostInfoPage.xbf">
       <PackagePath>View\PostInfoPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostsUserControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\PostsUserControl.xbf">
       <PackagePath>View\PostsUserControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Owl.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Owl.xr.xml">
       <PackagePath>Owl.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.Controls\Coding4Fun.Toolkit.Controls.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.Controls\Coding4Fun.Toolkit.Controls.xr.xml">
       <PackagePath>Coding4Fun.Toolkit.Controls\Coding4Fun.Toolkit.Controls.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.Controls\Themes\Generic.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\Coding4Fun.Toolkit.Controls.2.1.0\lib\wpa81\Coding4Fun.Toolkit.Controls\Themes\Generic.xbf">
       <PackagePath>Coding4Fun.Toolkit.Controls\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\WinRTXamlToolkit.xr.xml">
       <PackagePath>WinRTXamlToolkit\WinRTXamlToolkit.xr.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\AlternativeFrame\AlternativeFrame.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AnimatingContainer\AnimatingContainer.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AnimatingContainer\AnimatingContainer.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\AnimatingContainer\AnimatingContainer.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AutoCompleteTextBox\AutoCompleteTextBox.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\AutoCompleteTextBox\AutoCompleteTextBox.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\AutoCompleteTextBox\AutoCompleteTextBox.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\CameraCaptureControl\CameraCaptureControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\CascadingImageControl\CascadingImageControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CascadingTextBlock\CascadingTextBlock.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CascadingTextBlock\CascadingTextBlock.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\CascadingTextBlock\CascadingTextBlock.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\ColorPicker\ColorPicker.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CountdownControl\CountdownControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CountdownControl\CountdownControl.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\CountdownControl\CountdownControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\CustomGridSplitter\CustomGridSplitter.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\DelayedLoadControl\DelayedLoadControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\FocusVisualizer\FocusVisualizer.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\FocusVisualizer\FocusVisualizer.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\FocusVisualizer\FocusVisualizer.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\FxContentControl\FxContentControl.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\ImageButton\ImageButton.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\ImageToggleButton\ImageToggleButton.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\InputDialog\InputDialog.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\ListItemButton\ListItemButton.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\NumericUpDown\NumericUpDown.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ToolStrip\ToolStrip.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ToolStrip\ToolStrip.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\ToolStrip\ToolStrip.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ToolWindow\ToolWindow.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\ToolWindow\ToolWindow.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\ToolWindow\ToolWindow.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeView.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeView.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeView.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewItem.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewMouse.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\TreeView\TreeViewTouch.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\WatermarkPasswordBox\WatermarkPasswordBox.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf">
       <PackagePath>WinRTXamlToolkit\Controls\WatermarkTextBox\WatermarkTextBox.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Themes\Generic.xbf">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\WinRTXamlToolkit.WindowsPhone.1.8.1.0\lib\wpa\WinRTXamlToolkit\Themes\Generic.xbf">
       <PackagePath>WinRTXamlToolkit\Themes\Generic.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

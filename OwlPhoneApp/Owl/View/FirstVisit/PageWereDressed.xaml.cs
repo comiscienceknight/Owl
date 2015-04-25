@@ -40,6 +40,8 @@ namespace Owl.View.FirstVisit
                 ListPickerFlyout_DressCode.SelectedItem = "I still have time to change";
             }
 
+            RichEditBox_OtherInfo.Document.SetText(Windows.UI.Text.TextSetOptions.ApplyRtfDocumentDefaults, App.MyPost.OtherInfo ?? "");
+
             Button_DressCode.Content = ListPickerFlyout_DressCode.SelectedItem;
         }
 
@@ -70,7 +72,7 @@ namespace Owl.View.FirstVisit
         }
 
         private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)
-        {   
+        {
             string value = string.Empty;
             RichEditBox_OtherInfo.Document.GetText(Windows.UI.Text.TextGetOptions.AdjustCrlf, out value);
             App.MyPost.OtherInfo = value;

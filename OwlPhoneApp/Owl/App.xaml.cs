@@ -126,18 +126,8 @@ namespace Owl
                 var rootFrame = Window.Current.Content as Frame;
                 if (rootFrame != null && rootFrame.CurrentSourcePageType.Equals(typeof(PivotPage)))
                 {
-                    await QuitApp();
                     e.Handled = true;
-                }
-                else if (rootFrame != null && rootFrame.CurrentSourcePageType.Equals(typeof(EditMyProfilePage)))
-                {
-                    if((rootFrame.Content as EditMyProfilePage).IsTakingPhoto)
-                    {
-                        (rootFrame.Content as EditMyProfilePage).CloseCameraByBackButton();
-                        e.Handled = true;
-                    }
-                    else
-                        rootFrame.GoBack();
+                    await QuitApp();
                 }
                 else if (rootFrame.CanGoBack)
                     rootFrame.GoBack();

@@ -99,16 +99,17 @@
       <RootProperty Name="Margin" />
       <RootProperty Name="Content" />
       <RootProperty Name="ZoomMode" />
+      <RootProperty Name="BringIntoViewOnFocusChange" />
+      <RootProperty Name="HorizontalContentAlignment" />
+      <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="HorizontalScrollMode" />
       <RootProperty Name="VerticalScrollMode" />
       <RootProperty Name="MinZoomFactor" />
       <RootProperty Name="Height" />
       <RootProperty Name="IsHorizontalScrollChainingEnabled" />
       <RootProperty Name="IsHorizontalRailEnabled" />
-      <RootProperty Name="HorizontalScrollBarVisibility" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
-      <RootEvent Name="Tapped" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="BorderBrush" />

@@ -38,7 +38,7 @@ namespace Owl.View.FirstVisit
             }
             else
             {
-                if(!string.IsNullOrWhiteSpace(App.MyPost.Id))
+                if (!string.IsNullOrWhiteSpace(App.MyPost.Id))
                 {
                     var rootFrame = (Window.Current.Content as Frame);
                     rootFrame.Navigate(typeof(PivotPage));

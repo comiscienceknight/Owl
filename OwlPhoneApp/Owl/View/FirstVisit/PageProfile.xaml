@@ -38,7 +38,10 @@
                                       HorizontalAlignment="Center" Margin="0"
                                       VerticalAlignment="Center" Click="AppBarButton_InsertProfile_Click"
                                       IsCompact="False" Label="Add photo" />
-                    <ScrollViewer ZoomMode="Enabled" Tapped="ScrollViewer_Tapped"
+                    <ScrollViewer ZoomMode="Enabled" 
+                                  BringIntoViewOnFocusChange="True"
+                                 HorizontalContentAlignment="Center"
+                                  HorizontalScrollBarVisibility="Visible"
                               HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled"
                               MinZoomFactor="1">
                         <Image x:Name="Image_Profile" 

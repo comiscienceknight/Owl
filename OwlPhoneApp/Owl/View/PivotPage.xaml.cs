@@ -28,13 +28,23 @@ namespace Owl
     {
         private bool _readyToQuit = false;
 
+        private NavigationHelper _navigationHelper;
+        public NavigationHelper NavigationHelper
+        {
+            get { return this._navigationHelper; }
+        }
+
         private Common.GeoLocation _geoLocation;
 
         public PivotPage()
         {
             this.InitializeComponent();
 
-            this.NavigationCacheMode = NavigationCacheMode.Required;
+            this.NavigationCacheMode = NavigationCacheMode.Enabled;
+
+            _navigationHelper = new NavigationHelper(this);
+            _navigationHelper.LoadState += this.NavigationHelper_LoadState;
+            _navigationHelper.SaveState += this.NavigationHelper_SaveState;
 
             _geoLocation = new Common.GeoLocation(this.Dispatcher);
 
@@ -73,14 +83,24 @@ namespace Owl
             UpdateAppBarItems(Pivot_Main.SelectedItem as PivotItem);
         }
 
+        private void NavigationHelper_LoadState(object sender, LoadStateEventArgs e)
+        {
+
+        }
+
+        private void NavigationHelper_SaveState(object sender, SaveStateEventArgs e)
+        {
+        }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            _navigationHelper.OnNavigatedTo(e);
             _readyToQuit = false;
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
         {
+            _navigationHelper.OnNavigatedFrom(e);
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -98,7 +118,7 @@ namespace Owl
             dialog.Commands.Add(new UICommand("YES"));
             dialog.Commands.Add(new UICommand("NO"));
             var returnCommand = await dialog.ShowAsync();
-            if(returnCommand.Label == "YES")
+            if (returnCommand.Label == "YES")
             {
                 App.OwlbatClient.Logout();
                 if (App.PasswordVaultObject != null)
@@ -110,7 +130,7 @@ namespace Owl
                 Messenger.Default.Send<LogoutMessage>(new LogoutMessage());
 
                 _readyToQuit = true;
-              
+
                 var rootFrame = (Window.Current.Content as Frame);
                 if (!rootFrame.Navigate(typeof(MainPage), "logout"))
                 {

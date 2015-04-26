@@ -208,7 +208,7 @@ namespace Owl.View.FirstVisit
             {
                 await SaveProfile(renderBitmap, profileUrl);
                 StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(profileUrl);
-                await(new AzureStorage()).UploadProfile(profileRemoteFileName, savedFile);
+                await (new AzureStorage()).UploadProfile(profileRemoteFileName, savedFile);
                 profileUrl = profileRemoteFileName;
             }
             using (HttpClient client = new HttpClient())
@@ -232,7 +232,7 @@ namespace Owl.View.FirstVisit
                 prms.Add("codedress", App.MyPost.DressCode ?? "");
 
                 HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
-                
+
                 client.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
                 HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/createpost"), formContent);
                 response.EnsureSuccessStatusCode();
@@ -294,17 +294,6 @@ namespace Owl.View.FirstVisit
         private void AppBarButton_Leave_Click(object sender, RoutedEventArgs e)
         {
             App.QuitFromEditPost();
-        }
-
-        private void ScrollViewer_Tapped(object sender, TappedRoutedEventArgs e)
-        {
-            FileOpenPicker openPicker = new FileOpenPicker();
-            openPicker.ViewMode = PickerViewMode.Thumbnail;
-            openPicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
-            openPicker.FileTypeFilter.Add(".jpg");
-            openPicker.FileTypeFilter.Add(".jpeg");
-            openPicker.FileTypeFilter.Add(".png");
-            openPicker.PickSingleFileAndContinue();
         }
     }
 }

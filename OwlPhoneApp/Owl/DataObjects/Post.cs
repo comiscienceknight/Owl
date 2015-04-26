@@ -75,7 +75,13 @@ namespace Owl.DataObjects
         private string _place;
         public string Place
         {
-            get { return _place; }
+            get 
+            {
+                if (!string.IsNullOrWhiteSpace(_place))
+                    return _place;
+                else
+                    return _outType;
+            }
             set
             {
                 _place = value;
@@ -141,7 +147,7 @@ namespace Owl.DataObjects
         private string _require;
         public string Require
         {
-            get { return _require; }
+            get { return string.Format("+{0} boys, +{1} girls. {2}", this._guysNumber, this._girlsNumber, this._time); }
             set
             {
                 _require = value;
@@ -294,37 +300,20 @@ namespace Owl.DataObjects
             }
         }
 
-        private BitmapImage _profile;
-        public BitmapImage Profile
+        private BitmapImage _profileBitmap;
+        public BitmapImage ProfileBitmap
         {
-            get { return _profile; }
+            get { return _profileBitmap; }
             set
             {
-                _profile = value;
-                OnPropertyChanged("Profile");
+                _profileBitmap = value;
+                OnPropertyChanged("ProfileBitmap");
             }
         }
 
-        private BitmapImage _profile2;
-        public BitmapImage Profile2
+        public Post Clone()
         {
-            get { return _profile2; }
-            set
-            {
-                _profile2 = value;
-                OnPropertyChanged("Profile2");
-            }
-        }
-
-        private BitmapImage _profile3;
-        public BitmapImage Profile3
-        {
-            get { return _profile3; }
-            set
-            {
-                _profile3 = value;
-                OnPropertyChanged("Profile3");
-            }
+            return (Post)this.MemberwiseClone();
         }
     }
 

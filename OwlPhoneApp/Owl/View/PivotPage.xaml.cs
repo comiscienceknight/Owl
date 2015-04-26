@@ -148,6 +148,9 @@ namespace Owl
 
         private void AppBarButton_RefreshPost_Click(object sender, RoutedEventArgs e)
         {
+            //var cacheSize = ((Frame)Parent).CacheSize;
+            //((Frame)Parent).CacheSize = 0;
+            //((Frame)Parent).CacheSize = cacheSize;
             Messenger.Default.Send<RefreshPostsMessage>(new RefreshPostsMessage());
         }
 

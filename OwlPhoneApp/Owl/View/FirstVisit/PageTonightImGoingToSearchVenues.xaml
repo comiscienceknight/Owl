@@ -44,7 +44,8 @@
                                                   IsDropDownOpen="True" DropDownMaxHeight="240" 
                                                   FilterMemberPath="Venue" FilterMode="Contains"
                                                   Margin="20,0,20,10"  FilterDelay="0:0:0.1"
-                                                  LostFocus="RadAutoCompleteBox_Search_LostFocus" FontFamily="Global User Interface">
+                                                  LostFocus="RadAutoCompleteBox_Search_LostFocus" 
+                                      FontFamily="Global User Interface">
                 <Input:RadAutoCompleteBox.HeaderStyle>
                     <Style TargetType="ContentControl">
                         <Setter Property="FontSize" Value="22"/>

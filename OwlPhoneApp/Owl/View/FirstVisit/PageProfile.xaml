@@ -17,9 +17,9 @@
                 <AppBarButton x:Name="AppBarButton_Leave" Icon="Stop"
                               Click="AppBarButton_Leave_Click"
                               IsCompact="False" Label="Leave"/>
-                <AppBarButton x:Name="AppBarButton_Upload"  Icon="Upload" 
-                              IsCompact="False" Label="Upload"    IsEnabled="False"
-                              Click="AppBarButton_Upload_Click"/>
+                <AppBarButton x:Name="AppBarButton_Preview"  Icon="Preview" 
+                              IsCompact="False" Label="Preview"    IsEnabled="False"
+                              Click="AppBarButton_Preview_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
@@ -38,15 +38,13 @@
                                       HorizontalAlignment="Center" Margin="0"
                                       VerticalAlignment="Center" Click="AppBarButton_InsertProfile_Click"
                                       IsCompact="False" Label="Add photo" />
-                    <ScrollViewer ZoomMode="Enabled" 
-                                  BringIntoViewOnFocusChange="True"
-                                 HorizontalContentAlignment="Center"
-                                  HorizontalScrollBarVisibility="Visible"
-                              HorizontalScrollMode="Enabled" VerticalScrollMode="Enabled"
+                    <ScrollViewer x:Name="ScrollViewer_Profile"  ZoomMode="Enabled"
+                                  IsDeferredScrollingEnabled="True"
+                              HorizontalScrollMode="Auto" VerticalScrollMode="Enabled"
                               MinZoomFactor="1">
                         <Image x:Name="Image_Profile" 
                            VerticalAlignment="Center" Tapped="Image_Profile_Tapped" 
-                           Stretch="UniformToFill" >
+                           Stretch="Fill" >
                         </Image>
                     </ScrollViewer>
                 </Grid>

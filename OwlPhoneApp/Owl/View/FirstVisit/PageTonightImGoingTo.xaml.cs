@@ -26,11 +26,12 @@ namespace Owl.View.FirstVisit
         {
             Border_Root.Visibility = Windows.UI.Xaml.Visibility.Visible;
             App.MyPost = await JsonReceiver.GetPostByUserId(App.UserId);
-            if (string.IsNullOrWhiteSpace(App.MyPost.UserId))
-                App.MyPost.UserId = App.MySelf.UserId;
+            App.MyPreviewPost = App.MyPost.Clone();
+            if (string.IsNullOrWhiteSpace(App.MyPreviewPost.UserId))
+                App.MyPreviewPost.UserId = App.MySelf.UserId;
             Border_Root.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
 
-            InitUiContentsWithAppMyPost();
+            InitUiContentsWithAppMyPreviewPost();
 
             if(_purposeForUpdating)
             {
@@ -38,7 +39,7 @@ namespace Owl.View.FirstVisit
             }
             else
             {
-                if (!string.IsNullOrWhiteSpace(App.MyPost.Id))
+                if (!string.IsNullOrWhiteSpace(App.MyPreviewPost.Id))
                 {
                     var rootFrame = (Window.Current.Content as Frame);
                     rootFrame.Navigate(typeof(PivotPage));
@@ -46,15 +47,18 @@ namespace Owl.View.FirstVisit
             }
         }
 
-        private void InitUiContentsWithAppMyPost()
+        private void InitUiContentsWithAppMyPreviewPost()
         {
-            if (!string.IsNullOrWhiteSpace(App.MyPost.VenueId))
+            if (!string.IsNullOrWhiteSpace(App.MyPreviewPost.VenueId))
             {
                 AffectRadioButtons(true, false, false);
             }
             else
             {
-                AffectRadioButtons(false, true, false);
+                if(App.MyPreviewPost.OutType.StartsWith("Neighborhood"))
+                    AffectRadioButtons(false, false, true);
+                else
+                    AffectRadioButtons(false, true, false);
             }
         }
 
@@ -106,12 +110,12 @@ namespace Owl.View.FirstVisit
             }
             else if (RadioButton_Neighborhood.IsChecked == true)
             {
-                rootFrame.Navigate(typeof(PageTonightImGoingToSearchVenues));
+                rootFrame.Navigate(typeof(PageTonightImGoingToNeighborhood));
             }
             else if (RadioButton_Anywhere.IsChecked == true)
             {
-                App.MyPost.VenueId = null;
-                App.MyPost.Place = "Anywhere";
+                App.MyPreviewPost.VenueId = null;
+                App.MyPreviewPost.OutType = "Anywhere";
                 rootFrame.Navigate(typeof(PageImWithGirlsAndGuys));
             }
         }

@@ -104,11 +104,11 @@ namespace Owl.ViewModel
                 post.ProfileUrl = jo.GetNamedString("profileUrl");
                 if (!string.IsNullOrWhiteSpace(post.ProfileUrl))
                 {
-                    Uri myUri = new Uri(post.ProfileUrl + "?Width=175", UriKind.Absolute);
+                    Uri myUri = new Uri(post.ProfileUrl + "?Width=125", UriKind.Absolute);
                     BitmapImage bmi = new BitmapImage();
                     bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
                     bmi.UriSource = myUri;
-                    post.Profile = bmi;
+                    post.ProfileBitmap = bmi;
                 }
             }
             if (jo.ContainsKey("userPopularity"))
@@ -147,8 +147,6 @@ namespace Owl.ViewModel
                 post.VenuePhotoUrl2 = jo.GetNamedString("venuePhotoUrl2");
             if (jo.ContainsKey("venuePhotoUrl3"))
                 post.VenuePhotoUrl3 = jo.GetNamedString("venuePhotoUrl3");
-
-            post.Require = string.Format("+{0} boys, +{1} girls. {2}", post.GuysNumber, post.GirlsNumber, post.ArrivalTime);
 
             return post;
         }

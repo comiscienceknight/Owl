@@ -48,30 +48,23 @@ namespace Owl.View.FirstVisit
             Border_Image.Width = Window.Current.Bounds.Width - 20;
             Border_Image.Height = Border_Image.Width * 0.9;
 
-            if(App.MyPost != null && !string.IsNullOrWhiteSpace(App.MyPost.ProfileUrl) &&
-               (App.MyPost.ProfileUrl.ToUpper().EndsWith(".JPG") || App.MyPost.ProfileUrl.ToUpper().EndsWith(".JPEG") || 
-                App.MyPost.ProfileUrl.ToUpper().EndsWith(".PNG")))
+            if (App.MyPreviewPost != null && !string.IsNullOrWhiteSpace(App.MyPreviewPost.ProfileUrl) &&
+               (App.MyPreviewPost.ProfileUrl.ToUpper().EndsWith(".JPG") || App.MyPreviewPost.ProfileUrl.ToUpper().EndsWith(".JPEG") ||
+                App.MyPreviewPost.ProfileUrl.ToUpper().EndsWith(".PNG")))
             {
-                if(App.MyPost.Profile != null)
+                try
                 {
-                    Image_Profile.Source = App.MyPost.Profile;
-                    AppBarButton_Upload.IsEnabled = true;
+                    Uri myUri = new Uri(App.MyPreviewPost.ProfileUrl, UriKind.Absolute);
+                    BitmapImage bmi = new BitmapImage();
+                    bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bmi.UriSource = myUri;
+                    Image_Profile.Source = bmi;
+                    AppBarButton_Preview.IsEnabled = true;
+                    //ScrollViewer_Profile.HorizontalScrollBarVisibility = ScrollBarVisibility.Auto;
                 }
-                else
+                catch
                 {
-                    try
-                    {
-                        Uri myUri = new Uri(App.MyPost.ProfileUrl, UriKind.Absolute);
-                        BitmapImage bmi = new BitmapImage();
-                        bmi.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                        bmi.UriSource = myUri;
-                        Image_Profile.Source = bmi;
-                        AppBarButton_Upload.IsEnabled = true;
-                    }
-                    catch
-                    {
 
-                    }
                 }
             }
         }
@@ -155,7 +148,7 @@ namespace Owl.View.FirstVisit
                 _capturedImage = await CameraPhotoUserControl.LoadImage(_selectedStorageFile);
 
                 Image_Profile.Source = _capturedImage;
-                AppBarButton_Upload.IsEnabled = true;
+                AppBarButton_Preview.IsEnabled = true;
             }
         }
 
@@ -193,13 +186,13 @@ namespace Owl.View.FirstVisit
 
                         // Set the rendered image as source for the cartoon image control.
                         Image_Profile.Source = cartoonImageBitmap;
-                        AppBarButton_Upload.IsEnabled = true;
+                        AppBarButton_Preview.IsEnabled = true;
                     }
                 }
             }
         }
 
-        private async void AppBarButton_Upload_Click(object sender, RoutedEventArgs e)
+        private async void AppBarButton_Preview_Click(object sender, RoutedEventArgs e)
         {
             var renderBitmap = await CreateBitmapFromElement(Grid_Image);
             var profileUrl = "owlUploadingPic" + ".jpeg";
@@ -208,46 +201,18 @@ namespace Owl.View.FirstVisit
             {
                 await SaveProfile(renderBitmap, profileUrl);
                 StorageFile savedFile = await Windows.Storage.ApplicationData.Current.LocalFolder.GetFileAsync(profileUrl);
-                await (new AzureStorage()).UploadProfile(profileRemoteFileName, savedFile);
-                profileUrl = profileRemoteFileName;
-            }
-            using (HttpClient client = new HttpClient())
-            {
-                var prms = new Dictionary<string, string>();
-                if (!string.IsNullOrWhiteSpace(profileUrl))
-                    prms.Add("profileurl", "http://owlbat.azurewebsites.net/profile/" + profileUrl);
-                prms.Add("userid", App.MySelf.UserId);
-                string outType = "";
-                if (string.IsNullOrWhiteSpace(App.MyPost.VenueId) && App.MyPost.Place == "Anywhere")
-                    outType = "Anywhere";
-                else
-                    outType = "Venue";
-                prms.Add("outype", outType);
-                prms.Add("venueid", App.MyPost.VenueId ?? "");
-                prms.Add("lookingfor", App.MyPost.LookingFor ?? "");
-                prms.Add("arrivaltime", App.MyPost.ArrivalTime ?? "");
-                prms.Add("girlnumber", (App.MyPost.GirlsNumber ?? 0).ToString());
-                prms.Add("boynumber", (App.MyPost.GuysNumber ?? 0).ToString());
-                prms.Add("otherinfo", App.MyPost.OtherInfo ?? "");
-                prms.Add("codedress", App.MyPost.DressCode ?? "");
 
-                HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
 
-                client.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
-                HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/createpost"), formContent);
-                response.EnsureSuccessStatusCode();
-
-                await response.Content.ReadAsStringAsync();
-
-                if (response.Content != null && response.Content.ToString() == "")
+                var rootFrame = (Window.Current.Content as Frame);
+                rootFrame.Navigate(typeof(Owl.PostInfoPage), new PostInfoNavigationParameter()
                 {
-                    var dialog = new MessageDialog(response.Content.ToString());
-                    await dialog.ShowAsync();
-                }
+                    Post = App.MyPreviewPost,
+                    PreviewMode = true,
+                    RenderBitmapStorageFile = savedFile
+                });
             }
 
-            var rootFrame = (Window.Current.Content as Frame);
-            rootFrame.Navigate(typeof(Owl.PivotPage));
+            
         }
 
         private async Task SaveProfile(RenderTargetBitmap bmp, string imageName)

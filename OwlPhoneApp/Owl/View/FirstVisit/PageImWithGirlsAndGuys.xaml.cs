@@ -35,19 +35,19 @@ namespace Owl.View.FirstVisit
         {
             ListPickerFlyout_LookingFor.ItemsSource = _lookingFor;
 
-            if (App.MyPost != null)
+            if (App.MyPreviewPost != null)
             {
-                NumericUpDown_WithGirls.Value = App.MyPost.GirlsNumber ?? 0;
-                NumericUpDown_WithBoys.Value = App.MyPost.GuysNumber ?? 0;
-                if (!_lookingFor.Contains(App.MyPost.LookingFor) && !string.IsNullOrWhiteSpace(App.MyPost.LookingFor))
-                    _lookingFor.Add(App.MyPost.LookingFor);
-                ListPickerFlyout_LookingFor.SelectedItem = App.MyPost.LookingFor;
-                if (!string.IsNullOrWhiteSpace(App.MyPost.ArrivalTime))
+                NumericUpDown_WithGirls.Value = App.MyPreviewPost.GirlsNumber ?? 0;
+                NumericUpDown_WithBoys.Value = App.MyPreviewPost.GuysNumber ?? 0;
+                if (!_lookingFor.Contains(App.MyPreviewPost.LookingFor) && !string.IsNullOrWhiteSpace(App.MyPreviewPost.LookingFor))
+                    _lookingFor.Add(App.MyPreviewPost.LookingFor);
+                ListPickerFlyout_LookingFor.SelectedItem = App.MyPreviewPost.LookingFor;
+                if (!string.IsNullOrWhiteSpace(App.MyPreviewPost.ArrivalTime))
                 {
-                    if (App.MyPost.ArrivalTime.ToUpper().Contains("AROUND"))
+                    if (App.MyPreviewPost.ArrivalTime.ToUpper().Contains("AROUND"))
                     {
                         CheckBox_ArrivalTime.IsChecked = true;
-                        string time = App.MyPost.ArrivalTime.Remove(App.MyPost.ArrivalTime.ToUpper().IndexOf("AROUND"), 6).Trim();
+                        string time = App.MyPreviewPost.ArrivalTime.Remove(App.MyPreviewPost.ArrivalTime.ToUpper().IndexOf("AROUND"), 6).Trim();
                         if (time.Length == 5)
                         {
                             int hour, minute;
@@ -93,7 +93,7 @@ namespace Owl.View.FirstVisit
         private void EnableNextButton()
         {
             if (NumericUpDown_WithGirls.Value <= 0 && NumericUpDown_WithBoys.Value <= 0 ||
-                (App.MyPost.LookingFor == "Suggest something" &&
+                (App.MyPreviewPost.LookingFor == "Suggest something" &&
                  string.IsNullOrWhiteSpace(TextBox_Suggestion.Text)))
             {
                 AppBarButton_Forward.IsEnabled = false;
@@ -110,7 +110,7 @@ namespace Owl.View.FirstVisit
                 TextBox_Suggestion.Visibility = Windows.UI.Xaml.Visibility.Visible;
             else
                 TextBox_Suggestion.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-            App.MyPost.LookingFor = sender.SelectedValue.ToString();
+            App.MyPreviewPost.LookingFor = sender.SelectedValue.ToString();
             Button_LookingFor.Content = ListPickerFlyout_LookingFor.SelectedItem;
 
             EnableNextButton();
@@ -118,19 +118,19 @@ namespace Owl.View.FirstVisit
 
         private void TextBox_Suggestion_TextChanged(object sender, TextChangedEventArgs e)
         {
-            App.MyPost.LookingFor = TextBox_Suggestion.Text;
+            App.MyPreviewPost.LookingFor = TextBox_Suggestion.Text;
             EnableNextButton();
         }
 
         private void AppBarButton_Forward_Click(object sender, RoutedEventArgs e)
         {
-            App.MyPost.GirlsNumber = (int)NumericUpDown_WithGirls.Value;
-            App.MyPost.GuysNumber = (int)NumericUpDown_WithBoys.Value;
-            App.MyPost.LookingFor = Button_LookingFor.Content.ToString();
+            App.MyPreviewPost.GirlsNumber = (int)NumericUpDown_WithGirls.Value;
+            App.MyPreviewPost.GuysNumber = (int)NumericUpDown_WithBoys.Value;
+            App.MyPreviewPost.LookingFor = Button_LookingFor.Content.ToString();
             if (CheckBox_ArrivalTime.IsChecked == true)
-                App.MyPost.ArrivalTime = "Around " + TimePicker_ArrivalTime.Time.ToString().Substring(0, 5);
+                App.MyPreviewPost.ArrivalTime = "Around " + TimePicker_ArrivalTime.Time.ToString().Substring(0, 5);
             else
-                App.MyPost.ArrivalTime = TimePicker_ArrivalTime.Time.ToString("hh:mm");
+                App.MyPreviewPost.ArrivalTime = TimePicker_ArrivalTime.Time.ToString("hh:mm");
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.Navigate(typeof(PageWereDressed));
         }

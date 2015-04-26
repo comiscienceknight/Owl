@@ -1,22 +1,13 @@
 ﻿using Owl.DataObjects;
+using Owl.Models;
 using Owl.View.FirstVisit;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
-using Windows.Data.Json;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Graphics.Display;
-using Windows.Phone.UI.Input;
+using Windows.Storage;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using Windows.Web.Http;
@@ -28,6 +19,8 @@ namespace Owl
     public sealed partial class PostInfoPage : Page
     {
         private Post _post = null;
+        private bool _previewMode = false;
+        private StorageFile _renderBitmapStorageFile;
 
         public PostInfoPage()
         {
@@ -50,6 +43,7 @@ namespace Owl
                     AppBarButton_Edit.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                     AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Visible;
                 }
+                StartPreviewMode();
             }
         }
 
@@ -60,10 +54,23 @@ namespace Owl
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            _post = e.Parameter as Post;
+            if(e.Parameter is Post)
+            {
+                _post = e.Parameter as Post;
+            }
+            else if (e.Parameter is PostInfoNavigationParameter)
+            {
+                var pp = e.Parameter as PostInfoNavigationParameter;
+                if (pp != null)
+                {
+                    _previewMode = pp.PreviewMode;
+                    _post = pp.Post;
+                    _renderBitmapStorageFile = pp.RenderBitmapStorageFile;
+                }
+            }
         }
 
-        public void Load(bool isCurrentUser = false)
+        public async void Load(bool isCurrentUser = false)
         {
             try
             {
@@ -94,26 +101,33 @@ namespace Owl
                 FlipView_NightClubPhoto.Width = FlipView_ProfileBackground.Width + 4;
                 FlipView_NightClubPhoto.Height = FlipView_ProfileBackground.Width * 0.8 + 3;
 
-                if (!string.IsNullOrWhiteSpace(_post.ProfileUrl) && _post.ProfileUrl.Length > 4)
+                if (_renderBitmapStorageFile != null)
                 {
-                    var bitmap1 = new BitmapImage();
-                    bitmap1.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                    bitmap1.UriSource = new Uri(_post.ProfileUrl, UriKind.Absolute);
-                    Image_Profile1.Source = bitmap1;
+                    Image_Profile1.Source = await CameraPhotoUserControl.LoadImage(_renderBitmapStorageFile);
                 }
-                if (!string.IsNullOrWhiteSpace(_post.ProfileUrl2))
+                else
                 {
-                    var bitmap2 = new BitmapImage();
-                    bitmap2.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                    bitmap2.UriSource = new Uri(_post.ProfileUrl2, UriKind.Absolute);
-                    Image_Profile2.Source = bitmap2;
-                }
-                if (!string.IsNullOrWhiteSpace(_post.ProfileUrl3))
-                {
-                    var bitmap3 = new BitmapImage();
-                    bitmap3.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
-                    bitmap3.UriSource = new Uri(_post.ProfileUrl3, UriKind.Absolute);
-                    Image_Profile3.Source = bitmap3;
+                    if (!string.IsNullOrWhiteSpace(_post.ProfileUrl) && _post.ProfileUrl.Length > 4)
+                    {
+                        var bitmap1 = new BitmapImage();
+                        bitmap1.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        bitmap1.UriSource = new Uri(_post.ProfileUrl, UriKind.Absolute);
+                        Image_Profile1.Source = bitmap1;
+                    }
+                    if (!string.IsNullOrWhiteSpace(_post.ProfileUrl2))
+                    {
+                        var bitmap2 = new BitmapImage();
+                        bitmap2.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        bitmap2.UriSource = new Uri(_post.ProfileUrl2, UriKind.Absolute);
+                        Image_Profile2.Source = bitmap2;
+                    }
+                    if (!string.IsNullOrWhiteSpace(_post.ProfileUrl3))
+                    {
+                        var bitmap3 = new BitmapImage();
+                        bitmap3.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                        bitmap3.UriSource = new Uri(_post.ProfileUrl3, UriKind.Absolute);
+                        Image_Profile3.Source = bitmap3;
+                    }
                 }
 
                 TextBlock_Require.Text = _post.Require ?? "";
@@ -149,10 +163,16 @@ namespace Owl
                         Image_NightClub3.Source = bitmap3;
                     }
                 }
-                else if(_post.Place == "Anywhere")
+                else if(_post.OutType == "Anywhere")
                 {
                     TextBlock_ClubTitle.Text = _post.Place;
                     TextBlock_PlaceAddresse.Text = "We could be anywhere if we find it interesting";
+                } 
+                else if(_post.OutType.StartsWith("Neighborhood"))
+                {
+                    TextBlock_ClubTitle.Text = "Neighborhood"; 
+                    TextBlock_PlaceAddresse.Text = "Neighborhood of Metro station " +  _post.OutType.Substring(14);
+                    Grid_NightClubPhoto.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                 }
                 else
                 {
@@ -165,6 +185,17 @@ namespace Owl
             catch (Exception)
             {
 
+            }
+        }
+
+        public void StartPreviewMode()
+        {
+            if(_previewMode)
+            {
+                AppBarButton_Upload.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                AppBarButton_Edit.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                AppBarButton_Message.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                TextBlock_PageTitle.Text = "Preview - " + App.MyPreviewPost.UserName ?? "";
             }
         }
 
@@ -204,5 +235,83 @@ namespace Owl
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.Navigate(typeof(PageTonightImGoingTo), true);
         }
+
+        private async void AppBarButton_Upload_Click(object sender, RoutedEventArgs e)
+        {
+            Exception exp = null;
+            try
+            {
+                string profileRemoteFileName = App.UserId + ".jpg";
+                if (_renderBitmapStorageFile != null)
+                    await (new AzureStorage()).UploadProfile(profileRemoteFileName, _renderBitmapStorageFile);
+                using (HttpClient client = new HttpClient())
+                {
+                    var prms = new Dictionary<string, string>();
+                    if (!string.IsNullOrWhiteSpace(profileRemoteFileName))
+                        prms.Add("profileurl", "http://owlbat.azurewebsites.net/profile/" + profileRemoteFileName);
+                    prms.Add("userid", App.MySelf.UserId);
+                    string outType = "";
+                    if (string.IsNullOrWhiteSpace(App.MyPreviewPost.VenueId) && App.MyPreviewPost.OutType == "Anywhere")
+                        outType = "Anywhere";
+                    else if (string.IsNullOrWhiteSpace(App.MyPreviewPost.VenueId) && App.MyPreviewPost.OutType.StartsWith("Neighborhood"))
+                        outType = App.MyPreviewPost.OutType;
+                    else
+                        outType = "Venue";
+                    prms.Add("outype", outType);
+                    prms.Add("venueid", App.MyPreviewPost.VenueId ?? "");
+                    prms.Add("lookingfor", App.MyPreviewPost.LookingFor ?? "");
+                    prms.Add("arrivaltime", App.MyPreviewPost.ArrivalTime ?? "");
+                    prms.Add("girlnumber", (App.MyPreviewPost.GirlsNumber ?? 0).ToString());
+                    prms.Add("boynumber", (App.MyPreviewPost.GuysNumber ?? 0).ToString());
+                    prms.Add("otherinfo", App.MyPreviewPost.OtherInfo ?? "");
+                    prms.Add("codedress", App.MyPreviewPost.DressCode ?? "");
+
+                    HttpFormUrlEncodedContent formContent = new HttpFormUrlEncodedContent(prms);
+
+                    client.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+                    HttpResponseMessage response = await client.PostAsync(new Uri("http://owlbat.azure-mobile.net/post/createpost"), formContent);
+                    response.EnsureSuccessStatusCode();
+
+                    await response.Content.ReadAsStringAsync();
+
+                    if (response.Content != null && response.Content.ToString() == "")
+                    {
+                        var dialog = new MessageDialog(response.Content.ToString());
+                        await dialog.ShowAsync();
+                    }
+                }
+
+                App.MyPost = await JsonReceiver.GetPostByUserId(App.UserId);
+                App.MyPreviewPost = App.MyPost.Clone();
+
+                var rootFrame = (Window.Current.Content as Frame);
+                rootFrame.Navigate(typeof(PivotPage));
+            }
+            catch(Exception expp)
+            {
+                exp = expp;
+            }
+            if (exp != null)
+            {
+                var dialog = new MessageDialog(exp.Message);
+                await dialog.ShowAsync();
+            }
+        }
+    }
+
+    public class PostInfoNavigationParameter
+    {
+        public DataObjects.Post Post { get; set; }
+        private bool _previewMode = false;
+        public bool PreviewMode
+        {
+            get { return _previewMode; }
+            set
+            {
+                _previewMode = value;
+            }
+        }
+
+        public StorageFile RenderBitmapStorageFile { get; set; }
     }
 }

@@ -1,0 +1,79 @@
+﻿<Page
+    x:Class="Owl.View.FirstVisit.PageTonightImGoingToNeighborhood"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Owl.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Page.BottomAppBar>
+        <CommandBar IsOpen="True" x:Name="AppBar_Pivot" Background="#7FC30F0F"
+                     >
+            <CommandBar.PrimaryCommands>
+                <AppBarButton x:Name="AppBarButton_Back"  Icon="Back" 
+                              IsCompact="False" Label="Back" 
+                              Click="AppBarButton_Back_Click"/>
+                <AppBarButton x:Name="AppBarButton_Leave" Icon="Stop"
+                              Click="AppBarButton_Leave_Click"
+                              IsCompact="False" Label="Leave"/>
+                <AppBarButton x:Name="AppBarButton_Forward"  Icon="Forward" 
+                              IsCompact="False" Label="Edit Post" 
+                              Click="AppBarButton_Forward_Click"/>
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Page.Resources>
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+
+            <TextBlock Text="Edit Post 1/4 - 2" FontSize="16" Opacity="0.8"
+                   HorizontalAlignment="Center" FontWeight="SemiLight"
+                   VerticalAlignment="Top" Margin="10,10,10,0" />
+            <Rectangle Fill="#FF07B054" Height="2" VerticalAlignment="Top"
+                   Margin="10,30,10,10"/>
+            
+            <TextBlock Text="Search neighborhood by subway station"
+                   TextWrapping="Wrap" HorizontalAlignment="Center" 
+                   FontSize="24" FontWeight="SemiLight" Opacity="0.8" Margin="0,50,0,10" />
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="15,10,10,10">
+
+            <SemanticZoom Style="{StaticResource AlphaJumpListStyle}" >
+                <SemanticZoom.ZoomedInView>
+                    <ListView x:Name="ListView_Stations" ItemsSource="{Binding Collection.View}"
+                               ItemClick="ListView_Stations_ItemClick"
+                              IsItemClickEnabled="True"
+                              SelectionChanged="ListView_Stations_SelectionChanged">
+                        <ListView.GroupStyle>
+                            <GroupStyle HeaderTemplate="{StaticResource AlphaBorderGroupHeaderTemplate}"
+                                        HeaderContainerStyle="{StaticResource JumpListListHeaderContainerStyle}"
+                                        HidesIfEmpty="True" />
+                        </ListView.GroupStyle>
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <TextBlock Text="{Binding SubwayStationName}"
+                                     HorizontalAlignment="Left"       Style="{ThemeResource ListViewItemTextBlockStyle}"
+                                           Margin="0,0,10,9.5" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </SemanticZoom.ZoomedInView>
+                <SemanticZoom.ZoomedOutView>
+                    <GridView ItemsSource="{Binding Collection.View.CollectionGroups}"
+                              Style="{StaticResource AlphaJumpListPickerStyle}" />
+                </SemanticZoom.ZoomedOutView>
+            </SemanticZoom>
+        </Grid>
+        
+    </Grid>
+</Page>

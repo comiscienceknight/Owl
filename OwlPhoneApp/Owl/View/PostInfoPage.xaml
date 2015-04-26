@@ -16,6 +16,8 @@
                               IsCompact="False" Label="Message" Click="AppBarButton_Message_Click"/>
                 <AppBarButton x:Name="AppBarButton_Edit" Icon="Edit"  
                               IsCompact="False" Label="Edit" Click="AppBarButton_Edit_Click"/>
+                <AppBarButton x:Name="AppBarButton_Upload" Icon="Upload" Visibility="Collapsed"
+                              IsCompact="False" Label="Upload" Click="AppBarButton_Upload_Click"/>
             </CommandBar.PrimaryCommands>
         </CommandBar>
     </Page.BottomAppBar>
@@ -81,7 +83,7 @@
                        Margin="0,-6.5,0,10" 
                        Style="{ThemeResource HeaderTextBlockStyle}" FontSize="36"
                        CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" FontFamily="Global User Interface"/>
-                    <Grid  Margin="0,0,0,0" HorizontalAlignment="Left">
+                    <Grid x:Name="Grid_NightClubPhoto"  Margin="0,0,0,0" HorizontalAlignment="Left">
                     	<FlipView x:Name="FlipView_NightClubPhoto"
                     		Height="300" VerticalAlignment="Top" >
                     		<Image x:Name="Image_NightClub1"

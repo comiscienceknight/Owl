@@ -240,16 +240,6 @@ namespace Owl
             }
             else
             {
-                if (Image_SelectedImage.Source == Image_Profile2.Source)
-                {
-                    _post.Profile2 = null;
-                    _post.ProfileUrl2 = null;
-                }
-                else if (Image_SelectedImage.Source == Image_Profile3.Source)
-                {
-                    _post.Profile3 = null;
-                    _post.ProfileUrl3 = null;
-                }
                 Image_SelectedImage.Source = null;
                 Grid_ManipForProfile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }

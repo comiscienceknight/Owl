@@ -15,7 +15,7 @@
         <DataTemplate x:Key="ImageTextListCollectionTemplate">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
                 <Border Height="125" Width="140" Margin="5,2,0,15">
-                    <Image Source="{Binding Path=Profile}" Stretch="UniformToFill"/>
+                    <Image Source="{Binding Path=ProfileBitmap}" Stretch="UniformToFill"/>
                 </Border>
                 <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,4,0,10">
                     <TextBlock Text="{Binding Path=Place}"  FontSize="22" 

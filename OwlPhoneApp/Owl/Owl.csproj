@@ -83,6 +83,7 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Common\JumperListHelper.cs" />
     <Compile Include="DataObjects\MyPost.cs" />
     <Compile Include="DataObjects\User.cs" />
     <Compile Include="Models\JsonReceiver.cs" />
@@ -159,15 +160,16 @@
     <Compile Include="View\MyPostUserControl.xaml.cs">
       <DependentUpon>MyPostUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FirstVisit\PageTonightImGoingToNeighborhood.xaml.cs">
+      <DependentUpon>PageTonightImGoingToNeighborhood.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\PivotPage.xaml.cs">
       <DependentUpon>PivotPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PostInfoPage.xaml.cs">
       <DependentUpon>PostInfoPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PostsUserControl.xaml.cs">
-      <DependentUpon>PostsUserControl.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="View\PostsUserControl.xaml.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -207,6 +209,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Assets\Styles\JumpList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
     <Page Include="View\EditMyProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -270,6 +277,10 @@
     <Page Include="View\MyPostUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\FirstVisit\PageTonightImGoingToNeighborhood.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\PivotPage.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -41,6 +41,7 @@ namespace Owl
 
         public static DataObjects.User MySelf;
         public static DataObjects.Post MyPost;
+        public static DataObjects.Post MyPreviewPost;
 
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code

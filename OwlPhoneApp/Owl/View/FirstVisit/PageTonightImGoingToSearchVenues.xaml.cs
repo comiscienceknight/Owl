@@ -36,11 +36,11 @@ namespace Owl.View.FirstVisit
         {
             InitAutoTextComplete();
 
-            if (App.MyPost != null)
+            if (App.MyPreviewPost != null)
             {
-                if (App.MyPost.VenueId != null)
+                if (App.MyPreviewPost.VenueId != null)
                 {
-                    RadAutoCompleteBox_Search.Text = App.MyPost.Place;
+                    RadAutoCompleteBox_Search.Text = App.MyPreviewPost.Place;
                     AppBarButton_Forward.IsEnabled = true;
                 }
             }
@@ -60,9 +60,10 @@ namespace Owl.View.FirstVisit
             SearchAvenues sa = RadAutoCompleteBox_Search.SelectedItem as SearchAvenues;
             if (sa != null && !string.IsNullOrWhiteSpace(sa.VenueId))
             {
-                App.MyPost.VenueId = sa.VenueId;
-                App.MyPost.Place = sa.Venue;
-                App.MyPost.PlaceAddresse = sa.Adresse;
+                App.MyPreviewPost.OutType = "Venue";
+                App.MyPreviewPost.VenueId = sa.VenueId;
+                App.MyPreviewPost.Place = sa.Venue;
+                App.MyPreviewPost.PlaceAddresse = sa.Adresse;
 
                 AppBarButton_Forward.IsEnabled = true;
             }

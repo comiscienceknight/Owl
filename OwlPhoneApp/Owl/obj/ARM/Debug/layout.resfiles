@@ -24,6 +24,7 @@ Assets\Tempo\night3.jpg
 Assets\thinking_man_Clip_Art.png
 Assets\WideLogo.scale-240.png
 App.xbf
+Assets\Styles\JumpList.xbf
 Owl.xr.xml
 Telerik.UI.Xaml.Chart\Themes\Generic.xbf
 Telerik.UI.Xaml.Chart\Themes\ThemeResourcesDark.xbf
@@ -52,6 +53,7 @@ View\FirstVisit\PageBasicInfo.xbf
 View\FirstVisit\PageImWithGirlsAndGuys.xbf
 View\FirstVisit\PageProfile.xbf
 View\FirstVisit\PageTonightImGoingTo.xbf
+View\FirstVisit\PageTonightImGoingToNeighborhood.xbf
 View\FirstVisit\PageTonightImGoingToSearchVenues.xbf
 View\FirstVisit\PageWereDressed.xbf
 View\ImageEffectsUserControl.xbf

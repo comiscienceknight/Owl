@@ -34,14 +34,14 @@ namespace Owl.View.FirstVisit
         void PageWereDressed_Loaded(object sender, RoutedEventArgs e)
         {
             ListPickerFlyout_DressCode.ItemsSource = _dressCode;
-            if (!string.IsNullOrWhiteSpace(App.MyPost.DressCode))
-                ListPickerFlyout_DressCode.SelectedItem = App.MyPost.DressCode;
+            if (!string.IsNullOrWhiteSpace(App.MyPreviewPost.DressCode))
+                ListPickerFlyout_DressCode.SelectedItem = App.MyPreviewPost.DressCode;
             else
             {
                 ListPickerFlyout_DressCode.SelectedItem = "I still have time to change";
             }
 
-            RichEditBox_OtherInfo.Document.SetText(Windows.UI.Text.TextSetOptions.ApplyRtfDocumentDefaults, App.MyPost.OtherInfo ?? "");
+            RichEditBox_OtherInfo.Document.SetText(Windows.UI.Text.TextSetOptions.ApplyRtfDocumentDefaults, App.MyPreviewPost.OtherInfo ?? "");
 
             Button_DressCode.Content = ListPickerFlyout_DressCode.SelectedItem;
         }
@@ -76,9 +76,9 @@ namespace Owl.View.FirstVisit
         {
             string value = string.Empty;
             RichEditBox_OtherInfo.Document.GetText(Windows.UI.Text.TextGetOptions.AdjustCrlf, out value);
-            App.MyPost.OtherInfo = value;
+            App.MyPreviewPost.OtherInfo = value;
 
-            App.MyPost.DressCode = Button_DressCode.Content.ToString();
+            App.MyPreviewPost.DressCode = Button_DressCode.Content.ToString();
 
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.Navigate(typeof(PageProfile));

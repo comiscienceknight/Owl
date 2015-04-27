@@ -17,6 +17,7 @@ using System.Web;
 using System.Text;
 using System.Data.SqlClient;
 using OwlBatAzureMobileService.Models;
+using Microsoft.WindowsAzure.Mobile.Service.Notifications;
 
 namespace OwlBatAzureMobileService.Controllers
 {
@@ -37,7 +38,7 @@ namespace OwlBatAzureMobileService.Controllers
 
         [Route("get/getpost/{userid}")]
         [HttpGet]
-        public GetPostResult GetUserPost(string userid)
+        public async Task<GetPostResult> GetUserPost(string userid)
         {
             using (var db = new Models.OwlDataClassesDataContext())
             {
@@ -50,8 +51,17 @@ namespace OwlBatAzureMobileService.Controllers
 
         [Route("get/getpostbyuserid/{userid}")]
         [HttpGet]
-        public GetPostByUserIdResult GetUserPostByUserId(string userid)
+        public async Task<GetPostByUserIdResult> GetUserPostByUserId(string userid)
         {
+            var currentUser = this.User as ServiceUser;
+            string wnsToast =
+                string.Format(
+                "<?xml version=\"1.0\" encoding=\"utf-8\"?><toast><visual><binding template=\"ToastText01\"><text id=\"1\">{0} Signed in</text></binding></visual></toast>",
+                currentUser.Id);
+            WindowsPushMessage message = new WindowsPushMessage();
+            message.XmlPayload = wnsToast;
+            await Services.Push.SendAsync(message, currentUser.Id);
+
             using (var db = new Models.OwlDataClassesDataContext())
             {
                 var results = db.GetPostByUserId(userid).ToList();

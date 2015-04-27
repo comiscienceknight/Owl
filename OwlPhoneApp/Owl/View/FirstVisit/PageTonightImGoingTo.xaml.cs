@@ -76,6 +76,7 @@ namespace Owl.View.FirstVisit
         /// This parameter is typically used to configure the page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            //Owl.OwlbatPush.UploadChannel();
             if (e.Parameter != null && e.Parameter is bool)
                 _purposeForUpdating = (bool)e.Parameter;
         }

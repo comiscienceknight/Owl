@@ -22,10 +22,6 @@ namespace Owl
     /// </summary>
     public sealed partial class App : Application
     {
-        // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
-        public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient owlbatClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
-        "https://owlbat.azure-mobile.net/",
-        "FeeTSGBvxVAVzirOfnjTWHAKBRfvFV37");
 
         // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
         public static Microsoft.WindowsAzure.MobileServices.MobileServiceClient OwlbatClient = new Microsoft.WindowsAzure.MobileServices.MobileServiceClient(
@@ -117,6 +113,8 @@ namespace Owl
 
             // Ensure the current window is active
             Window.Current.Activate();
+            // http://go.microsoft.com/fwlink/?LinkId=290986&clcid=0x409
+
         }
 
         async void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)

@@ -15,5 +15,6 @@
   </PropertyGroup>
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
+    <AppxShowAllApps>False</AppxShowAllApps>
   </PropertyGroup>
 </Project>

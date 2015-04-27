@@ -87,6 +87,9 @@
     <Compile Include="DataObjects\MyPost.cs" />
     <Compile Include="DataObjects\User.cs" />
     <Compile Include="Models\JsonReceiver.cs" />
+    <Compile Include="Services\MobileServices\owlbat\push.register.cs">
+      <ConnectedServiceReference>owlbat</ConnectedServiceReference>
+    </Compile>
     <Compile Include="ViewModel\Message\RefreshPostsMessage.cs" />
     <Compile Include="View\EditMyProfilePage.xaml.cs">
       <DependentUpon>EditMyProfilePage.xaml</DependentUpon>
@@ -202,6 +205,8 @@
     <Content Include="Assets\Tempo\night3.jpg" />
     <Content Include="Assets\thinking_man_Clip_Art.png" />
     <Content Include="Assets\WideLogo.scale-240.png" />
+    <Content Include="StoreManifest.xml" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="ReadMe.Coding4Fun.Toolkit.txt" />
   </ItemGroup>
   <ItemGroup>

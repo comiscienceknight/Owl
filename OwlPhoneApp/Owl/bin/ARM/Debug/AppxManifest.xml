@@ -7,11 +7,11 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="12fc2fbb-db2e-4831-8716-bff129089de0" Publisher="CN=Bo" Version="1.0.0.0" ProcessorArchitecture="arm" />
-  <mp:PhoneIdentity PhoneProductId="12fc2fbb-db2e-4831-8716-bff129089de0" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="41404comisciencebo.Owl" Publisher="CN=7CC2A853-0A94-4DFB-9120-4E6F1563BE8C" Version="1.0.0.0" ProcessorArchitecture="arm" />
+  <mp:PhoneIdentity PhoneProductId="e12eee16-e875-41cc-a1f2-a2bce5decf8a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Owl</DisplayName>
-    <PublisherDisplayName>Bo</PublisherDisplayName>
+    <PublisherDisplayName>Surface Knight</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -23,7 +23,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="Owl.exe" EntryPoint="Owl.App">
-      <m3:VisualElements DisplayName="Owl" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Owl" ForegroundText="light" BackgroundColor="transparent">
+      <m3:VisualElements DisplayName="Owl" Square150x150Logo="Assets\Logo.png" Square44x44Logo="Assets\SmallLogo.png" Description="Owl" ForegroundText="light" BackgroundColor="transparent" ToastCapable="true">
         <m3:DefaultTile Wide310x150Logo="Assets\WideLogo.png" Square71x71Logo="Assets\Square71x71Logo.png"></m3:DefaultTile>
         <m3:SplashScreen Image="Assets\SplashScreen.png" />
       </m3:VisualElements>
@@ -169,7 +169,7 @@
   <build:Metadata>
     <build:Item Name="TargetFrameworkMoniker" Value="WindowsPhoneApp,Version=v8.1" />
     <build:Item Name="VisualStudio" Version="12.0" />
-    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Community 2013" />
+    <build:Item Name="VisualStudioEdition" Value="Microsoft Visual Studio Professional 2013" />
     <build:Item Name="OperatingSystem" Version="6.3.9600.16384 (winblue_rtm.130821-1623)" />
     <build:Item Name="Microsoft.Build.AppxPackage.dll" Version="12.0.31101.0" />
     <build:Item Name="ProjectGUID" Value="{AB9EF57B-9AD8-442C-9C5F-A25ACC7A42E3}" />

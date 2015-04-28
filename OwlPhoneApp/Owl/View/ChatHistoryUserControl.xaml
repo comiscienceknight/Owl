@@ -13,20 +13,26 @@
     d:DesignWidth="400">
     <UserControl.Resources>
         <DataTemplate x:Key="ImageTextListCollectionTemplate">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                <Border Height="108" Width="120" Margin="5,2,0,15">
+            <Grid HorizontalAlignment="Stretch">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="80" />
+                </Grid.ColumnDefinitions>
+                <Border Height="72" Width="81" Margin="5,2,0,15" Grid.Column="0">
                     <Image Source="{Binding Path=UserProfile}" Stretch="UniformToFill"/>
                 </Border>
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,4,0,10">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,4,5,10"
+                             Grid.Column="1">
                     <TextBlock Text="{Binding Path=UserName}"  FontSize="30" 
-                       Margin="0,0,20,3" TextTrimming="WordEllipsis" FontFamily="Global User Interface" />
+                       Margin="0,0,3,8" TextTrimming="WordEllipsis" FontFamily="Global User Interface" />
                     <TextBlock Text="{Binding Path=Message}"  HorizontalAlignment="Left"
-                               Opacity="0.8" Margin="0,8,10,0"
-                                FontSize="25" TextTrimming="WordEllipsis" TextWrapping="Wrap" FontFamily="Global User Interface"/>
+                               Opacity="0.7" Margin="0,2,3,3"
+                                FontSize="20" FontFamily="Global User Interface"/>
                 </StackPanel>
-                <TextBlock Text="{Binding Path=Time}"  FontSize="28" Opacity="0.8"
-                       Margin="0,0,10,3" VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Global User Interface" />
-            </StackPanel>
+                <TextBlock Text="{Binding Path=Time}" Grid.Column="2" FontSize="20" Opacity="0.8"
+                       Margin="0,3,5,10" VerticalAlignment="Center" FontFamily="Global User Interface" />
+            </Grid>
         </DataTemplate>
 
         <local:ItemClickedConverter x:Name="ItemClickedConverter" />

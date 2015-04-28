@@ -84,6 +84,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Common\JumperListHelper.cs" />
+    <Compile Include="DataObjects\MessageUnit.cs" />
     <Compile Include="DataObjects\MyPost.cs" />
     <Compile Include="DataObjects\User.cs" />
     <Compile Include="Models\JsonReceiver.cs" />

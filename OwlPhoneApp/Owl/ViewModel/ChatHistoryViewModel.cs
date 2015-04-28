@@ -69,10 +69,10 @@ namespace Owl.ViewModel
             ChatEntrytCollection.Add(new ChatEntry()
             {
                 Time = "21:25",
-                Message = "Hi, how are you",
-                UserId = "test1",
-                UserName = "Robot",
-                UserProfile = "http://owlbat.azurewebsites.net/profile/boys2_3.jpg?Width=100"
+                Message = "You really wanna talk to yourself?",
+                UserId = App.MySelf.UserId,
+                UserName = App.MySelf.UserName,
+                UserProfile = App.MyPost.ProfileUrl + "?Width=81"
             });
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(), LoadingAnimationMessage.ChatToken);
         }

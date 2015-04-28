@@ -115,27 +115,31 @@ namespace Owl
                 // Use the PasswordVault to securely store and access credentials.
                 PasswordVault vault = new PasswordVault();
                 // Try to get an existing credential from the vault.
-                PasswordCredential credential = vault.FindAllByResource(provider).FirstOrDefault();
-                if (credential != null)
+                var credentials = vault.RetrieveAll();
+                if(credentials != null && credentials.Count > 0)
                 {
-                    // Create a user from the stored credentials.
-                    MobileServiceUser user = new MobileServiceUser(credential.UserName);
-                    credential.RetrievePassword();
-                    user.MobileServiceAuthenticationToken = credential.Password;
-
-                    // Set the user from the stored credentials.
-                    App.OwlbatClient.CurrentUser = user;
-                    App.PasswordVaultObject = vault;
-
-                    _dispatcherTimer.Stop();
-
-                    var rootFrame = (Window.Current.Content as Frame);
-                    if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
+                    PasswordCredential credential = credentials.FirstOrDefault();
+                    if (credential != null)
                     {
-                        throw new Exception("Failed to create initial page");
+                        // Create a user from the stored credentials.
+                        MobileServiceUser user = new MobileServiceUser(credential.UserName);
+                        credential.RetrievePassword();
+                        user.MobileServiceAuthenticationToken = credential.Password;
+
+                        // Set the user from the stored credentials.
+                        App.OwlbatClient.CurrentUser = user;
+                        App.PasswordVaultObject = vault;
+
+                        var rootFrame = (Window.Current.Content as Frame);
+                        if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
+                        {
+                            throw new Exception("Failed to create initial page");
+                        }
+                        return true;
                     }
-                    return true;
                 }
+
+                _dispatcherTimer.Stop();
             }
             catch (Exception)
             {
@@ -198,47 +202,62 @@ namespace Owl
 
         private async void Button_SignIn_Click(object sender, RoutedEventArgs e)
         {
-            JToken jToken = await App.OwlbatClient.InvokeApiAsync("customlogin",
-                new JObject(new JProperty("username", TextBox_UserName.Text),
-                            new JProperty("password", PasswordBox_Password.Password)));
-            if(jToken != null)
+            Exception exp = null;
+            try
             {
-                PasswordVault vault = new PasswordVault();
-                PasswordCredential credential = null;
-                try
-                {
-                    // Login with the identity provider.
-                    MobileServiceUser user = new MobileServiceUser(TextBox_UserName.Text);
-                    user.MobileServiceAuthenticationToken = jToken["authenticationToken"].ToString();
-                    // Create and store the user credentials.
-                    credential = new PasswordCredential("customlogin",
-                        user.UserId, user.MobileServiceAuthenticationToken);
-                    vault.Add(credential);
+                JToken jToken = await App.OwlbatClient.InvokeApiAsync("customlogin",
+    new JObject(new JProperty("username", TextBox_UserName.Text),
+                new JProperty("password", PasswordBox_Password.Password)));
 
-                    App.OwlbatClient.CurrentUser = user;
-                }
-                catch (MobileServiceInvalidOperationException)
+                if (jToken != null)
                 {
-                    return;
+                    PasswordVault vault = new PasswordVault();
+                    PasswordCredential credential = null;
+                    try
+                    {
+                        // Login with the identity provider.
+                        MobileServiceUser user = new MobileServiceUser(TextBox_UserName.Text);
+                        user.MobileServiceAuthenticationToken = jToken["authenticationToken"].ToString();
+                        // Create and store the user credentials.
+                        credential = new PasswordCredential("customlogin",
+                            user.UserId, user.MobileServiceAuthenticationToken);
+                        vault.Add(credential);
+
+                        App.OwlbatClient.CurrentUser = user;
+                    }
+                    catch (MobileServiceInvalidOperationException)
+                    {
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        return;
+                    }
+                    finally
+                    {
+                    }
+                    App.PasswordVaultObject = vault;
+
+                    var rootFrame = (Window.Current.Content as Frame);
+                    if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
+                    {
+                        throw new Exception("Failed to create initial page");
+                    }
                 }
-                catch (Exception)
+                else
                 {
-                    return;
-                }
-                finally
-                {
-                }
-                App.PasswordVaultObject = vault;
-                
-                var rootFrame = (Window.Current.Content as Frame);
-                if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
-                {
-                    throw new Exception("Failed to create initial page");
+                    var dialog = new MessageDialog(jToken.ToString());
+                    dialog.Commands.Add(new UICommand("OK"));
+                    await dialog.ShowAsync();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                var dialog = new MessageDialog(jToken.ToString());
+                exp = ex;
+            }
+            if(exp != null)
+            {
+                var dialog = new MessageDialog(exp.Message);
                 dialog.Commands.Add(new UICommand("OK"));
                 await dialog.ShowAsync();
             }

@@ -149,6 +149,8 @@ namespace Owl.View.FirstVisit
 
                 Image_Profile.Source = _capturedImage;
                 AppBarButton_Preview.IsEnabled = true;
+
+                AppBarButton_InsertProfile.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             }
         }
 

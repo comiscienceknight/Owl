@@ -11,9 +11,21 @@
 
     <Grid>
         <StackPanel x:Name="StackPanel_SignIn" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    Margin="0,0,0,100">
+                    Margin="0,0,0,50">
             <TextBlock HorizontalAlignment="Center"
-                       FontSize="35" Margin="0,0,0,40" FontFamily="Segoe UI Semilight">owl</TextBlock>
+                       FontSize="35" Margin="0,0,0,10" FontFamily="Segoe UI Semilight">owl</TextBlock>
+            <StackPanel HorizontalAlignment="Center" Margin="10">
+                <TextBlock Text="User Id" HorizontalAlignment="Center"
+                           FontSize="24"/>
+                <TextBox x:Name="TextBox_UserName" MinWidth="200" HorizontalAlignment="Center"
+                         FontSize="22"/>
+                <TextBlock Text="Password" Margin="0,5,0,0" HorizontalAlignment="Center"
+                           FontSize="24"/>
+                <PasswordBox x:Name="PasswordBox_Password" MinWidth="200" HorizontalAlignment="Center" 
+                             FontSize="22"/>
+                <Button x:ConnectionId='2' x:Name="Button_SignIn" Content="Sign in"
+                        Margin="0,5,0,0"                             HorizontalAlignment="Center" />
+            </StackPanel>
             <Image x:ConnectionId='1' x:Name="Image_HotmailSignIn"  Margin="5,10" 
                    Width="200"                                    
                    Source="ms-appx:///Assets/SignIn/HotmailSignIn.png">

@@ -43,16 +43,15 @@ namespace Owl.View.FirstVisit
             Border_Root.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
             EnableSubmit();
 
-            if (App.MySelf == null)
+            if (_mySelf != null && App.MySelf == null)
             {
                 App.MySelf = _mySelf;
-                if (!string.IsNullOrWhiteSpace(_mySelf.UserId))
+                if (!string.IsNullOrWhiteSpace(_mySelf.Id))
                 {
                     var rootFrame = (Window.Current.Content as Frame);
                     rootFrame.Navigate(typeof(PageTonightImGoingTo));
                 }
             }
-
         }
 
 
@@ -174,7 +173,10 @@ namespace Owl.View.FirstVisit
                     var dialog = new MessageDialog(response.Content.ToString());
                     await dialog.ShowAsync();
                 }
+
             }
+
+            App.MySelf = _mySelf;
 
             var rootFrame = (Window.Current.Content as Frame);
             rootFrame.Navigate(typeof(PageTonightImGoingTo));

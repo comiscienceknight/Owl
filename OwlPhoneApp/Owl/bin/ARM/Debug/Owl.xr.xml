@@ -461,6 +461,11 @@
     <RootType FullName="Owl.ChatHistoryUserControl" />
     <RootType FullName="Windows.UI.Xaml.Controls.SymbolIcon" />
     <RootType FullName="Owl.View.ImageEffectsUserControl" />
+    <RootType FullName="Windows.UI.Xaml.Controls.PasswordBox">
+      <RootProperty Name="MinWidth" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="FontSize" />
+    </RootType>
     <RootType FullName="Owl.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.FlipView">
       <RootProperty Name="Margin" />

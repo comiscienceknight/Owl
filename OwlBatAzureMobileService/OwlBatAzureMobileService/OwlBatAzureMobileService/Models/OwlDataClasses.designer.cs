@@ -45,6 +45,9 @@ namespace OwlBatAzureMobileService.Models
     partial void InsertPost(Post instance);
     partial void UpdatePost(Post instance);
     partial void DeletePost(Post instance);
+    partial void InsertAccount(Account instance);
+    partial void UpdateAccount(Account instance);
+    partial void DeleteAccount(Account instance);
     #endregion
 		
 		public OwlDataClassesDataContext() : 
@@ -117,6 +120,14 @@ namespace OwlBatAzureMobileService.Models
 			}
 		}
 		
+		public System.Data.Linq.Table<Account> Accounts
+		{
+			get
+			{
+				return this.GetTable<Account>();
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.GetPost")]
 		public ISingleResult<GetPostResult> GetPost([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(128)")] string userid)
 		{
@@ -157,6 +168,20 @@ namespace OwlBatAzureMobileService.Models
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
 			return ((ISingleResult<GetPostsResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertAnMessage")]
+		public int InsertAnMessage([global::System.Data.Linq.Mapping.ParameterAttribute(Name="FromUserId", DbType="VarChar(128)")] string fromUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="ToUserId", DbType="VarChar(128)")] string toUserId, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Message", DbType="VarChar(250)")] string message)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), fromUserId, toUserId, message);
+			return ((int)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.InsertAnAccount")]
+		public int InsertAnAccount([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserName", DbType="VarChar(128)")] string userName, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="Salt", DbType="VarBinary(512)")] System.Data.Linq.Binary salt, [global::System.Data.Linq.Mapping.ParameterAttribute(Name="SaltedAndHashedPassword", DbType="VarBinary(512)")] System.Data.Linq.Binary saltedAndHashedPassword)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userName, salt, saltedAndHashedPassword);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
@@ -1573,6 +1598,164 @@ namespace OwlBatAzureMobileService.Models
 					this._CodeDress = value;
 					this.SendPropertyChanged("CodeDress");
 					this.OnCodeDressChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Account")]
+	public partial class Account : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Id;
+		
+		private string _UserName;
+		
+		private System.Data.Linq.Binary _Salt;
+		
+		private System.Data.Linq.Binary _SaltedAndHashedPassword;
+		
+		private System.DateTimeOffset _CreatedAt;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(string value);
+    partial void OnIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnSaltChanging(System.Data.Linq.Binary value);
+    partial void OnSaltChanged();
+    partial void OnSaltedAndHashedPasswordChanging(System.Data.Linq.Binary value);
+    partial void OnSaltedAndHashedPasswordChanged();
+    partial void OnCreatedAtChanging(System.DateTimeOffset value);
+    partial void OnCreatedAtChanged();
+    #endregion
+		
+		public Account()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", DbType="NVarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="VarChar(128) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Salt", DbType="VarBinary(512) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary Salt
+		{
+			get
+			{
+				return this._Salt;
+			}
+			set
+			{
+				if ((this._Salt != value))
+				{
+					this.OnSaltChanging(value);
+					this.SendPropertyChanging();
+					this._Salt = value;
+					this.SendPropertyChanged("Salt");
+					this.OnSaltChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SaltedAndHashedPassword", DbType="VarBinary(512) NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary SaltedAndHashedPassword
+		{
+			get
+			{
+				return this._SaltedAndHashedPassword;
+			}
+			set
+			{
+				if ((this._SaltedAndHashedPassword != value))
+				{
+					this.OnSaltedAndHashedPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._SaltedAndHashedPassword = value;
+					this.SendPropertyChanged("SaltedAndHashedPassword");
+					this.OnSaltedAndHashedPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CreatedAt", DbType="DateTimeOffset NOT NULL")]
+		public System.DateTimeOffset CreatedAt
+		{
+			get
+			{
+				return this._CreatedAt;
+			}
+			set
+			{
+				if ((this._CreatedAt != value))
+				{
+					this.OnCreatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._CreatedAt = value;
+					this.SendPropertyChanged("CreatedAt");
+					this.OnCreatedAtChanged();
 				}
 			}
 		}

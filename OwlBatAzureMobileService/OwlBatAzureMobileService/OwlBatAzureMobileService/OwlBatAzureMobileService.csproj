@@ -87,6 +87,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Data.Services.Client.5.6.2\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.16.204221202\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.2.16.204221202\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin">
       <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
@@ -227,7 +233,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ChatHub.cs" />
     <Compile Include="Controllers\CustomController.cs" />
+    <Compile Include="Controllers\CustomLoginController.cs" />
+    <Compile Include="Controllers\CustomRegistrationController.cs" />
+    <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\NotifyUsersController.cs" />
+    <Compile Include="DataObjects\LoginRequest.cs" />
+    <Compile Include="DataObjects\RegistrationRequest.cs" />
     <Compile Include="DataObjects\Venue.cs" />
     <Compile Include="Models\MobileServiceContext.cs" />
     <Compile Include="Models\OwlDataClasses.designer.cs">
@@ -243,6 +254,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CustomLoginProvider.cs" />
+    <Compile Include="Utils\CustomLoginProviderCredentials.cs" />
+    <Compile Include="Utils\CustomLoginProviderUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />

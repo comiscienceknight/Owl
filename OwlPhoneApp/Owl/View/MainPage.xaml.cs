@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Messaging;
 using Microsoft.WindowsAzure.MobileServices;
+using Newtonsoft.Json.Linq;
 using Owl.Common;
 using Owl.DataObjects;
 using Owl.ViewModel;
@@ -9,6 +10,7 @@ using System.Threading;
 using Windows.Devices.Geolocation;
 using Windows.Security.Credentials;
 using Windows.UI.Core;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -191,6 +193,54 @@ namespace Owl
                 {
                     Interlocked.CompareExchange(ref _syncObjBool, 0, 1);
                 }
+            }
+        }
+
+        private async void Button_SignIn_Click(object sender, RoutedEventArgs e)
+        {
+            JToken jToken = await App.OwlbatClient.InvokeApiAsync("customlogin",
+                new JObject(new JProperty("username", TextBox_UserName.Text),
+                            new JProperty("password", PasswordBox_Password.Password)));
+            if(jToken != null)
+            {
+                PasswordVault vault = new PasswordVault();
+                PasswordCredential credential = null;
+                try
+                {
+                    // Login with the identity provider.
+                    MobileServiceUser user = new MobileServiceUser(TextBox_UserName.Text);
+                    user.MobileServiceAuthenticationToken = jToken["authenticationToken"].ToString();
+                    // Create and store the user credentials.
+                    credential = new PasswordCredential("customlogin",
+                        user.UserId, user.MobileServiceAuthenticationToken);
+                    vault.Add(credential);
+
+                    App.OwlbatClient.CurrentUser = user;
+                }
+                catch (MobileServiceInvalidOperationException)
+                {
+                    return;
+                }
+                catch (Exception)
+                {
+                    return;
+                }
+                finally
+                {
+                }
+                App.PasswordVaultObject = vault;
+                
+                var rootFrame = (Window.Current.Content as Frame);
+                if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
+                {
+                    throw new Exception("Failed to create initial page");
+                }
+            }
+            else
+            {
+                var dialog = new MessageDialog(jToken.ToString());
+                dialog.Commands.Add(new UICommand("OK"));
+                await dialog.ShowAsync();
             }
         }
     }

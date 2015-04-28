@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="41404comisciencebo.Owl" Publisher="CN=7CC2A853-0A94-4DFB-9120-4E6F1563BE8C" Version="1.0.0.0" />
+  <Identity Name="41404comisciencebo.Owl" Publisher="CN=7CC2A853-0A94-4DFB-9120-4E6F1563BE8C" Version="1.1.0.0" />
   <mp:PhoneIdentity PhoneProductId="e12eee16-e875-41cc-a1f2-a2bce5decf8a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Owl</DisplayName>

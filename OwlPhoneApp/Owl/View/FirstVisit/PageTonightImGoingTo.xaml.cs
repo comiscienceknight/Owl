@@ -55,7 +55,9 @@ namespace Owl.View.FirstVisit
             }
             else
             {
-                if(App.MyPreviewPost.OutType.StartsWith("Neighborhood"))
+                if(string.IsNullOrWhiteSpace(App.MyPreviewPost.OutType))
+                    AffectRadioButtons(false, true, false);
+                else if(App.MyPreviewPost.OutType.StartsWith("Neighborhood"))
                     AffectRadioButtons(false, false, true);
                 else
                     AffectRadioButtons(false, true, false);

@@ -138,12 +138,14 @@ namespace Owl
                         return true;
                     }
                 }
-
-                _dispatcherTimer.Stop();
             }
             catch (Exception)
             {
                 // When there is no matching resource an error occurs, which we ignore.
+            }
+            finally
+            {
+                _dispatcherTimer.Stop();
             }
             return false;
         }

@@ -19,6 +19,17 @@ namespace Owl.DataObjects
             }
         }
 
+        private string _pairId;
+        public string PairId
+        {
+            get { return _pairId; }
+            set
+            {
+                _pairId = value;
+                OnPropertyChanged("PairId");
+            }
+        }
+
         private string _message;
         public string Message
         {
@@ -60,6 +71,17 @@ namespace Owl.DataObjects
             {
                 _time = value;
                 OnPropertyChanged("Time");
+            }
+        }
+
+        private long _updatedTime;
+        public long UpdatedTime
+        {
+            get { return _updatedTime; }
+            set
+            {
+                _updatedTime = value;
+                OnPropertyChanged("UpdatedTime");
             }
         }
 

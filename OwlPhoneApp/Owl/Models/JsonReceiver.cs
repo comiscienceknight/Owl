@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Windows.Data.Json;
 using Windows.Web.Http;
@@ -71,6 +69,22 @@ namespace Owl.Models
                     post.VenuePhotoUrl3 = jo.GetNamedString("venuePhotoUrl3");
             }
             return post;
+        }
+
+
+
+        public static async Task<string> CreateNewMessagePair(string touserid)
+        {
+            using (HttpClient httpClient = new HttpClient())
+            {
+                httpClient.DefaultRequestHeaders.Add("X-ZUMO-AUTH", App.OwlbatClient.CurrentUser.MobileServiceAuthenticationToken);
+                httpClient.DefaultRequestHeaders.Accept.TryParseAdd("application/json");
+                string uri = String.Format("http://owlbat.azure-mobile.net/message/createdpair/{0}/{1}", App.MySelf.Id, touserid);
+                var result = await httpClient.GetStringAsync(
+                    new Uri(uri));
+                JsonValue jsonValue = JsonValue.Parse(result);
+                return jsonValue.GetString();
+            }
         }
     }
 }

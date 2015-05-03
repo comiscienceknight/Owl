@@ -8,9 +8,11 @@ using Microsoft.WindowsAzure.Mobile.Service;
 using OwlBatAzureMobileService.Models;
 using Microsoft.WindowsAzure.Mobile.Service.Security;
 using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
 namespace OwlBatAzureMobileService.Controllers
 {
+    [AuthorizeLevel(AuthorizationLevel.User)]
     public class MessageController : ApiController
     {
         public ApiServices Services { get; set; }
@@ -42,6 +44,62 @@ namespace OwlBatAzureMobileService.Controllers
                     return results.First();
             }
             return new GetPostByUserIdResult();
+        }
+
+        [Route("message/createdpair/{userid1}/{userid2}")]
+        [HttpGet]
+        public string CreateMessageUserPair(string userid1, string userid2)
+        {
+            try
+            {
+                using(var db = new Models.OwlDataClassesDataContext())
+                {
+                    if(db.MessageUserPairs.Any(p=>(p.User1Id == userid1 && p.User2Id == userid2) || 
+                        (p.User1Id == userid2 && p.User2Id == userid1)))
+                    {
+                        return db.MessageUserPairs.Where(p => (p.User1Id == userid1 && p.User2Id == userid2) ||
+                        (p.User1Id == userid2 && p.User2Id == userid1)).First().Id;
+                    }
+                    else if(!string.IsNullOrWhiteSpace(userid2) && !string.IsNullOrWhiteSpace(userid1))
+                    {
+                        string newPairId = Guid.NewGuid().ToString();
+                        db.MessageUserPairs.InsertOnSubmit(new MessageUserPair()
+                        {
+                            User1Id = userid1,
+                            User2Id = userid2,
+                            Id = newPairId
+                        });
+                        db.SubmitChanges();
+                        return newPairId;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Services.Log.Error(e.ToString());
+            }
+            return "";
+        }
+
+        [Route("message/sendmessage")]
+        [HttpPost]
+        public bool SendMessage(JObject data)
+        {
+            try
+            {
+                string pairId = data.GetValue("pairid").Value<string>();
+                string message = data.GetValue("message").Value<string>();
+                using(var db = new Models.OwlDataClassesDataContext())
+                {
+                    db.InsertAnMessage(message, pairId);
+                }
+                return true;
+            }
+            catch (Exception e)
+            {
+                Services.Log.Error(e.ToString());
+            }
+            return false;
         }
 
     }

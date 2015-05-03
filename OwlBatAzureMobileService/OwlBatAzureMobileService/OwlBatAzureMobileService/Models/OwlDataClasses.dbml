@@ -81,6 +81,14 @@
       <Column Name="CreatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.MessageUserPair" Member="MessageUserPairs">
+    <Type Name="MessageUserPair">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="User1Id" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="User2Id" Type="System.String" DbType="VarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Function Name="dbo.GetPost" Method="GetPost">
     <Parameter Name="userid" Type="System.String" DbType="VarChar(128)" />
     <ElementType Name="GetPostResult">
@@ -189,16 +197,15 @@
       <Column Name="VenuePhotoUrl3" Type="System.String" DbType="NVarChar(160)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="dbo.InsertAnMessage" Method="InsertAnMessage">
-    <Parameter Name="FromUserId" Parameter="fromUserId" Type="System.String" DbType="VarChar(128)" />
-    <Parameter Name="ToUserId" Parameter="toUserId" Type="System.String" DbType="VarChar(128)" />
-    <Parameter Name="Message" Parameter="message" Type="System.String" DbType="VarChar(250)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="dbo.InsertAnAccount" Method="InsertAnAccount">
     <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(128)" />
     <Parameter Name="Salt" Parameter="salt" Type="System.Data.Linq.Binary" DbType="VarBinary(512)" />
     <Parameter Name="SaltedAndHashedPassword" Parameter="saltedAndHashedPassword" Type="System.Data.Linq.Binary" DbType="VarBinary(512)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertAnMessage" Method="InsertAnMessage">
+    <Parameter Name="Message" Parameter="message" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="PairId" Parameter="pairId" Type="System.String" DbType="VarChar(128)" />
     <Return Type="System.Int32" />
   </Function>
 </Database>

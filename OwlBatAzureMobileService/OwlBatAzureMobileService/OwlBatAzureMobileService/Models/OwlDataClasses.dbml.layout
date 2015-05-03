@@ -38,5 +38,11 @@
         <elementListCompartment Id="9f09c701-904a-4285-8c6f-17b3fb2a1a8d" absoluteBounds="3.64, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="6e3b8570-76a3-47dd-acc4-6665f0b23379" absoluteBounds="7.125, 4.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/OwlDataClassesDataContext/MessageUserPair" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6c2b309f-fce1-47c5-829a-175f4777e167" absoluteBounds="7.14, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

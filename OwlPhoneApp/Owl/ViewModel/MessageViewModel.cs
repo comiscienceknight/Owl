@@ -2,6 +2,7 @@
 using GalaSoft.MvvmLight.Command;
 using GalaSoft.MvvmLight.Messaging;
 using Owl.DataObjects;
+using Owl.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -36,6 +37,7 @@ namespace Owl.ViewModel
         private string _userId;
         private string _userName;
         private string _userProfileUrl;
+        private string _pairId;
 
         public MessageViewModel()
         {
@@ -59,18 +61,23 @@ namespace Owl.ViewModel
             });
         }
 
-        public void InitBasicInfo(string userId, string userName, string userProfileUrl)
+        public async void InitBasicInfo(string userId, string userName, string userProfileUrl, string pairId)
         {
             _userId = userId;
             _userProfileUrl = userProfileUrl;
             _userName = userName;
+            _pairId = pairId;
+            if(string.IsNullOrWhiteSpace(_pairId))
+                _pairId = await JsonReceiver.CreateNewMessagePair(_userId);
+
             Messenger.Default.Send<EnterIntoChatMessage>(new EnterIntoChatMessage(new ChatEntry()
             {
                 UserId = _userId,
                 UserName = _userName,
                 Message = "",
                 Time = "",
-                UserProfile = _userProfileUrl
+                UserProfile = _userProfileUrl,
+                PairId = _pairId
             }));
         }
 

@@ -41,14 +41,13 @@ namespace Owl.ViewModel
             });
             Messenger.Default.Register<EnterIntoChatMessage>(this, async msg =>
             {
-                string pairId = await JsonReceiver.CreateNewMessagePair(msg.Message.UserId);
-                if(ChatEntrytCollection.All(p=>p.PairId != pairId))
+                if(ChatEntrytCollection.All(p=>p.PairId != msg.Message.PairId))
                 {
                     ChatEntrytCollection.Add(new ChatEntry()
                     {
                         Time = msg.Message.Time ?? "",
                         Message = msg.Message.Message ?? "",
-                        PairId = pairId,
+                        PairId = msg.Message.PairId,
                         UserId = msg.Message.UserId,
                         UserName = msg.Message.UserName,
                         UserProfile = msg.Message.UserProfile + "?Width=90"

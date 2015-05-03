@@ -30,6 +30,7 @@ namespace Owl
         private string _userId;
         private string _userName;
         private string _userProfileUrl;
+        private string _pairId;
 
         public MessagePage()
         {
@@ -40,7 +41,7 @@ namespace Owl
 
         void MessagePage_Loaded(object sender, RoutedEventArgs e)
         {
-            (this.DataContext as MessageViewModel).InitBasicInfo(_userId, _userName, _userProfileUrl);
+            (this.DataContext as MessageViewModel).InitBasicInfo(_userId, _userName, _userProfileUrl, _pairId);
             TextBlock_PageTitle.Text = "Chat - " + _userName;
             Messenger.Default.Register<SendMsgMessage>(this, async msg =>
             {
@@ -74,6 +75,7 @@ namespace Owl
                 _userId = param.UserId;
                 _userName = param.UserName;
                 _userProfileUrl = param.UserProfile;
+                _pairId = param.PairId;
             }
         }
 

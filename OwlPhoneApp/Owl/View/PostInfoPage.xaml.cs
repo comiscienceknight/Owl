@@ -223,10 +223,10 @@ namespace Owl
                     UserName = _post.UserName,
                     UserProfile = _post.ProfileUrl + "?Width=125"
                 };
-                if (!rootFrame.Navigate(typeof(MessagePage), chatEntry))
-                {
-                    throw new Exception("Failed to create MainPage");
-                }
+                //if (!rootFrame.Navigate(typeof(MessagePage), chatEntry))
+                //{
+                //    throw new Exception("Failed to create MainPage");
+                //}
             }
         }
 

@@ -116,9 +116,6 @@
     <Compile Include="View\FirstVisit\PageWereDressed.xaml.cs">
       <DependentUpon>PageWereDressed.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MessagePage.xaml.cs">
-      <DependentUpon>MessagePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Common\ContinuationManager.cs" />
     <Compile Include="Common\GeoLocation.cs" />
     <Compile Include="Common\NavigationHelper.cs" />
@@ -249,10 +246,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FirstVisit\PageWereDressed.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MessagePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

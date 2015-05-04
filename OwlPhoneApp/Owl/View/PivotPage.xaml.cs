@@ -66,9 +66,9 @@ namespace Owl
             });
             Messenger.Default.Register<NavigateToChatMessage>(this, msg =>
             {
-                var rootFrame = (Window.Current.Content as Frame);
-                _readyToQuit = true;
-                rootFrame.Navigate(typeof(MessagePage), msg.ChatEntry);
+                //var rootFrame = (Window.Current.Content as Frame);
+                //_readyToQuit = true;
+                //rootFrame.Navigate(typeof(MessagePage), msg.ChatEntry);
             });
         }
 
@@ -186,8 +186,8 @@ namespace Owl
                     default:
                         AppBarButton_FilterPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         AppBarButton_RefreshPost.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
-                        AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Visible;
-                        AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Visible;
+                        AppBarButton_Logout.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
+                        AppBar_Pivot.Visibility = Windows.UI.Xaml.Visibility.Collapsed;
                         break;
                 }
             }

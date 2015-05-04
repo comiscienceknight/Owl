@@ -13,32 +13,62 @@
     d:DesignWidth="400">
     <UserControl.Resources>
         <DataTemplate x:Key="ImageTextListCollectionTemplate">
-            <Grid HorizontalAlignment="Stretch">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="80" />
-                </Grid.ColumnDefinitions>
-                <Border Height="72" Width="81" Margin="5,2,0,15" Grid.Column="0">
-                    <Image Source="{Binding Path=UserProfile}" Stretch="UniformToFill"/>
-                </Border>
-                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="15,4,5,10"
-                             Grid.Column="1">
-                    <TextBlock Text="{Binding Path=UserName}"  FontSize="30" 
-                       Margin="0,0,3,8" TextTrimming="WordEllipsis" FontFamily="Global User Interface" />
-                    <TextBlock Text="{Binding Path=Message}"  HorizontalAlignment="Left"
-                               Opacity="0.7" Margin="0,2,3,3"
-                                FontSize="20" FontFamily="Global User Interface"/>
+            <Grid HorizontalAlignment="Stretch" Width="400"  Margin="5">
+                <StackPanel HorizontalAlignment="Left" x:Name="StackPanel_ToGrid"
+                            Visibility="{Binding Path=IsFrom}" Margin="0,5">
+                    <TextBlock x:Name="TextBlock_ToUserName" HorizontalAlignment="Left"
+                           FontSize="20" Margin="5,5,5,10" Opacity="0.8"
+                           Text="From Just have fun, at 20:30" />
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0">
+                            <Image x:Name="Image_ToUserProfile" Height="50" VerticalAlignment="Top"
+                               Source="ms-appx:///Assets/Tempo/logo.png"  />
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <TextBlock Text="Hi, i'm Cathie, how's going?" FontSize="18">
+
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
                 </StackPanel>
-                <TextBlock Text="{Binding Path=Time}" Grid.Column="2" FontSize="20" Opacity="0.8"
-                       Margin="0,3,5,10" VerticalAlignment="Center" FontFamily="Global User Interface" />
+                <StackPanel HorizontalAlignment="Right" x:Name="StackPanel_FromGrid" 
+                            Visibility="{Binding Path=IsTo}" Margin="0,5">
+                    <TextBlock x:Name="TextBlock_FromMeUserName" HorizontalAlignment="Right"
+                           FontSize="20" Margin="5,5,5,10" Opacity="0.8"
+                           Text="To Just have fun, at 20:32" />
+                    <Grid HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <Image x:Name="Image_FromMeUserProfile" Height="50" VerticalAlignment="Top"
+                               Source="ms-appx:///Assets/Tempo/logo.png"  />
+                        </Grid>
+                        <Grid Grid.Column="0">
+                            <TextBlock Text="Hi, i'm good and you?" FontSize="18"
+                                       HorizontalAlignment="Right">
+
+                            </TextBlock>
+                        </Grid>
+                    </Grid>
+                </StackPanel>
             </Grid>
         </DataTemplate>
 
         <local:ItemClickedConverter x:Name="ItemClickedConverter" />
     </UserControl.Resources>
     <Grid>
-        <ListView x:Name="ListView_ChatEntries"  HorizontalAlignment="Stretch"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ListView x:Name="ListView_ChatEntries" Margin="5,0"
+                  Grid.Row="0"  HorizontalAlignment="Stretch"
                   ItemsSource="{Binding Path=ChatEntrytCollection}"
                   VerticalAlignment="Stretch" IsItemClickEnabled="True"
                   ItemTemplate="{StaticResource ImageTextListCollectionTemplate}">
@@ -52,7 +82,37 @@
                 </core:EventTriggerBehavior>
             </i:Interaction.Behaviors>
         </ListView>
-
+        <Grid x:Name="Grid_SendMessage"  Grid.Row="1" Margin="2,2,2,5">
+            <StackPanel HorizontalAlignment="Stretch">
+                <TextBlock x:Name="TextBlock_ToUserName" HorizontalAlignment="Left"
+                           FontSize="20"    Margin="2,1,2,5"    Opacity="0.8"
+                           Text="To Just have fun" />
+                <Grid HorizontalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Image x:Name="Image_ToUserProfile" Height="60" VerticalAlignment="Top"
+                               Source="ms-appx:///Assets/Tempo/logo.png"  />
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="TextBox_Message"  Grid.Column="0"
+                                 VerticalAlignment="Stretch" Margin="2,1,2,2"
+                                 TextWrapping="Wrap">
+                            
+                        </TextBox>
+                        <Button Grid.Column="1" VerticalAlignment="Top" Margin="2,1,5,2">
+                            Send
+                        </Button>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </Grid>
         <ProgressBar x:Name="ProgressBar_Loading" IsIndeterminate="False"
                      HorizontalAlignment="Stretch"        Visibility="Collapsed"
                      VerticalAlignment="Center"/>

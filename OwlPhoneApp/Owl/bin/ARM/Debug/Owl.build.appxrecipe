@@ -367,9 +367,6 @@
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstVisit\PageWereDressed.xbf">
       <PackagePath>View\FirstVisit\PageWereDressed.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\MessagePage.xbf">
-      <PackagePath>View\MessagePage.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Bo\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\FirstEnterIn.xbf">
       <PackagePath>View\FirstEnterIn.xbf</PackagePath>
     </AppxPackagedFile>

@@ -148,7 +148,7 @@ namespace Owl.Owl_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[87];
+            _typeNameTable = new string[80];
             _typeNameTable[0] = "Owl.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "Owl.ViewModel.MainViewModel";
@@ -193,51 +193,44 @@ namespace Owl.Owl_XamlTypeInfo
             _typeNameTable[41] = "Owl.View.FirstVisit.PageTonightImGoingToSearchVenues";
             _typeNameTable[42] = "Owl.View.FirstVisit.PageTonightImGoingTo";
             _typeNameTable[43] = "Owl.View.FirstVisit.PageWereDressed";
-            _typeNameTable[44] = "Coding4Fun.Toolkit.Controls.ChatBubble";
-            _typeNameTable[45] = "Windows.UI.Xaml.Controls.ContentControl";
-            _typeNameTable[46] = "Coding4Fun.Toolkit.Controls.ChatBubbleDirection";
-            _typeNameTable[47] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[48] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[49] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[50] = "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox";
-            _typeNameTable[51] = "Windows.UI.Xaml.Controls.TextBox";
-            _typeNameTable[52] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[53] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[54] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[55] = "System.Windows.Input.ICommand";
-            _typeNameTable[56] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[57] = "Owl.ScrollToBottomBehavior";
-            _typeNameTable[58] = "Owl.MessagePage";
-            _typeNameTable[59] = "Owl.FirstTimeEnterUserControl";
-            _typeNameTable[60] = "Owl.FirstEnterIn";
-            _typeNameTable[61] = "Owl.CameraPhotoUserControl";
-            _typeNameTable[62] = "Owl.ItemClickedConverter";
-            _typeNameTable[63] = "Owl.ChatHistoryUserControl";
-            _typeNameTable[64] = "Owl.View.ImageEffectsUserControl";
-            _typeNameTable[65] = "Owl.MainPage";
-            _typeNameTable[66] = "Owl.Common.NavigationHelper";
-            _typeNameTable[67] = "Owl.MyPostUserControl";
-            _typeNameTable[68] = "Owl.View.FirstVisit.PageTonightImGoingToNeighborhood";
-            _typeNameTable[69] = "Owl.PostsUserControl";
-            _typeNameTable[70] = "Owl.PivotPage";
-            _typeNameTable[71] = "Owl.PostInfoPage";
-            _typeNameTable[72] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
-            _typeNameTable[73] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
-            _typeNameTable[74] = "Windows.UI.Xaml.HorizontalAlignment";
-            _typeNameTable[75] = "Windows.UI.Xaml.VerticalAlignment";
-            _typeNameTable[76] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
-            _typeNameTable[77] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
-            _typeNameTable[78] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
-            _typeNameTable[79] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[80] = "Windows.UI.Xaml.Media.FontFamily";
-            _typeNameTable[81] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
-            _typeNameTable[82] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[83] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
-            _typeNameTable[84] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
-            _typeNameTable[85] = "Windows.UI.Xaml.FrameworkElement";
-            _typeNameTable[86] = "Windows.UI.Xaml.Media.Animation.Storyboard";
+            _typeNameTable[44] = "Owl.FirstTimeEnterUserControl";
+            _typeNameTable[45] = "Owl.FirstEnterIn";
+            _typeNameTable[46] = "Owl.CameraPhotoUserControl";
+            _typeNameTable[47] = "Owl.ItemClickedConverter";
+            _typeNameTable[48] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[49] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[50] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[51] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[52] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[53] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[54] = "System.Windows.Input.ICommand";
+            _typeNameTable[55] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[56] = "Owl.ChatHistoryUserControl";
+            _typeNameTable[57] = "Owl.View.ImageEffectsUserControl";
+            _typeNameTable[58] = "Owl.MainPage";
+            _typeNameTable[59] = "Owl.Common.NavigationHelper";
+            _typeNameTable[60] = "Owl.MyPostUserControl";
+            _typeNameTable[61] = "Owl.View.FirstVisit.PageTonightImGoingToNeighborhood";
+            _typeNameTable[62] = "Owl.PostsUserControl";
+            _typeNameTable[63] = "Owl.PivotPage";
+            _typeNameTable[64] = "Owl.PostInfoPage";
+            _typeNameTable[65] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
+            _typeNameTable[66] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
+            _typeNameTable[67] = "Windows.UI.Xaml.HorizontalAlignment";
+            _typeNameTable[68] = "Windows.UI.Xaml.VerticalAlignment";
+            _typeNameTable[69] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
+            _typeNameTable[70] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
+            _typeNameTable[71] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
+            _typeNameTable[72] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[73] = "Windows.UI.Xaml.Media.FontFamily";
+            _typeNameTable[74] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
+            _typeNameTable[75] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[76] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
+            _typeNameTable[77] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
+            _typeNameTable[78] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[79] = "Windows.UI.Xaml.Media.Animation.Storyboard";
 
-            _typeTable = new global::System.Type[87];
+            _typeTable = new global::System.Type[80];
             _typeTable[0] = typeof(global::Owl.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::Owl.ViewModel.MainViewModel);
@@ -282,49 +275,42 @@ namespace Owl.Owl_XamlTypeInfo
             _typeTable[41] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToSearchVenues);
             _typeTable[42] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingTo);
             _typeTable[43] = typeof(global::Owl.View.FirstVisit.PageWereDressed);
-            _typeTable[44] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubble);
-            _typeTable[45] = typeof(global::Windows.UI.Xaml.Controls.ContentControl);
-            _typeTable[46] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection);
-            _typeTable[47] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[48] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[49] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[50] = typeof(global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox);
-            _typeTable[51] = typeof(global::Windows.UI.Xaml.Controls.TextBox);
-            _typeTable[52] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[53] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[54] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[55] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[56] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[57] = typeof(global::Owl.ScrollToBottomBehavior);
-            _typeTable[58] = typeof(global::Owl.MessagePage);
-            _typeTable[59] = typeof(global::Owl.FirstTimeEnterUserControl);
-            _typeTable[60] = typeof(global::Owl.FirstEnterIn);
-            _typeTable[61] = typeof(global::Owl.CameraPhotoUserControl);
-            _typeTable[62] = typeof(global::Owl.ItemClickedConverter);
-            _typeTable[63] = typeof(global::Owl.ChatHistoryUserControl);
-            _typeTable[64] = typeof(global::Owl.View.ImageEffectsUserControl);
-            _typeTable[65] = typeof(global::Owl.MainPage);
-            _typeTable[66] = typeof(global::Owl.Common.NavigationHelper);
-            _typeTable[67] = typeof(global::Owl.MyPostUserControl);
-            _typeTable[68] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood);
-            _typeTable[69] = typeof(global::Owl.PostsUserControl);
-            _typeTable[70] = typeof(global::Owl.PivotPage);
-            _typeTable[71] = typeof(global::Owl.PostInfoPage);
-            _typeTable[72] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
-            _typeTable[73] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
-            _typeTable[74] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
-            _typeTable[75] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
-            _typeTable[76] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
-            _typeTable[77] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
-            _typeTable[78] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
-            _typeTable[79] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[80] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
-            _typeTable[81] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
-            _typeTable[82] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[83] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
-            _typeTable[84] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
-            _typeTable[85] = typeof(global::Windows.UI.Xaml.FrameworkElement);
-            _typeTable[86] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
+            _typeTable[44] = typeof(global::Owl.FirstTimeEnterUserControl);
+            _typeTable[45] = typeof(global::Owl.FirstEnterIn);
+            _typeTable[46] = typeof(global::Owl.CameraPhotoUserControl);
+            _typeTable[47] = typeof(global::Owl.ItemClickedConverter);
+            _typeTable[48] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[49] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[50] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[51] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[52] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[53] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[54] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[55] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[56] = typeof(global::Owl.ChatHistoryUserControl);
+            _typeTable[57] = typeof(global::Owl.View.ImageEffectsUserControl);
+            _typeTable[58] = typeof(global::Owl.MainPage);
+            _typeTable[59] = typeof(global::Owl.Common.NavigationHelper);
+            _typeTable[60] = typeof(global::Owl.MyPostUserControl);
+            _typeTable[61] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood);
+            _typeTable[62] = typeof(global::Owl.PostsUserControl);
+            _typeTable[63] = typeof(global::Owl.PivotPage);
+            _typeTable[64] = typeof(global::Owl.PostInfoPage);
+            _typeTable[65] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
+            _typeTable[66] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
+            _typeTable[67] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
+            _typeTable[68] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
+            _typeTable[69] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
+            _typeTable[70] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
+            _typeTable[71] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
+            _typeTable[72] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[73] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
+            _typeTable[74] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
+            _typeTable[75] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[76] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
+            _typeTable[77] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
+            _typeTable[78] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[79] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -376,45 +362,41 @@ namespace Owl.Owl_XamlTypeInfo
         private object Activate_41_PageTonightImGoingToSearchVenues() { return new global::Owl.View.FirstVisit.PageTonightImGoingToSearchVenues(); }
         private object Activate_42_PageTonightImGoingTo() { return new global::Owl.View.FirstVisit.PageTonightImGoingTo(); }
         private object Activate_43_PageWereDressed() { return new global::Owl.View.FirstVisit.PageWereDressed(); }
-        private object Activate_44_ChatBubble() { return new global::Coding4Fun.Toolkit.Controls.ChatBubble(); }
-        private object Activate_48_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_50_ChatBubbleTextBox() { return new global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox(); }
-        private object Activate_52_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_53_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_54_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_57_ScrollToBottomBehavior() { return new global::Owl.ScrollToBottomBehavior(); }
-        private object Activate_58_MessagePage() { return new global::Owl.MessagePage(); }
-        private object Activate_59_FirstTimeEnterUserControl() { return new global::Owl.FirstTimeEnterUserControl(); }
-        private object Activate_60_FirstEnterIn() { return new global::Owl.FirstEnterIn(); }
-        private object Activate_61_CameraPhotoUserControl() { return new global::Owl.CameraPhotoUserControl(); }
-        private object Activate_62_ItemClickedConverter() { return new global::Owl.ItemClickedConverter(); }
-        private object Activate_63_ChatHistoryUserControl() { return new global::Owl.ChatHistoryUserControl(); }
-        private object Activate_64_ImageEffectsUserControl() { return new global::Owl.View.ImageEffectsUserControl(); }
-        private object Activate_65_MainPage() { return new global::Owl.MainPage(); }
-        private object Activate_67_MyPostUserControl() { return new global::Owl.MyPostUserControl(); }
-        private object Activate_68_PageTonightImGoingToNeighborhood() { return new global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood(); }
-        private object Activate_69_PostsUserControl() { return new global::Owl.PostsUserControl(); }
-        private object Activate_70_PivotPage() { return new global::Owl.PivotPage(); }
-        private object Activate_71_PostInfoPage() { return new global::Owl.PostInfoPage(); }
-        private object Activate_72_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
-        private object Activate_76_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
-        private object Activate_77_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
-        private object Activate_78_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
-        private object Activate_83_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
-        private object Activate_84_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
-        private void VectorAdd_48_BehaviorCollection(object instance, object item)
+        private object Activate_44_FirstTimeEnterUserControl() { return new global::Owl.FirstTimeEnterUserControl(); }
+        private object Activate_45_FirstEnterIn() { return new global::Owl.FirstEnterIn(); }
+        private object Activate_46_CameraPhotoUserControl() { return new global::Owl.CameraPhotoUserControl(); }
+        private object Activate_47_ItemClickedConverter() { return new global::Owl.ItemClickedConverter(); }
+        private object Activate_49_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_51_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_52_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_53_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_56_ChatHistoryUserControl() { return new global::Owl.ChatHistoryUserControl(); }
+        private object Activate_57_ImageEffectsUserControl() { return new global::Owl.View.ImageEffectsUserControl(); }
+        private object Activate_58_MainPage() { return new global::Owl.MainPage(); }
+        private object Activate_60_MyPostUserControl() { return new global::Owl.MyPostUserControl(); }
+        private object Activate_61_PageTonightImGoingToNeighborhood() { return new global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood(); }
+        private object Activate_62_PostsUserControl() { return new global::Owl.PostsUserControl(); }
+        private object Activate_63_PivotPage() { return new global::Owl.PivotPage(); }
+        private object Activate_64_PostInfoPage() { return new global::Owl.PostInfoPage(); }
+        private object Activate_65_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
+        private object Activate_69_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
+        private object Activate_70_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
+        private object Activate_71_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
+        private object Activate_76_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
+        private object Activate_77_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
+        private void VectorAdd_49_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_53_ActionCollection(object instance, object item)
+        private void VectorAdd_52_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_78_List(object instance, object item)
+        private void VectorAdd_71_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Brush>)instance;
             var newItem = (global::Windows.UI.Xaml.Media.Brush)item;
@@ -722,61 +704,54 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 44:   //  Coding4Fun.Toolkit.Controls.ChatBubble
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.ContentControl"));
-                userType.Activator = Activate_44_ChatBubble;
-                userType.AddMemberName("ChatBubbleDirection");
-                userType.AddMemberName("IsEquallySpaced");
+            case 44:   //  Owl.FirstTimeEnterUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_44_FirstTimeEnterUserControl;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 45:   //  Windows.UI.Xaml.Controls.ContentControl
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 46:   //  Coding4Fun.Toolkit.Controls.ChatBubbleDirection
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
-                userType.AddEnumValue("UpperRight", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.UpperRight);
-                userType.AddEnumValue("UpperLeft", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.UpperLeft);
-                userType.AddEnumValue("LowerRight", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.LowerRight);
-                userType.AddEnumValue("LowerLeft", global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection.LowerLeft);
+            case 45:   //  Owl.FirstEnterIn
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_45_FirstEnterIn;
+                userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 47:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 46:   //  Owl.CameraPhotoUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_46_CameraPhotoUserControl;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 47:   //  Owl.ItemClickedConverter
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_47_ItemClickedConverter;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 48:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 48:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 49:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_48_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_49_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 49:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 50:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 50:   //  Coding4Fun.Toolkit.Controls.ChatBubbleTextBox
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.TextBox"));
-                userType.Activator = Activate_50_ChatBubbleTextBox;
-                userType.AddMemberName("ChatBubbleDirection");
-                userType.AddMemberName("Hint");
-                userType.AddMemberName("HintStyle");
-                userType.AddMemberName("IsEquallySpaced");
-                xamlType = userType;
-                break;
-
-            case 51:   //  Windows.UI.Xaml.Controls.TextBox
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 52:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 51:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_52_EventTriggerBehavior;
+                userType.Activator = Activate_51_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -785,146 +760,102 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 53:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 52:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_53_ActionCollection;
+                userType.CollectionAdd = VectorAdd_52_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 54:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 53:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_54_InvokeCommandAction;
+                userType.Activator = Activate_53_InvokeCommandAction;
                 userType.AddMemberName("Command");
-                userType.AddMemberName("CommandParameter");
                 userType.AddMemberName("InputConverter");
+                userType.AddMemberName("CommandParameter");
                 userType.AddMemberName("InputConverterParameter");
                 userType.AddMemberName("InputConverterLanguage");
                 xamlType = userType;
                 break;
 
-            case 55:   //  System.Windows.Input.ICommand
+            case 54:   //  System.Windows.Input.ICommand
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 56:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 55:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 57:   //  Owl.ScrollToBottomBehavior
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_57_ScrollToBottomBehavior;
-                userType.AddMemberName("ItemsSource");
-                userType.AddMemberName("AssociatedObject");
+            case 56:   //  Owl.ChatHistoryUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_56_ChatHistoryUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 58:   //  Owl.MessagePage
+            case 57:   //  Owl.View.ImageEffectsUserControl
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
+                userType.Activator = Activate_57_ImageEffectsUserControl;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 58:   //  Owl.MainPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_58_MessagePage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 59:   //  Owl.FirstTimeEnterUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_59_FirstTimeEnterUserControl;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 60:   //  Owl.FirstEnterIn
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_60_FirstEnterIn;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 61:   //  Owl.CameraPhotoUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_61_CameraPhotoUserControl;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 62:   //  Owl.ItemClickedConverter
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_62_ItemClickedConverter;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 63:   //  Owl.ChatHistoryUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_63_ChatHistoryUserControl;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 64:   //  Owl.View.ImageEffectsUserControl
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_64_ImageEffectsUserControl;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 65:   //  Owl.MainPage
-                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_65_MainPage;
+                userType.Activator = Activate_58_MainPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 66:   //  Owl.Common.NavigationHelper
+            case 59:   //  Owl.Common.NavigationHelper
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 67:   //  Owl.MyPostUserControl
+            case 60:   //  Owl.MyPostUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_67_MyPostUserControl;
+                userType.Activator = Activate_60_MyPostUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 68:   //  Owl.View.FirstVisit.PageTonightImGoingToNeighborhood
+            case 61:   //  Owl.View.FirstVisit.PageTonightImGoingToNeighborhood
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_68_PageTonightImGoingToNeighborhood;
+                userType.Activator = Activate_61_PageTonightImGoingToNeighborhood;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 69:   //  Owl.PostsUserControl
+            case 62:   //  Owl.PostsUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_69_PostsUserControl;
+                userType.Activator = Activate_62_PostsUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 70:   //  Owl.PivotPage
+            case 63:   //  Owl.PivotPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_70_PivotPage;
+                userType.Activator = Activate_63_PivotPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 71:   //  Owl.PostInfoPage
+            case 64:   //  Owl.PostInfoPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_71_PostInfoPage;
+                userType.Activator = Activate_64_PostInfoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 72:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
+            case 65:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_72_ChartAnnotationLabelDefinition;
+                userType.Activator = Activate_65_ChartAnnotationLabelDefinition;
                 userType.AddMemberName("Format");
                 userType.AddMemberName("Template");
                 userType.AddMemberName("DefaultVisualStyle");
@@ -937,7 +868,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 73:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
+            case 66:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Left", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Left);
                 userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Top);
@@ -947,17 +878,17 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 74:   //  Windows.UI.Xaml.HorizontalAlignment
+            case 67:   //  Windows.UI.Xaml.HorizontalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 75:   //  Windows.UI.Xaml.VerticalAlignment
+            case 68:   //  Windows.UI.Xaml.VerticalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 76:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
+            case 69:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_76_ChartPalette;
+                userType.Activator = Activate_69_ChartPalette;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("FillEntries");
                 userType.AddMemberName("SpecialFillEntries");
@@ -967,30 +898,30 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 77:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
+            case 70:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_77_PaletteEntryCollection;
+                userType.Activator = Activate_70_PaletteEntryCollection;
                 userType.SetContentPropertyName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes");
                 userType.AddMemberName("Brushes");
                 xamlType = userType;
                 break;
 
-            case 78:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
+            case 71:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_78_List;
+                userType.CollectionAdd = VectorAdd_71_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 79:   //  Windows.UI.Xaml.Media.Brush
+            case 72:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 80:   //  Windows.UI.Xaml.Media.FontFamily
+            case 73:   //  Windows.UI.Xaml.Media.FontFamily
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 81:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
+            case 74:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Black", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Black);
                 userType.AddEnumValue("Bold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Bold);
@@ -1006,7 +937,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 82:   //  Windows.UI.Text.FontStyle
+            case 75:   //  Windows.UI.Text.FontStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
@@ -1014,28 +945,28 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 83:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
+            case 76:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_83_CalendarCellStyle;
+                userType.Activator = Activate_76_CalendarCellStyle;
                 userType.AddMemberName("ContentStyle");
                 userType.AddMemberName("DecorationStyle");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 84:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
+            case 77:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.Activator = Activate_84_BusyIndicatorAnimationAdapter;
+                userType.Activator = Activate_77_BusyIndicatorAnimationAdapter;
                 userType.AddMemberName("Animation");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 85:   //  Windows.UI.Xaml.FrameworkElement
+            case 78:   //  Windows.UI.Xaml.FrameworkElement
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 86:   //  Windows.UI.Xaml.Media.Animation.Storyboard
+            case 79:   //  Windows.UI.Xaml.Media.Animation.Storyboard
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }
@@ -1397,390 +1328,315 @@ namespace Owl.Owl_XamlTypeInfo
         {
             global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox.SetIsTextMatchHighlightEnabled((global::Windows.UI.Xaml.DependencyObject)instance, (global::System.Boolean)Value);
         }
-        private object get_33_ChatBubble_ChatBubbleDirection(object instance)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
-            return that.ChatBubbleDirection;
-        }
-        private void set_33_ChatBubble_ChatBubbleDirection(object instance, object Value)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
-            that.ChatBubbleDirection = (global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection)Value;
-        }
-        private object get_34_ChatBubble_IsEquallySpaced(object instance)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
-            return that.IsEquallySpaced;
-        }
-        private void set_34_ChatBubble_IsEquallySpaced(object instance, object Value)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubble)instance;
-            that.IsEquallySpaced = (global::System.Boolean)Value;
-        }
-        private object get_35_Interaction_Behaviors(object instance)
+        private object get_33_Interaction_Behaviors(object instance)
         {
             return global::Microsoft.Xaml.Interactivity.Interaction.GetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance);
         }
-        private void set_35_Interaction_Behaviors(object instance, object Value)
+        private void set_33_Interaction_Behaviors(object instance, object Value)
         {
             global::Microsoft.Xaml.Interactivity.Interaction.SetBehaviors((global::Windows.UI.Xaml.DependencyObject)instance, (global::Microsoft.Xaml.Interactivity.BehaviorCollection)Value);
         }
-        private object get_36_ChatBubbleTextBox_ChatBubbleDirection(object instance)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            return that.ChatBubbleDirection;
-        }
-        private void set_36_ChatBubbleTextBox_ChatBubbleDirection(object instance, object Value)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            that.ChatBubbleDirection = (global::Coding4Fun.Toolkit.Controls.ChatBubbleDirection)Value;
-        }
-        private object get_37_ChatBubbleTextBox_Hint(object instance)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            return that.Hint;
-        }
-        private void set_37_ChatBubbleTextBox_Hint(object instance, object Value)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            that.Hint = (global::System.String)Value;
-        }
-        private object get_38_ChatBubbleTextBox_HintStyle(object instance)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            return that.HintStyle;
-        }
-        private void set_38_ChatBubbleTextBox_HintStyle(object instance, object Value)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            that.HintStyle = (global::Windows.UI.Xaml.Style)Value;
-        }
-        private object get_39_ChatBubbleTextBox_IsEquallySpaced(object instance)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            return that.IsEquallySpaced;
-        }
-        private void set_39_ChatBubbleTextBox_IsEquallySpaced(object instance, object Value)
-        {
-            var that = (global::Coding4Fun.Toolkit.Controls.ChatBubbleTextBox)instance;
-            that.IsEquallySpaced = (global::System.Boolean)Value;
-        }
-        private object get_40_EventTriggerBehavior_Actions(object instance)
+        private object get_34_EventTriggerBehavior_Actions(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.Actions;
         }
-        private object get_41_EventTriggerBehavior_EventName(object instance)
+        private object get_35_EventTriggerBehavior_EventName(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.EventName;
         }
-        private void set_41_EventTriggerBehavior_EventName(object instance, object Value)
+        private void set_35_EventTriggerBehavior_EventName(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.EventName = (global::System.String)Value;
         }
-        private object get_42_EventTriggerBehavior_SourceObject(object instance)
+        private object get_36_EventTriggerBehavior_SourceObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.SourceObject;
         }
-        private void set_42_EventTriggerBehavior_SourceObject(object instance, object Value)
+        private void set_36_EventTriggerBehavior_SourceObject(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             that.SourceObject = (global::System.Object)Value;
         }
-        private object get_43_EventTriggerBehavior_AssociatedObject(object instance)
+        private object get_37_EventTriggerBehavior_AssociatedObject(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior)instance;
             return that.AssociatedObject;
         }
-        private object get_44_InvokeCommandAction_Command(object instance)
+        private object get_38_InvokeCommandAction_Command(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.Command;
         }
-        private void set_44_InvokeCommandAction_Command(object instance, object Value)
+        private void set_38_InvokeCommandAction_Command(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.Command = (global::System.Windows.Input.ICommand)Value;
         }
-        private object get_45_InvokeCommandAction_CommandParameter(object instance)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            return that.CommandParameter;
-        }
-        private void set_45_InvokeCommandAction_CommandParameter(object instance, object Value)
-        {
-            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
-            that.CommandParameter = (global::System.Object)Value;
-        }
-        private object get_46_InvokeCommandAction_InputConverter(object instance)
+        private object get_39_InvokeCommandAction_InputConverter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverter;
         }
-        private void set_46_InvokeCommandAction_InputConverter(object instance, object Value)
+        private void set_39_InvokeCommandAction_InputConverter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverter = (global::Windows.UI.Xaml.Data.IValueConverter)Value;
         }
-        private object get_47_InvokeCommandAction_InputConverterParameter(object instance)
+        private object get_40_InvokeCommandAction_CommandParameter(object instance)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            return that.CommandParameter;
+        }
+        private void set_40_InvokeCommandAction_CommandParameter(object instance, object Value)
+        {
+            var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
+            that.CommandParameter = (global::System.Object)Value;
+        }
+        private object get_41_InvokeCommandAction_InputConverterParameter(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterParameter;
         }
-        private void set_47_InvokeCommandAction_InputConverterParameter(object instance, object Value)
+        private void set_41_InvokeCommandAction_InputConverterParameter(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterParameter = (global::System.Object)Value;
         }
-        private object get_48_InvokeCommandAction_InputConverterLanguage(object instance)
+        private object get_42_InvokeCommandAction_InputConverterLanguage(object instance)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             return that.InputConverterLanguage;
         }
-        private void set_48_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
+        private void set_42_InvokeCommandAction_InputConverterLanguage(object instance, object Value)
         {
             var that = (global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction)instance;
             that.InputConverterLanguage = (global::System.String)Value;
         }
-        private object get_49_ScrollToBottomBehavior_ItemsSource(object instance)
-        {
-            var that = (global::Owl.ScrollToBottomBehavior)instance;
-            return that.ItemsSource;
-        }
-        private void set_49_ScrollToBottomBehavior_ItemsSource(object instance, object Value)
-        {
-            var that = (global::Owl.ScrollToBottomBehavior)instance;
-            that.ItemsSource = (global::System.Object)Value;
-        }
-        private object get_50_ScrollToBottomBehavior_AssociatedObject(object instance)
-        {
-            var that = (global::Owl.ScrollToBottomBehavior)instance;
-            return that.AssociatedObject;
-        }
-        private object get_51_MainPage_NavigationHelper(object instance)
+        private object get_43_MainPage_NavigationHelper(object instance)
         {
             var that = (global::Owl.MainPage)instance;
             return that.NavigationHelper;
         }
-        private object get_52_PivotPage_NavigationHelper(object instance)
+        private object get_44_PivotPage_NavigationHelper(object instance)
         {
             var that = (global::Owl.PivotPage)instance;
             return that.NavigationHelper;
         }
-        private object get_53_ChartAnnotationLabelDefinition_Format(object instance)
+        private object get_45_ChartAnnotationLabelDefinition_Format(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.Format;
         }
-        private void set_53_ChartAnnotationLabelDefinition_Format(object instance, object Value)
+        private void set_45_ChartAnnotationLabelDefinition_Format(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.Format = (global::System.String)Value;
         }
-        private object get_54_ChartAnnotationLabelDefinition_Template(object instance)
+        private object get_46_ChartAnnotationLabelDefinition_Template(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.Template;
         }
-        private void set_54_ChartAnnotationLabelDefinition_Template(object instance, object Value)
+        private void set_46_ChartAnnotationLabelDefinition_Template(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.Template = (global::Windows.UI.Xaml.DataTemplate)Value;
         }
-        private object get_55_ChartAnnotationLabelDefinition_DefaultVisualStyle(object instance)
+        private object get_47_ChartAnnotationLabelDefinition_DefaultVisualStyle(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.DefaultVisualStyle;
         }
-        private void set_55_ChartAnnotationLabelDefinition_DefaultVisualStyle(object instance, object Value)
+        private void set_47_ChartAnnotationLabelDefinition_DefaultVisualStyle(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.DefaultVisualStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_56_ChartAnnotationLabelDefinition_Location(object instance)
+        private object get_48_ChartAnnotationLabelDefinition_Location(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.Location;
         }
-        private void set_56_ChartAnnotationLabelDefinition_Location(object instance, object Value)
+        private void set_48_ChartAnnotationLabelDefinition_Location(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.Location = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation)Value;
         }
-        private object get_57_ChartAnnotationLabelDefinition_HorizontalAlignment(object instance)
+        private object get_49_ChartAnnotationLabelDefinition_HorizontalAlignment(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.HorizontalAlignment;
         }
-        private void set_57_ChartAnnotationLabelDefinition_HorizontalAlignment(object instance, object Value)
+        private void set_49_ChartAnnotationLabelDefinition_HorizontalAlignment(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.HorizontalAlignment = (global::Windows.UI.Xaml.HorizontalAlignment)Value;
         }
-        private object get_58_ChartAnnotationLabelDefinition_VerticalAlignment(object instance)
+        private object get_50_ChartAnnotationLabelDefinition_VerticalAlignment(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.VerticalAlignment;
         }
-        private void set_58_ChartAnnotationLabelDefinition_VerticalAlignment(object instance, object Value)
+        private void set_50_ChartAnnotationLabelDefinition_VerticalAlignment(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.VerticalAlignment = (global::Windows.UI.Xaml.VerticalAlignment)Value;
         }
-        private object get_59_ChartAnnotationLabelDefinition_HorizontalOffset(object instance)
+        private object get_51_ChartAnnotationLabelDefinition_HorizontalOffset(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.HorizontalOffset;
         }
-        private void set_59_ChartAnnotationLabelDefinition_HorizontalOffset(object instance, object Value)
+        private void set_51_ChartAnnotationLabelDefinition_HorizontalOffset(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.HorizontalOffset = (global::System.Double)Value;
         }
-        private object get_60_ChartAnnotationLabelDefinition_VerticalOffset(object instance)
+        private object get_52_ChartAnnotationLabelDefinition_VerticalOffset(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             return that.VerticalOffset;
         }
-        private void set_60_ChartAnnotationLabelDefinition_VerticalOffset(object instance, object Value)
+        private void set_52_ChartAnnotationLabelDefinition_VerticalOffset(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition)instance;
             that.VerticalOffset = (global::System.Double)Value;
         }
-        private object get_61_ChartPalette_Name(object instance)
+        private object get_53_ChartPalette_Name(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             return that.Name;
         }
-        private void set_61_ChartPalette_Name(object instance, object Value)
+        private void set_53_ChartPalette_Name(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             that.Name = (global::System.String)Value;
         }
-        private object get_62_ChartPalette_FillEntries(object instance)
+        private object get_54_ChartPalette_FillEntries(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             return that.FillEntries;
         }
-        private void set_62_ChartPalette_FillEntries(object instance, object Value)
+        private void set_54_ChartPalette_FillEntries(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             that.FillEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
         }
-        private object get_63_PaletteEntryCollection_Brushes(object instance)
+        private object get_55_PaletteEntryCollection_Brushes(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)instance;
             return that.Brushes;
         }
-        private object get_64_ChartPalette_SpecialFillEntries(object instance)
+        private object get_56_ChartPalette_SpecialFillEntries(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             return that.SpecialFillEntries;
         }
-        private void set_64_ChartPalette_SpecialFillEntries(object instance, object Value)
+        private void set_56_ChartPalette_SpecialFillEntries(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             that.SpecialFillEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
         }
-        private object get_65_ChartPalette_StrokeEntries(object instance)
+        private object get_57_ChartPalette_StrokeEntries(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             return that.StrokeEntries;
         }
-        private void set_65_ChartPalette_StrokeEntries(object instance, object Value)
+        private void set_57_ChartPalette_StrokeEntries(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             that.StrokeEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
         }
-        private object get_66_ChartPalette_SpecialStrokeEntries(object instance)
+        private object get_58_ChartPalette_SpecialStrokeEntries(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             return that.SpecialStrokeEntries;
         }
-        private void set_66_ChartPalette_SpecialStrokeEntries(object instance, object Value)
+        private void set_58_ChartPalette_SpecialStrokeEntries(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Chart.ChartPalette)instance;
             that.SpecialStrokeEntries = (global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection)Value;
         }
-        private object get_67_HighlightStyle_FontFamily(object instance)
+        private object get_59_HighlightStyle_FontFamily(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             return that.FontFamily;
         }
-        private void set_67_HighlightStyle_FontFamily(object instance, object Value)
+        private void set_59_HighlightStyle_FontFamily(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             that.FontFamily = (global::Windows.UI.Xaml.Media.FontFamily)Value;
         }
-        private object get_68_HighlightStyle_FontWeight(object instance)
+        private object get_60_HighlightStyle_FontWeight(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             return that.FontWeight;
         }
-        private void set_68_HighlightStyle_FontWeight(object instance, object Value)
+        private void set_60_HighlightStyle_FontWeight(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             that.FontWeight = (global::Telerik.UI.Xaml.Controls.Input.FontWeightName)Value;
         }
-        private object get_69_HighlightStyle_FontStyle(object instance)
+        private object get_61_HighlightStyle_FontStyle(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             return that.FontStyle;
         }
-        private void set_69_HighlightStyle_FontStyle(object instance, object Value)
+        private void set_61_HighlightStyle_FontStyle(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             that.FontStyle = (global::Windows.UI.Text.FontStyle)Value;
         }
-        private object get_70_HighlightStyle_Foreground(object instance)
+        private object get_62_HighlightStyle_Foreground(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             return that.Foreground;
         }
-        private void set_70_HighlightStyle_Foreground(object instance, object Value)
+        private void set_62_HighlightStyle_Foreground(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             that.Foreground = (global::Windows.UI.Xaml.Media.Brush)Value;
         }
-        private object get_71_HighlightStyle_FontSize(object instance)
+        private object get_63_HighlightStyle_FontSize(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             return that.FontSize;
         }
-        private void set_71_HighlightStyle_FontSize(object instance, object Value)
+        private void set_63_HighlightStyle_FontSize(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.HighlightStyle)instance;
             that.FontSize = (global::System.Double)Value;
         }
-        private object get_72_CalendarCellStyle_ContentStyle(object instance)
+        private object get_64_CalendarCellStyle_ContentStyle(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
             return that.ContentStyle;
         }
-        private void set_72_CalendarCellStyle_ContentStyle(object instance, object Value)
+        private void set_64_CalendarCellStyle_ContentStyle(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
             that.ContentStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_73_CalendarCellStyle_DecorationStyle(object instance)
+        private object get_65_CalendarCellStyle_DecorationStyle(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
             return that.DecorationStyle;
         }
-        private void set_73_CalendarCellStyle_DecorationStyle(object instance, object Value)
+        private void set_65_CalendarCellStyle_DecorationStyle(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle)instance;
             that.DecorationStyle = (global::Windows.UI.Xaml.Style)Value;
         }
-        private object get_74_BusyIndicatorAnimationAdapter_Animation(object instance)
+        private object get_66_BusyIndicatorAnimationAdapter_Animation(object instance)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter)instance;
             return that.Animation;
         }
-        private void set_74_BusyIndicatorAnimationAdapter_Animation(object instance, object Value)
+        private void set_66_BusyIndicatorAnimationAdapter_Animation(object instance, object Value)
         {
             var that = (global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter)instance;
             that.Animation = (global::Windows.UI.Xaml.Media.Animation.Storyboard)Value;
@@ -2021,290 +1877,235 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlMember.Getter = get_32_RadAutoCompleteBox_IsTextMatchHighlightEnabled;
                 xamlMember.Setter = set_32_RadAutoCompleteBox_IsTextMatchHighlightEnabled;
                 break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubble.ChatBubbleDirection":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubble");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ChatBubbleDirection", "Coding4Fun.Toolkit.Controls.ChatBubbleDirection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_33_ChatBubble_ChatBubbleDirection;
-                xamlMember.Setter = set_33_ChatBubble_ChatBubbleDirection;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubble.IsEquallySpaced":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubble");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsEquallySpaced", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_34_ChatBubble_IsEquallySpaced;
-                xamlMember.Setter = set_34_ChatBubble_IsEquallySpaced;
-                break;
             case "Microsoft.Xaml.Interactivity.Interaction.Behaviors":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactivity.Interaction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Behaviors", "Microsoft.Xaml.Interactivity.BehaviorCollection");
                 xamlMember.SetTargetTypeName("Windows.UI.Xaml.DependencyObject");
                 xamlMember.SetIsAttachable();
-                xamlMember.Getter = get_35_Interaction_Behaviors;
-                xamlMember.Setter = set_35_Interaction_Behaviors;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.ChatBubbleDirection":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ChatBubbleDirection", "Coding4Fun.Toolkit.Controls.ChatBubbleDirection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_36_ChatBubbleTextBox_ChatBubbleDirection;
-                xamlMember.Setter = set_36_ChatBubbleTextBox_ChatBubbleDirection;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.Hint":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Hint", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_37_ChatBubbleTextBox_Hint;
-                xamlMember.Setter = set_37_ChatBubbleTextBox_Hint;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.HintStyle":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HintStyle", "Windows.UI.Xaml.Style");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_38_ChatBubbleTextBox_HintStyle;
-                xamlMember.Setter = set_38_ChatBubbleTextBox_HintStyle;
-                break;
-            case "Coding4Fun.Toolkit.Controls.ChatBubbleTextBox.IsEquallySpaced":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Coding4Fun.Toolkit.Controls.ChatBubbleTextBox");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "IsEquallySpaced", "Boolean");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_39_ChatBubbleTextBox_IsEquallySpaced;
-                xamlMember.Setter = set_39_ChatBubbleTextBox_IsEquallySpaced;
+                xamlMember.Getter = get_33_Interaction_Behaviors;
+                xamlMember.Setter = set_33_Interaction_Behaviors;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Actions", "Microsoft.Xaml.Interactivity.ActionCollection");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_40_EventTriggerBehavior_Actions;
+                xamlMember.Getter = get_34_EventTriggerBehavior_Actions;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.EventName":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "EventName", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_41_EventTriggerBehavior_EventName;
-                xamlMember.Setter = set_41_EventTriggerBehavior_EventName;
+                xamlMember.Getter = get_35_EventTriggerBehavior_EventName;
+                xamlMember.Setter = set_35_EventTriggerBehavior_EventName;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.SourceObject":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "SourceObject", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_42_EventTriggerBehavior_SourceObject;
-                xamlMember.Setter = set_42_EventTriggerBehavior_SourceObject;
+                xamlMember.Getter = get_36_EventTriggerBehavior_SourceObject;
+                xamlMember.Setter = set_36_EventTriggerBehavior_SourceObject;
                 break;
             case "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.AssociatedObject":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_43_EventTriggerBehavior_AssociatedObject;
+                xamlMember.Getter = get_37_EventTriggerBehavior_AssociatedObject;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.Command":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Command", "System.Windows.Input.ICommand");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_44_InvokeCommandAction_Command;
-                xamlMember.Setter = set_44_InvokeCommandAction_Command;
-                break;
-            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_45_InvokeCommandAction_CommandParameter;
-                xamlMember.Setter = set_45_InvokeCommandAction_CommandParameter;
+                xamlMember.Getter = get_38_InvokeCommandAction_Command;
+                xamlMember.Setter = set_38_InvokeCommandAction_Command;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverter":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverter", "Windows.UI.Xaml.Data.IValueConverter");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_46_InvokeCommandAction_InputConverter;
-                xamlMember.Setter = set_46_InvokeCommandAction_InputConverter;
+                xamlMember.Getter = get_39_InvokeCommandAction_InputConverter;
+                xamlMember.Setter = set_39_InvokeCommandAction_InputConverter;
+                break;
+            case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.CommandParameter":
+                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
+                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "CommandParameter", "Object");
+                xamlMember.SetIsDependencyProperty();
+                xamlMember.Getter = get_40_InvokeCommandAction_CommandParameter;
+                xamlMember.Setter = set_40_InvokeCommandAction_CommandParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterParameter":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverterParameter", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_47_InvokeCommandAction_InputConverterParameter;
-                xamlMember.Setter = set_47_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Getter = get_41_InvokeCommandAction_InputConverterParameter;
+                xamlMember.Setter = set_41_InvokeCommandAction_InputConverterParameter;
                 break;
             case "Microsoft.Xaml.Interactions.Core.InvokeCommandAction.InputConverterLanguage":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Xaml.Interactions.Core.InvokeCommandAction");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "InputConverterLanguage", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_48_InvokeCommandAction_InputConverterLanguage;
-                xamlMember.Setter = set_48_InvokeCommandAction_InputConverterLanguage;
-                break;
-            case "Owl.ScrollToBottomBehavior.ItemsSource":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Owl.ScrollToBottomBehavior");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ItemsSource", "Object");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_49_ScrollToBottomBehavior_ItemsSource;
-                xamlMember.Setter = set_49_ScrollToBottomBehavior_ItemsSource;
-                break;
-            case "Owl.ScrollToBottomBehavior.AssociatedObject":
-                userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Owl.ScrollToBottomBehavior");
-                xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "AssociatedObject", "Windows.UI.Xaml.DependencyObject");
-                xamlMember.Getter = get_50_ScrollToBottomBehavior_AssociatedObject;
-                xamlMember.SetIsReadOnly();
+                xamlMember.Getter = get_42_InvokeCommandAction_InputConverterLanguage;
+                xamlMember.Setter = set_42_InvokeCommandAction_InputConverterLanguage;
                 break;
             case "Owl.MainPage.NavigationHelper":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Owl.MainPage");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "NavigationHelper", "Owl.Common.NavigationHelper");
-                xamlMember.Getter = get_51_MainPage_NavigationHelper;
+                xamlMember.Getter = get_43_MainPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Owl.PivotPage.NavigationHelper":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Owl.PivotPage");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "NavigationHelper", "Owl.Common.NavigationHelper");
-                xamlMember.Getter = get_52_PivotPage_NavigationHelper;
+                xamlMember.Getter = get_44_PivotPage_NavigationHelper;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.Format":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Format", "String");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_53_ChartAnnotationLabelDefinition_Format;
-                xamlMember.Setter = set_53_ChartAnnotationLabelDefinition_Format;
+                xamlMember.Getter = get_45_ChartAnnotationLabelDefinition_Format;
+                xamlMember.Setter = set_45_ChartAnnotationLabelDefinition_Format;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.Template":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Template", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_54_ChartAnnotationLabelDefinition_Template;
-                xamlMember.Setter = set_54_ChartAnnotationLabelDefinition_Template;
+                xamlMember.Getter = get_46_ChartAnnotationLabelDefinition_Template;
+                xamlMember.Setter = set_46_ChartAnnotationLabelDefinition_Template;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.DefaultVisualStyle":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "DefaultVisualStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_55_ChartAnnotationLabelDefinition_DefaultVisualStyle;
-                xamlMember.Setter = set_55_ChartAnnotationLabelDefinition_DefaultVisualStyle;
+                xamlMember.Getter = get_47_ChartAnnotationLabelDefinition_DefaultVisualStyle;
+                xamlMember.Setter = set_47_ChartAnnotationLabelDefinition_DefaultVisualStyle;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.Location":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Location", "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_56_ChartAnnotationLabelDefinition_Location;
-                xamlMember.Setter = set_56_ChartAnnotationLabelDefinition_Location;
+                xamlMember.Getter = get_48_ChartAnnotationLabelDefinition_Location;
+                xamlMember.Setter = set_48_ChartAnnotationLabelDefinition_Location;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.HorizontalAlignment":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HorizontalAlignment", "Windows.UI.Xaml.HorizontalAlignment");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_57_ChartAnnotationLabelDefinition_HorizontalAlignment;
-                xamlMember.Setter = set_57_ChartAnnotationLabelDefinition_HorizontalAlignment;
+                xamlMember.Getter = get_49_ChartAnnotationLabelDefinition_HorizontalAlignment;
+                xamlMember.Setter = set_49_ChartAnnotationLabelDefinition_HorizontalAlignment;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.VerticalAlignment":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "VerticalAlignment", "Windows.UI.Xaml.VerticalAlignment");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_58_ChartAnnotationLabelDefinition_VerticalAlignment;
-                xamlMember.Setter = set_58_ChartAnnotationLabelDefinition_VerticalAlignment;
+                xamlMember.Getter = get_50_ChartAnnotationLabelDefinition_VerticalAlignment;
+                xamlMember.Setter = set_50_ChartAnnotationLabelDefinition_VerticalAlignment;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.HorizontalOffset":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "HorizontalOffset", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_59_ChartAnnotationLabelDefinition_HorizontalOffset;
-                xamlMember.Setter = set_59_ChartAnnotationLabelDefinition_HorizontalOffset;
+                xamlMember.Getter = get_51_ChartAnnotationLabelDefinition_HorizontalOffset;
+                xamlMember.Setter = set_51_ChartAnnotationLabelDefinition_HorizontalOffset;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition.VerticalOffset":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "VerticalOffset", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_60_ChartAnnotationLabelDefinition_VerticalOffset;
-                xamlMember.Setter = set_60_ChartAnnotationLabelDefinition_VerticalOffset;
+                xamlMember.Getter = get_52_ChartAnnotationLabelDefinition_VerticalOffset;
+                xamlMember.Setter = set_52_ChartAnnotationLabelDefinition_VerticalOffset;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.Name":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Name", "String");
-                xamlMember.Getter = get_61_ChartPalette_Name;
-                xamlMember.Setter = set_61_ChartPalette_Name;
+                xamlMember.Getter = get_53_ChartPalette_Name;
+                xamlMember.Setter = set_53_ChartPalette_Name;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.FillEntries":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FillEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
-                xamlMember.Getter = get_62_ChartPalette_FillEntries;
-                xamlMember.Setter = set_62_ChartPalette_FillEntries;
+                xamlMember.Getter = get_54_ChartPalette_FillEntries;
+                xamlMember.Setter = set_54_ChartPalette_FillEntries;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Brushes", "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>");
-                xamlMember.Getter = get_63_PaletteEntryCollection_Brushes;
+                xamlMember.Getter = get_55_PaletteEntryCollection_Brushes;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.SpecialFillEntries":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "SpecialFillEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
-                xamlMember.Getter = get_64_ChartPalette_SpecialFillEntries;
-                xamlMember.Setter = set_64_ChartPalette_SpecialFillEntries;
+                xamlMember.Getter = get_56_ChartPalette_SpecialFillEntries;
+                xamlMember.Setter = set_56_ChartPalette_SpecialFillEntries;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.StrokeEntries":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "StrokeEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
-                xamlMember.Getter = get_65_ChartPalette_StrokeEntries;
-                xamlMember.Setter = set_65_ChartPalette_StrokeEntries;
+                xamlMember.Getter = get_57_ChartPalette_StrokeEntries;
+                xamlMember.Setter = set_57_ChartPalette_StrokeEntries;
                 break;
             case "Telerik.UI.Xaml.Controls.Chart.ChartPalette.SpecialStrokeEntries":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Chart.ChartPalette");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "SpecialStrokeEntries", "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection");
-                xamlMember.Getter = get_66_ChartPalette_SpecialStrokeEntries;
-                xamlMember.Setter = set_66_ChartPalette_SpecialStrokeEntries;
+                xamlMember.Getter = get_58_ChartPalette_SpecialStrokeEntries;
+                xamlMember.Setter = set_58_ChartPalette_SpecialStrokeEntries;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontFamily":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FontFamily", "Windows.UI.Xaml.Media.FontFamily");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_67_HighlightStyle_FontFamily;
-                xamlMember.Setter = set_67_HighlightStyle_FontFamily;
+                xamlMember.Getter = get_59_HighlightStyle_FontFamily;
+                xamlMember.Setter = set_59_HighlightStyle_FontFamily;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontWeight":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FontWeight", "Telerik.UI.Xaml.Controls.Input.FontWeightName");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_68_HighlightStyle_FontWeight;
-                xamlMember.Setter = set_68_HighlightStyle_FontWeight;
+                xamlMember.Getter = get_60_HighlightStyle_FontWeight;
+                xamlMember.Setter = set_60_HighlightStyle_FontWeight;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontStyle":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FontStyle", "Windows.UI.Text.FontStyle");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_69_HighlightStyle_FontStyle;
-                xamlMember.Setter = set_69_HighlightStyle_FontStyle;
+                xamlMember.Getter = get_61_HighlightStyle_FontStyle;
+                xamlMember.Setter = set_61_HighlightStyle_FontStyle;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.Foreground":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Foreground", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_70_HighlightStyle_Foreground;
-                xamlMember.Setter = set_70_HighlightStyle_Foreground;
+                xamlMember.Getter = get_62_HighlightStyle_Foreground;
+                xamlMember.Setter = set_62_HighlightStyle_Foreground;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.HighlightStyle.FontSize":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.HighlightStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "FontSize", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_71_HighlightStyle_FontSize;
-                xamlMember.Setter = set_71_HighlightStyle_FontSize;
+                xamlMember.Getter = get_63_HighlightStyle_FontSize;
+                xamlMember.Setter = set_63_HighlightStyle_FontSize;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle.ContentStyle":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.CalendarCellStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "ContentStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_72_CalendarCellStyle_ContentStyle;
-                xamlMember.Setter = set_72_CalendarCellStyle_ContentStyle;
+                xamlMember.Getter = get_64_CalendarCellStyle_ContentStyle;
+                xamlMember.Setter = set_64_CalendarCellStyle_ContentStyle;
                 break;
             case "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle.DecorationStyle":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Input.CalendarCellStyle");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "DecorationStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_73_CalendarCellStyle_DecorationStyle;
-                xamlMember.Setter = set_73_CalendarCellStyle_DecorationStyle;
+                xamlMember.Getter = get_65_CalendarCellStyle_DecorationStyle;
+                xamlMember.Setter = set_65_CalendarCellStyle_DecorationStyle;
                 break;
             case "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter.Animation":
                 userType = (global::Owl.Owl_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter");
                 xamlMember = new global::Owl.Owl_XamlTypeInfo.XamlMember(this, "Animation", "Windows.UI.Xaml.Media.Animation.Storyboard");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_74_BusyIndicatorAnimationAdapter_Animation;
-                xamlMember.Setter = set_74_BusyIndicatorAnimationAdapter_Animation;
+                xamlMember.Getter = get_66_BusyIndicatorAnimationAdapter_Animation;
+                xamlMember.Setter = set_66_BusyIndicatorAnimationAdapter_Animation;
                 break;
             }
             return xamlMember;

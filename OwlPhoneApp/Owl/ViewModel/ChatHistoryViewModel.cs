@@ -33,7 +33,7 @@ namespace Owl.ViewModel
         {
             ItemSelectedCommand = new RelayCommand<ChatEntry>(c =>
             {
-                Messenger.Default.Send<NavigateToChatMessage>(new NavigateToChatMessage(c));
+                //Messenger.Default.Send<NavigateToChatMessage>(new NavigateToChatMessage(c));
             });
             ListViewChatEntriesLoadedCommand = new RelayCommand(() =>
             {
@@ -67,20 +67,29 @@ namespace Owl.ViewModel
         {
             ChatEntrytCollection.Clear();
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(true), LoadingAnimationMessage.ChatToken);
-            var chatHistories = await ReadStringFromLocalFile(_fileName);
-            foreach (var item in chatHistories)
+            //var chatHistories = await ReadStringFromLocalFile(_fileName);
+            //foreach (var item in chatHistories)
+            //{
+            for (int i = 0; i < 30;i++ )
             {
                 ChatEntrytCollection.Add(new ChatEntry()
                 {
-                    Time = item.Time,
-                    PairId = item.PairId,
-                    Message = item.Message,
-                    UserId = item.UserId,
-                    UserName = item.UserName,
-                    UserProfile = item.UserProfile,
-                    UpdatedTime = DateTime.Now.Ticks
+                    //Time = item.Time,
+                    //PairId = item.PairId,
+                    //Message = item.Message,
+                    //UserId = item.UserId,
+                    //UserName = item.UserName,
+                    //UserProfile = item.UserProfile,
+                    //UpdatedTime = DateTime.Now.Ticks
+                });
+                ChatEntrytCollection.Add(new ChatEntry()
+                {
+                    IsTo = "Visible",
+                    IsFrom = "Collapsed"
                 });
             }
+                
+            //}
             Messenger.Default.Send<LoadingAnimationMessage>(new LoadingAnimationMessage(), LoadingAnimationMessage.ChatToken);
         }
 

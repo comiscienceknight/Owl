@@ -41,6 +41,28 @@ namespace Owl.DataObjects
             }
         }
 
+        private string _isFrom = "Visible";
+        public string IsFrom
+        {
+            get { return _isFrom; }
+            set
+            {
+                _isFrom = value;
+                OnPropertyChanged("IsFrom");
+            }
+        }
+
+        private string _isTo = "Collapsed";
+        public string IsTo
+        {
+            get { return _isTo; }
+            set
+            {
+                _isTo = value;
+                OnPropertyChanged("IsTo");
+            }
+        }
+
         private string _userId;
         public string UserId
         {

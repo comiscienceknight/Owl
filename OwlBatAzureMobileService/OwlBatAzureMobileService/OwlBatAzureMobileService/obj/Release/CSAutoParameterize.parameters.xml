@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="OwlbatConnectionString-Web.config Connection String" description="OwlbatConnectionString Connection String used in web.config by the application to access the database." defaultValue="data source=owlbat.database.windows.net;initial catalog=Owlbat;user id=owlbat;password=@nlc0ccmb;MultipleActiveResultSets=True;App=EntityFramework" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlbatConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlbatConnectionString']/@connectionString" />
   </parameter>
   <parameter name="MS_NotificationHubConnectionString-Web.config Connection String" description="MS_NotificationHubConnectionString Connection String used in web.config by the application to access the database." defaultValue="Endpoint=sb://owlbathub-ns.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=6dyG5E9oA5ID4LULO0x0+VoZ60llKcYvVTsE4PQsXXI=" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_NotificationHubConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_NotificationHubConnectionString']/@connectionString" />
   </parameter>
   <parameter name="OwlConnectionString-Web.config Connection String" description="OwlConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=olblgislxo.database.windows.net;Initial Catalog=Owl;Persist Security Info=True;User ID=owlbat;Password=@nlc0ccmb" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\Users\\Bo\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlConnectionString']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\bhu\\Documents\\GitHub\\Owl\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\OwlBatAzureMobileService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='OwlConnectionString']/@connectionString" />
   </parameter>
 </parameters>

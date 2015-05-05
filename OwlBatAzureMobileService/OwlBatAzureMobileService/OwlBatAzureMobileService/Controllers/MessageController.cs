@@ -9,6 +9,8 @@ using OwlBatAzureMobileService.Models;
 using Microsoft.WindowsAzure.Mobile.Service.Security;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
+using System.Collections.Specialized;
+using System.Web;
 
 namespace OwlBatAzureMobileService.Controllers
 {
@@ -46,52 +48,30 @@ namespace OwlBatAzureMobileService.Controllers
             return new GetPostByUserIdResult();
         }
 
-        [Route("message/createdpair/{userid1}/{userid2}")]
+        [Route("message/getmessages/{userid}/{createdtimeticks}")]
         [HttpGet]
-        public string CreateMessageUserPair(string userid1, string userid2)
+        public List<GetMessagesResult> GetMessages(string userid, string createdtimeticks)
         {
-            try
+            DateTimeOffset createdTime = new DateTimeOffset(new DateTime(Convert.ToInt64(createdtimeticks)));
+            using (var db = new Models.OwlDataClassesDataContext())
             {
-                using(var db = new Models.OwlDataClassesDataContext())
-                {
-                    if(db.MessageUserPairs.Any(p=>(p.User1Id == userid1 && p.User2Id == userid2) || 
-                        (p.User1Id == userid2 && p.User2Id == userid1)))
-                    {
-                        return db.MessageUserPairs.Where(p => (p.User1Id == userid1 && p.User2Id == userid2) ||
-                        (p.User1Id == userid2 && p.User2Id == userid1)).First().Id;
-                    }
-                    else if(!string.IsNullOrWhiteSpace(userid2) && !string.IsNullOrWhiteSpace(userid1))
-                    {
-                        string newPairId = Guid.NewGuid().ToString();
-                        db.MessageUserPairs.InsertOnSubmit(new MessageUserPair()
-                        {
-                            User1Id = userid1,
-                            User2Id = userid2,
-                            Id = newPairId
-                        });
-                        db.SubmitChanges();
-                        return newPairId;
-                    }
-                }
+                return db.GetMessages(userid, createdTime, 20).ToList();
             }
-            catch (Exception e)
-            {
-                Services.Log.Error(e.ToString());
-            }
-            return "";
         }
 
-        [Route("message/sendmessage")]
+        [Route("message/sendmsg")]
         [HttpPost]
-        public bool SendMessage(JObject data)
+        public async Task<bool> SendMessage()//JObject data)
         {
             try
             {
-                string pairId = data.GetValue("pairid").Value<string>();
-                string message = data.GetValue("message").Value<string>();
-                using(var db = new Models.OwlDataClassesDataContext())
+                HttpRequestMessage request = this.Request;
+                string querystring = await request.Content.ReadAsStringAsync();
+                NameValueCollection qscoll = HttpUtility.ParseQueryString(querystring);
+
+                using (var db = new Models.OwlDataClassesDataContext())
                 {
-                    db.InsertAnMessage(message, pairId);
+                    db.InsertAnMessage(qscoll["message"], qscoll["fromuserid"], qscoll["touserid"]);
                 }
                 return true;
             }

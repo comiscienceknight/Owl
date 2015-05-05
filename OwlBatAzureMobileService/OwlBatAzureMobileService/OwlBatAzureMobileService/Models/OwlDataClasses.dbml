@@ -205,7 +205,21 @@
   </Function>
   <Function Name="dbo.InsertAnMessage" Method="InsertAnMessage">
     <Parameter Name="Message" Parameter="message" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="PairId" Parameter="pairId" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="FromUserId" Parameter="fromUserId" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="ToUserId" Parameter="toUserId" Type="System.String" DbType="VarChar(128)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.GetMessages" Method="GetMessages">
+    <Parameter Name="ToUserid" Parameter="toUserid" Type="System.String" DbType="VarChar(128)" />
+    <Parameter Name="CreatedTime" Parameter="createdTime" Type="System.DateTimeOffset" DbType="DateTimeOffset" />
+    <Parameter Name="TopNumber" Parameter="topNumber" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetMessagesResult">
+      <Column Name="Id" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="FromUserId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="ToUserId" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="Message" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
+      <Column Name="PairId" Type="System.String" DbType="VarChar(128)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

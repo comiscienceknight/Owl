@@ -26,7 +26,7 @@ namespace OwlBatAzureMobileService.Utils
             return salt;
         }
 
-        public static bool slowEquals(byte[] a, byte[] b)
+        public static bool SlowEquals(byte[] a, byte[] b)
         {
             int diff = a.Length ^ b.Length;
             for (int i = 0; i < a.Length && i < b.Length; i++)

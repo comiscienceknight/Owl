@@ -388,3 +388,4 @@ C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServi
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\ru\Microsoft.WindowsAzure.Mobile.Service.SignalR.resources.dll
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\zh-Hans\Microsoft.WindowsAzure.Mobile.Service.SignalR.resources.dll
 C:\Users\Bo\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\zh-Hant\Microsoft.WindowsAzure.Mobile.Service.SignalR.resources.dll
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.SinaWeibo.dll

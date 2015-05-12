@@ -39,7 +39,7 @@ namespace OwlBatAzureMobileService.Controllers
                     var account = db.Accounts.Where(p => p.UserName == loginRequest.username).First();
                     byte[] incoming = CustomLoginProviderUtils.hash(loginRequest.password, ConvertBinaryToByte(account.Salt));
 
-                    if (CustomLoginProviderUtils.slowEquals(incoming, ConvertBinaryToByte(account.SaltedAndHashedPassword)))
+                    if (CustomLoginProviderUtils.SlowEquals(incoming, ConvertBinaryToByte(account.SaltedAndHashedPassword)))
                     {
                         ClaimsIdentity claimsIdentity = new ClaimsIdentity();
                         claimsIdentity.AddClaim(new Claim(ClaimTypes.NameIdentifier, loginRequest.username));
@@ -54,13 +54,6 @@ namespace OwlBatAzureMobileService.Controllers
         public byte[] ConvertBinaryToByte(Binary binary)
         {
             return binary.ToArray();
-            //int numOfBytes = binary.Length / 8;
-            //byte[] bytes = new byte[numOfBytes];
-            //for (int i = 0; i < numOfBytes; ++i)
-            //{
-            //    bytes[i] = Convert.ToByte(bStr.Substring(8 * i, 8), 2);
-            //}
-            //return bytes;
         }
 
     }

@@ -545,3 +545,5 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServ
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.pdb
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.csprojResolveAssemblyReference.cache
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.SinaWeibo.dll

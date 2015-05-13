@@ -14,6 +14,7 @@ namespace Owl.Common
     {
         private Geolocator _geolocator = null;
         private CoreDispatcher _uiDispatcher;
+        public event EventHandler<GeoLocationEventArg> GeoLocationUpdate;
 
         public GeoLocation(CoreDispatcher uiDispatcher)
         {
@@ -25,14 +26,19 @@ namespace Owl.Common
 
         async void Geolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
         {
-            await _uiDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-            {
-                Geoposition pos = args.Position;
+            if (GeoLocationUpdate != null)
+                GeoLocationUpdate(this, new GeoLocationEventArg()
+                {
+                    Position = args.Position
+                });
+            //await _uiDispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+            //{
+            //    Geoposition pos = args.Position;
 
-                //var dialog = new MessageDialog(string.Format("GeoLocation: {0}, {1}", pos.Coordinate.Point.Position.Latitude, pos.Coordinate.Point.Position.Longitude));
-                //dialog.Commands.Add(new UICommand("OK"));
-                //await dialog.ShowAsync();
-            });
+            //    //var dialog = new MessageDialog(string.Format("GeoLocation: {0}, {1}", pos.Coordinate.Point.Position.Latitude, pos.Coordinate.Point.Position.Longitude));
+            //    //dialog.Commands.Add(new UICommand("OK"));
+            //    //await dialog.ShowAsync();
+            //});
         }
 
         //public async void GeoLocationRequest()
@@ -66,5 +72,10 @@ namespace Owl.Common
         //    {
         //    }
         //}
+    }
+
+    public class GeoLocationEventArg : EventArgs
+    {
+        public Geoposition Position { get; set; }
     }
 }

@@ -106,7 +106,7 @@
                                  TextWrapping="Wrap">
                             
                         </TextBox>
-                        <Button Grid.Column="1" VerticalAlignment="Top" Margin="2,1,5,2">
+                        <Button Grid.Column="1" VerticalAlignment="Top" Margin="2,1,5,2" Click="Button_Click">
                             Send
                         </Button>
                     </Grid>

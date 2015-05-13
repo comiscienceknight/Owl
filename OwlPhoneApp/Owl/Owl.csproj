@@ -83,6 +83,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="BlankPage.xaml.cs">
+      <DependentUpon>BlankPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Common\JumperListHelper.cs" />
     <Compile Include="DataObjects\MessageUnit.cs" />
     <Compile Include="DataObjects\MyPost.cs" />
@@ -217,6 +220,10 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
+    <Page Include="BlankPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\EditMyProfilePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -309,6 +316,12 @@
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Platform">
       <HintPath>..\..\OwlWindowsPhoneApp\packages\MvvmLightLibs.5.1.1.0\lib\wpa81\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\portable-win81+wpa81\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client.Store">
+      <HintPath>packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\portable-win81+wpa81\Microsoft.AspNet.SignalR.Client.Store.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Edm">
       <HintPath>packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll</HintPath>

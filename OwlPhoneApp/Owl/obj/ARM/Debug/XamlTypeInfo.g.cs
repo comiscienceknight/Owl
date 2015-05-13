@@ -148,7 +148,7 @@ namespace Owl.Owl_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[80];
+            _typeNameTable = new string[81];
             _typeNameTable[0] = "Owl.ViewModel.ViewModelLocator";
             _typeNameTable[1] = "Object";
             _typeNameTable[2] = "Owl.ViewModel.MainViewModel";
@@ -157,80 +157,81 @@ namespace Owl.Owl_XamlTypeInfo
             _typeNameTable[5] = "Owl.ViewModel.PivotViewModel";
             _typeNameTable[6] = "Owl.ViewModel.PostsViewModel";
             _typeNameTable[7] = "Owl.ViewModel.ChatHistoryViewModel";
-            _typeNameTable[8] = "WinRTXamlToolkit.Controls.NumericUpDown";
-            _typeNameTable[9] = "Windows.UI.Xaml.Controls.Primitives.RangeBase";
-            _typeNameTable[10] = "String";
-            _typeNameTable[11] = "WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility";
-            _typeNameTable[12] = "System.Enum";
-            _typeNameTable[13] = "System.ValueType";
-            _typeNameTable[14] = "Boolean";
-            _typeNameTable[15] = "Double";
-            _typeNameTable[16] = "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox";
-            _typeNameTable[17] = "Telerik.UI.Xaml.Controls.RadHeaderedControl";
-            _typeNameTable[18] = "Telerik.UI.Xaml.Controls.RadControl";
-            _typeNameTable[19] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[20] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode";
-            _typeNameTable[21] = "TimeSpan";
-            _typeNameTable[22] = "Windows.UI.Xaml.Style";
-            _typeNameTable[23] = "Windows.UI.Xaml.DataTemplate";
-            _typeNameTable[24] = "System.StringComparison";
-            _typeNameTable[25] = "Int32";
-            _typeNameTable[26] = "System.Func`2<Object, String>";
-            _typeNameTable[27] = "System.MulticastDelegate";
-            _typeNameTable[28] = "System.Delegate";
-            _typeNameTable[29] = "System.Collections.IEnumerable";
-            _typeNameTable[30] = "Windows.UI.Xaml.Controls.DataTemplateSelector";
-            _typeNameTable[31] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode";
-            _typeNameTable[32] = "Telerik.UI.Xaml.Controls.Input.HighlightStyle";
-            _typeNameTable[33] = "Windows.UI.Xaml.DependencyObject";
-            _typeNameTable[34] = "Owl.EditMyProfilePage";
-            _typeNameTable[35] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[36] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[37] = "Owl.FilterPage";
-            _typeNameTable[38] = "Owl.View.FirstVisit.PageBasicInfo";
-            _typeNameTable[39] = "Owl.View.FirstVisit.PageImWithGirlsAndGuys";
-            _typeNameTable[40] = "Owl.View.FirstVisit.PageProfile";
-            _typeNameTable[41] = "Owl.View.FirstVisit.PageTonightImGoingToSearchVenues";
-            _typeNameTable[42] = "Owl.View.FirstVisit.PageTonightImGoingTo";
-            _typeNameTable[43] = "Owl.View.FirstVisit.PageWereDressed";
-            _typeNameTable[44] = "Owl.FirstTimeEnterUserControl";
-            _typeNameTable[45] = "Owl.FirstEnterIn";
-            _typeNameTable[46] = "Owl.CameraPhotoUserControl";
-            _typeNameTable[47] = "Owl.ItemClickedConverter";
-            _typeNameTable[48] = "Microsoft.Xaml.Interactivity.Interaction";
-            _typeNameTable[49] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
-            _typeNameTable[50] = "Windows.UI.Xaml.DependencyObjectCollection";
-            _typeNameTable[51] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
-            _typeNameTable[52] = "Microsoft.Xaml.Interactivity.ActionCollection";
-            _typeNameTable[53] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
-            _typeNameTable[54] = "System.Windows.Input.ICommand";
-            _typeNameTable[55] = "Windows.UI.Xaml.Data.IValueConverter";
-            _typeNameTable[56] = "Owl.ChatHistoryUserControl";
-            _typeNameTable[57] = "Owl.View.ImageEffectsUserControl";
-            _typeNameTable[58] = "Owl.MainPage";
-            _typeNameTable[59] = "Owl.Common.NavigationHelper";
-            _typeNameTable[60] = "Owl.MyPostUserControl";
-            _typeNameTable[61] = "Owl.View.FirstVisit.PageTonightImGoingToNeighborhood";
-            _typeNameTable[62] = "Owl.PostsUserControl";
-            _typeNameTable[63] = "Owl.PivotPage";
-            _typeNameTable[64] = "Owl.PostInfoPage";
-            _typeNameTable[65] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
-            _typeNameTable[66] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
-            _typeNameTable[67] = "Windows.UI.Xaml.HorizontalAlignment";
-            _typeNameTable[68] = "Windows.UI.Xaml.VerticalAlignment";
-            _typeNameTable[69] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
-            _typeNameTable[70] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
-            _typeNameTable[71] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
-            _typeNameTable[72] = "Windows.UI.Xaml.Media.Brush";
-            _typeNameTable[73] = "Windows.UI.Xaml.Media.FontFamily";
-            _typeNameTable[74] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
-            _typeNameTable[75] = "Windows.UI.Text.FontStyle";
-            _typeNameTable[76] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
-            _typeNameTable[77] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
-            _typeNameTable[78] = "Windows.UI.Xaml.FrameworkElement";
-            _typeNameTable[79] = "Windows.UI.Xaml.Media.Animation.Storyboard";
+            _typeNameTable[8] = "Owl.BlankPage";
+            _typeNameTable[9] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[10] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[11] = "WinRTXamlToolkit.Controls.NumericUpDown";
+            _typeNameTable[12] = "Windows.UI.Xaml.Controls.Primitives.RangeBase";
+            _typeNameTable[13] = "String";
+            _typeNameTable[14] = "WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility";
+            _typeNameTable[15] = "System.Enum";
+            _typeNameTable[16] = "System.ValueType";
+            _typeNameTable[17] = "Boolean";
+            _typeNameTable[18] = "Double";
+            _typeNameTable[19] = "Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox";
+            _typeNameTable[20] = "Telerik.UI.Xaml.Controls.RadHeaderedControl";
+            _typeNameTable[21] = "Telerik.UI.Xaml.Controls.RadControl";
+            _typeNameTable[22] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[23] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode";
+            _typeNameTable[24] = "TimeSpan";
+            _typeNameTable[25] = "Windows.UI.Xaml.Style";
+            _typeNameTable[26] = "Windows.UI.Xaml.DataTemplate";
+            _typeNameTable[27] = "System.StringComparison";
+            _typeNameTable[28] = "Int32";
+            _typeNameTable[29] = "System.Func`2<Object, String>";
+            _typeNameTable[30] = "System.MulticastDelegate";
+            _typeNameTable[31] = "System.Delegate";
+            _typeNameTable[32] = "System.Collections.IEnumerable";
+            _typeNameTable[33] = "Windows.UI.Xaml.Controls.DataTemplateSelector";
+            _typeNameTable[34] = "Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode";
+            _typeNameTable[35] = "Telerik.UI.Xaml.Controls.Input.HighlightStyle";
+            _typeNameTable[36] = "Windows.UI.Xaml.DependencyObject";
+            _typeNameTable[37] = "Owl.EditMyProfilePage";
+            _typeNameTable[38] = "Owl.FilterPage";
+            _typeNameTable[39] = "Owl.View.FirstVisit.PageBasicInfo";
+            _typeNameTable[40] = "Owl.View.FirstVisit.PageImWithGirlsAndGuys";
+            _typeNameTable[41] = "Owl.View.FirstVisit.PageProfile";
+            _typeNameTable[42] = "Owl.View.FirstVisit.PageTonightImGoingToSearchVenues";
+            _typeNameTable[43] = "Owl.View.FirstVisit.PageTonightImGoingTo";
+            _typeNameTable[44] = "Owl.View.FirstVisit.PageWereDressed";
+            _typeNameTable[45] = "Owl.FirstTimeEnterUserControl";
+            _typeNameTable[46] = "Owl.FirstEnterIn";
+            _typeNameTable[47] = "Owl.CameraPhotoUserControl";
+            _typeNameTable[48] = "Owl.ItemClickedConverter";
+            _typeNameTable[49] = "Microsoft.Xaml.Interactivity.Interaction";
+            _typeNameTable[50] = "Microsoft.Xaml.Interactivity.BehaviorCollection";
+            _typeNameTable[51] = "Windows.UI.Xaml.DependencyObjectCollection";
+            _typeNameTable[52] = "Microsoft.Xaml.Interactions.Core.EventTriggerBehavior";
+            _typeNameTable[53] = "Microsoft.Xaml.Interactivity.ActionCollection";
+            _typeNameTable[54] = "Microsoft.Xaml.Interactions.Core.InvokeCommandAction";
+            _typeNameTable[55] = "System.Windows.Input.ICommand";
+            _typeNameTable[56] = "Windows.UI.Xaml.Data.IValueConverter";
+            _typeNameTable[57] = "Owl.ChatHistoryUserControl";
+            _typeNameTable[58] = "Owl.View.ImageEffectsUserControl";
+            _typeNameTable[59] = "Owl.MainPage";
+            _typeNameTable[60] = "Owl.Common.NavigationHelper";
+            _typeNameTable[61] = "Owl.MyPostUserControl";
+            _typeNameTable[62] = "Owl.View.FirstVisit.PageTonightImGoingToNeighborhood";
+            _typeNameTable[63] = "Owl.PostsUserControl";
+            _typeNameTable[64] = "Owl.PivotPage";
+            _typeNameTable[65] = "Owl.PostInfoPage";
+            _typeNameTable[66] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition";
+            _typeNameTable[67] = "Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation";
+            _typeNameTable[68] = "Windows.UI.Xaml.HorizontalAlignment";
+            _typeNameTable[69] = "Windows.UI.Xaml.VerticalAlignment";
+            _typeNameTable[70] = "Telerik.UI.Xaml.Controls.Chart.ChartPalette";
+            _typeNameTable[71] = "Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection";
+            _typeNameTable[72] = "System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>";
+            _typeNameTable[73] = "Windows.UI.Xaml.Media.Brush";
+            _typeNameTable[74] = "Windows.UI.Xaml.Media.FontFamily";
+            _typeNameTable[75] = "Telerik.UI.Xaml.Controls.Input.FontWeightName";
+            _typeNameTable[76] = "Windows.UI.Text.FontStyle";
+            _typeNameTable[77] = "Telerik.UI.Xaml.Controls.Input.CalendarCellStyle";
+            _typeNameTable[78] = "Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter";
+            _typeNameTable[79] = "Windows.UI.Xaml.FrameworkElement";
+            _typeNameTable[80] = "Windows.UI.Xaml.Media.Animation.Storyboard";
 
-            _typeTable = new global::System.Type[80];
+            _typeTable = new global::System.Type[81];
             _typeTable[0] = typeof(global::Owl.ViewModel.ViewModelLocator);
             _typeTable[1] = typeof(global::System.Object);
             _typeTable[2] = typeof(global::Owl.ViewModel.MainViewModel);
@@ -239,78 +240,79 @@ namespace Owl.Owl_XamlTypeInfo
             _typeTable[5] = typeof(global::Owl.ViewModel.PivotViewModel);
             _typeTable[6] = typeof(global::Owl.ViewModel.PostsViewModel);
             _typeTable[7] = typeof(global::Owl.ViewModel.ChatHistoryViewModel);
-            _typeTable[8] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDown);
-            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.Primitives.RangeBase);
-            _typeTable[10] = typeof(global::System.String);
-            _typeTable[11] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility);
-            _typeTable[12] = typeof(global::System.Enum);
-            _typeTable[13] = typeof(global::System.ValueType);
-            _typeTable[14] = typeof(global::System.Boolean);
-            _typeTable[15] = typeof(global::System.Double);
-            _typeTable[16] = typeof(global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox);
-            _typeTable[17] = typeof(global::Telerik.UI.Xaml.Controls.RadHeaderedControl);
-            _typeTable[18] = typeof(global::Telerik.UI.Xaml.Controls.RadControl);
-            _typeTable[19] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[20] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode);
-            _typeTable[21] = typeof(global::System.TimeSpan);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.Style);
-            _typeTable[23] = typeof(global::Windows.UI.Xaml.DataTemplate);
-            _typeTable[24] = typeof(global::System.StringComparison);
-            _typeTable[25] = typeof(global::System.Int32);
-            _typeTable[26] = typeof(global::System.Func<global::System.Object, global::System.String>);
-            _typeTable[27] = typeof(global::System.MulticastDelegate);
-            _typeTable[28] = typeof(global::System.Delegate);
-            _typeTable[29] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[30] = typeof(global::Windows.UI.Xaml.Controls.DataTemplateSelector);
-            _typeTable[31] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode);
-            _typeTable[32] = typeof(global::Telerik.UI.Xaml.Controls.Input.HighlightStyle);
-            _typeTable[33] = typeof(global::Windows.UI.Xaml.DependencyObject);
-            _typeTable[34] = typeof(global::Owl.EditMyProfilePage);
-            _typeTable[35] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[36] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[37] = typeof(global::Owl.FilterPage);
-            _typeTable[38] = typeof(global::Owl.View.FirstVisit.PageBasicInfo);
-            _typeTable[39] = typeof(global::Owl.View.FirstVisit.PageImWithGirlsAndGuys);
-            _typeTable[40] = typeof(global::Owl.View.FirstVisit.PageProfile);
-            _typeTable[41] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToSearchVenues);
-            _typeTable[42] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingTo);
-            _typeTable[43] = typeof(global::Owl.View.FirstVisit.PageWereDressed);
-            _typeTable[44] = typeof(global::Owl.FirstTimeEnterUserControl);
-            _typeTable[45] = typeof(global::Owl.FirstEnterIn);
-            _typeTable[46] = typeof(global::Owl.CameraPhotoUserControl);
-            _typeTable[47] = typeof(global::Owl.ItemClickedConverter);
-            _typeTable[48] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
-            _typeTable[49] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
-            _typeTable[50] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
-            _typeTable[51] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
-            _typeTable[52] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
-            _typeTable[53] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
-            _typeTable[54] = typeof(global::System.Windows.Input.ICommand);
-            _typeTable[55] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
-            _typeTable[56] = typeof(global::Owl.ChatHistoryUserControl);
-            _typeTable[57] = typeof(global::Owl.View.ImageEffectsUserControl);
-            _typeTable[58] = typeof(global::Owl.MainPage);
-            _typeTable[59] = typeof(global::Owl.Common.NavigationHelper);
-            _typeTable[60] = typeof(global::Owl.MyPostUserControl);
-            _typeTable[61] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood);
-            _typeTable[62] = typeof(global::Owl.PostsUserControl);
-            _typeTable[63] = typeof(global::Owl.PivotPage);
-            _typeTable[64] = typeof(global::Owl.PostInfoPage);
-            _typeTable[65] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
-            _typeTable[66] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
-            _typeTable[67] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
-            _typeTable[68] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
-            _typeTable[69] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
-            _typeTable[70] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
-            _typeTable[71] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
-            _typeTable[72] = typeof(global::Windows.UI.Xaml.Media.Brush);
-            _typeTable[73] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
-            _typeTable[74] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
-            _typeTable[75] = typeof(global::Windows.UI.Text.FontStyle);
-            _typeTable[76] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
-            _typeTable[77] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
-            _typeTable[78] = typeof(global::Windows.UI.Xaml.FrameworkElement);
-            _typeTable[79] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
+            _typeTable[8] = typeof(global::Owl.BlankPage);
+            _typeTable[9] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[10] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[11] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDown);
+            _typeTable[12] = typeof(global::Windows.UI.Xaml.Controls.Primitives.RangeBase);
+            _typeTable[13] = typeof(global::System.String);
+            _typeTable[14] = typeof(global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility);
+            _typeTable[15] = typeof(global::System.Enum);
+            _typeTable[16] = typeof(global::System.ValueType);
+            _typeTable[17] = typeof(global::System.Boolean);
+            _typeTable[18] = typeof(global::System.Double);
+            _typeTable[19] = typeof(global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox);
+            _typeTable[20] = typeof(global::Telerik.UI.Xaml.Controls.RadHeaderedControl);
+            _typeTable[21] = typeof(global::Telerik.UI.Xaml.Controls.RadControl);
+            _typeTable[22] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[23] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode);
+            _typeTable[24] = typeof(global::System.TimeSpan);
+            _typeTable[25] = typeof(global::Windows.UI.Xaml.Style);
+            _typeTable[26] = typeof(global::Windows.UI.Xaml.DataTemplate);
+            _typeTable[27] = typeof(global::System.StringComparison);
+            _typeTable[28] = typeof(global::System.Int32);
+            _typeTable[29] = typeof(global::System.Func<global::System.Object, global::System.String>);
+            _typeTable[30] = typeof(global::System.MulticastDelegate);
+            _typeTable[31] = typeof(global::System.Delegate);
+            _typeTable[32] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[33] = typeof(global::Windows.UI.Xaml.Controls.DataTemplateSelector);
+            _typeTable[34] = typeof(global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode);
+            _typeTable[35] = typeof(global::Telerik.UI.Xaml.Controls.Input.HighlightStyle);
+            _typeTable[36] = typeof(global::Windows.UI.Xaml.DependencyObject);
+            _typeTable[37] = typeof(global::Owl.EditMyProfilePage);
+            _typeTable[38] = typeof(global::Owl.FilterPage);
+            _typeTable[39] = typeof(global::Owl.View.FirstVisit.PageBasicInfo);
+            _typeTable[40] = typeof(global::Owl.View.FirstVisit.PageImWithGirlsAndGuys);
+            _typeTable[41] = typeof(global::Owl.View.FirstVisit.PageProfile);
+            _typeTable[42] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToSearchVenues);
+            _typeTable[43] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingTo);
+            _typeTable[44] = typeof(global::Owl.View.FirstVisit.PageWereDressed);
+            _typeTable[45] = typeof(global::Owl.FirstTimeEnterUserControl);
+            _typeTable[46] = typeof(global::Owl.FirstEnterIn);
+            _typeTable[47] = typeof(global::Owl.CameraPhotoUserControl);
+            _typeTable[48] = typeof(global::Owl.ItemClickedConverter);
+            _typeTable[49] = typeof(global::Microsoft.Xaml.Interactivity.Interaction);
+            _typeTable[50] = typeof(global::Microsoft.Xaml.Interactivity.BehaviorCollection);
+            _typeTable[51] = typeof(global::Windows.UI.Xaml.DependencyObjectCollection);
+            _typeTable[52] = typeof(global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior);
+            _typeTable[53] = typeof(global::Microsoft.Xaml.Interactivity.ActionCollection);
+            _typeTable[54] = typeof(global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction);
+            _typeTable[55] = typeof(global::System.Windows.Input.ICommand);
+            _typeTable[56] = typeof(global::Windows.UI.Xaml.Data.IValueConverter);
+            _typeTable[57] = typeof(global::Owl.ChatHistoryUserControl);
+            _typeTable[58] = typeof(global::Owl.View.ImageEffectsUserControl);
+            _typeTable[59] = typeof(global::Owl.MainPage);
+            _typeTable[60] = typeof(global::Owl.Common.NavigationHelper);
+            _typeTable[61] = typeof(global::Owl.MyPostUserControl);
+            _typeTable[62] = typeof(global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood);
+            _typeTable[63] = typeof(global::Owl.PostsUserControl);
+            _typeTable[64] = typeof(global::Owl.PivotPage);
+            _typeTable[65] = typeof(global::Owl.PostInfoPage);
+            _typeTable[66] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition);
+            _typeTable[67] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation);
+            _typeTable[68] = typeof(global::Windows.UI.Xaml.HorizontalAlignment);
+            _typeTable[69] = typeof(global::Windows.UI.Xaml.VerticalAlignment);
+            _typeTable[70] = typeof(global::Telerik.UI.Xaml.Controls.Chart.ChartPalette);
+            _typeTable[71] = typeof(global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection);
+            _typeTable[72] = typeof(global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>);
+            _typeTable[73] = typeof(global::Windows.UI.Xaml.Media.Brush);
+            _typeTable[74] = typeof(global::Windows.UI.Xaml.Media.FontFamily);
+            _typeTable[75] = typeof(global::Telerik.UI.Xaml.Controls.Input.FontWeightName);
+            _typeTable[76] = typeof(global::Windows.UI.Text.FontStyle);
+            _typeTable[77] = typeof(global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle);
+            _typeTable[78] = typeof(global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter);
+            _typeTable[79] = typeof(global::Windows.UI.Xaml.FrameworkElement);
+            _typeTable[80] = typeof(global::Windows.UI.Xaml.Media.Animation.Storyboard);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -351,52 +353,53 @@ namespace Owl.Owl_XamlTypeInfo
         private object Activate_5_PivotViewModel() { return new global::Owl.ViewModel.PivotViewModel(); }
         private object Activate_6_PostsViewModel() { return new global::Owl.ViewModel.PostsViewModel(); }
         private object Activate_7_ChatHistoryViewModel() { return new global::Owl.ViewModel.ChatHistoryViewModel(); }
-        private object Activate_8_NumericUpDown() { return new global::WinRTXamlToolkit.Controls.NumericUpDown(); }
-        private object Activate_16_RadAutoCompleteBox() { return new global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox(); }
-        private object Activate_32_HighlightStyle() { return new global::Telerik.UI.Xaml.Controls.Input.HighlightStyle(); }
-        private object Activate_34_EditMyProfilePage() { return new global::Owl.EditMyProfilePage(); }
-        private object Activate_37_FilterPage() { return new global::Owl.FilterPage(); }
-        private object Activate_38_PageBasicInfo() { return new global::Owl.View.FirstVisit.PageBasicInfo(); }
-        private object Activate_39_PageImWithGirlsAndGuys() { return new global::Owl.View.FirstVisit.PageImWithGirlsAndGuys(); }
-        private object Activate_40_PageProfile() { return new global::Owl.View.FirstVisit.PageProfile(); }
-        private object Activate_41_PageTonightImGoingToSearchVenues() { return new global::Owl.View.FirstVisit.PageTonightImGoingToSearchVenues(); }
-        private object Activate_42_PageTonightImGoingTo() { return new global::Owl.View.FirstVisit.PageTonightImGoingTo(); }
-        private object Activate_43_PageWereDressed() { return new global::Owl.View.FirstVisit.PageWereDressed(); }
-        private object Activate_44_FirstTimeEnterUserControl() { return new global::Owl.FirstTimeEnterUserControl(); }
-        private object Activate_45_FirstEnterIn() { return new global::Owl.FirstEnterIn(); }
-        private object Activate_46_CameraPhotoUserControl() { return new global::Owl.CameraPhotoUserControl(); }
-        private object Activate_47_ItemClickedConverter() { return new global::Owl.ItemClickedConverter(); }
-        private object Activate_49_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
-        private object Activate_51_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
-        private object Activate_52_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
-        private object Activate_53_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
-        private object Activate_56_ChatHistoryUserControl() { return new global::Owl.ChatHistoryUserControl(); }
-        private object Activate_57_ImageEffectsUserControl() { return new global::Owl.View.ImageEffectsUserControl(); }
-        private object Activate_58_MainPage() { return new global::Owl.MainPage(); }
-        private object Activate_60_MyPostUserControl() { return new global::Owl.MyPostUserControl(); }
-        private object Activate_61_PageTonightImGoingToNeighborhood() { return new global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood(); }
-        private object Activate_62_PostsUserControl() { return new global::Owl.PostsUserControl(); }
-        private object Activate_63_PivotPage() { return new global::Owl.PivotPage(); }
-        private object Activate_64_PostInfoPage() { return new global::Owl.PostInfoPage(); }
-        private object Activate_65_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
-        private object Activate_69_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
-        private object Activate_70_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
-        private object Activate_71_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
-        private object Activate_76_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
-        private object Activate_77_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
-        private void VectorAdd_49_BehaviorCollection(object instance, object item)
+        private object Activate_8_BlankPage() { return new global::Owl.BlankPage(); }
+        private object Activate_11_NumericUpDown() { return new global::WinRTXamlToolkit.Controls.NumericUpDown(); }
+        private object Activate_19_RadAutoCompleteBox() { return new global::Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox(); }
+        private object Activate_35_HighlightStyle() { return new global::Telerik.UI.Xaml.Controls.Input.HighlightStyle(); }
+        private object Activate_37_EditMyProfilePage() { return new global::Owl.EditMyProfilePage(); }
+        private object Activate_38_FilterPage() { return new global::Owl.FilterPage(); }
+        private object Activate_39_PageBasicInfo() { return new global::Owl.View.FirstVisit.PageBasicInfo(); }
+        private object Activate_40_PageImWithGirlsAndGuys() { return new global::Owl.View.FirstVisit.PageImWithGirlsAndGuys(); }
+        private object Activate_41_PageProfile() { return new global::Owl.View.FirstVisit.PageProfile(); }
+        private object Activate_42_PageTonightImGoingToSearchVenues() { return new global::Owl.View.FirstVisit.PageTonightImGoingToSearchVenues(); }
+        private object Activate_43_PageTonightImGoingTo() { return new global::Owl.View.FirstVisit.PageTonightImGoingTo(); }
+        private object Activate_44_PageWereDressed() { return new global::Owl.View.FirstVisit.PageWereDressed(); }
+        private object Activate_45_FirstTimeEnterUserControl() { return new global::Owl.FirstTimeEnterUserControl(); }
+        private object Activate_46_FirstEnterIn() { return new global::Owl.FirstEnterIn(); }
+        private object Activate_47_CameraPhotoUserControl() { return new global::Owl.CameraPhotoUserControl(); }
+        private object Activate_48_ItemClickedConverter() { return new global::Owl.ItemClickedConverter(); }
+        private object Activate_50_BehaviorCollection() { return new global::Microsoft.Xaml.Interactivity.BehaviorCollection(); }
+        private object Activate_52_EventTriggerBehavior() { return new global::Microsoft.Xaml.Interactions.Core.EventTriggerBehavior(); }
+        private object Activate_53_ActionCollection() { return new global::Microsoft.Xaml.Interactivity.ActionCollection(); }
+        private object Activate_54_InvokeCommandAction() { return new global::Microsoft.Xaml.Interactions.Core.InvokeCommandAction(); }
+        private object Activate_57_ChatHistoryUserControl() { return new global::Owl.ChatHistoryUserControl(); }
+        private object Activate_58_ImageEffectsUserControl() { return new global::Owl.View.ImageEffectsUserControl(); }
+        private object Activate_59_MainPage() { return new global::Owl.MainPage(); }
+        private object Activate_61_MyPostUserControl() { return new global::Owl.MyPostUserControl(); }
+        private object Activate_62_PageTonightImGoingToNeighborhood() { return new global::Owl.View.FirstVisit.PageTonightImGoingToNeighborhood(); }
+        private object Activate_63_PostsUserControl() { return new global::Owl.PostsUserControl(); }
+        private object Activate_64_PivotPage() { return new global::Owl.PivotPage(); }
+        private object Activate_65_PostInfoPage() { return new global::Owl.PostInfoPage(); }
+        private object Activate_66_ChartAnnotationLabelDefinition() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition(); }
+        private object Activate_70_ChartPalette() { return new global::Telerik.UI.Xaml.Controls.Chart.ChartPalette(); }
+        private object Activate_71_PaletteEntryCollection() { return new global::Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection(); }
+        private object Activate_72_List() { return new global::System.Collections.Generic.List<global::Windows.UI.Xaml.Media.Brush>(); }
+        private object Activate_77_CalendarCellStyle() { return new global::Telerik.UI.Xaml.Controls.Input.CalendarCellStyle(); }
+        private object Activate_78_BusyIndicatorAnimationAdapter() { return new global::Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter(); }
+        private void VectorAdd_50_BehaviorCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_52_ActionCollection(object instance, object item)
+        private void VectorAdd_53_ActionCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.DependencyObject>)instance;
             var newItem = (global::Windows.UI.Xaml.DependencyObject)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_71_List(object instance, object item)
+        private void VectorAdd_72_List(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.Media.Brush>)instance;
             var newItem = (global::Windows.UI.Xaml.Media.Brush)item;
@@ -467,9 +470,24 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 8:   //  WinRTXamlToolkit.Controls.NumericUpDown
+            case 8:   //  Owl.BlankPage
+                userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_8_BlankPage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 9:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 10:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 11:   //  WinRTXamlToolkit.Controls.NumericUpDown
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Primitives.RangeBase"));
-                userType.Activator = Activate_8_NumericUpDown;
+                userType.Activator = Activate_11_NumericUpDown;
                 userType.AddMemberName("ValueFormat");
                 userType.AddMemberName("ValueBarVisibility");
                 userType.AddMemberName("IsReadOnly");
@@ -477,42 +495,42 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  Windows.UI.Xaml.Controls.Primitives.RangeBase
+            case 12:   //  Windows.UI.Xaml.Controls.Primitives.RangeBase
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 10:   //  String
+            case 13:   //  String
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 11:   //  WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility
+            case 14:   //  WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Visible", global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility.Visible);
                 userType.AddEnumValue("Collapsed", global::WinRTXamlToolkit.Controls.NumericUpDownValueBarVisibility.Collapsed);
                 xamlType = userType;
                 break;
 
-            case 12:   //  System.Enum
+            case 15:   //  System.Enum
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 13:   //  System.ValueType
+            case 16:   //  System.ValueType
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 14:   //  Boolean
+            case 17:   //  Boolean
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 15:   //  Double
+            case 18:   //  Double
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 16:   //  Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox
+            case 19:   //  Telerik.UI.Xaml.Controls.Input.RadAutoCompleteBox
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadHeaderedControl"));
-                userType.Activator = Activate_16_RadAutoCompleteBox;
+                userType.Activator = Activate_19_RadAutoCompleteBox;
                 userType.AddMemberName("Watermark");
                 userType.AddMemberName("AutosuggestFirstItem");
                 userType.AddMemberName("IsDropDownOpen");
@@ -537,7 +555,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 17:   //  Telerik.UI.Xaml.Controls.RadHeaderedControl
+            case 20:   //  Telerik.UI.Xaml.Controls.RadHeaderedControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Telerik.UI.Xaml.Controls.RadControl"));
                 userType.AddMemberName("HeaderStyle");
                 userType.AddMemberName("Header");
@@ -545,38 +563,38 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 18:   //  Telerik.UI.Xaml.Controls.RadControl
+            case 21:   //  Telerik.UI.Xaml.Controls.RadControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.AddMemberName("CurrentVisualState");
                 xamlType = userType;
                 break;
 
-            case 19:   //  Windows.UI.Xaml.Controls.Control
+            case 22:   //  Windows.UI.Xaml.Controls.Control
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 20:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode
+            case 23:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("StartsWith", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode.StartsWith);
                 userType.AddEnumValue("Contains", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxFilterMode.Contains);
                 xamlType = userType;
                 break;
 
-            case 21:   //  TimeSpan
+            case 24:   //  TimeSpan
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 22:   //  Windows.UI.Xaml.Style
+            case 25:   //  Windows.UI.Xaml.Style
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 23:   //  Windows.UI.Xaml.DataTemplate
+            case 26:   //  Windows.UI.Xaml.DataTemplate
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 24:   //  System.StringComparison
+            case 27:   //  System.StringComparison
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("CurrentCulture", global::System.StringComparison.CurrentCulture);
                 userType.AddEnumValue("CurrentCultureIgnoreCase", global::System.StringComparison.CurrentCultureIgnoreCase);
@@ -585,37 +603,37 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 25:   //  Int32
+            case 28:   //  Int32
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 26:   //  System.Func`2<Object, String>
+            case 29:   //  System.Func`2<Object, String>
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.MulticastDelegate"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 27:   //  System.MulticastDelegate
+            case 30:   //  System.MulticastDelegate
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Delegate"));
                 xamlType = userType;
                 break;
 
-            case 28:   //  System.Delegate
+            case 31:   //  System.Delegate
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 29:   //  System.Collections.IEnumerable
+            case 32:   //  System.Collections.IEnumerable
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 30:   //  Windows.UI.Xaml.Controls.DataTemplateSelector
+            case 33:   //  Windows.UI.Xaml.Controls.DataTemplateSelector
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 31:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode
+            case 34:   //  Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Auto", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode.Auto);
                 userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Input.AutoCompleteBoxPlacementMode.Top);
@@ -624,9 +642,9 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 32:   //  Telerik.UI.Xaml.Controls.Input.HighlightStyle
+            case 35:   //  Telerik.UI.Xaml.Controls.Input.HighlightStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_32_HighlightStyle;
+                userType.Activator = Activate_35_HighlightStyle;
                 userType.AddMemberName("FontFamily");
                 userType.AddMemberName("FontWeight");
                 userType.AddMemberName("FontStyle");
@@ -636,122 +654,114 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 33:   //  Windows.UI.Xaml.DependencyObject
+            case 36:   //  Windows.UI.Xaml.DependencyObject
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 34:   //  Owl.EditMyProfilePage
+            case 37:   //  Owl.EditMyProfilePage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_34_EditMyProfilePage;
+                userType.Activator = Activate_37_EditMyProfilePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 35:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 36:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 37:   //  Owl.FilterPage
+            case 38:   //  Owl.FilterPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_37_FilterPage;
+                userType.Activator = Activate_38_FilterPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 38:   //  Owl.View.FirstVisit.PageBasicInfo
+            case 39:   //  Owl.View.FirstVisit.PageBasicInfo
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_38_PageBasicInfo;
+                userType.Activator = Activate_39_PageBasicInfo;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 39:   //  Owl.View.FirstVisit.PageImWithGirlsAndGuys
+            case 40:   //  Owl.View.FirstVisit.PageImWithGirlsAndGuys
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_39_PageImWithGirlsAndGuys;
+                userType.Activator = Activate_40_PageImWithGirlsAndGuys;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 40:   //  Owl.View.FirstVisit.PageProfile
+            case 41:   //  Owl.View.FirstVisit.PageProfile
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_40_PageProfile;
+                userType.Activator = Activate_41_PageProfile;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 41:   //  Owl.View.FirstVisit.PageTonightImGoingToSearchVenues
+            case 42:   //  Owl.View.FirstVisit.PageTonightImGoingToSearchVenues
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_41_PageTonightImGoingToSearchVenues;
+                userType.Activator = Activate_42_PageTonightImGoingToSearchVenues;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 42:   //  Owl.View.FirstVisit.PageTonightImGoingTo
+            case 43:   //  Owl.View.FirstVisit.PageTonightImGoingTo
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_42_PageTonightImGoingTo;
+                userType.Activator = Activate_43_PageTonightImGoingTo;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 43:   //  Owl.View.FirstVisit.PageWereDressed
+            case 44:   //  Owl.View.FirstVisit.PageWereDressed
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_43_PageWereDressed;
+                userType.Activator = Activate_44_PageWereDressed;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 44:   //  Owl.FirstTimeEnterUserControl
+            case 45:   //  Owl.FirstTimeEnterUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_44_FirstTimeEnterUserControl;
+                userType.Activator = Activate_45_FirstTimeEnterUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 45:   //  Owl.FirstEnterIn
+            case 46:   //  Owl.FirstEnterIn
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_45_FirstEnterIn;
+                userType.Activator = Activate_46_FirstEnterIn;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 46:   //  Owl.CameraPhotoUserControl
+            case 47:   //  Owl.CameraPhotoUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_46_CameraPhotoUserControl;
+                userType.Activator = Activate_47_CameraPhotoUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 47:   //  Owl.ItemClickedConverter
+            case 48:   //  Owl.ItemClickedConverter
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_47_ItemClickedConverter;
+                userType.Activator = Activate_48_ItemClickedConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 48:   //  Microsoft.Xaml.Interactivity.Interaction
+            case 49:   //  Microsoft.Xaml.Interactivity.Interaction
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.AddMemberName("Behaviors");
                 xamlType = userType;
                 break;
 
-            case 49:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
+            case 50:   //  Microsoft.Xaml.Interactivity.BehaviorCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_49_BehaviorCollection;
+                userType.CollectionAdd = VectorAdd_50_BehaviorCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 50:   //  Windows.UI.Xaml.DependencyObjectCollection
+            case 51:   //  Windows.UI.Xaml.DependencyObjectCollection
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 51:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
+            case 52:   //  Microsoft.Xaml.Interactions.Core.EventTriggerBehavior
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_51_EventTriggerBehavior;
+                userType.Activator = Activate_52_EventTriggerBehavior;
                 userType.SetContentPropertyName("Microsoft.Xaml.Interactions.Core.EventTriggerBehavior.Actions");
                 userType.AddMemberName("Actions");
                 userType.AddMemberName("EventName");
@@ -760,16 +770,16 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 52:   //  Microsoft.Xaml.Interactivity.ActionCollection
+            case 53:   //  Microsoft.Xaml.Interactivity.ActionCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObjectCollection"));
-                userType.CollectionAdd = VectorAdd_52_ActionCollection;
+                userType.CollectionAdd = VectorAdd_53_ActionCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 53:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
+            case 54:   //  Microsoft.Xaml.Interactions.Core.InvokeCommandAction
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_53_InvokeCommandAction;
+                userType.Activator = Activate_54_InvokeCommandAction;
                 userType.AddMemberName("Command");
                 userType.AddMemberName("InputConverter");
                 userType.AddMemberName("CommandParameter");
@@ -778,84 +788,84 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 54:   //  System.Windows.Input.ICommand
+            case 55:   //  System.Windows.Input.ICommand
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 55:   //  Windows.UI.Xaml.Data.IValueConverter
+            case 56:   //  Windows.UI.Xaml.Data.IValueConverter
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 56:   //  Owl.ChatHistoryUserControl
+            case 57:   //  Owl.ChatHistoryUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_56_ChatHistoryUserControl;
+                userType.Activator = Activate_57_ChatHistoryUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 57:   //  Owl.View.ImageEffectsUserControl
+            case 58:   //  Owl.View.ImageEffectsUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_57_ImageEffectsUserControl;
+                userType.Activator = Activate_58_ImageEffectsUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 58:   //  Owl.MainPage
+            case 59:   //  Owl.MainPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_58_MainPage;
+                userType.Activator = Activate_59_MainPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 59:   //  Owl.Common.NavigationHelper
+            case 60:   //  Owl.Common.NavigationHelper
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.SetIsReturnTypeStub();
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 60:   //  Owl.MyPostUserControl
+            case 61:   //  Owl.MyPostUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_60_MyPostUserControl;
+                userType.Activator = Activate_61_MyPostUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 61:   //  Owl.View.FirstVisit.PageTonightImGoingToNeighborhood
+            case 62:   //  Owl.View.FirstVisit.PageTonightImGoingToNeighborhood
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_61_PageTonightImGoingToNeighborhood;
+                userType.Activator = Activate_62_PageTonightImGoingToNeighborhood;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 62:   //  Owl.PostsUserControl
+            case 63:   //  Owl.PostsUserControl
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_62_PostsUserControl;
+                userType.Activator = Activate_63_PostsUserControl;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 63:   //  Owl.PivotPage
+            case 64:   //  Owl.PivotPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_63_PivotPage;
+                userType.Activator = Activate_64_PivotPage;
                 userType.AddMemberName("NavigationHelper");
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 64:   //  Owl.PostInfoPage
+            case 65:   //  Owl.PostInfoPage
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_64_PostInfoPage;
+                userType.Activator = Activate_65_PostInfoPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 65:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
+            case 66:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelDefinition
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_65_ChartAnnotationLabelDefinition;
+                userType.Activator = Activate_66_ChartAnnotationLabelDefinition;
                 userType.AddMemberName("Format");
                 userType.AddMemberName("Template");
                 userType.AddMemberName("DefaultVisualStyle");
@@ -868,7 +878,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 66:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
+            case 67:   //  Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Left", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Left);
                 userType.AddEnumValue("Top", global::Telerik.UI.Xaml.Controls.Chart.ChartAnnotationLabelLocation.Top);
@@ -878,17 +888,17 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 67:   //  Windows.UI.Xaml.HorizontalAlignment
+            case 68:   //  Windows.UI.Xaml.HorizontalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 68:   //  Windows.UI.Xaml.VerticalAlignment
+            case 69:   //  Windows.UI.Xaml.VerticalAlignment
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 69:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
+            case 70:   //  Telerik.UI.Xaml.Controls.Chart.ChartPalette
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_69_ChartPalette;
+                userType.Activator = Activate_70_ChartPalette;
                 userType.AddMemberName("Name");
                 userType.AddMemberName("FillEntries");
                 userType.AddMemberName("SpecialFillEntries");
@@ -898,30 +908,30 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 70:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
+            case 71:   //  Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_70_PaletteEntryCollection;
+                userType.Activator = Activate_71_PaletteEntryCollection;
                 userType.SetContentPropertyName("Telerik.UI.Xaml.Controls.Chart.PaletteEntryCollection.Brushes");
                 userType.AddMemberName("Brushes");
                 xamlType = userType;
                 break;
 
-            case 71:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
+            case 72:   //  System.Collections.Generic.List`1<Windows.UI.Xaml.Media.Brush>
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_71_List;
+                userType.CollectionAdd = VectorAdd_72_List;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 72:   //  Windows.UI.Xaml.Media.Brush
+            case 73:   //  Windows.UI.Xaml.Media.Brush
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 73:   //  Windows.UI.Xaml.Media.FontFamily
+            case 74:   //  Windows.UI.Xaml.Media.FontFamily
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 74:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
+            case 75:   //  Telerik.UI.Xaml.Controls.Input.FontWeightName
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Black", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Black);
                 userType.AddEnumValue("Bold", global::Telerik.UI.Xaml.Controls.Input.FontWeightName.Bold);
@@ -937,7 +947,7 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 75:   //  Windows.UI.Text.FontStyle
+            case 76:   //  Windows.UI.Text.FontStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Normal", global::Windows.UI.Text.FontStyle.Normal);
                 userType.AddEnumValue("Oblique", global::Windows.UI.Text.FontStyle.Oblique);
@@ -945,28 +955,28 @@ namespace Owl.Owl_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 76:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
+            case 77:   //  Telerik.UI.Xaml.Controls.Input.CalendarCellStyle
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_76_CalendarCellStyle;
+                userType.Activator = Activate_77_CalendarCellStyle;
                 userType.AddMemberName("ContentStyle");
                 userType.AddMemberName("DecorationStyle");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 77:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
+            case 78:   //  Telerik.UI.Xaml.Controls.Primitives.BusyIndicator.BusyIndicatorAnimationAdapter
                 userType = new global::Owl.Owl_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.FrameworkElement"));
-                userType.Activator = Activate_77_BusyIndicatorAnimationAdapter;
+                userType.Activator = Activate_78_BusyIndicatorAnimationAdapter;
                 userType.AddMemberName("Animation");
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 78:   //  Windows.UI.Xaml.FrameworkElement
+            case 79:   //  Windows.UI.Xaml.FrameworkElement
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 79:   //  Windows.UI.Xaml.Media.Animation.Storyboard
+            case 80:   //  Windows.UI.Xaml.Media.Animation.Storyboard
                 xamlType = new global::Owl.Owl_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
             }

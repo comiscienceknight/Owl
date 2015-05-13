@@ -8,19 +8,16 @@ using System.Web;
 
 namespace OwlBatAzureMobileService.Controllers
 {
+    [System.Web.Http.AuthorizeLevel(AuthorizationLevel.Anonymous)]
     public class GpsHub : Hub
     {
         public ApiServices Services { get; set; }
 
-        [AuthorizeLevel(AuthorizationLevel.User)]
+        [System.Web.Http.AuthorizeLevel(AuthorizationLevel.Anonymous)]
+        [AuthorizeLevel(AuthorizationLevel.Anonymous)]
         public string Send(string message)
         {
             return message;
-        }
-
-        public GpsUnit BoardMyPos(GpsUnit gpsUnit)
-        {
-            return gpsUnit;
         }
     }
 }

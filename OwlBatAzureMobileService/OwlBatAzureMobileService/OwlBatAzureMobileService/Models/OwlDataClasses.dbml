@@ -92,8 +92,8 @@
   <Table Name="dbo.JingGegeGps" Member="JingGegeGps">
     <Type Name="JingGegeGp">
       <Column Name="UserId" Type="System.String" DbType="VarChar(128) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Altitude" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
-      <Column Name="Longitude" Type="System.Decimal" DbType="Decimal(20,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Altitude" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
+      <Column Name="Longitude" Type="System.Single" DbType="Real NOT NULL" CanBeNull="false" />
       <Column Name="UpdatedAt" Type="System.DateTimeOffset" DbType="DateTimeOffset NOT NULL" CanBeNull="false" />
     </Type>
   </Table>

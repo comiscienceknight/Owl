@@ -44,10 +44,10 @@
         <elementListCompartment Id="6c2b309f-fce1-47c5-829a-175f4777e167" absoluteBounds="7.14, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3c9dcfd6-2fa6-4e92-947f-bce8112eae13" absoluteBounds="0.75, 2.5, 2, 1.5785953776041666">
+    <classShape Id="30795b4e-cd8c-4439-8a65-98b688eefc34" absoluteBounds="1, 3.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/OwlDataClassesDataContext/JingGegeGp" />
       <nestedChildShapes>
-        <elementListCompartment Id="692ce8a3-5cec-4254-bb06-493d6ac0a29c" absoluteBounds="0.765, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="12c35e60-0b46-43ce-8242-2e9f49baf2d5" absoluteBounds="1.0150000000000001, 3.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

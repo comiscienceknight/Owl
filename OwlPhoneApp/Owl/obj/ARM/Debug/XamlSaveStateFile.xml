@@ -1,6 +1,6 @@
 <XamlCompilerSaveState>
   <ReferenceAssemblyList>
-    <LocalAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\obj\arm\debug\intermediatexaml\owl.exe" HashGuid="b1843428-b251-d1e7-ebf1-663f67db8df2" />
+    <LocalAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\obj\arm\debug\intermediatexaml\owl.exe" HashGuid="bbdad0f9-dc43-b6ce-c52e-5fd1b818e2d5" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactions.dll" HashGuid="95a94f94-3917-d473-4f7c-18c4bd437046" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\behaviorsxamlsdkmanaged\12.0\references\commonconfiguration\neutral\microsoft.xaml.interactivity.dll" HashGuid="d25f59e6-dd81-900a-0dfc-55b39f6898ef" />
     <ReferenceAssembly PathName="c:\program files (x86)\microsoft sdks\windowsphoneapp\v8.1\extensionsdks\microsoft.vclibs\12.0\references\commonconfiguration\neutral\platform.winmd" HashGuid="58b6b6d1-928e-9908-9804-eb460e5e101b" />
@@ -18,6 +18,8 @@
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\lumiaimagingsdk.2.0.208\lib\wpa81-hidden\arm\lumia.imaging.managed.dll" HashGuid="4995ac95-997b-6a34-dd96-7fb05ef15210" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\lumiaimagingsdk.2.0.208\lib\wpa81\arm\lumia.imaging.winmd" HashGuid="d16e02ff-554c-0883-c15e-9c1ee6c065c5" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\lumiaimagingsdk.2.0.208\lib\wpa81\arm\lumia.interopservices.windowsruntime.winmd" HashGuid="be026b97-4e17-03e1-494d-e8a25f3c2582" />
+    <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\packages\microsoft.aspnet.signalr.client.2.2.0\lib\portable-win81+wpa81\microsoft.aspnet.signalr.client.dll" HashGuid="122fd8fc-0022-0dd0-2020-cd60e5b50849" />
+    <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\packages\microsoft.aspnet.signalr.client.2.2.0\lib\portable-win81+wpa81\microsoft.aspnet.signalr.client.store.dll" HashGuid="db15ee65-549a-89a1-7a28-15a9e99ac2e1" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\packages\microsoft.data.edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\microsoft.data.edm.dll" HashGuid="652859ac-63b5-9ab0-7a6b-0cb8dfcd265f" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlphoneapp\owl\packages\microsoft.data.odata.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\microsoft.data.odata.dll" HashGuid="4e84b0db-d22a-61af-6343-dd7cc7f44046" />
     <ReferenceAssembly PathName="c:\users\bhu\documents\github\owl\owlwindowsphoneapp\packages\commonservicelocator.1.3\lib\portable-net4+sl5+netcore45+wpa81+wp8\microsoft.practices.servicelocation.dll" HashGuid="89de7f80-26d8-a17c-5ad9-b855f81ea5b2" />

@@ -1952,9 +1952,9 @@ namespace OwlBatAzureMobileService.Models
 		
 		private string _UserId;
 		
-		private decimal _Altitude;
+		private float _Altitude;
 		
-		private decimal _Longitude;
+		private float _Longitude;
 		
 		private System.DateTimeOffset _UpdatedAt;
 		
@@ -1964,9 +1964,9 @@ namespace OwlBatAzureMobileService.Models
     partial void OnCreated();
     partial void OnUserIdChanging(string value);
     partial void OnUserIdChanged();
-    partial void OnAltitudeChanging(decimal value);
+    partial void OnAltitudeChanging(float value);
     partial void OnAltitudeChanged();
-    partial void OnLongitudeChanging(decimal value);
+    partial void OnLongitudeChanging(float value);
     partial void OnLongitudeChanged();
     partial void OnUpdatedAtChanging(System.DateTimeOffset value);
     partial void OnUpdatedAtChanged();
@@ -1997,8 +1997,8 @@ namespace OwlBatAzureMobileService.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Altitude", DbType="Decimal(20,0) NOT NULL")]
-		public decimal Altitude
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Altitude", DbType="Real NOT NULL")]
+		public float Altitude
 		{
 			get
 			{
@@ -2017,8 +2017,8 @@ namespace OwlBatAzureMobileService.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Decimal(20,0) NOT NULL")]
-		public decimal Longitude
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Real NOT NULL")]
+		public float Longitude
 		{
 			get
 			{

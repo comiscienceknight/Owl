@@ -382,6 +382,7 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServ
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.Jwt.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.SinaWeibo.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.ServiceBus.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.WindowsAzure.Configuration.dll
@@ -545,5 +546,3 @@ C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileServ
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\zh-Hant\System.Spatial.resources.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.dll
 C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.pdb
-C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\obj\Debug\OwlBatAzureMobileService.csprojResolveAssemblyReference.cache
-C:\Users\bhu\Documents\GitHub\Owl\OwlBatAzureMobileService\OwlBatAzureMobileService\OwlBatAzureMobileService\bin\Microsoft.Owin.Security.SinaWeibo.dll

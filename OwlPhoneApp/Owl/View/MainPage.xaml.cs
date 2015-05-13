@@ -131,7 +131,7 @@ namespace Owl
                         App.PasswordVaultObject = vault;
 
                         var rootFrame = (Window.Current.Content as Frame);
-                        if (!rootFrame.Navigate(typeof(View.FirstVisit.PageBasicInfo)))
+                        if (!rootFrame.Navigate(typeof(BlankPage)))
                         {
                             throw new Exception("Failed to create initial page");
                         }

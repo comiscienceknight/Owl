@@ -64,6 +64,12 @@
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlWindowsPhoneApp\packages\LumiaImagingSDK.2.0.208\build\wpa81\\..\..\lib\wpa81-hidden\ARM\Lumia.Imaging.Managed.dll">
       <PackagePath>Lumia.Imaging.Managed.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\portable-win81+wpa81\Microsoft.AspNet.SignalR.Client.dll">
+      <PackagePath>Microsoft.AspNet.SignalR.Client.dll</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.AspNet.SignalR.Client.2.2.0\lib\portable-win81+wpa81\Microsoft.AspNet.SignalR.Client.Store.dll">
+      <PackagePath>Microsoft.AspNet.SignalR.Client.Store.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\packages\Microsoft.Data.Edm.5.6.2\lib\portable-net40+sl5+wp8+win8+wpa\Microsoft.Data.Edm.dll">
       <PackagePath>Microsoft.Data.Edm.dll</PackagePath>
     </AppxPackagedFile>
@@ -342,6 +348,9 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\Assets\Styles\JumpList.xbf">
       <PackagePath>Assets\Styles\JumpList.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\BlankPage.xbf">
+      <PackagePath>BlankPage.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\bhu\Documents\GitHub\Owl\OwlPhoneApp\Owl\bin\ARM\Debug\View\EditMyProfilePage.xbf">
       <PackagePath>View\EditMyProfilePage.xbf</PackagePath>

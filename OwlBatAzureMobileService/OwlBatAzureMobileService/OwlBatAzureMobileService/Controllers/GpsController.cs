@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Microsoft.WindowsAzure.Mobile.Service;
+using Microsoft.WindowsAzure.Mobile.Service.Security;
 using OwlBatAzureMobileService.Models;
 using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace OwlBatAzureMobileService.Controllers
 {
     //http://blogs.msdn.com/b/azuremobile/archive/2014/05/30/realtime-with-signalr-and-azure-mobile-net-backend.aspx
 
+    [System.Web.Http.AuthorizeLevel(AuthorizationLevel.Anonymous)]
     public class GpsController : ApiController
     {
         public ApiServices Services { get; set; }
@@ -29,6 +31,7 @@ namespace OwlBatAzureMobileService.Controllers
             }
         }
 
+        [System.Web.Http.AuthorizeLevel(AuthorizationLevel.Anonymous)]
         [Route("api/updatepos")]
         [HttpPost]
         public async void Post(GpsUnit gpsUnit)
@@ -36,10 +39,10 @@ namespace OwlBatAzureMobileService.Controllers
             await Task.Run(() =>
             {
                 string userid = gpsUnit.UserId;
-                decimal altitude;
-                Decimal.TryParse(gpsUnit.Altitude, out altitude);
-                decimal longitude;
-                Decimal.TryParse(gpsUnit.Longitude, out longitude);
+                float altitude;
+                float.TryParse(gpsUnit.Altitude, out altitude);
+                float longitude;
+                float.TryParse(gpsUnit.Longitude, out longitude);
                 using (var db = new Models.OwlDataClassesDataContext())
                 {
                     if (db.JingGegeGps.Count(p => p.UserId == userid) == 0)
@@ -65,6 +68,8 @@ namespace OwlBatAzureMobileService.Controllers
 
                 IHubContext hubContext = Services.GetRealtime<GpsHub>();
                 hubContext.Clients.All.BoardMyPos(gpsUnit);
+
+                hubContext.Clients.All.Send(gpsUnit.UserId + ";" + gpsUnit.Altitude + ";" + gpsUnit.Longitude);
             });
         }
     }

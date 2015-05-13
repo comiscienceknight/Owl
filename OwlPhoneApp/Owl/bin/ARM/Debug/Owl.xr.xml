@@ -207,12 +207,13 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
-      <RootProperty Name="BottomAppBar" />
       <RootProperty Name="Content" />
+      <RootProperty Name="BottomAppBar" />
       <RootProperty Name="DataContext" />
       <RootProperty Name="Resources" />
       <RootProperty Name="Transitions" />
     </RootType>
+    <RootType FullName="Owl.BlankPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.CommandBar">
       <RootProperty Name="IsSticky" />
       <RootProperty Name="Background" />

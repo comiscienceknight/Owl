@@ -18,7 +18,7 @@ namespace OwlBatAzureMobileService
             // Use this class to set configuration options for your mobile service
             ConfigOptions options = new ConfigOptions();
             options.LoginProviders.Add(typeof(SinaWeiboLoginProvider));
-            options.PushAuthorization = Microsoft.WindowsAzure.Mobile.Service.Security.AuthorizationLevel.User; 
+            //options.PushAuthorization = Microsoft.WindowsAzure.Mobile.Service.Security.AuthorizationLevel.User; 
 
             // Use this class to set WebAPI configuration options
             HttpConfiguration config = ServiceConfig.Initialize(new ConfigBuilder(options));

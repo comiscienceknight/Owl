@@ -51,6 +51,9 @@ namespace OwlBatAzureMobileService.Models
     partial void InsertMessageUserPair(MessageUserPair instance);
     partial void UpdateMessageUserPair(MessageUserPair instance);
     partial void DeleteMessageUserPair(MessageUserPair instance);
+    partial void InsertJingGegeGp(JingGegeGp instance);
+    partial void UpdateJingGegeGp(JingGegeGp instance);
+    partial void DeleteJingGegeGp(JingGegeGp instance);
     #endregion
 		
 		public OwlDataClassesDataContext() : 
@@ -136,6 +139,14 @@ namespace OwlBatAzureMobileService.Models
 			get
 			{
 				return this.GetTable<MessageUserPair>();
+			}
+		}
+		
+		public System.Data.Linq.Table<JingGegeGp> JingGegeGps
+		{
+			get
+			{
+				return this.GetTable<JingGegeGp>();
 			}
 		}
 		
@@ -1908,6 +1919,140 @@ namespace OwlBatAzureMobileService.Models
 					this._CreatedAt = value;
 					this.SendPropertyChanged("CreatedAt");
 					this.OnCreatedAtChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.JingGegeGps")]
+	public partial class JingGegeGp : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _UserId;
+		
+		private decimal _Altitude;
+		
+		private decimal _Longitude;
+		
+		private System.DateTimeOffset _UpdatedAt;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(string value);
+    partial void OnUserIdChanged();
+    partial void OnAltitudeChanging(decimal value);
+    partial void OnAltitudeChanged();
+    partial void OnLongitudeChanging(decimal value);
+    partial void OnLongitudeChanged();
+    partial void OnUpdatedAtChanging(System.DateTimeOffset value);
+    partial void OnUpdatedAtChanged();
+    #endregion
+		
+		public JingGegeGp()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="VarChar(128) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Altitude", DbType="Decimal(20,0) NOT NULL")]
+		public decimal Altitude
+		{
+			get
+			{
+				return this._Altitude;
+			}
+			set
+			{
+				if ((this._Altitude != value))
+				{
+					this.OnAltitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Altitude = value;
+					this.SendPropertyChanged("Altitude");
+					this.OnAltitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Longitude", DbType="Decimal(20,0) NOT NULL")]
+		public decimal Longitude
+		{
+			get
+			{
+				return this._Longitude;
+			}
+			set
+			{
+				if ((this._Longitude != value))
+				{
+					this.OnLongitudeChanging(value);
+					this.SendPropertyChanging();
+					this._Longitude = value;
+					this.SendPropertyChanged("Longitude");
+					this.OnLongitudeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UpdatedAt", DbType="DateTimeOffset NOT NULL")]
+		public System.DateTimeOffset UpdatedAt
+		{
+			get
+			{
+				return this._UpdatedAt;
+			}
+			set
+			{
+				if ((this._UpdatedAt != value))
+				{
+					this.OnUpdatedAtChanging(value);
+					this.SendPropertyChanging();
+					this._UpdatedAt = value;
+					this.SendPropertyChanged("UpdatedAt");
+					this.OnUpdatedAtChanged();
 				}
 			}
 		}

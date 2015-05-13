@@ -102,12 +102,9 @@ namespace Owl
                 {
                     _hubConnection.Headers["x-zumo-application"] = App.OwlbatClient.ApplicationKey;
                 }
+
                 IHubProxy proxy = _hubConnection.CreateHubProxy("GpsHub");
                 await _hubConnection.Start();
-
-                //string result = await proxy.Invoke<string>("Send", "Hello World!");
-                //var invokeDialog = new MessageDialog(result);
-                //await invokeDialog.ShowAsync();
 
                 proxy.On<string>("Send", async msg =>
                 {

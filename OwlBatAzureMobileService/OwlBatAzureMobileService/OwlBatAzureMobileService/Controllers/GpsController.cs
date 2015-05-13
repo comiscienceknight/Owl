@@ -67,8 +67,6 @@ namespace OwlBatAzureMobileService.Controllers
                 }
 
                 IHubContext hubContext = Services.GetRealtime<GpsHub>();
-                hubContext.Clients.All.BoardMyPos(gpsUnit);
-
                 hubContext.Clients.All.Send(gpsUnit.UserId + ";" + gpsUnit.Altitude + ";" + gpsUnit.Longitude);
             });
         }
